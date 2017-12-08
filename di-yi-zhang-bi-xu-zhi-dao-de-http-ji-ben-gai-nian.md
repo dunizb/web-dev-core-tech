@@ -211,7 +211,7 @@ HTTP是很简单可扩展的一种协议。结合了轻松添加头部信息能�
 
 * MDN：[https://developer.mozilla.org/zh-CN/docs/Web/HTTP](https://developer.mozilla.org/zh-CN/docs/Web/HTTP)
 * 扫盲 HTTPS 和 SSL/TLS 协议\[1\]：背景知识、协议的需求、设计的难点：[https://program-think.blogspot.com/2014/11/https-ssl-tls-1.html](https://program-think.blogspot.com/2014/11/https-ssl-tls-1.html)
-* [《HTTP小书》](/www.ituring.com.cn/book/1791)，刘传君
+* 《HT[http://www.ituring.com.cn/book/1791](http://www.ituring.com.cn/book/1791)TP小书》，刘传君
 
 
 

@@ -12,5 +12,7 @@ HTTP相关知识是从事Web开发程序员必须知道的内容，可以算作�
 
 * [HTTP小书](/www.ituring.com.cn/book/1791)，图灵电子书，刘传君 著
 
+* [HTTP协议入门](http://www.ruanyifeng.com/blog/2016/08/http.html)，阮一峰的博客
+
 
 

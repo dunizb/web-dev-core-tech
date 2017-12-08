@@ -111,6 +111,44 @@ HTTP 对 TCP 连接的使用，分为两种方式：俗称“短连接”和“�
 
 到了1995年底开始制定 HTTP 1.1 草案的时候，网页已经开始变得复杂（网页内的图片、脚本越来越多了）。这时候再用短连接的方式，效率太低下了（因为建立 TCP 连接是有“时间成本”和“CPU 成本”滴）。所以，在 HTTP 1.1 中，**默认**采用的是“Keep-Alive”的方式。
 
+## 六、一些术语
+
+**资源（resource）**
+
+Web资源是使用URL指向的Web内容。
+
+* 内容可以是静态的，如：文本文件、HTML文件、JPEG文件。
+* 或者是动态的内容。如：摄像头的实时采集软件生成的动态影像，用户填写的电子网站订单。
+
+**资源类型**
+
+Web服务器会为所有HTTP资源赋予一个类型，以便于HTTP软件处理消息主体。如，用 text/html 标记 html。可以再看两个案例：
+
+* text/plain :ASCII文本文档
+* image/jpeg :JPEG版本的图片
+
+非常多的资源类型和文本标记的对应关系，一起构成了一个超长的清单，并且由RFC 2045标准化。此标准被称为MIME。MIME是Multipurpose Internet Mail Extension的缩写。虽然名称很长，但是含义简单，就是用来指定消息内的实体类型的。之所以有Mail字样，是因为最初设计是为了Mail的异构系统交换文档的。
+
+资源标示符
+
+URL是一种资源位置标示方法。URL描述了一个资源在服务器上的位置。这就是一个合法的URL：http://example.com/part/index.htm。
+
+* 第一部分：方案\(scheme\)。指明了访问资源所使用的协议类型。这部分通常是HTTP协议\(http://\)。
+* 第二部分：服务器地址\(比如，example.com）。
+* 其余部分指定了Web服务器上的某个资源\(比如，/part/index.htm\)。
+
+当在地址栏输入此资源名并回车后，用户代理会把URL解析，把必要的信息以HTTP协议的要求，打入请求消息内。以http://www.example.com/index.html，变成
+
+```
+GET index.html HTTP/1.1
+host:www.example.com
+空行
+```
+
+打开到www.example.com的tcp连接，并发送此请求消息给服务器，然后等待服务器响应并解析显示给用户。
+
+> 更多URL、URI、URN详细推荐阅读：[《你知道URL、URI和URN三者之间的区别吗？》](http://web.jobbole.com/83452/)
+
 ## 小结
 
 HTTP是一个简单快速、灵活、无连接、无状态的超文本传输协议。

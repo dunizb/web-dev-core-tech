@@ -22,12 +22,12 @@ Email：[zb@dunizb.vip](mailto:zb@dunizb.vip)
 
 **第一部分 你必须知道的HTTP**
 
-* 第一章 HTTP基本概念
-* 第二章 HTTP简史
-* 第三章 请求
-* 第四章 响应
-* 第五章 HTTP的几种连接
-* 第六章 Cookie技术
+* [x] 第一章 HTTP基本概念
+* [ ] 第二章 HTTP简史
+* [ ] 第三章 请求
+* [ ] 第四章 响应
+* [ ] 第五章 HTTP的几种连接
+* [ ] 第六章 Cookie技术
 
 **第二部分 你必须知道的HTML**
 

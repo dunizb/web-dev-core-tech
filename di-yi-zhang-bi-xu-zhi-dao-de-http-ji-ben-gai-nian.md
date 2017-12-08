@@ -131,13 +131,13 @@ Web服务器会为所有HTTP资源赋予一个类型，以便于HTTP软件处理
 
 资源标示符
 
-URL是一种资源位置标示方法。URL描述了一个资源在服务器上的位置。这就是一个合法的URL：http://example.com/part/index.htm。
+URL是一种资源位置标示方法。URL描述了一个资源在服务器上的位置。这就是一个合法的URL：[http://example.com/part/index.htm。](http://example.com/part/index.htm。)
 
-* 第一部分：方案\(scheme\)。指明了访问资源所使用的协议类型。这部分通常是HTTP协议\(http://\)。
+* 第一部分：方案\(scheme\)。指明了访问资源所使用的协议类型。这部分通常是HTTP协议\([http://\)。](http://%29。)
 * 第二部分：服务器地址\(比如，example.com）。
 * 其余部分指定了Web服务器上的某个资源\(比如，/part/index.htm\)。
 
-当在地址栏输入此资源名并回车后，用户代理会把URL解析，把必要的信息以HTTP协议的要求，打入请求消息内。以http://www.example.com/index.html，变成
+当在地址栏输入此资源名并回车后，用户代理会把URL解析，把必要的信息以HTTP协议的要求，打入请求消息内。以[http://www.example.com/index.html，变成](http://www.example.com/index.html，变成)
 
 ```
 GET index.html HTTP/1.1
@@ -148,6 +148,52 @@ host:www.example.com
 打开到www.example.com的tcp连接，并发送此请求消息给服务器，然后等待服务器响应并解析显示给用户。
 
 > 更多URL、URI、URN详细推荐阅读：[《你知道URL、URI和URN三者之间的区别吗？》](http://web.jobbole.com/83452/)
+
+**HTTP事务**
+
+一个HTTP事务由一条请求消息和一个响应消息构成。
+
+**HTTP方法**
+
+HTTP支持几种不同的请求命令，这些命令被称为HTTP方法\(HTTP method\)。每条HTTP请求报文都包含一个方法。
+
+**状态码**
+
+每条HTTP响应消息返回时都会携带一个状态码。状态码是一个三位数字的代码，告知客户端请求是否成功，或者是需要采取其他行动。
+
+消息
+
+从Web客户端发往Web服务器的HTTP报文称为请求消息。从服务器发往客户端的消息称为响应消息。HTTP报文包括三部分：
+
+```
+起始行 
+首部字段 
+主体
+```
+
+如发送一个hello.htm 的资源给客户端，请求消息是：
+
+```
+GET /hello.html HTTP/1.1
+```
+
+请求消息只有起始行，指明使用的HTTP方法、资源的URL，以及协议的版本。没有首部字段和主体。
+
+响应消息为：
+
+```js
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: text/html; charset=utf-8
+Content-Length: 22
+ETag: W/"16-FmHX0hamHjYkHeAP/7PfzA"
+Date: Thu, 03 Dec 2015 09:54:01 GMT
+Connection: close
+
+<h1>Hello, World!</h1>
+```
+
+这个消息第一行为起始行，指明协议版本、状态码（200表示成功）和状态说明（OK）。接下来一直到空行之间都是首部字段，用来说明服务器、资源类型、内容长度、生成文档时间等。空行后就是主体，这里就是一个html文件的内容。实际上，主体可以承载任何内容，而不限于文本。
 
 ## 小结
 

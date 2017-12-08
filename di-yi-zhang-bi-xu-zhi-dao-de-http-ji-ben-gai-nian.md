@@ -129,7 +129,7 @@ Web服务器会为所有HTTP资源赋予一个类型，以便于HTTP软件处理
 
 非常多的资源类型和文本标记的对应关系，一起构成了一个超长的清单，并且由RFC 2045标准化。此标准被称为MIME。MIME是Multipurpose Internet Mail Extension的缩写。虽然名称很长，但是含义简单，就是用来指定消息内的实体类型的。之所以有Mail字样，是因为最初设计是为了Mail的异构系统交换文档的。
 
-资源标示符
+**资源标示符**
 
 URL是一种资源位置标示方法。URL描述了一个资源在服务器上的位置。这就是一个合法的URL：[http://example.com/part/index.htm。](http://example.com/part/index.htm。)
 

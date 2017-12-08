@@ -6,7 +6,7 @@
 
 ## 在线阅读
 
-[在线阅读](https://dunizb.gitbooks.io/web-dev-technical-manual/content/)
+[在线阅读](https://webdev.dunizb.vip)
 
 ## 已写目录
 

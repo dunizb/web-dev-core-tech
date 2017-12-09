@@ -29,7 +29,7 @@ B首次访问，服务器响应：
 HTTP/1.1 200 OK
 Set-Cookie:id=26
 
-这是你的首访 
+这是你的首访
 ```
 
 A再次访问，发送之前的Cookie给服务器：
@@ -39,7 +39,7 @@ GET /A HTTP/1.1
 Cookie: id=25
 ```
 
-服务器解析Cookie头字段，知道这个客户是A，可以做出个性响应： 
+服务器解析Cookie头字段，知道这个客户是A，可以做出个性响应：
 
 ```
 HTTP/1.1 200 OK
@@ -64,6 +64,88 @@ Set-Cookie:id=26
 ```
 
 ## 二、cookie的类型
+
+可以按照过期时间分为两类：会话cookie和持久cookie。会话cookie是一种临时cookie，用户退出浏览器，会话Cookie就会被删除了，持久cookie则会储存在硬盘里，保留时间更长，关闭浏览器，重启电脑，它依然存在，通常是持久性的cookie会维护某一个用户周期性访问服务器的配置文件或者登录信息。
+
+> 持久cookie 设置一个特定的过期时间（Expires）或者有效期（Max-Age）
+
+```
+Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2019 07:28:00 GMT;
+```
+
+## 三、cookie的属性
+
+### **cookie的域**
+
+产生Cookie的服务器可以向set-Cookie响应首部添加一个Domain属性来控制哪些站点可以看到那个cookie，例如下面：
+
+```
+Set-Cookie: name="dunizb"; domain="dunizb.com"
+```
+
+如果用户访问的是dunizb.com那就会发送cookie: name="dunizb", 如果用户访问www.aaa.com（非dunizb.com）就不会发送这个Cookie。
+
+### cookie的路径 Path
+
+Path属性可以为服务器特定文档指定Cookie，这个属性设置的url且带有这个前缀的url路径都是有效的。
+
+例如：dunizb.com 和 dunizb.com/user/这两个url。 dunizb.com 设置cookie
+
+```
+Set-cookie: id="123432";domain="m.zhuanzhuan.58.com";
+```
+
+dunizb.com/user/ 设置cookie：
+
+```
+Set-cookie：user="wang", domain="m.zhuanzhuan.58.com"; path=/user/
+```
+
+但是访问其他路径dunizb.com/other/就会获得
+
+```
+cookie: id="123432"
+```
+
+如果访问dunizb.com/user/就会获得
+
+```
+cookie: id="123432"
+cookie: user="dunizb"
+```
+
+### secure
+
+设置了属性secure，cookie只有在https协议加密情况下才会发送给服务端。但是这并不是最安全的，由于其固有的不安全性，敏感信息也是不应该通过cookie传输的。
+
+```
+Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT; Secure;
+```
+
+> chrome 52和firefox 52 开始不安全的（HTTP）是无法使用secure的
+
+## 四、操作Cookie
+
+通过docuemnt.cookie可以设置和获取Cookie的值
+
+```
+document.cookie = "user = dunizb"
+console.log(document.cookie)
+```
+
+禁止javascript操作cookie（为避免跨域脚本\(xss\)攻击，通过javascript的document.cookie无法访问带有HttpOnly标记的cookie。）
+
+```
+Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2017 07:28:00 GMT; Secure; HttpOnly
+```
+
+
+
+
+
+
+
+
 
 
 

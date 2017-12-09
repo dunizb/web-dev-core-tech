@@ -28,5 +28,9 @@ Email：[zb@dunizb.vip](mailto:zb@dunizb.vip)
 * [x] 第六章 Cookie技术
 * [x] 第七章 HTTPS
 
-**第二部分 你必须知道的HTML**
+**第二部分 HTML**
+
+* [ ] 第八章 理解HTML的语义化
+
+
 

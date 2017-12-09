@@ -99,14 +99,13 @@ HTTPS在传输数据之前需要客户端（浏览器）与服务端（网站）
 
 TLS握手过程中如果有任何错误，都会使加密连接断开，从而阻止了隐私信息的传输。正是由于HTTPS非常的安全，攻击者无法从中找到下手的地方，于是更多的是采用了假证书的手法来欺骗客户端，从而获取明文的信息，但是这些手段都可以被识别出来。
 
-
-
 ---
 
 参考资料：
 
 * 百度百科，[https://baike.baidu.com/item/https/285356?fr=aladdin](https://baike.baidu.com/item/https/285356?fr=aladdin)
 * 扫盲 HTTPS 和 SSL/TLS 协议\[1\]：背景知识、协议的需求、设计的难点，[https://program-think.blogspot.com/2014/11/https-ssl-tls-1.html](https://program-think.blogspot.com/2014/11/https-ssl-tls-1.html)
+* HTTPS那些事（一）HTTPS原理，[https://www.guokr.com/post/114121/](https://www.guokr.com/post/114121/)
 
 
 

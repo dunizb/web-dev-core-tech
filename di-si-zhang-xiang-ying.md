@@ -54,8 +54,6 @@ HTTP/1.1 200 OK
 * 205 Reset Content
 * 206 Partial Content
 
-
-
 **200 OK **
 
 可能是最常用的状态。它指明请求已经成功完成。
@@ -64,7 +62,7 @@ HTTP/1.1 200 OK
 
 201 Created 会比200 OK 有更加具体的语义。201指明请求成功且创建了一个资源，因此201常常配合PUT方法使用，因为PUT方法的语义上就是创建一个资源。
 
-**202 Accepted** 
+**202 Accepted**
 
 202 Accepted 会比200 OK 有更加具体的语义。202表明请求成功被接受，但不一定已经完成资源创建或者修改，而只是被接受，可能还有服务器的后续的处理。
 
@@ -217,18 +215,135 @@ If-Modified-Since: Wed, 01 Sep 2004 13:24:52 GMT
 
 ```
 HTTP/1.1 304 Not Modified
-Date: Tue, 27 Dec 2005 05:25:19 GMT 
+Date: Tue, 27 Dec 2005 05:25:19 GMT
 ```
 
 ### 400 型响应
 
+400 系列响应消息都是用来由服务器告诉客户端，收到的请求是它无法处理的。比如最常用的404 Not Found可以用来指示客户端请求的资源在服务器上根本没有。
 
+400系列数量众多，但是大部分都比较简单。所以我只会把 412、417、403 单列出来做特别说明，因为前两个错误相对而言和协议的其他特性耦合比较多，因此显得复杂，并且对于设计良好的Restful app来说也是比较实用的。第三个状态码比较常见，但是标准定义比较抽象，我希望把它可以具体化一点。
 
+**412 Precondition Failed **
 
+客户端发起了条件请求，服务器发现这个请求中的其中一个条件并不成立，那么服务器就会用此错误码作为响应消息的状态码返回给客户端。
 
+请求头上可以使用如下字段对请求做出条件限定：
 
+* If-Match
+* If-Modified-Since
+* If-None-Match
+* If-Range
+* If-Unmodified-Since
 
+这些请求头被称为前条件。通过它们可以告诉服务器只有条件满足才去完成请求的执行。
 
+举个例子。假设我们GET了一个资源，在客户端由用户修改后提交更新。那么我们肯定希望在更新资源之前首先询问服务器此资源在 GET 后到更新之前是否有改动。如果有了改动，就说明另一个用户已经修改它了，我们当前的更新就不应该执行，否则就可能会导致不一致的事务了。具体的做法就是使用 POST 方法请求去更新资源的状态，并加上 If-Unmodified-Since 限定只有你最近GET资源之后此资源没有被修改的这个条件满足才去执行更新。而服务器可以校验此条件，如果这个条件没有满足，那么返回状态码412 \(Precondition Failed\) 即可。
+
+**417 Expectation Failed **
+
+客户端在请求头内加入了 Expect 字段，这个字段要求的期望如果并不能被服务器支持，那么服务器会返回417 状态码给客户端。
+
+案例：
+
+```
+GET /todo/1 HTTP/1.1
+Host: example.org
+Content-Type:json
+Expect: 100-continue
+
+HTTP/1.1 417 Expectation Failed
+```
+
+403 Fobidden 
+
+服务器禁止提供资源来响应它，尽管客户端的请求是有效的。相对而言，401 Unauthorized响应只要客户端提供授权就可以得到资源；403 fobidden 是即使客户端给了用户授权也是不行的。那么到底是什么原因禁止呢？标准在此处是沉默的。看到这个状态码，作为客户除了离开或者重试外，其实并不知道到底出了什么错，也不知道如何解决。为了希望用户不太困惑，有人为此错误给出了更加详细的子错误码——这是微软的IIS服务器的做法。这里给出了子错误码的局部列表：
+
+* 403.1 - Execute access forbidden
+* 403.2 - Read access forbidden
+* 403.3 - Write access forbidden
+* 403.4 - SSL required.
+* 403.5 - SSL 128 required.
+* 403.6 - IP address rejected
+* 403.7 - Client certificate required.
+* 403.8 - Site access denied
+* 403.9 - Too many users
+
+对程序员来说，这些状态子码，大部分可以一眼看明白它的含义，因此这套错误码可以帮助对403 Fobidden 的本意做出更加清晰的了解。所以尽管它们并不是标准的一部分，也依然是值得去学习和了解的。 对于用户而言，仅仅看到403 fobidden 而不去了解细节或许是更好的选择。
+
+更多的400系列的错误码是比较简单的，其中大部分都是可以望文生义的了解到它的错误场景。比如411 Length Required 就是告诉客户端你的请求必须有Content-Length首部。401 Unauthorize 则是告诉客户端当前访问的资源需要认证，请提供用户名和密码过来。这里就不详述了。
+
+### 500 型响应
+
+这个系列响应消息的状态码，对用户而言表现的更加含糊。看到了这个错可以确认的就是：这不是客户端的错，也不是用户的错。它就是服务器的错。服务器也不想让用户或用户代理知道更多的细节。
+
+**500 Internal Server Error **
+
+就是一个这样模糊的错。语义上就是服务器遇到了一个妨碍它提供服务的错误，就使用此状态码。作为服务器的开发者，应该需要在发出这个错误时，内部记录具体的、可以有助于解决问题的错误消息。
+
+**503 Service Unavailable **
+
+说明服务器现在无法提供服务，但是将来可以。如果服务器知道何时资源可用，应该在响应中包含Retry-After的首部，提示客户端可以重试服务的时间。
+
+这个状态码略显诡异的是，既然服务已经不可用，那么这条消息是谁给出的？
+
+状态码由Web Server给出，指示为当前网页服务的模块被关闭了。
+
+以IIS为例。IIS是有应用池\(application pool\)的概念，它是一个比Web Server更小的模块,每个网页都由应用池提供具体服务。要是应用池被关闭了，那么，我们就会遇到这个错误。原因可能是：
+
+1. 你的应用崩溃了
+2. 或者你的应用常常崩溃，因此IIS决定关闭你的应用池。（常常崩溃的标准是5分钟内5次）
+
+### 100型响应
+
+当客户端发送 Expect:100-Continue时, 服务端可以响应 100 Continue 为允许，或者不许可\(417 Expectation Failed\) 。100 Continue 状态码通知客户端可以继续发送请求。
+
+在发送大文件之前，客户端可以首先发出询问，要是在服务器不接受大文件的话，服务器就可以直接拒绝继续。否则，服务器只能从请求头内提取内容大小，当发现不符合条件的时候，实体内容这时候可能已经在传递了。这可是在浪费带宽了。
+
+### 101 型响应
+
+HTTP 协议提供一个机制，允许在已经建立的连接上把HTTP协议切换到一个新的、不兼容的协议上。
+
+客户端可以发起这个协议切换请求，而服务器可以选择拒绝并关闭连接，或者选择接受。如果服务器选择了接受，接下来就可以在此连接上传递新的协议内容。这样做的好处在于不必重建连接即可做协议升级或者调整为新的协议。服务器可以发送101型响应消息给客户端表示接受协议切换。比如本来是HTTP/1.1协议可以经过101 Switch Protocols就改变为h2c 、WebSocket、TLS。握手完成后，传递的协议就此改变。
+
+案例：如何利用101 Switch Protocols 把HTTP协议切换为WebSocket？
+
+客户端通过http协议的 GET 方法的首部字段，向服务器发起请求：
+
+```
+GET ws://echo.websocket.org/?encoding=text HTTP/1.1
+Origin: http://websocket.org
+Cookie: __utma=99as
+Connection: Upgrade
+Host: echo.websocket.org
+Sec-WebSocket-Key: uRovscZjNol/umbTt5uKmw==
+Upgrade: websocket
+Sec-WebSocket-Version: 13
+```
+
+特别留意的是首部的这两行：
+
+```
+Connection: Upgrade
+Upgrade: websocket
+```
+
+这两个首部字段，就是指明客户端向服务器发起请求，希望把连接升级到websocket。
+
+如果服务器端理解这个请求 ，就会返回一个响应：
+
+```
+HTTP/1.1 101 WebSocket Protocol Handshake
+Date: Fri, 10 Feb 2012 17:38:18 GMT
+Connection: Upgrade
+Upgrade: WebSocket
+```
+
+在响应首行，只是状态码为101，就是协议切换被认可。之后再这个连接上就可以传递websocket协议了。
+
+---
+
+本文摘自《HTTP小书》[http://www.ituring.com.cn/book/1791](http://www.ituring.com.cn/book/1791)
 
 
 

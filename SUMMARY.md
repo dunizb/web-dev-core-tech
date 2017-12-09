@@ -6,7 +6,7 @@
   * [第二章 HTTP简史](di-er-zhang-http-jian-shi.md)
   * [第三章 请求](di-san-zhang-qing-qiu.md)
   * [第四章 响应](di-si-zhang-xiang-ying.md)
-  * 第五章 HTTP的几种连接
+  * [第五章 HTTP的几种连接](di-wu-zhang-http-de-ji-zhong-lian-jie.md)
   * 第六章 Cookie技术
   * 第七章 HTTPS
 

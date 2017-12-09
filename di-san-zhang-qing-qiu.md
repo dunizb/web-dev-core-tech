@@ -164,7 +164,170 @@ Allow:GET,POST,PUT,OPTIONS
 
 ### PUT和DELETE
 
+PUT方法的意图，是对URL指定的资源进行创建,如果资源存在就修改它；相应的，DELETE方法的意图是对URL指定的资源进行删除。
 
+可是要做到这两件事，只是POST就够了。那么为何在HTTP标准内还有PUT和DELETE呢？我将会举个业务案例，给出只是使用POST、和全面使用HTTP方法的效果，以此对比来说明问题。
+
+假设我们手里有一个电子商务网站，那么我们必然需要提供订单的维护，包括创建、修改、删除、查询。
+
+对于查询，我们可以采用GET 方法，并提供订单编号为参数：
+
+```
+GET /order/1
+```
+
+使用GET 方法在这里是恰如其分的，因为GET隐含着只是查询，而并不会影响服务器的状态。
+
+接下来，我们更新一个订单，假设编号为2：
+
+```
+POST /order/2
+Content-Type:text/json
+
+{
+    "date":"2015-12-07"，
+    “guest":"frodo",
+    [{
+        "item":"The King of Ring",
+        "count":"2",
+        "price":"100"
+    }]
+}
+```
+
+这里使用POST也是合适的。因为POST的语义中包括对资源进行更新。
+
+但是对于创建和删除，我们就有不同的做法了。
+
+首先看创建。我们常见的方法依然是使用POST，但是在URL内（或者请求消息主体内的参数）要和更新操作不同，以便区别两者：
+
+```
+POST /order/2/create
+Content-Type:text/json
+
+{
+    "date":"2015-12-07"，
+    “guest":"frodo",
+    [{
+        "item":"The King of Ring",
+        "count":"1",
+        "price":"100"
+    }]
+}
+```
+
+这样做是可以达成业务需求的。然而，我们可以有更好的选择。这个选择不但能够完成功能的需求，还能够满足Restful App的规范化需求。我们可以在创建资源是选择PUT：
+
+```
+PUT /order/2
+Content-Type:text/json
+
+…
+```
+
+删除的时候也是一样。典型的请求消息：
+
+```
+POST /order/2/delete
+或者有人这样
+
+POST /order/2/remove
+
+或者还有人这样
+POST /order/remove_order/2
+```
+
+而如果我想要满足Restful app规范，选择就是一个样：
+
+```
+DELETE /order/2
+```
+
+稍微做过总结，Restful App 的方案的好处是看得到的：
+
+1. 把操作意图表达在请求方法内
+2. 把操作意图从URL中分离出来
+
+相对于使用POST做全部的提交数据的做法而言，这样的做法经过一个著名框架（Ruby on Rails\)的首倡，目前得到了很多框架的附和，堪称一时风气之先。这样做可以有语义上的一致性，避免不同程序员选择的不同方案导致的不必要的混乱。
+
+尽管Web Form的Action字段只能指定为GET和POST，本身没有提供PUT、DELETE方法，但是可以通过Form隐含字段来细分POST为 PUT、POST、DELETE，比如约定一个叫做\_method的字段，其值可以在PUT、POST、DELETE、POST之间选择一个：
+
+```
+<form method="post" …>
+  <input type="hidden" name="_method" value="PUT | POST | DELETE " />
+  …
+```
+
+这样就可以由框架实现完整的对资源操作的不同类型。在使用框架的基础上，应用可以直接享受到完整的GET、PUT 、POST、 DELETE语义。
+
+### CONNECT
+
+在当前已经建立HTTP连接的情况下，CONNECT 方法用来告知代理服务器，客户端想要和服务器之间建立SSL连接。
+
+要是没有HTTP代理服务器，客户端可以使用 Connection 头字段来表达客户端要升级到SSL的请求：
+
+```
+GET http://example.bank.com/acct_stat.html?749394889300 HTTP/1.1
+Host: example.bank.com
+Upgrade: TLS/1.0
+Connection: Upgrade
+```
+
+这样服务器接收到此消息即可发送：
+
+```
+HTTP/1.1 101 Switching Protocols
+Upgrade: TLS/1.0, HTTP/1.1
+Connection: Upgrade
+```
+
+表示确认。一次握手后，双方认可，这个http连接之后就可以发送SSL流量了。
+
+如果中间有HTTP代理服务器的话，情况就不同了。因为我们使用的Connection头字段是hop-by-hop（逐跳）的，这个头字段会被代理服务器认为是在客户端到代理服务器之间的协议升级。于是，代理升级连接协议，解析并删除此字段后继续转到服务器。这样服务器是收不到这个首部的，本来希望客户端和服务器直接达成SSL 升级，实际上却变成了客户端和代理服务器之间的SSL升级，这是违背Connetion字段的本意的。
+
+为了解决此问题，HTTP 引入了 Connect 方法。客户端使用如下消息，通知代理服务器，去做一个连接到指定的服务器地址和端口:
+
+```
+CONNECT example.com 443 HTTP/1.1
+```
+
+代理服务器随后提取CONNECT 方法指定的地址和端口（这里是 example.com 443 ），建立和此服务器的SSL连接，成功后随后通知客户端，需要的连接建立完毕：
+
+```
+HTTP/1.1 OK 
+```
+
+之后，代理服务器简单的转发客户端的消息到服务器，以及转发服务器来的消息给客户端。因为它只是转发，它就变成了一个透明代理。透明代理和一般代理是不同的，一般的http 代理不是仅仅转发，还需要解析头字段、考虑是否缓存、添加Via头字段等工作，而透明代理只管转发，不管内容和格式。
+
+升级到 SSL 只能有客户端发起。如果服务器希望升级，可以通过状态码426 upgrade required 告知客户端。
+
+因此，客户端和服务器之间要升级到SSL，就必须区分两种情况，一种是两者之间存在代理服务器，就需要用Connect 方法；否则使用第一种方法（使用Connection 头字段的方法）即可。
+
+有很多资料提到 Connect 方法建立的是一种隧道，叫做SSL隧道。我觉得这个说法不妥，因为和隧道的定义是不符的。
+
+隧道被用来在一个协议上承载一个系统本来并不支持的外部协议。一个协议内嵌套另一个协议，就像一个管道嵌入另一个管道，因此取名为隧道。 这就意味着，完全可能在TCP上承载IP、IPV6协议，或者在TCP上承载NetBIOS协议。
+
+我们再进一步查看CONNECTION连接和HTTP隧道在防火墙面前的差异。在使用CONNECT 方法时，一旦连接建立成功后，传递的内容如加密流量是在RAW SOCKET上，对于可以识别HTTP包格式的防火墙，可以知道这个流量尽管可能是80端口，但是并非HTTP流量，因为它的格式根本不遵循HTTP标准内的请求和响应包格式。而HTTP隧道的流量到来时，即使可以识别包格式的防火墙也会认为它传递的就是HTTP流量，因为非HTTP流量本来就是包装HTTP消息内的。因此，CONNECTION 方法建立的SSL通道并不是隧道。把Connect建立的通道叫做隧道会导致认知的混乱。
+
+所以理解 Connect 方法，需要对比和区分以下内容：
+
+1. Http 可以通过Connection：upgrade的方法升级到TLS。仅仅使用于无代理服务器的情况。
+2. Connect 方法是 http upgrade tls 的一个替代。针对有代理的情况。
+3. Connect 方法成功返回后，中间的http代理变成了透明的代理：不再使用HTTP协议解析数据包和修改数据包，而是简单的转发流量。
+
+这样就清晰了。
+
+### 小结
+
+* GET 表示我要请求一个由URI指定的在服务器上的资源。
+* PUT方法 表示如果指定URI资源不存在就创建它，否则就修改它。
+* POST方法 表示要创建一个新的子资源，或者更新一个存在的资源。
+* DELETE表示我要删除一个由URI指定的资源。
+* HEAD 和GET一样，但是仅仅返回指定资源响应的头部分，而不必返回响应主体
+* OPTIONS 查询目标资源支持method的清单。
+* TRACE 查询到目标资源经过的中间节点。用于测试。
+* CONNECT 建立一个到URI指定的服务器的隧道。
+* PATCH方法用于对资源应用部分修改。
 
 
 

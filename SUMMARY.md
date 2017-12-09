@@ -9,4 +9,8 @@
   * [第五章 HTTP的几种连接](di-wu-zhang-http-de-ji-zhong-lian-jie.md)
   * [第六章 Cookie技术](di-liu-zhang-cookie-ji-zhu.md)
   * [第七章 HTTPS](di-qi-zhang-https.md)
+* 第二部分 HTML
+  * 理解HTML的语义化
+
+
 

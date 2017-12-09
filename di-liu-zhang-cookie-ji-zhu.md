@@ -143,9 +143,35 @@ Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2017 07:28:00 GMT; Secure; HttpOnly
 
 通常cookie的域和浏览器地址的域匹配，这被称为第一方cookie。那么第三方cookie就是cookie的域和地址栏中的域不匹配，这种cookie通常被用在第三方广告网站。为了跟踪用户的浏览记录，并且根据收集的用户的浏览习惯，给用户推送相关的广告。 ![](/assets/640.webp)
 
+如上图（a）：用户访问服务器1的一个页面index.html，这个页面和第三方广告网站合作，这个页面还有一张www.advertisement.com域名下的一张广告图ad1.jpg，当请求这张ad1.jpg图片的时候，www.advertisement.com这个服务器会给用户设置cookie
 
+```
+Set-Cookie: user="dunizb";like="a"; domain="advertisement.com"
+```
 
+记录用户的浏览记录，分配一个user来表示用户的身份。
 
+图（b）：用户访问服务器2的一个index.html页面，这个页面也和同一家广告商合作，这个页面也包含一张www.advertisement.com域名下的一张广告图ad2.jpg，当请求这张ad2.jpg图片的时候，浏览器就会向www.advertisement.com发送cookie
+
+```
+Cookie:  user="dunizb"; like="a";
+```
+
+www.advertisement.com收到浏览器发送的cookie识别了用户的身份，同时又把这个页面用户的浏览数据设置cookie
+
+```
+Set-Cookie: buy="b"; domain="advertisement.com"
+```
+
+图（c）：很巧，用户访问服务器3的一个index.html页面，这个页面也和那一家广告商合作，这个页面也包含一张www.advertisement.com域名下的一张广告图ad3.jpg，当请求这张ad3.jpg图片的时候，浏览器就会向www.advertisement.com发送cookie
+
+```
+Cookie:  user="dunizb"; like="a"; buy="b"
+```
+
+这样广告公司就可以根据用户的浏览习惯，给用户推送合适的广告。
+
+## 六、安全
 
 
 

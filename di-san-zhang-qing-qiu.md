@@ -19,7 +19,7 @@ HTTP协议只允许客户端发起请求，也只允许服务器针对请求返�
 GET /hello.html HTTP/1.1
 ```
 
- **请求方法**
+**请求方法**
 
 HTTP/1.1支持方法包括：
 
@@ -77,15 +77,92 @@ Content-Length: 3
 hel
 ```
 
- 本案例中的 Content-Range 的值是一个内容为 bytes 0-2/12 的字符串，这里需要对它稍作解释：分隔符“/”的前面一组数字表明本次返回位置范围，“/”后的数字指明资源的总大小。
+本案例中的 Content-Range 的值是一个内容为 bytes 0-2/12 的字符串，这里需要对它稍作解释：分隔符“/”的前面一组数字表明本次返回位置范围，“/”后的数字指明资源的总大小。
 
 ### POST
 
+HTTP POST 方法 发送数据给服务器，常常用来提交表单数据。假设有一个表单，其html如下：
 
+```
+<form enctype="application/x-www-form-urlencoded" />
+    <input type="text" name="user" action="/example"/>
+    <input type="password" name="password" />
+    <input type="submit"/>
+</form>
+```
 
+当在两个文本框内分别填写1，2，然后点击提交的时候，我们需要传递形如：
 
+```
+username :1
+password :2
+```
 
+的内容给服务器。
 
+本案例中，我们需要注意到Form的属性enctype指定了一个看起来有些复杂的值： application/x-www-form-urlencoded，这个值指示Form经由HTTP提交到服务器的消息主体采用的编码方式。最后的提交请求数据就是这样的：
+
+```
+POST /example HTTP/1.1
+
+username=1&password=2
+```
+
+此编码方式把提交字段和值用“=”分隔，多个提交项目之间用“&”分隔，空格会被使用“+“替代，其他不是字母和数字的字符会用url encoding 来编码，替换为%HH，比如%21 表示 “！”。看到案例后，就知道看起来复杂的enctype其实还比较简单的。
+
+只不过使用这个编码方式的话，一个非字母数字的二进制值会需要3个字符来表达。对于较大的二进制数据来说这样的作法实在有些浪费。因此HTTP标准也引入了新的封装格式：multipart/form-data。我们依然可以通过Form 的enctype属性指定此新的打包格式：
+
+```
+<form enctype="multipart/form-data" />
+```
+
+这样指定的封装类型，请求消息会变成：
+
+```
+POST /example HTTP/1.1
+Host: example.com
+Content-Type: multipart/form-data; boundary=---------------------------9051914041544843365972754266
+Content-Length: 554
+
+-----------------------------9051914041544843365972754266
+Content-Disposition: form-data; name="username"
+
+1
+-----------------------------9051914041544843365972754266
+Content-Disposition: form-data; name="password"
+Content-Type: text/plain
+
+2
+-----------------------------9051914041544843365972754266--
+```
+
+我们要留意的是，在请求消息内的第三行，也就是Content-Type字段的值内，指定请求主体内的格式为multipart/form-data，同时在“；”后还有一个 boundary\(边界\) 子字段，它的值是一个字符串。此字符串的目的就是指定每个表单字段的开始和结束。在两个 boundary 之间，就是一个字段的内容。每个字段内可以指定字段的名称和类型，然后加上一个空行后内容开始。直到遇到一个新的 boundary 结束。
+
+boundary字符串常常由若干个连字符加上一个随机字符串构成，由客户端软件生成，算法可以自己决定，只要不会在内容中出现就可以。如果对冲突感到担心，还可以在生成后由软件在请求消息体内搜索此字符串，如果发现有相同的话，就在此基础上继续添加一个随机字符，再执行此过程直到不再出现即可。
+
+### OPTIONS
+
+请求方法OPTIONS用来查询URL指定的资源所支持的方法列表。
+
+请求案例：
+
+```
+OPTIONS /example HTTP/1.1
+```
+
+响应：
+
+```
+HTTP/1.1 OK
+
+Allow:GET,POST,PUT,OPTIONS
+```
+
+本请求案例中，请求的就是/example 指定的资源所支持的方法。响应案例给出的是此资源支持的请求方法，列表为GET、POST、PUT、OPTIONS。
+
+服务器应该返回405 \(Method Not Allowed\)响应，如果使用的请求方法是为服务器所知的、但是并不被允许的话。 服务器应该返回 501 \(Not Implemented\) ，如果请求方法没有被实现的话。
+
+### PUT和DELETE
 
 
 

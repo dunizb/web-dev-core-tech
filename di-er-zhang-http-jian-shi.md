@@ -207,18 +207,8 @@ HTTP/2 允许服务器未经请求，主动向客户端发送资源，这叫做�
 
 参考资料：
 
-* 刘传君《HTTP小书》
+* 刘传君《HTTP小书》[http://www.ituring.com.cn/book/1791](http://www.ituring.com.cn/book/1791)
 * HTTP协议入门：[http://www.ruanyifeng.com/blog/2016/08/http.html](http://www.ruanyifeng.com/blog/2016/08/http.html)
-
-
-
-
-
-
-
-
-
-
 
 
 

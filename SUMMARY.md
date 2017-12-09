@@ -8,5 +8,5 @@
   * [第四章 响应](di-si-zhang-xiang-ying.md)
   * [第五章 HTTP的几种连接](di-wu-zhang-http-de-ji-zhong-lian-jie.md)
   * [第六章 Cookie技术](di-liu-zhang-cookie-ji-zhu.md)
-  * 第七章 HTTPS
+  * [第七章 HTTPS](di-qi-zhang-https.md)
 

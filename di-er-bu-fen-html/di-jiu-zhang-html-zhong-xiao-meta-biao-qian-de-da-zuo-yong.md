@@ -246,9 +246,71 @@ Phone 6对应的图片大小是750×1294，iPhone 6 Plus 对应的是1242×2148 
 <link rel="apple-touch-startup-image" href="launch6plus.png" media="(device-width: 414px)">
 ```
 
+## 六、其它移动端的meta
 
+```
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection"content="telephone=no, email=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+<meta name="format-detection" content="telphone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+<!-- 启用360浏览器的极速模式(webkit) -->
+<meta name="renderer" content="webkit">
+<!-- 避免IE使用兼容模式 -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+<meta name="HandheldFriendly" content="true">
+<!-- 微软的老式浏览器 -->
+<meta name="MobileOptimized" content="320">
+<!-- uc强制竖屏 -->
+<meta name="screen-orientation" content="portrait">
+<!-- QQ强制竖屏 -->
+<meta name="x5-orientation" content="portrait">
+<!-- UC强制全屏 -->
+<meta name="full-screen" content="yes">
+<!-- QQ强制全屏 -->
+<meta name="x5-fullscreen" content="true">
+<!-- UC应用模式 -->
+<meta name="browsermode" content="application">
+<!-- QQ应用模式 -->
+<meta name="x5-page-mode" content="app">
+<!-- windows phone 点击无高光 -->
+<meta name="msapplication-tap-highlight" content="no">
+<!-- 适应移动端end -->
+```
 
+## 七、其它
 
+**Windows8**
+
+Windows 8 磁贴颜色
+
+```
+<meta name="msapplication-TileColor" content="#000"/> 
+```
+
+Windows 8 磁贴图标
+
+```
+<meta name="msapplication-TileImage" content="icon.png"/>
+```
+
+**RSS订阅**
+
+```
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml" />
+```
+
+**favicon icon**
+
+```
+<link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+```
+
+比较详细的 favicon 介绍可参考[https://github.com/audreyr/favicon-cheat-sheet](https://github.com/audreyr/favicon-cheat-sheet)
 
 ---
 

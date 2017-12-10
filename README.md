@@ -22,7 +22,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
 ## 在线阅读
 
-[在线阅读](https://webdev.dunizb.vip)
+[https://webdev.dunizb.vip（可能比较慢，建议开启VPN加速）](https://webdev.dunizb.vip)
 
 ## 计划目录
 
@@ -54,8 +54,4 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [ ] 第十七章 CSS3新增内容
 
 **第四部分 JavaScript**
-
-
-
-
 

@@ -36,9 +36,21 @@ W3C定义了这些语义标签，不可能完全符合我们有时的设计目�
 
 ## 四、HTML5新增了哪些语义标签
 
+header元素
+
+
+
+
+
+
+
+
+
+
+
 
 
 ---
 
-原文：[http://www.html5jscss.com/html5-semantics-section.html](http://www.html5jscss.com/html5-semantics-section.html)
+参考：[http://www.html5jscss.com/html5-semantics-section.html](http://www.html5jscss.com/html5-semantics-section.html)
 

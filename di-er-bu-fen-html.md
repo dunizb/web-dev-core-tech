@@ -43,6 +43,17 @@ XHTML 2.0，W3C工作草案。
 
 XHTML 5，从XHTML 1.x的更新版，基于HTML 5草案。
 
+## xhtml 和 html 有什么区别
+
+HTML 是一种基本的 WEB 网页设计语言，XHTML 是一个基于 XML 的置标语言
+
+* 最主要的不同:
+* XHTML 元素必须被正确地嵌套。
+* XHTML 元素必须被关闭。
+* 标签名必须用小写字母。
+
+
+
 ---
 
 百度百科：HTML，[https://baike.baidu.com/item/HTML/97049?fr=aladdin](https://baike.baidu.com/item/HTML/97049?fr=aladdin)

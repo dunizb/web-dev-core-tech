@@ -30,7 +30,5 @@ Email：[zb@dunizb.vip](mailto:zb@dunizb.vip)
 
 **第二部分 HTML**
 
-* [ ] 第八章 理解HTML的语义化
-
-
+* [x] 第八章 理解HTML的语义化
 

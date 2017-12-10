@@ -27,11 +27,12 @@ Email：[zb@dunizb.vip](mailto:zb@dunizb.vip)
 * [x] 第五章 HTTP的几种连接
 * [x] 第六章 Cookie技术
 * [x] 第七章 HTTPS
+* [ ] 第八章 HTTP/2
 
 **第二部分 HTML**
 
-* [x] 第八章 理解HTML的语义化
-* [ ] 第九章 HTML中meta标签的大作用
+* [x] 第九章 理解HTML的语义化
+* [ ] 第十章 HTML中meta标签的大作用
 
 
 

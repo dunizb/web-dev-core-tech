@@ -1,4 +1,4 @@
-# 附录：HTML面试题
+# 附录：HTML面试题精选
 
 ### 1. a：img的alt与title有何异同？b：strong与em的异同？
 
@@ -53,6 +53,17 @@ png-8，png-24，jpeg，gif，svg。
 ### 5. 在css/js代码上线之后开发人员经常会优化性能，从用户刷新网页开始，一次js请求一般情况下有哪些地方会有缓存处理？
 
 答案：dns缓存，cdn缓存，浏览器缓存，服务器缓存。
+
+### 6. 如果我不放入&lt;! DOCTYPE html&gt; ，HTML5还会工作么？
+
+不会，浏览器将不能识别他是HTML文档，同时HTML5的标签将不能正常工作
+
+---
+
+参考资料：
+
+* [BAT及各大互联网公司2014前端笔试面试题--Html,Css篇](http://www.cnblogs.com/coco1s/p/4034937.html)
+* [40个重要的HTML5面试题及答案](http://blog.jobbole.com/78346/#q10)
 
 
 

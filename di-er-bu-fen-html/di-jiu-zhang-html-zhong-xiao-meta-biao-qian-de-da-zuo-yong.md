@@ -10,7 +10,7 @@ meta是用来在HTML文档中模拟HTTP协议的响应头报文。meta 标签用
 
 **Refresh**
 
-&lt;meta http-equiv="Refresh" contect="n;url=[http://yourlink"&gt;定时让网页在指定的时间n内，跳转到页面http://yourlink；](http://yourlink">定时让网页在指定的时间n内，跳转到页面http://yourlink；)
+&lt;meta http-equiv="Refresh" contect="n;url=\[[http://yourlink"&gt;定时让网页在指定的时间n内，跳转到页面http://yourlink；\]\(http://yourlink"&gt;定时让网页在指定的时间n内，跳转到页面http://yourlink；](http://yourlink">定时让网页在指定的时间n内，跳转到页面http://yourlink；]%28http://yourlink">定时让网页在指定的时间n内，跳转到页面http://yourlink；)\)
 
 **Expires**
 
@@ -54,6 +54,48 @@ meta是用来在HTML文档中模拟HTTP协议的响应头报文。meta 标签用
 * follow：页面上的链接可以被查询；
 * noindex：文件将不被检索，但页面上的链接可以被查询；
 * nofollow：文件将不被检索，页面上的链接可以被查询。
+
+## **四、浏览器内核控制**
+
+**优先使用 IE 最新版本和 Chrome**
+
+```
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+```
+
+**360 使用Google Chrome Frame**
+
+```
+<meta name="renderer" content="webkit">
+```
+
+360 浏览器就会在读取到这个标签后，立即切换对应的极速核。 另外为了保险起见再加入
+
+```
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+```
+
+这样写可以达到的效果是如果安装了 Google Chrome Frame，则使用 GCF 来渲染页面，如果没有安装 GCF，则使用最高版本的 IE 内核进行渲染。
+
+**百度禁止转码**
+
+通过百度手机打开网页时，百度可能会对你的网页进行转码，脱下你的衣服，往你的身上贴狗皮膏药的广告，为此可在 head 内添加
+
+```
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+```
+
+## 五、SEO 优化部分
+
+## 
+
+
+
+
+
+
+
+
 
 ---
 

@@ -38,6 +38,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第九章 理解HTML的语义化
 * [x] 第十章 HTML中meta标签的大作用
 * [x] 第十一章 理解DOM结构
+* [x] 附录：HTML面试题精选
 
 
 

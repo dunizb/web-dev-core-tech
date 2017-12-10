@@ -10,7 +10,7 @@ meta是用来在HTML文档中模拟HTTP协议的响应头报文。meta 标签用
 
 **Refresh**
 
-&lt;meta http-equiv="Refresh" contect="n;url=http://yourlink"&gt;定时让网页在指定的时间n内，跳转到页面http://yourlink；
+&lt;meta http-equiv="Refresh" contect="n;url=[http://yourlink"&gt;定时让网页在指定的时间n内，跳转到页面http://yourlink；](http://yourlink">定时让网页在指定的时间n内，跳转到页面http://yourlink；)
 
 **Expires**
 
@@ -36,11 +36,24 @@ meta是用来在HTML文档中模拟HTTP协议的响应头报文。meta 标签用
 
 &lt;meta http-equiv="Page-Enter" contect="revealTrans\(duration=10,transtion= 50\)"&gt;和&lt;meta http-equiv="Page-Exit" contect="revealTrans\(duration=20，transtion=6\)"&gt;设定进入和离开页面时的特殊效果，这个功能即FrontPage中的“格式/网页过渡”，不过所加的页面不能够是一个frame页面。
 
+## 二、name 属性
 
+&lt;meta name="Generator" contect=""&gt;用以说明生成工具（如Microsoft FrontPage 4.0）等；
 
+&lt;meta name="keywords" contect=""&gt;向搜索引擎说明你的网页的关键词；
 
+&lt;meta name="description" contect=""&gt;告诉搜索引擎你的站点的主要内容；
 
+&lt;meta name="Author" contect="你的姓名"&gt;告诉搜索引擎你的站点的制作的作者；
 
+&lt;meta name="Robots" contect= "all\|none\|index\|noindex\|follow\|nofollow"&gt;告诉搜索引擎爬虫是否爬取页面
+
+* all：文件将被检索，且页面上的链接可以被查询；
+* none：文件将不被检索，且页面上的链接不可以被查询；
+* index：文件将被检索；
+* follow：页面上的链接可以被查询；
+* noindex：文件将不被检索，但页面上的链接可以被查询；
+* nofollow：文件将不被检索，页面上的链接可以被查询。
 
 ---
 

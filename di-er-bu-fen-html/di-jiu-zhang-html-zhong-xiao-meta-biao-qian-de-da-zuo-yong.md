@@ -19,7 +19,7 @@ meta是用来在HTML文档中模拟HTTP协议的响应头报文。meta 标签用
 <meta http-equiv="Refresh" contect="n;url=http://yourlink">
 ```
 
-定时让网页在指定的时间n内，跳转到页面http://yourlink；
+定时让网页在指定的时间n内，跳转到页面[http://yourlink；](http://yourlink；)
 
 **Expires**
 
@@ -119,7 +119,46 @@ cookie设定，如果网页过期，存盘的cookie将被删除。需要注意�
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 ```
 
-## 五、
+## 五、针对iOS设备特性
+
+**添加到主屏后的标题（iOS 6 新增）**
+
+```
+<meta name="apple-mobile-web-app-title" content="标题">
+```
+
+**是否启用 WebApp 全屏模式**
+
+```
+<meta name="apple-mobile-web-app-capable" content="yes" />
+```
+
+**设置状态栏的背景颜色**
+
+```
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> 
+```
+
+只有在 "apple-mobile-web-app-capable" content="yes" 时生效
+
+* content 参数：
+* default 默认值。
+* black 状态栏背景是黑色。
+* black-translucent 状态栏背景是黑色半透明。 如果设置为 default 或 black ,网页内容从状态栏底部开始。 如果设置为 black-translucent ,网页内容充满整个屏幕，顶部会被状态栏遮挡。
+
+**禁止数字识自动别为电话号码**
+
+```
+<meta name="format-detection" content="telephone=no" />
+```
+
+
+
+
+
+
+
+
 
 ---
 

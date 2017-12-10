@@ -10,7 +10,7 @@ meta是用来在HTML文档中模拟HTTP协议的响应头报文。meta 标签用
 
 **Refresh**
 
-&lt;meta http-equiv="Refresh" contect="n;url=\[[http://yourlink"&gt;定时让网页在指定的时间n内，跳转到页面http://yourlink；\]\(http://yourlink"&gt;定时让网页在指定的时间n内，跳转到页面http://yourlink；](http://yourlink">定时让网页在指定的时间n内，跳转到页面http://yourlink；]%28http://yourlink">定时让网页在指定的时间n内，跳转到页面http://yourlink；)\)
+&lt;meta http-equiv="Refresh" contect="n;url=\[\[[http://yourlink"&gt;定时让网页在指定的时间n内，跳转到页面http://yourlink；\]\(http://yourlink"&gt;定时让网页在指定的时间n内，跳转到页面http://yourlink；\]\(http://yourlink"&gt;定时让网页在指定的时间n内，跳转到页面http://yourlink；\]\(http://yourlink"&gt;定时让网页在指定的时间n内，跳转到页面http://yourlink；\)\](http://yourlink">定时让网页在指定的时间n内，跳转到页面http://yourlink；]%28http://yourlink">定时让网页在指定的时间n内，跳转到页面http://yourlink；]%28http://yourlink">定时让网页在指定的时间n内，跳转到页面http://yourlink；]%28http://yourlink">定时让网页在指定的时间n内，跳转到页面http://yourlink；%29\)\)
 
 **Expires**
 
@@ -85,9 +85,7 @@ meta是用来在HTML文档中模拟HTTP协议的响应头报文。meta 标签用
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 ```
 
-## 五、SEO 优化部分
-
-## 
+## 五、
 
 
 

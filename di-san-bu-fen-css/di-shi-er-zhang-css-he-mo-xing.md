@@ -1,3 +1,6 @@
+
+---
+
 # 第十二章 CSS盒模型
 
 ## 一、CSS 实际上如何工作？
@@ -29,9 +32,12 @@ CSS3中新增了一种盒模型计算方式：box-sizing熟悉。盒模型默认
 * 相邻元素叠加 相邻的两个元素， 如果它们的上下边距相遇，即会产生叠加。
 * 包含（父子）元素叠加 包含元素的外边距隔着 父元素的内边距和边框， 当这两项都不存在的时候， 父子元素垂直外边距相邻， 产生叠加。 添加任何一项即会取消叠加。
 
+---
 
+参考资料：
 
-
+* [MDN CSS盒子模型](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+* [《前端工程师手册》](https://leohxj.gitbooks.io/front-end-database/html-and-css-basic/box-module.html)
 
 
 

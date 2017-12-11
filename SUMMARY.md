@@ -9,13 +9,12 @@
   * [第五章 HTTP的几种连接](di-wu-zhang-http-de-ji-zhong-lian-jie.md)
   * [第六章 Cookie技术](di-liu-zhang-cookie-ji-zhu.md)
   * [第七章 HTTPS](di-qi-zhang-https.md)
-  * [第八章 HTTP/2](di-ba-zhang-http-2.md)
   * 附录
-    * 附录1：GET和POST的真正区别
+    * [附录1：GET和POST的真正区别](fu-lu-1-get-he-post-de-zhen-zheng-qu-bie.md)
 * [第二部分 HTML](di-er-bu-fen-html.md)
-  * [第九章 理解HTML的语义化](di-er-bu-fen-html/di-ba-zhang-li-jie-html-de-yu-yi-hua.md)
-  * [第十章 HTML中meta标签的大作用](di-er-bu-fen-html/di-jiu-zhang-html-zhong-xiao-meta-biao-qian-de-da-zuo-yong.md)
-  * [第十一章 理解DOM结构](di-er-bu-fen-html/di-shi-yi-zhang-li-jie-dom-jie-gou.md)
+  * [第八章 理解HTML的语义化](di-er-bu-fen-html/di-ba-zhang-li-jie-html-de-yu-yi-hua.md)
+  * [第九章 HTML中meta标签的大作用](di-er-bu-fen-html/di-jiu-zhang-html-zhong-xiao-meta-biao-qian-de-da-zuo-yong.md)
+  * [第十章 理解DOM结构](di-er-bu-fen-html/di-shi-yi-zhang-li-jie-dom-jie-gou.md)
   * [附录](di-er-bu-fen-html/fu-lu.md)
     * [附录1：HTML面试题精选](di-er-bu-fen-html/fu-lu-ff1a-html-mian-shi-ti.md)
     * [附录2：在HTML5中被废弃的元素和属性](di-er-bu-fen-html/fu-lu-2-ff1a-zai-html5-zhong-bei-fei-qi-de-yuan-su-he-shu-xing.md)

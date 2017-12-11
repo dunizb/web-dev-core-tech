@@ -50,7 +50,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 **第三部分 CSS**
 
 * [x] 第十一章 CSS书写顺序及相应规范
-* [ ] 第十二章 CSS盒模型
+* [x] 第十二章 CSS盒模型
 * [ ] 第十三章 Flexbox布局
 * [ ] 第十四章 CSS Grid布局
 * [ ] 第十五章 CSS3新增内容

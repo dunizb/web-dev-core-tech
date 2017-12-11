@@ -49,9 +49,27 @@ HTML5的规范里有对这些属性的代替方案，[点击访问](http://www.w
 | td | scope |
 | table | summary |
 
+另外， 在HTML5里，以下元素的视觉属性也将被废弃，因为这些功能可用CSS来实现：
 
+| ID | 对应元素 | 属性名称 |
+| :--- | :--- | :--- |
+| 01 | caption, iframe, img, input, object, legend, table, hr, div, h1, h2, h3, h4, h5, h6, p, col, colgroup, tbody, td, tfoot, th, thead, tr | align |
+| 02 | body | alink, link, text, vlink, background |
+| 03 | table, tr, td, th, body | bgcolor |
+| 04 | object | border |
+| 05 | table | cellpadding, cellspacing, frame |
+| 06 | col, colgroup, tbody, td, tfoot, th, thead, tr | char, charoff |
+| 07 | br | clear |
+| 08 | dl, menu, ol, ul | compact |
+| 09 | iframe | frameborder, marginheight, marginwidth, scrolling |
+| 10 | td, th | height, nowrap |
+| 11 | img, object | hspace, vspace |
+| 12 | hr | noshade, size |
+| 13 | hr, table, td, th, col, colgroup, pre | width |
+| 14 | col, colgroup, tbody, td, tfoot, th, thead, tr | valign |
+| 15 | li, ol, ul | type |
 
+---
 
-
-
+原文：[http://www.cnblogs.com/TomXu/archive/2011/12/17/2269168.html](http://www.cnblogs.com/TomXu/archive/2011/12/17/2269168.html)
 

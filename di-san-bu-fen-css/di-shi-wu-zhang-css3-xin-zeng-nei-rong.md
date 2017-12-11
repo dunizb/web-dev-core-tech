@@ -119,6 +119,55 @@ CSS3新增了三个边框属性，分别是：
 
 IE9+支持border-radius和box-shadow属性。Firefox、Chrome以及Safari支持所有新的边框属性。
 
+## 三、背景
+
+CSS3新增了几个关于背景的属性，分别是
+
+* background-clip
+* background-origin
+* background-size
+* background-break
+
+### background-clip
+
+background-clip属性用于确定背景画区，有以下几种可能的属性：
+
+* border-box; 背景从border开始显示
+* padding-box; 背景从padding开始显示
+* content-box; 背景显content区域开始显示
+* no-clip; 默认属性，等同于border-box
+
+通常情况，背景都是覆盖整个元素的，利用这个属性可以设定背景颜色或图片的覆盖范围。
+
+### background-origin
+
+background-clip属性用于确定背景的位置，它通常与background-position联合使用，可以从 border、padding、content来计算background-position（就像background-clip）。
+
+* border-box; 从border开始计算background-position
+* padding-box; 从padding开始计算background-position
+* content-box; 从content开始计算background-position
+
+### background-size
+
+background-size属性常用来调整背景图片的大小，主要用于设定图片本身。有以下可能的属性：
+
+* background-size: contain; 缩小图片以适合元素（维持像素长宽比）
+* background-size: cover; 扩展元素以填补元素（维持像素长宽比）
+* background-size: 100px 100px; 缩小图片至指定的大小
+* background-size: 50% 100%; 缩小图片至指定的大小，百分比是相对包 含元素的尺寸
+
+### background-break
+
+CSS3中，元素可以被分成几个独立的盒子（如使内联元素span跨越多行），background-break 属性用来控制背景怎样在这些不同的盒子中显示。
+
+* continuous; 默认值。忽略盒之间的距离（也就是像元素没有分成多个盒子，依然是一个整体一样）
+* bounding-box; 把盒之间的距离计算在内；
+* each-box; 为每个盒子单独重绘背景。
+
+## 四、文字效果
+
+
+
 
 
 

@@ -53,7 +53,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第十二章 CSS盒模型
 * [ ] 第十三章 Flexbox布局
 * [ ] 第十四章 CSS Grid布局
-* [ ] 第十五章 CSS3新增内容
+* [x] 第十五章 CSS3新增内容
 
 **第四部分 JavaScript**
 

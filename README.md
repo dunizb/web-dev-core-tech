@@ -40,20 +40,20 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
 **第二部分 HTML**
 
-* [x] 第九章 理解HTML的语义化
-* [x] 第十章 HTML中meta标签的大作用
-* [x] 第十一章 理解DOM结构
+* [x] 第八章 理解HTML的语义化
+* [x] 第九章 HTML中meta标签的大作用
+* [x] 第十章 理解DOM结构
 * [x] 附录
   * [x] 附录1：HTML面试题精选
   * [x] 附录2：在HTML5中被废弃的元素和属性
 
 **第三部分 CSS**
 
-* [ ] 第十二章 CSS书写顺序及相应规范
-* [ ] 第十三章 CSS盒模型
-* [ ] 第十四章 Flexbox布局
-* [ ] 第十五章 CSS Grid布局
-* [ ] 第十六章 CSS3新增内容
+* [ ] 第十一章 CSS书写顺序及相应规范
+* [ ] 第十二章 CSS盒模型
+* [ ] 第十三章 Flexbox布局
+* [ ] 第十四章 CSS Grid布局
+* [ ] 第十五章 CSS3新增内容
 
 **第四部分 JavaScript**
 

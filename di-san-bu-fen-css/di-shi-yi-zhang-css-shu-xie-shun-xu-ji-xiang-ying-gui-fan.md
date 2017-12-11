@@ -1,5 +1,7 @@
 # 第十一章 CSS书写顺序及相应规范
 
+本章你将看到：CSS书写顺序、CSS书写规范、常用的CSS命名规则三方面的内容
+
 ## 一、CSS书写顺序
 
 1. 位置属性\(position, top, right, z-index, display, float等\) 
@@ -8,7 +10,7 @@
 4. 背景\(background, border等\) 
 5. 其他\(animation, transition等\)
 
-## 二、CSS书写规范 
+## 二、CSS书写规范
 
 使用CSS缩写属性：CSS有些属性是可以缩写的，比如padding,margin,font等等，这样精简代码同时又能提高用户的阅读体验。
 
@@ -210,7 +212,7 @@
 
 友情链接：link
 
-版权：copyright 
+版权：copyright
 
 ### 注意事项
 

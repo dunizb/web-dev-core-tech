@@ -111,11 +111,13 @@ Animation让CSS拥有了可以制作动画的功能。使用CSS3的Animation制�
 
 ## 二、边框
 
+CSS3新增了三个边框属性，分别是：
 
+* border-radius，创建圆角边框
+* box-shadow，为元素添加阴影
+* border-image，使用图片来绘制边框
 
-
-
-
+IE9+支持border-radius和box-shadow属性。Firefox、Chrome以及Safari支持所有新的边框属性。
 
 
 

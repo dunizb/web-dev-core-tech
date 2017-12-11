@@ -1,6 +1,14 @@
 # 第十五章 CSS3新增内容
 
-除了html5的新特性，CSS3的新特性也是面试中经常被问到的。
+除了html5的新特性，CSS3的新特性也是面试中经常被问到的。新增内容如下：
+
+1. 新增一些选择器
+2. 新增过渡\(Transition\)、转换\(Transform\)、动画\(Animation\)
+3. 新增一些边框属性
+4. 新增一些背景属性
+5. 新增一些文字效果属性
+6. 新增渐变
+7. 新增多列布局
 
 ## 一、选择器
 
@@ -166,11 +174,105 @@ CSS3中，元素可以被分成几个独立的盒子（如使内联元素span跨
 
 ## 四、文字效果
 
+### word-wrap
 
+CSS3中，word-wrap属性允许您允许文本强制文本进行换行，即这意味着会对单词进行拆分。所有主流浏览器都支持 word-wrap 属性。
 
+```css
+p {
+    word-wrap:break-word;
+}
+```
 
+### text-overflow
 
+它与word-wrap是协同工作的，word-wrap设置或检索当当前行超过指定容器的边界时是否断开转行，而 text-overflow则设置或检索当当前行超过指定容器的边界时如何显示。对于“text-overflow”属性，有“clip”和“ellipsis”两种可供选择。
 
+### text-shadow
 
+CSS3中，text-shadow可向文本应用阴影。能够规定水平阴影、垂直阴影、模糊距离，以及阴影的颜色。
 
+```css
+h1{
+    text-shadow: 5px 5px 5px #FF0000;
+}
+```
+
+### text-decoration
+
+CSS3里面开始支持对文字的更深层次的渲染，具体有三个属性可供设置：
+
+* text-fill-color: 设置文字内部填充颜色
+* text-stroke-color: 设置文字边界填充颜色
+* text-stroke-width: 设置文字边界宽度
+
+## 五、渐变
+
+CSS3新增了渐变效果，包括linear-gradient\(线性渐变\)和radial-gradient\(径向渐变\)。具体用法参考教程：[CSS3 Gradient](http://www.w3cplus.com/content/css3-gradient)
+
+## 六、@font-face特性
+
+在CSS3之前，web设计师必须使用已在用户计算机上安装好的字体。通过CSS3，web设计师可以使用他们喜欢的任意字体。当您您找到或购买到希望使用的字体时，可将该字体文件存放到web服务器上，它会在需要时被自动下载到用户的计算机上。字体是在 CSS3 @font-face 规则中定义的。Firefox、Chrome、Safari以及Opera支持 .ttf\(True Type Fonts\)和 .otf\(OpenType Fonts\)类型的字体。IE9+ 支持新的@font-face规则，但是仅支持 .eot类型的字体\(Embedded OpenType\)。
+
+在新的@font-face规则中，必须首先定义字体的名称（比如myFont），然后指向该字体文件。
+
+如需为HTML元素使用字体，请通过font-family属性来引用字体的名称 \(myFont\)
+
+```css
+@font-face {
+    font-family: myFirstFont;
+    src: url('Sansation_Light.ttf'),
+         url('Sansation_Light.eot'); /* IE9+ */
+}
+div{
+    font-family:myFirstFont;
+}
+```
+
+## 七、多列布局
+
+通过CSS3，能够创建多个列来对文本进行布局，IE10和Opera支持多列属性。Firefox 需要前缀-moz-，Chrome和Safari需要前缀-webkit-。主要有如下三个属性：
+
+* column-count: 规定元素应该被分隔的列数。
+* column-gap: 规定列之间的间隔。
+* column-rule: 设置列之间的宽度、样式和颜色规则
+
+```css
+div{
+    -moz-column-count:3;    /* Firefox */
+    -webkit-column-count:3; /* Safari 和 Chrome */
+    column-count:3;
+    -moz-column-gap:40px;       /* Firefox */
+    -webkit-column-gap:40px;    /* Safari 和 Chrome */
+    column-gap:40px;
+    -moz-column-rule:3px outset #ff0000;    /* Firefox */
+    -webkit-column-rule:3px outset #ff0000; /* Safari and Chrome */
+    column-rule:3px outset #ff0000;
+}
+```
+
+## 八、用户界面
+
+CSS3中，新的用户界面特性包括重设元素尺寸、盒尺寸以及轮廓等。Firefox、Chrome以及Safari 支持resize属性。IE、Chrome、Safari以及Opera支持box-sizing属性。Firefox需要前缀-moz-。
+
+所有主流浏览器都支持outline-offset属性，除了IE。
+
+### resize
+
+resize 属性规定是否可由用户调整元素尺寸。如果希望此属性生效，需要设置元素的 overflow 属性，值可以是 auto、hidden 或 scroll。
+
+```css
+div{
+    resize:both; /* none|both|horizontal|vertical; */
+    overflow:auto;
+}
+```
+
+### outline-offset
+
+outline-offset属性对轮廓进行偏移，并在超出边框边缘的位置绘制轮廓。
+
+---
+
+参考资料：[《前端面试之CSS3新特性》](http://hyuhan.com/2017/07/06/css3-of-interview/)
 

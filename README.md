@@ -36,13 +36,17 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第六章 Cookie技术
 * [x] 第七章 HTTPS
 * [ ] 第八章 HTTP/2
+* [ ] 附录
+  * [ ] 附录1：GET和POST的真正区别
 
 **第二部分 HTML**
 
 * [x] 第九章 理解HTML的语义化
 * [x] 第十章 HTML中meta标签的大作用
 * [x] 第十一章 理解DOM结构
-* [x] 附录：HTML面试题精选
+* [x] 附录
+  * [x] 附录1：HTML面试题精选
+  * [x] 附录2：在HTML5中被废弃的元素和属性
 
 **第三部分 CSS**
 

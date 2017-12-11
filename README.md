@@ -35,7 +35,6 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第五章 HTTP的几种连接
 * [x] 第六章 Cookie技术
 * [x] 第七章 HTTPS
-* [ ] 第八章 HTTP/2
 * [x] 附录
   * [x] 附录1：GET和POST的区别
 

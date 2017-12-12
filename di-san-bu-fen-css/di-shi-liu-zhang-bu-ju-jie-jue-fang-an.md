@@ -429,10 +429,16 @@ NOTE：table-cell 中不可以设置 margin 但是可以通过 padding 来设置
     /*等价于*/
     /*flex: 1 1 0;*/
   }
-</style> 
+</style>
 ```
 
 多列定宽的实现可以更具单列定宽的例子进行修改与实现。
+
+### 1.5 一列不定宽加一列自适应
+
+![](https://li-xinyang.gitbooks.io/frontend-notebook/content/img/L/layout-multicolumn-2.png)
+
+
 
 
 

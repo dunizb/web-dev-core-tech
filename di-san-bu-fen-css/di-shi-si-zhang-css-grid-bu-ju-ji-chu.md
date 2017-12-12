@@ -135,9 +135,30 @@ CSS Grid 布局由两个核心组成部分是 **wrapper（父元素）**和 **it
 
 为了确保你已经正确理解了这个概念，我们重新排列其他的 items\(子元素\) 。
 
+```css
+.item1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.item3 {
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+.item4 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+```
 
+你可以尝试在你的脑子里过一边上面代码的布局效果，应该不会很难。
 
+以下是页面上的布局效果：
 
+![](http://newimg88.b0.upaiyun.com/newimg88/2017/12/1_QDSybpxjXSat6UtoHgUapQ.png)
 
+Grid 布局就是这么简单，当然这里展示的是最简单的 Grid 布局概念，但是 Grid 布局系统中还有更多强大灵活的特性。
 
+---
+
+原文：[《5分钟学会 CSS Grid 布局》](http://www.css88.com/archives/8506)
 

@@ -158,6 +158,8 @@ CSS Grid 布局由两个核心组成部分是 **wrapper（父元素）**和 **it
 
 Grid 布局就是这么简单，当然这里展示的是最简单的 Grid 布局概念，但是 Grid 布局系统中还有更多强大灵活的特性。
 
+作为本文续篇，请阅读 [如何使用 CSS Grid 快速而又灵活的布局](http://www.css88.com/archives/8512) 让你体会 Grid 布局真正的强大和灵活。在此之前建议阅读请[CSS Grid 布局完全指南\(图解 Grid 详细教程\)](http://www.css88.com/archives/8510)，首先了解一下 Grid 相关的术语和所有属性。
+
 ---
 
 原文：[《5分钟学会 CSS Grid 布局》](http://www.css88.com/archives/8506)

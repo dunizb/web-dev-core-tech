@@ -22,6 +22,30 @@
 
 值得注意的是，未知的关键字会让 CSS 属性无效。
 
+### 哪些属性可以设置颜色
+
+所有可以用到颜色值的地方，都可以用色彩关键字替代，那么在 CSS 中，什么地方可以用到颜色值呢？
+
+* 文本的颜色 color:red
+* 元素的背景色 background-color:red （包含各类渐变）
+* 元素的边框 border-color:red
+* 元素的盒阴影或文字阴影 box-shadow:0 0 0 1px red \| text-shadow:5px 5px 5px red
+* 运用在一些滤镜当中 filter: drop-shadow\(16px 16px 20px red\)
+* &lt;hr /&gt; 水平线的颜色
+
+一些无法直接设置，但是可以被得到或者继承当前元素 currentColor 的属性：
+
+* &lt;img&gt; 的 alt 文本。也就是，当无法显示图像时，代替图像出现的文本，会继承这个颜色值。
+* ul 列表项的小点
+
+一些比较常见的就不举例了，说一下 &lt;hr/&gt; 、 &lt;img&gt; 的 alt 文本和 ul 列表项的小点。
+
+经过测试， &lt;hr/&gt;的颜色值，可以通过设置它的 border 的颜色值来表示。
+
+&lt;img&gt; 的 alt 文本和 ul 列表项的小点则会继承当前元素 currentColor 的属性。
+
+对于表单控件 &lt;input type="radio"&gt; &lt;input type="checkbox"&gt; ，暂时没有找到很好的直接改变颜色的方法，如果有知道希望不吝赐教。
+
 
 
 

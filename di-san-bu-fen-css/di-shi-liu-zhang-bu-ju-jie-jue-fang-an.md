@@ -145,6 +145,104 @@
 
 缺点：transform 为 CSS3 属性，有兼容性问题
 
+**flex + align-items**
+
+```css
+<div class="parent">
+  <div class="child">Demo</div>
+</div>
+
+<style>
+  .parent {
+    display: flex;
+    align-items: center;
+  }
+</style>
+```
+
+优点：只需设置父节点属性，无需设置子元素
+
+缺点：有兼容性问题
+
+### 1.3 水平与垂直居中
+
+![](https://li-xinyang.gitbooks.io/frontend-notebook/content/img/L/layout-center-center.png)
+
+子元素于父元素垂直及水平居中且其（子元素与父元素）高度宽度均可变。
+
+**inline-block + text-align + table-cell + vertical-align**
+
+```css
+<div class="parent">
+  <div class="child">Demo</div>
+</div>
+
+<style>
+  .parent {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .child {
+    display: inline-block;
+  }
+</style>
+```
+
+优点：兼容性好
+
+**absolute + transform**
+
+```css
+<div class="parent">
+  <div class="child">Demo</div>
+</div>
+
+<style>
+  .parent {
+    position: relative;
+  }
+  .child {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>
+```
+
+优点：绝对定位脱离文档流，不会对后续元素的布局造成影响。但如果绝对定位元素是唯一的元素则父元素也会失去高度。
+
+缺点：transform 为 CSS3 属性，有兼容性问题
+
+**flex + justify-content + align-items**
+
+```css
+<div class="parent">
+  <div class="child">Demo</div>
+</div>
+
+<style>
+  .parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+```
+
+优点：只需设置父节点属性，无需设置子元素
+
+缺点：有兼容性问题
+
+## 二、多列布局
+
+
+
+
+
+
+
 
 
 

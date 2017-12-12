@@ -31,6 +31,35 @@ CSS3中新增了一种盒模型计算方式：box-sizing熟悉。盒模型默认
 * 相邻元素叠加 相邻的两个元素， 如果它们的上下边距相遇，即会产生叠加。
 * 包含（父子）元素叠加 包含元素的外边距隔着 父元素的内边距和边框， 当这两项都不存在的时候， 父子元素垂直外边距相邻， 产生叠加。 添加任何一项即会取消叠加。
 
+## 四、JS如何设置获取盒模型对应的宽和高？
+
+* **dom.style.width/height**，这种方式只能获取元素的内联样式
+* **dom.currentStyle.width/height**，获取即时运行的（渲染后的）元素样式，不管是用哪种方式定义的样式，但是这个属性只有IE支持
+* **window.getComputedStyle\(dom\).width/height**，作用同currentStyle，但是兼容Firefox和Chrome，通用性更好
+* **dom.getBoundingClientReact\(\).width/height**，也能拿到元素渲染后的真实的宽高，这个API经常用来计算一个元素的绝对位置，这个位置是相对于视窗（Viewport）左上角左顶点，返回left、top、width、height。
+
+## 五、BFC（边距重叠解决方案）
+
+BFC\(Block formatting context\)直译为"块级格式化上下文"。它是一个独立的渲染区域，只有 Block-level box 参 与， 它规定了内部的 Block-level Box 如何布局，并且与这个区域外部毫不相干。
+
+**BFC的渲染规则**
+
+* BFC这个元素的垂直方向的边距会发生重叠
+* BFC的区域不会与浮动元素的box重叠（清除浮动原理）
+* BFC在页面上是一个独立的容器，外面的元素不会影响它里面的元素，反过来它里面的元素也不会影响外面的元素
+* 计算BFC的高度的时候，浮动元素也会参与计算
+
+**如何创建BFC？**
+
+* overflow属性不为visible
+* float属性不为none
+* position属性为absolute或fixed
+* display属性为inline-block、table-cell、table-caption、flex、inline-flex
+
+**BFC的使用场景** 
+
+他的很常用的一个应用场景就是解决边距重叠的问题.
+
 ---
 
 参考资料：

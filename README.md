@@ -56,8 +56,8 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第十五章 浮动
 * [x] 第十六章 布局解决方案
 * [x] 第十七章 CSS3新增内容
-* [x] 第十八章 CSS 颜色体系
-* [ ] 第十九章 CSS单位体系
+* [x] 第十八章 CSS颜色单位体系
+* [ ] 第十九章 CSS尺寸单位体系
 
 **第四部分 JavaScript**
 

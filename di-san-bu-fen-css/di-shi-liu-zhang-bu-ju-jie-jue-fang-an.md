@@ -448,21 +448,9 @@ NOTE：table-cell 中不可以设置 margin 但是可以通过 padding 来设置
 
 每一列的宽度和间距均相等，下面为多列等分布局的布局特定。
 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+跟多布局解决方案：[https://li-xinyang.gitbooks.io/frontend-notebook/content/chapter4/02\_layout.html](https://li-xinyang.gitbooks.io/frontend-notebook/content/chapter4/02_layout.html)
 
 
 

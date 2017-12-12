@@ -48,15 +48,42 @@
 
 ## 二、transparent
 
+transparent 的字面意思就是透明。它用来表示一个完全透明的颜色，即该颜色看上去将是背景色。
 
+也可以理解为它是 rgba\(0,0,0,0\) 的简写。
 
+**值得注意的是：**在 CSS3 之前，transparent 关键字不是一个真实的颜色，只能用于 background-color 和 border-color中，表示一个透明的颜色。而在支持 CSS3 的浏览器中，它被重新定义为一个真实的颜色，transparent 可以用于任何需要 color 值的地方，像 color 属性。
 
+那么这个透明值有什么用呢？简单列举一些例子：
 
+**transparent 用于 border，绘制三角形**
 
+这算是 transparent 最常见的一个用法，用于绘制三角形。
 
+```css
+<div class='div1'></div>
+<div class='div2'></div>
 
+.div1{
+  width:0px;
+  height:0px;
+  margin:20px auto;
+  border-top:50px solid yellowgreen;
+  border-bottom:50px solid deeppink;
+  border-left:50px solid bisque;
+  border-right:50px solid chocolate;
+}
+.div2{
+  width:0px;
+  height:0px;
+  margin:20px auto;
+  border-bottom:50px solid deeppink;
+  border-left:50px solid transparent;
+  border-right:50px solid transparent;
+}
+```
 
-
+像上文说的，由于 transparent 在低版本浏览器中（IE78）可以使用在 border、background 中，所以此方法兼容性很好，可以利用于很多场景。
 
 
 

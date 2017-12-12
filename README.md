@@ -54,7 +54,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第十三章 Flexbox布局
 * [x] 第十四章 CSS Grid布局基础
 * [x] 第十五章 浮动
-* [ ] 第十六章 布局解决方案
+* [x] 第十六章 布局解决方案
 * [x] 第十七章 CSS3新增内容
 
 **第四部分 JavaScript**

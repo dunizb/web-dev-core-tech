@@ -23,8 +23,9 @@
   * [第十二章 CSS盒模型](di-san-bu-fen-css/di-shi-er-zhang-css-he-mo-xing.md)
   * [第十三章 Flexbox布局](di-san-bu-fen-css/di-shi-san-zhang-flexbox-bu-ju.md)
   * 第十四章 CSS Grid布局
-  * 第十五章 布局结局方案
-  * [第十六章 CSS3新增内容](di-san-bu-fen-css/di-shi-wu-zhang-css3-xin-zeng-nei-rong.md)
+  * 第十五章 浮动与定位
+  * 第十六章 布局结局方案
+  * [第十七章 CSS3新增内容](di-san-bu-fen-css/di-shi-wu-zhang-css3-xin-zeng-nei-rong.md)
 
 
 

@@ -46,6 +46,12 @@
 
 对于表单控件 &lt;input type="radio"&gt; &lt;input type="checkbox"&gt; ，暂时没有找到很好的直接改变颜色的方法，如果有知道希望不吝赐教。
 
+## 二、transparent
+
+
+
+
+
 
 
 

@@ -68,6 +68,63 @@ CSS中，角度的单位有 deg, grad, rad, turn。
 3. **rad** 弧度（Radians）。一个圆共2π弧度。
 4. **turn** 圈（Turns）。一个圆共1圈。
 
+## 三、rem
+
+我们将从你已经熟悉的东西开始。em单位被定义为当前字体大小。例如，如果你在body元素上设置一个字体大小，那么在body元素内的任何子元素的em值都等于这个字体大小。
+
+```css
+<body> 
+    <div class="test">Test</div>
+</body> 
+body { font-size: 14px; } 
+div { font-size: 1.2em; // calculated at 14px * 1.2, or 16.8px }
+```
+
+在这里，我们说这个div将有一个1.2em的font-size。它是所继承的字体大小的1.2倍，在这个例子中为14px。结果为16.8px
+
+```html
+<div>
+    Test (14 * 1.2 = 16.8px)
+    <div>
+        Test (16.8 * 1.2 = 20.16px)
+        <div>
+            Test (20.16 * 1.2 = 24.192px)
+        </div>
+    </div>
+</div>
+
+body {
+  font-size: 14px;
+  text-align: center;
+  background: #ff5722;
+}
+div {
+  font-size: 1.2em;
+  color: #64ffda;
+  font-weight: bold;
+  padding: 2em;
+}
+```
+
+![](/assets/import3.png)
+
+虽然在某些情况下可能需要这个，但是通常你可能想基于一个唯一的度量标准来按比例缩放。在这种情况下，你应该用rem。rem中的"r"代表"root"；这等同于font-size基于根元素进行设置；在大多数情况下根元素为html元素。
+
+```css
+html { font-size: 14px; } 
+div { font-size: 1.2rem; }
+```
+
+在上一个示例中三个嵌套的div的字体大小计算结果都为16.8px。
+
+## 四、vw和wh
+
+
+
+
+
+
+
 
 
 
@@ -78,9 +135,5 @@ CSS中，角度的单位有 deg, grad, rad, turn。
 
 **参考资料：**
 
-http://yangjh.oschina.io/front-end/css/unit.html
-
-
-
-
+[http://yangjh.oschina.io/front-end/css/unit.html](http://yangjh.oschina.io/front-end/css/unit.html)
 

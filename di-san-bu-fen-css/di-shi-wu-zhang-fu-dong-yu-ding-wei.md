@@ -40,5 +40,37 @@
 
 缺点：高度被固定死了，是适合内容固定不变的模块。（不推荐使用）
 
+### 方法2：使用DIV空元素&lt;div class="clear"&gt;&lt;/div&gt; \(.clear{clear:both}\)
+
+```html
+<div class=”div1″>
+   <div class=”left”>我是左浮动</div>
+   <div class=”right”>我是右浮动</div>
+
+   <div class=”clear”></div>
+</div>
+<div class=”div2″>我是div2</div>
+```
+
+原理：添加一对空的DIV标签，利用css的clear:both属性清除浮动，让父级DIV能够获取高度。
+
+优点：浏览器支持好
+
+缺点：多出了很多空的DIV标签，如果页面中浮动模块多的话，就会出现很多的空置DIV了，这样感觉视乎不是太令人满意。（不推荐使用）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

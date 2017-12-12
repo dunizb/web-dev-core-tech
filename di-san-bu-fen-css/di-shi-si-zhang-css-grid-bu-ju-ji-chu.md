@@ -73,11 +73,67 @@ CSS Grid 布局由两个核心组成部分是 **wrapper（父元素）**和 **it
 
 非常好理解，使用起来也非常简单是不是？下面我们来加大一点难度。
 
+## 三、放置 items\(子元素\)
 
+接下来你需要学习的是如何在 grid\(网格\) 上放置 items\(子元素\) 。特别注意，这里才是体现 Grid 布局超能力的地方，因为它使得创建布局变得非常简单。
 
+我们使用与之前相同的 HTML 标记，为了帮助我们更好的理解，我们在每个 items\(子元素\) 加上了单独的 class ：
 
+```html
+<div class="wrapper">
+  <div class="item1">1</div>
+  <div class="item2">2</div>
+  <div class="item3">3</div>
+  <div class="item4">4</div>
+  <div class="item5">5</div>
+  <div class="item6">6</div>
+</div>
+```
 
+现在，我们来创建一个 3×3 的 grid\(网格\)：
 
+```css
+.wrapper {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+}
+```
+
+将得到以下布局：
+
+![](http://newimg88.b0.upaiyun.com/newimg88/2017/12/1_WxIT0z8OH7-rkoFMg5fwRw.png)
+
+不知道你发现没有，我们只在页面上看到 3×2 的 grid\(网格\)，而我们定义的是 3×3 的 grid\(网格\)。这是因为我们只有 6 个 items\(子元素\) 来填满这个网格。如果我们再加3个 items\(子元素\)，那么最后一行也会被填满。
+
+要定位和调整 items\(子元素\) 大小，我们将使用 grid-column 和 grid-row 属性来设置：
+
+```css
+.item1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+```
+
+我们在这里要做的是，我们希望 item1 占据从第一条网格线开始，到第四条网格线结束。换句话说，它将独立占据整行。 以下是在屏幕上显示的内容：
+
+![](http://newimg88.b0.upaiyun.com/newimg88/2017/12/1_he7CoAzdQB3sei_WpHOtNg.png)
+
+如果你不明白我们设置的只有 3 列，为什么有4条网格线呢？看看下面这个图像，我画了黑色的列网格线：
+
+![](http://newimg88.b0.upaiyun.com/newimg88/2017/12/1_l-adYpQCGve7W6DWY949pw.png)
+
+请注意，我们现在正在使用网格中的所有行。当我们把第一个 items\(子元素\) 占据整个第一行时，它把剩下的 items\(子元素\) 都推到了下一行。
+
+最后，给你一个更简单的缩写方法来编写上面的语法：
+
+```css
+.item1 {
+    grid-column: 1 / 4;
+}
+```
+
+为了确保你已经正确理解了这个概念，我们重新排列其他的 items\(子元素\) 。
 
 
 

@@ -101,6 +101,50 @@
 
 ### 1.2 垂直居中
 
+![](https://li-xinyang.gitbooks.io/frontend-notebook/content/img/L/layout-center-vertical.png)
+
+子元素于父元素垂直居中且其（子元素与父元素）高度均可变。
+
+**table-cell + vertical-align**
+
+```css
+<div class="parent">
+  <div class="child">Demo</div>
+</div>
+
+<style>
+  .parent {
+    display: table-cell;
+    vertical-align: middle;
+  }
+</style>
+```
+
+优点：兼容性好（支持 IE 8，以下版本需要调整页面结构至 table）
+
+**absolute + transform**
+
+```css
+<div class="parent">
+  <div class="child">Demo</div>
+</div>
+
+<style>
+  .parent {
+    position: relative;
+  }
+  .child {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+</style>
+```
+
+优点：绝对定位脱离文档流，不会对后续元素的布局造成影响。但如果绝对定位元素是唯一的元素则父元素也会失去高度。
+
+缺点：transform 为 CSS3 属性，有兼容性问题
+
 
 
 

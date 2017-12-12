@@ -148,6 +148,33 @@ div:active{
 
 transparent 用于 background，通常可以制造出各种各样的背景图像。这里举个简单的例子，利用透明渐变，实现一个切角图形：
 
+```css
+<div>切角图形</div>
+
+div{
+  width: 160px;
+  margin:30px auto;
+  padding: 60px 20px;
+  text-align: center;
+  color: #fff;
+  font-size: 200%
+}
+        
+div{
+  background: 
+    linear-gradient(135deg, transparent 15px, #ff1493 0) top left, 
+    linear-gradient(-135deg, transparent 15px, #ff1493 0) top right,
+    linear-gradient(-45deg, transparent 15px, #ff1493 0) bottom right,
+    linear-gradient(45deg, transparent 15px, #ff1493 0) bottom left;
+  background-size: 50% 50%;
+  background-repeat: no-repeat
+}
+```
+
+![](/assets/import2.png)
+
+
+
 
 
 

@@ -237,7 +237,100 @@
 
 ## 二、多列布局
 
+多列布局在网页中非常常见（例如两列布局），多列布局可以是两列定宽，一列自适应， 或者多列不定宽一列自适应还有等分布局等。
 
+### 2.1 一列定宽，一列自适应 ![](https://li-xinyang.gitbooks.io/frontend-notebook/content/img/L/layout-multicolumn-0.jpg)
+
+**float + margin**
+
+```css
+<div class="parent">
+  <div class="left">
+    <p>left</p>
+  </div>
+  <div class="right">
+    <p>right</p>
+    <p>right</p>
+  </div>
+</div>
+
+<style>
+  .left {
+    float: left;
+    width: 100px;
+  }
+  .right {
+    margin-left: 100px
+    /*间距可再加入 margin-left */
+  }
+</style>
+```
+
+NOTE：IE 6 中会有3像素的 BUG，解决方法可以在 .left 加入 margin-left:-3px。
+
+**float + margin + \(fix\) 改造版**
+
+```css
+<div class="parent">
+  <div class="left">
+    <p>left</p>
+  </div>
+  <div class="right-fix">
+    <div class="right">
+      <p>right</p>
+      <p>right</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .left {
+    float: left;
+    width: 100px;
+  }
+  .right-fix {
+    float: right;
+    width: 100%;
+    margin-left: -100px;
+  }
+  .right {
+    margin-left: 100px
+    /*间距可再加入 margin-left */
+  }
+</style>
+```
+
+NOTE：此方法不会存在 IE 6 中3像素的 BUG，但 .left 不可选择， 需要设置 .left {position: relative} 来提高层级。 此方法可以适用于多版本浏览器（包括 IE6）。缺点是多余的 HTML 文本结构。
+
+**float + overflow**
+
+```css
+<div class="parent">
+  <div class="left">
+    <p>left</p>
+  </div>
+  <div class="right">
+    <p>right</p>
+    <p>right</p>
+  </div>
+</div>
+
+<style>
+  .left {
+    float: left;
+    width: 100px;
+  }
+  .right {
+    overflow: hidden;
+  }
+</style>
+```
+
+设置 overflow: hidden 会触发 BFC 模式（Block Formatting Context）块级格式化文本。 BFC 中的内容与外界的元素是隔离的。
+
+优点：样式简单
+
+缺点：不支持IE6
 
 
 

@@ -332,15 +332,107 @@ NOTE：此方法不会存在 IE 6 中3像素的 BUG，但 .left 不可选择， 
 
 缺点：不支持IE6
 
+**table**
 
+```css
+<div class="parent">
+  <div class="left">
+    <p>left</p>
+  </div>
+  <div class="right">
+    <p>right</p>
+    <p>right</p>
+  </div>
+</div>
 
+<style>
+  .parent {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+  .left {
+    display: table-cell;
+    width: 100px;
+  }
+  .right {
+    display: table-cell;
+    /*宽度为剩余宽度*/
+  }
+</style>
+```
 
+table 的显示特性为每列的单元格宽度合一定等与表格宽度。 table-layout: fixed; 可加速渲染，也是设定布局优先。
 
+NOTE：table-cell 中不可以设置 margin 但是可以通过 padding 来设置间距。
 
+**flex**
 
+```css
+<div class="parent">
+  <div class="left">
+    <p>left</p>
+  </div>
+  <div class="right">
+    <p>right</p>
+    <p>right</p>
+  </div>
+</div>
 
+<style>
+  .parent {
+    display: flex;
+  }
+  .left {
+    width: 100px;
+    margin-left: 20px;
+  }
+  .right {
+    flex: 1;
+    /*等价于*/
+    /*flex: 1 1 0;*/
+  }
+</style>
+```
 
+**缺点**
 
+* 低版本浏览器兼容问题
+* 性能问题，只适合小范围布局。
+
+### 1.4 两列定宽，一列自适应
+
+![](https://li-xinyang.gitbooks.io/frontend-notebook/content/img/L/layout-multicolumn-1.png)
+
+```css
+<div class="parent">
+  <div class="left">
+    <p>left</p>
+  </div>
+  <div class="center">
+    <p>center<p>
+  </div>
+  <div class="right">
+    <p>right</p>
+    <p>right</p>
+  </div>
+</div>
+
+<style>
+  .left, .center {
+    float: left;
+    width: 100px;
+    margin-right: 20px;
+  }
+  .right {
+    overflow: hidden;
+    /*等价于*/
+    /*flex: 1 1 0;*/
+  }
+</style> 
+```
+
+多列定宽的实现可以更具单列定宽的例子进行修改与实现。
 
 
 

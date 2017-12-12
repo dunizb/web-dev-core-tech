@@ -312,7 +312,7 @@ div:active{
 
 ---
 
-原文：[【CSS进阶】CSS 颜色体系详解](http://www.cnblogs.com/coco1s/p/5622534.html)
+**原文出处**
 
-
+ChokCoco的博客[【CSS进阶】CSS 颜色体系详解](http://www.cnblogs.com/coco1s/p/5622534.html)
 

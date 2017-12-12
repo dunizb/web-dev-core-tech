@@ -118,9 +118,35 @@ div:active{
 
 ![](http://images2015.cnblogs.com/blog/608782/201605/608782-20160527112625428-906375003.gif)
 
+这里我们将 border 用于了扩大鼠标点击区域，然而真实情况是有的时候我们的按钮必须要用到 border，而 border 又只能设置一重（无法像 box-shadow和 渐变一样设置多重 border），这个时候如果还需要运用这种方法，可以使用内阴影 box-shadow模拟一层 border，像这样：
 
+```css
+div{
+  width:140px;line-height:48px;
+  text-align:center;
+  margin:50px auto;
+  color:hsla(328, 100%, 54%,0.8);
+  cursor:pointer;
+  border:20px solid transparent;
+  background-clip: padding-box;
+  box-shadow:inset 0 0 0 1px hsla(328, 100%, 54%,0.8);
+}
+div:hover{
+  background:hsla(328, 100%, 54%,0.8);
+  color:white;
+  background-clip: padding-box;
+}
 
+div:active{
+  background:hsla(328, 100%, 54%,1);
+  color:white;
+  background-clip: padding-box;
+}
+```
 
+### transparent 用于 background，绘制背景图
+
+transparent 用于 background，通常可以制造出各种各样的背景图像。这里举个简单的例子，利用透明渐变，实现一个切角图形：
 
 
 

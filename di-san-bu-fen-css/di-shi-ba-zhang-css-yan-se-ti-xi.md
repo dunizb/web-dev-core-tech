@@ -87,9 +87,36 @@ transparent 的字面意思就是透明。它用来表示一个完全透明的�
 
 ### transparent 用于 border，实现增大点击热区
 
+按钮是我们网页设计中十分重要的一环，而按钮的设计也与用户体验息息相关。让用户更容易的点击到按钮无疑能很好的增加用户体验，尤其是在移动端，按钮通常都很小，但是有时由于设计稿限制，我们不能直接去改变按钮元素的高宽。那么这个时候有什么办法在不改变按钮原本大小的情况下去增加他的点击热区呢？
 
+这里，借助透明的 border 可以轻松帮我们实现（我 之前一篇文章写到过，利用伪元素也可以实现），利用一层透明的 border:20px solid transparent 我们可以这样写：
 
+```css
+<div>Btn</div>
 
+div{
+  width:140px;line-height:48px;
+  text-align:center;
+  margin:50px auto;
+  color:#333;
+  cursor:pointer;
+  background:hsl(200, 60%, 60%);
+  border:20px solid transparent;
+  background-clip: padding-box;
+}
+div:hover{
+  background:hsl(200, 60%, 50%);
+  background-clip: padding-box;
+}
+div:active{
+  background:hsl(200, 60%, 70%);
+  background-clip: padding-box;
+}
+```
+
+试着将光标靠近 Btn，会发现在还未到达有颜色区域之前，就已经触发了鼠标的交互响应事件 hover，利用这一点在移动端可以很好的扩大按钮的可点击区域又不至于改变按钮本身的形状。像这样：
+
+![](http://images2015.cnblogs.com/blog/608782/201605/608782-20160527112625428-906375003.gif)
 
 
 

@@ -119,21 +119,59 @@ div { font-size: 1.2rem; }
 
 ## 四、vw和wh
 
+响应式网页设计技术很大程度上依赖于比例规则。然而，CSS比例不总是每个问题的最佳解决方案。CSS宽度是相对于最近的包含父元素。如果你想使用显示窗口的宽度或高度而不是父元素的宽度将会怎么样？这正是vh和vw单位所提供的。
 
+响应式网页设计技术很大程度上依赖于比例规则。然而，CSS比例不总是每个问题的最佳解决方案。CSS宽度是相对于最近的包含父元素。如果你想使用显示窗口的宽度或高度而不是父元素的宽度将会怎么样？这正是vh和vw单位所提供的。
 
+这些规则表面上看起来有无尽的用途。例如，做一个占满高度的或者接近占满高度的幻灯片，可以用一个非常简单的方法实现，只要用一行CSS：
 
+```css
+.slide {
+    height: 100vh;
+}
+```
 
+设想你想要一个占满屏幕宽度的标题。为做到这一点，你将会用vw来设置一个字体大小。这个大小将会随着浏览器的宽度按比例缩放。
 
+```css
+<h2>Settle down? Are you kidding?<br>I’m at the top of my game!</h2>
+<p><em>- Elastigirl</em></p>
 
+body {
+  background: #ff5722;
+  padding: 1em 0;
+  color: #64ffda;
+}
+h2 {
+  font-size: 6vw;
+  margin-bottom: .2em
+}
+```
 
+## 五、vmin 和 vmax
 
+vh和vm总是与视口的高度和宽度有关，与之不同的，vmin和vmax是与这次宽度和高度的最大值或最小值有关，取决于哪个更大和更小。例如，如果浏览器设置为1100px宽、700px高，1vmin会是7px,1vmax为11px。然而，如果宽度设置为800px，高度设置为1080px，1vmin将会等于8px而1vmax将会是10.8px。
 
+所以你什么时候可能用到这些值？
 
+设想你需要一个总是在屏幕上可见的元素。使用高度和宽度设置为低于100的vmin值将可以实现这个效果。例如，一个正方形的元素总是至少接触屏幕的两条边可能是这样定义的：
 
+```css
+.box { height: 100vmin; width: 100vmin; }
+```
+
+![](https://www.w3cplus.com/sites/default/files/blogs/2015/1506/vmin.png)
+
+如果你需要一个总是覆盖可视窗口的正方形\(一直接触屏幕的四条边\),使用相同的规则只是把单位换成vmax。
+
+这些规则的组合提供了一个非常灵活的方式，用新的、令人兴奋的方式利用你的可视窗口的大小。
 
 ---
 
 **参考资料：**
 
-[http://yangjh.oschina.io/front-end/css/unit.html](http://yangjh.oschina.io/front-end/css/unit.html)
+* [http://yangjh.oschina.io/front-end/css/unit.html](http://yangjh.oschina.io/front-end/css/unit.html)
+* 白粥的博客：[七个你可能不了解的CSS单位](https://www.w3cplus.com/css/7-css-units-you-might-not-know-about.html)
+
+
 

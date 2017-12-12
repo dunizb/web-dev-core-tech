@@ -400,7 +400,7 @@ NOTE：table-cell 中不可以设置 margin 但是可以通过 padding 来设置
 * 低版本浏览器兼容问题
 * 性能问题，只适合小范围布局。
 
-### 1.4 两列定宽，一列自适应
+### 2.2 两列定宽，一列自适应
 
 ![](https://li-xinyang.gitbooks.io/frontend-notebook/content/img/L/layout-multicolumn-1.png)
 
@@ -434,9 +434,35 @@ NOTE：table-cell 中不可以设置 margin 但是可以通过 padding 来设置
 
 多列定宽的实现可以更具单列定宽的例子进行修改与实现。
 
-### 1.5 一列不定宽加一列自适应
+### 2.3 一列不定宽加一列自适应
 
-![](https://li-xinyang.gitbooks.io/frontend-notebook/content/img/L/layout-multicolumn-2.png)
+![](https://li-xinyang.gitbooks.io/frontend-notebook/content/img/L/layout-multicolumn-2.png)不定宽的宽度为内容决定，下面为可以实现此效果的方法：
+
+* float + overflow，此方法在 IE6 中有兼容性问题
+* table，此方法在 IE6 中有兼容性问题
+* flex，此方法在 IE9及其以下版本中有兼容性问题
+
+### 1.6 多列等分布局
+
+![](https://li-xinyang.gitbooks.io/frontend-notebook/content/img/L/layout-multicolumn-4.png)
+
+每一列的宽度和间距均相等，下面为多列等分布局的布局特定。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -65,5 +65,5 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 附录
   * [x] 附录1：CSS面试题精选
 
-**第四部分 JavaScript**
+**第四部分 ECMAScript**
 

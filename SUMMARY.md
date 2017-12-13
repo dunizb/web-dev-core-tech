@@ -34,7 +34,5 @@
   * [第23章 BEM命名规范](di-san-bu-fen-css/di-23-zhang-bem-ming-ming-gui-fan.md)
   * 附录
     * [附录1：CSS面试题精选](di-san-bu-fen-css/fu-lu-1-css-mian-shi-ti-jing-xuan.md)
-* 第四部分 ECMAScript
-
-
+* [第四部分 ECMAScript](di-si-bu-fen-ecmascript.md)
 

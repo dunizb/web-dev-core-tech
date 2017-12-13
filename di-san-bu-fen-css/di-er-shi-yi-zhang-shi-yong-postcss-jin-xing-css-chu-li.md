@@ -23,7 +23,7 @@ Webpack 中使用 postcss-loader 来执行插件处理。在代码清单 1 中�
 
 ```js
 var path = require('path');
- 
+
 module.exports = {
  context: path.join(__dirname, 'app'),
  entry: './app',
@@ -53,7 +53,7 @@ Gulp 中使用 gulp-postcss 来集成 PostCSS。在代码清单 2 中，CSS 文�
 
 ```js
 var gulp = require('gulp');
- 
+
 gulp.task('css', function() {
  var postcss = require('gulp-postcss');
  return gulp.src('app/**/*.css')
@@ -62,17 +62,53 @@ gulp.task('css', function() {
 });
 ```
 
+## 三、常用插件
 
+### Autoprefixer
 
+Autoprefixer 是一个流行的 PostCSS 插件，其作用是为 CSS 中的属性添加浏览器特定的前缀。开发人员在编写 CSS 时只需要使用 CSS 规范中的标准属性名即可。
 
+### cssnext
 
+cssnext 插件允许开发人员在当前的项目中使用 CSS 将来版本中可能会加入的新特性。cssnext 负责把这些新特性转译成当前浏览器中可以使用的语法。从实现角度来说，cssnext 是一系列与 CSS 将来版本相关的 PostCSS 插件的组合。比如，cssnext 中已经包含了对 Autoprefixer 的使用，因此使用了 cssnext 就不再需要使用 Autoprefixer。
 
+更多内容请参看参考资料1
 
----
+## 四、开发 PostCSS 插件
+
+虽然 PostCSS 已经有 200 多个插件，但在开发中仍然可能存在已有插件不能满足需求的情况。这个时候可以开发自己的 PostCSS 插件。开发插件是一件很容易的事情。每个插件本质只是一个 JavaScript 方法，用来对由 PostCSS 解析的 CSS AST 进行处理。
+
+每个 PostCSS 插件都是一个 NodeJS 的模块。使用 postcss 的 plugin 方法来定义一个新的插件。插件需要一个名称，一般以“postcss-”作为前缀。插件还需要一个进行初始化的方法。该方法的参数是插件所支持的配置选项，而返回值则是另外一个方法，用来进行实际的处理。该处理方法会接受两个参数，css 代表的是表示 CSS AST 的对象，而 result 代表的是处理结果。
+
+```js
+var postcss = require('postcss');
+ 
+module.exports = postcss.plugin('postcss-checkcolor', function(options) {
+ return function(css, result) {
+   css.walkDecls('color', function(decl) {
+     if (decl.value == 'black') {
+       result.warn('No black color.', {decl: decl});
+     }
+   });
+ };
+})
+```
+
+上面代码给出了一个简单的 PostCSS 插件。该插件使用 css 对象的 walkDecls 方法来遍历所有的“color”属性声明，并对“color”属性值进行检查。如果属性值为 black，就使用 result 对象的 warn 方法添加一个警告消息。
+
+PostCSS 插件一般通过不同的方法来对当前的 CSS 样式规则进行修改。如通过 insertBefore 和 insertAfter 方法来插入新的规则。
+
+ 
+
+ 
+
+ 
+
+ 
 
 **参考资料**
 
-* [使用 PostCSS 进行 CSS 处理](https://www.ibm.com/developerworks/cn/web/1604-postcss-css/index.html)
+1. [使用 PostCSS 进行 CSS 处理](https://www.ibm.com/developerworks/cn/web/1604-postcss-css/index.html)
 
 
 

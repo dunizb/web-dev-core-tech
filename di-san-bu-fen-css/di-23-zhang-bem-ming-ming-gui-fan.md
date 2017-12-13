@@ -6,6 +6,8 @@ BEM的意思就是块（block）、元素（element）、修饰符（modifier）
 
 重要的是要注意，我使用的基于BEM的命名方式是经过[Nicolas Gallagher修改过的](http://nicolasgallagher.com/about-html-semantics-front-end-architecture)。这篇文章中介绍的这种命名技术并不是原始的BEM，但却是一个我更喜欢的改进版。无论实际使用了什么样的符号，它们其实都是基于同样的BEM原则。
 
+> BEM 命名给 CSS 以及 html 提供清晰结构，命名空间提供更多信息，模块化提高代码的重用，以达到 CSS 命名语义化、可重用性高、后期维护容易、加载渲染快的要求。
+
 ## 二、命名约定的模式
 
 命名约定的模式如下：
@@ -133,7 +135,7 @@ BEM的另外一个好处是针对下面这种情况：
 
 ```css
 .header{}
-.header__logo{}	
+.header__logo{}
 ```
 
 但我们没必要这么做。使用BEM的诀窍是，你要知道什么时候哪些东西是应该写成BEM格式的。因为某些东西确实是位于一个块的内部，但这并不意味它就是BEM中所说的元素。这个例子中，网站logo完全是恰巧在.header的内部，它也有可能在侧边栏或是页脚里面。一个元素的范围可能开始于任何上下文，因此你要确定只在你需要用到BEM的地方你才使用它。再看一个例子：
@@ -141,7 +143,7 @@ BEM的另外一个好处是针对下面这种情况：
 ```html
 <div class="content">
   <h1 class="content__headline">Lorem ipsum dolor...</h1>
-</div>	
+</div>
 ```
 
 在这个例子里，我们也许仅仅只需要另一个class，可以叫它.headline；它的样式取决于它是如何被层叠的，因为它在.content的内部；或者它只是恰巧在.content的内部。如果它是后者（即恰巧在.content的内部，而不总是在）我们就不需要使用BEM。
@@ -150,7 +152,7 @@ BEM的另外一个好处是针对下面这种情况：
 
 ```
 .site-logo{}
-.site-logo--xmas{}	
+.site-logo--xmas{}
 ```
 
 我们可以通过使用--修饰符来快速地为我们的代码构建另一个版本。

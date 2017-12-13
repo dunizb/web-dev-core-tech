@@ -1,4 +1,4 @@
-# 第十五章 浮动
+# 第15章 浮动
 
 ## 一、浮动的原理
 
@@ -58,7 +58,7 @@
 
 缺点：多出了很多空的DIV标签，如果页面中浮动模块多的话，就会出现很多的空置DIV了，这样感觉视乎不是太令人满意。（不推荐使用）
 
-### 方法3：使用BR空元素&lt;br class=”clear”/&gt; \(.clear{clear:both}\) 
+### 方法3：使用BR空元素&lt;br class=”clear”/&gt; \(.clear{clear:both}\)
 
 ```html
 <div class=”div1″>

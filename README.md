@@ -62,7 +62,6 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第21章 使用PostCSS进行CSS处理
 * [x] 第22章 CSS的低权重原则
 * [x] 第23章 BEM命名规范
-* [x] 第24章 OOCSS和SMACSS
 
 **第四部分 JavaScript**
 

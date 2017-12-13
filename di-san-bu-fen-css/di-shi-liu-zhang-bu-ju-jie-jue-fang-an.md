@@ -1,4 +1,4 @@
-# 第十六章 布局解决方案
+# 第16章 布局解决方案
 
 了解 CSS 中属性的值及其特性， 透彻分析问题和需求才可以选择和设计最适合的布
 
@@ -451,10 +451,4 @@ NOTE：table-cell 中不可以设置 margin 但是可以通过 padding 来设置
 ---
 
 跟多布局解决方案：[https://li-xinyang.gitbooks.io/frontend-notebook/content/chapter4/02\_layout.html](https://li-xinyang.gitbooks.io/frontend-notebook/content/chapter4/02_layout.html)
-
-
-
-
-
-
 

@@ -1,4 +1,4 @@
-# 第十二章 CSS盒模型
+# 第12章 CSS盒模型
 
 本章内容：CSS 实际上如何工作？盒模型是什么？margin叠加是什么？
 
@@ -56,7 +56,7 @@ BFC\(Block formatting context\)直译为"块级格式化上下文"。它是一�
 * position属性为absolute或fixed
 * display属性为inline-block、table-cell、table-caption、flex、inline-flex
 
-**BFC的使用场景** 
+**BFC的使用场景**
 
 他的很常用的一个应用场景就是解决边距重叠的问题.
 

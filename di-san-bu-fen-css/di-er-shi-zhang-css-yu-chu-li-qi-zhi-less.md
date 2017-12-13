@@ -43,11 +43,21 @@ Less 没有去掉任何 CSS 的功能，而是在现有的语法上，增添了�
 
 **在命令行 使用npm安装**
 
+```bash
+npm install -g less
+```
 
+具体使用命令
 
+```bash
+$ lessc styles.less > styles.css
+```
 
+假如还有问题，[官网](http://less.bootcss.com/)已经有了明确的步骤。
 
+如果你也是 Webpack 的使用者，还需要配合 less-loader 进行处理，具体可见我的这篇文章：[Webpack飞行手册](https://tomotoes.com/posts/4d6f8cc5/)，里面详细说明了 less 的处理方式。
 
+如果你在本地环境，可以使用第一种方式，非常简单；但在生产环境中，性能非常重要，最好使用第二种方式。
 
 
 

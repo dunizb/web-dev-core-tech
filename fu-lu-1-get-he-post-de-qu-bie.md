@@ -1,4 +1,4 @@
-# 附录：GET和POST的区别
+# 附录1：GET和POST的区别
 
 GET和POST的区别如下：
 

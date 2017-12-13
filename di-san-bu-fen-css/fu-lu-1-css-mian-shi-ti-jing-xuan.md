@@ -14,5 +14,19 @@ rgba\(\)和opacity都能实现透明效果，但最大的不同是opacity作用�
 
 而rgba\(\)只作用于元素的颜色或其背景色。（设置rgba透明的元素的子元素不会继承透明效果！）
 
+### 3. CSS中link和@import的区别是什么
 
+Link属于html标签，而@import是CSS中提供的
+
+在页面加载的时候，link会同时被加载，而@import引用的CSS会在页面加载完成后才会加载引用的CSS
+
+@import只有在ie5以上才可以被识别，而link是html标签，不存在浏览器兼容性问题
+
+Link引入样式的权重大于@import的引用（@import是将引用的样式导入到当前的页面中）
+
+### 4. 选择器的优先级顺序为？
+
+!important &gt;  id &gt; class &gt; tag 
+
+important 比 内联优先级高
 

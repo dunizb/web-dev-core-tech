@@ -160,7 +160,7 @@ Less：
 * 相当于JS中的if，但不完全是
 * 满足条件后才能匹配
 
-我们来看一个画三角的例子，如果你知道怎么画更好： 
+我们来看一个画三角的例子，如果你知道怎么画更好：
 
 ```css
 <div class="sanjiao"></div>
@@ -175,7 +175,7 @@ Less：
 }
 ```
 
-这是画一个向上的三角，如果我们要改变三角的朝向，我们得改变border-color，我们得写几遍大部分都一样的代码，而用来模式匹配之后： 
+这是画一个向上的三角，如果我们要改变三角的朝向，我们得改变border-color，我们得写几遍大部分都一样的代码，而用来模式匹配之后：
 
 ```css
 //模式匹配
@@ -213,4 +213,122 @@ Less：
 ```
 
 发现了没？就是一个“@\_”参数！无论你选择top是right方向，带@\_参数的triangle都会被带上，调用的时候就没必要再写width，height等。
+
+### 4.5 运算
+
+在Less中，任何数组、颜色或者变量都可以参与运算，运算应该被包裹在括号中。例如：+ - \* / 
+
+给宽度增加20px然后在乘以5个像素，Less：
+
+```css
+@test_01:300px;
+
+.box_02{
+    width: (@test_01 + 20) * 5;
+}
+```
+
+### 4.6 嵌套规则
+
+Less中的嵌套是最有意思的小东西了、我们创建这个一个列表：
+
+```html
+<ul class="list">
+    <li>
+        <a href="#">Less的嵌套用法</a>
+        <a href="#">Less的嵌套用法</a>
+        <a href="#">Less的嵌套用法</a>
+        <a href="#">Less的嵌套用法</a>
+        <a href="#">Less的嵌套用法</a>
+    </li>
+</ul>
+```
+
+Less：
+
+```css
+.list{
+    width: 600px;
+    margin: 30px auto;
+    padding: 0;
+    list-style: none;
+
+    li{
+        height: 30px;
+        line-height: 30px;
+        background-color: pink;
+        margin-bottom: 5px;
+        padding: 0 10px;
+    }
+    a{
+        float: left;
+        //& 代表它的上一层选择器
+        &:hover{
+            color: red;
+        }
+    }
+    span{
+        float: right;
+    }
+}
+```
+
+### 4.7 @arguments变量
+
+@arguments包含了所有传递进来的参数。如果你不想单独处理每一个参数的话就可以像这样写： 
+
+```css
+.border_arg(@w:30px,@c:red,@xx:solid){
+    border: @arguments;
+}
+.test_arguments{
+    .border_arg();
+}
+```
+
+这样@arguments就自动帮我们注入了所有的参数，省了那么一丢丢的代码。
+
+### 4.8 避免编译、!important
+
+**避免编译**
+
+* 有时候我们不需要输出一些不正确的CSS语法或使用一些Less不认识的专有语法。
+* 要输出这样的值，我们可以在字符串前加一个~，例如：width:~'clac\(100% - 35\)' 
+
+```css
+.test_03 {
+  width: calc(200px - 30px);
+}
+```
+
+这样的话，编译后的CSS就自动帮你计算了 
+
+但我们并不想它在编译时被计算，而是想让浏览器去计算，这时候我们就需要添加**~**符号了：
+
+```css
+.test_03{
+    width: ~'calc(200px - 30px)';
+}
+```
+
+这样，就可以避免编译，输出的CSS就是这样（原样输出）
+
+```css
+.test_03 {
+  width: calc(200px - 30px);
+}
+```
+
+**!important关键字 **
+
+会为所有混合所带来的样式，添加!important
+
+---
+
+**参考资料：**
+
+* [Less使用与语法入门](http://www.imooc.com/learn/102)
+* [学习 Less——看这篇就够了](https://mp.weixin.qq.com/s?__biz=MjM5NTEwMTAwNg==&mid=2650213348&idx=2&sn=acd5b0760a8cd09b4dda54342714fab8&chksm=befe0bc5898982d3bd987371bb014aa7c9f72a4a793a2d9c65dca00a4d0e8df9921829f7f6a8&mpshare=1)
+
+
 

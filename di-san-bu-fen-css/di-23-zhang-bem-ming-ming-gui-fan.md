@@ -58,7 +58,7 @@ BEM的意思就是块（block）、元素（element）、修饰符（modifier）
 <form class="site-search  full">
   <input type="text" class="field">
   <input type="Submit" value ="Search" class="button">
-</form>	
+</form>
 ```
 
 这些CSS类名真是太不精确了，并不能告诉我们足够的信息。尽管我们可以用它们来完成工作，但它们确实非常含糊不清。用BEM记号法就会是下面这个样子：
@@ -67,7 +67,7 @@ BEM的意思就是块（block）、元素（element）、修饰符（modifier）
 <form class="site-search  site-search--full">
   <input type="text" class="site-search__field">
   <input type="Submit" value ="Search" class="site-search__button">
-</form>	
+</form>
 ```
 
 我们能清晰地看到有个叫.site-search的块，他内部是一个叫.site-search\_\_field的元素。并且.site-search还有另外一种形态叫.site-search--full。
@@ -82,7 +82,7 @@ BEM的意思就是块（block）、元素（element）、修饰符（modifier）
 .media{}
 .media__img{}
 .media__img--rev{}
-.media__body{}	
+.media__body{}
 ```
 
 从这种CSS的写法上我们就已经知道.media\_\_img 和.media\_\_body一定是位于.media内部的，而且.media\_\_img--rev是.media\_\_img的另一种形态。仅仅通过CSS选择器的名字我们就能获取到以上全部信息。
@@ -96,7 +96,7 @@ BEM的另外一个好处是针对下面这种情况：
     <h3 class="alpha">Welcome to Foo Corp</h3>
     <p class="lede">Foo Corp is the best, seriously!</p>
   </div>
-</div>	
+</div>
 ```
 
 光从上面的代码来看，我们根本不明白.media和.alpha两个class彼此之间是如何相互关联的？同样我们也无从知晓.body和.lede之间，或者.img-rev 和.media之间各是什么关系？从这段HTML（除非你对那个media对象非常了解）中我们也不知道这个组件是由什么组成的和它还有什么其他的形态。如果我们用BEM方式重写这段代码：
@@ -108,8 +108,56 @@ BEM的另外一个好处是针对下面这种情况：
     <h3 class="alpha">Welcome to Foo Corp</h3>
     <p class="lede">Foo Corp is the best, seriously!</p>
   </div>
-</div>	
+</div>
 ```
 
 我们立马就能明白.media是一个块，.media\_\_img--rev是一个加了修饰符的.media\_\_img的变体，它是属于.media的元素。而.media\_\_body是一个尚未被改变过的也是属于.media的元素。所有以上这些信息都通过它们的class名称就能明白，由此看来BEM确实非常实用。
+
+## 五、注意
+
+然而，当你真正使用BEM的时候，重要的是，请记住你没必要真的在每个地方都用上它。比如
+
+```css
+.caps{ text-transform:uppercase; }
+```
+
+这条CSS不属于任何一个BEM范畴，它仅仅只是一条单独的样式。
+
+另一个没有使用BEM的例子是：
+
+```css
+.site-logo{}
+```
+
+这是一个logo，我们可以把它写成BEM格式，像下面这样：
+
+```css
+.header{}
+.header__logo{}	
+```
+
+但我们没必要这么做。使用BEM的诀窍是，你要知道什么时候哪些东西是应该写成BEM格式的。因为某些东西确实是位于一个块的内部，但这并不意味它就是BEM中所说的元素。这个例子中，网站logo完全是恰巧在.header的内部，它也有可能在侧边栏或是页脚里面。一个元素的范围可能开始于任何上下文，因此你要确定只在你需要用到BEM的地方你才使用它。再看一个例子：
+
+```html
+<div class="content">
+  <h1 class="content__headline">Lorem ipsum dolor...</h1>
+</div>	
+```
+
+在这个例子里，我们也许仅仅只需要另一个class，可以叫它.headline；它的样式取决于它是如何被层叠的，因为它在.content的内部；或者它只是恰巧在.content的内部。如果它是后者（即恰巧在.content的内部，而不总是在）我们就不需要使用BEM。
+
+然而，一切都有可能潜在地用到BEM。我们再来看一下.site-logo的例子，想象一下我们想要给网站增加一点圣诞节的气氛，所以我们想有一个圣诞版的logo。于是我们有了下面的代码：
+
+```
+.site-logo{}
+.site-logo--xmas{}	
+```
+
+我们可以通过使用--修饰符来快速地为我们的代码构建另一个版本。
+
+**BEM最难的部分之一是明确作用域是从哪开始和到哪结束的，以及什么时候使用（不使用）它**。随着接触的多了，有了经验积累，你慢慢就会知道怎么用，这些问题也不再是问题。
+
+---
+
+原文：[BEM思想之彻底弄清BEM语法](https://www.w3cplus.com/css/mindbemding-getting-your-head-round-bem-syntax.html)
 

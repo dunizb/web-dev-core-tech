@@ -10,6 +10,7 @@ CSS 是开放网络的核心语言之一，由 W3C 规范 进行标准化。CSS 
 
 * [CSS编码规范](https://github.com/fex-team/styleguide/blob/master/css.md)
 * [OOCSS](https://www.w3cplus.com/blog/tags/284.html)
+* [从 BEM 谈大型项目中 CSS 的组织和管理](https://www.ibm.com/developerworks/cn/web/1512_chengfu_bem/index.html)
 
 
 

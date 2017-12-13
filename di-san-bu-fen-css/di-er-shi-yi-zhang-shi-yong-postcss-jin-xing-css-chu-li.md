@@ -82,7 +82,7 @@ cssnext 插件允许开发人员在当前的项目中使用 CSS 将来版本中�
 
 ```js
 var postcss = require('postcss');
- 
+
 module.exports = postcss.plugin('postcss-checkcolor', function(options) {
  return function(css, result) {
    css.walkDecls('color', function(decl) {
@@ -98,17 +98,14 @@ module.exports = postcss.plugin('postcss-checkcolor', function(options) {
 
 PostCSS 插件一般通过不同的方法来对当前的 CSS 样式规则进行修改。如通过 insertBefore 和 insertAfter 方法来插入新的规则。
 
- 
-
- 
-
- 
-
- 
+---
 
 **参考资料**
 
 1. [使用 PostCSS 进行 CSS 处理](https://www.ibm.com/developerworks/cn/web/1604-postcss-css/index.html)
+2. 参考 [PostCSS 官方网站](http://postcss.org/)，了解 PostCSS 的更多内容。
+3. 了解 [Autoprefixer](https://github.com/postcss/autoprefixer) 的相关内容。
+4. 了解 [cssnext](http://cssnext.io/) 的相关内容。
 
 
 

@@ -1,4 +1,4 @@
-# 第七章 HTTPS
+# 第07章 HTTPS
 
 我们写来看看HTTPS中的S指的是什么。HTTPS（全称：Hyper Text Transfer Protocol over Secure Socket Layer），是以安全为目标的HTTP通道，简单讲是HTTP的安全版。即HTTP下加入SSL层，HTTPS的安全基础是SSL。
 

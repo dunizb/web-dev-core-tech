@@ -28,38 +28,38 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
 **第一部分 HTTP**
 
-* [x] 第一章 HTTP基本概念
-* [x] 第二章 HTTP简史
-* [x] 第三章 请求
-* [x] 第四章 响应
-* [x] 第五章 HTTP的几种连接
-* [x] 第六章 Cookie技术
-* [x] 第七章 HTTPS
+* [x] 第01章 HTTP基本概念
+* [x] 第02章 HTTP简史
+* [x] 第03章 请求
+* [x] 第04章 响应
+* [x] 第05章 HTTP的几种连接
+* [x] 第06章 Cookie技术
+* [x] 第07章 HTTPS
 * [x] 附录
   * [x] 附录1：GET和POST的区别
 
 **第二部分 HTML**
 
-* [x] 第八章 理解HTML的语义化
-* [x] 第九章 HTML中meta标签的大作用
-* [x] 第十章 理解DOM结构
+* [x] 第08章 理解HTML的语义化
+* [x] 第09章 HTML中meta标签的大作用
+* [x] 第10章 理解DOM结构
 * [x] 附录
   * [x] 附录1：HTML面试题精选
   * [x] 附录2：在HTML5中被废弃的元素和属性
 
 **第三部分 CSS**
 
-* [x] 第十一章 CSS书写顺序及相应规范
-* [x] 第十二章 CSS盒模型
-* [x] 第十三章 Flexbox布局
-* [x] 第十四章 CSS Grid布局基础
-* [x] 第十五章 浮动
-* [x] 第十六章 布局解决方案
-* [x] 第十七章 CSS3新增内容
-* [x] 第十八章 CSS颜色体系
-* [x] 第十九章 CSS度量单位体系
-* [x] 第二十章 CSS预处理器之Less
-* [ ] 第二十一章 使用PostCSS进行CSS处理
+* [x] 第11章 CSS书写顺序及相应规范
+* [x] 第12章 CSS盒模型
+* [x] 第13章 Flexbox布局
+* [x] 第14章 CSS Grid布局基础
+* [x] 第15章 浮动
+* [x] 第16章 布局解决方案
+* [x] 第17章 CSS3新增内容
+* [x] 第18章 CSS颜色体系
+* [x] 第19章 CSS度量单位体系
+* [x] 第20章 CSS预处理器之Less
+* [ ] 第21章 使用PostCSS进行CSS处理
 
 **第四部分 JavaScript**
 

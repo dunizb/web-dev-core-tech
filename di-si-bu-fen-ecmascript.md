@@ -44,16 +44,23 @@ ECMAScript是由ECMA-262标准化的脚本语言的名称。JavaScript和JScript
 
 2004年6月Ecma组织发表了ECMA-357标准，它是ECMAScript的一个扩延，也被称为E4X（ECMAScript for XML）。
 
+## ECMAScript 和 JavaScript 的关系
+
+要讲清楚这个问题，需要回顾历史。1996 年 11 月，JavaScript 的创造者 Netscape 公司，决定将 JavaScript 提交给国际标准化组织 ECMA，希望这种语言能够成为国际标准。次年，ECMA 发布 262 号标准文件（ECMA-262）的第一版，规定了浏览器脚本语言的标准，并将这种语言称为 ECMAScript，这个版本就是 1.0 版。
+
+该标准从一开始就是针对 JavaScript 语言制定的，但是之所以不叫 JavaScript，有两个原因。一是商标，Java 是 Sun 公司的商标，根据授权协议，只有 Netscape 公司可以合法地使用 JavaScript 这个名字，且 JavaScript 本身也已经被 Netscape 公司注册为商标。二是想体现这门语言的制定者是 ECMA，不是 Netscape，这样有利于保证这门语言的开放性和中立性。
+
+因此，ECMAScript 和 JavaScript 的关系是，前者是后者的规格，后者是前者的一种实现（另外的 ECMAScript 方言还有 Jscript 和 ActionScript）。**日常场合，这两个词是可以互换的**。
+
 
 
 ---
 
 ## 参考资料
 
-* [维基百科](https://www.google.com.hk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&cad=rja&uact=8&ved=0ahUKEwjj9qGvn4fYAhXCsY8KHRyBAZ8QFggvMAI&url=%68%74%74%70%73%3a%2f%2f%7a%68%2e%77%69%6b%69%70%65%64%69%61%2e%6f%72%67%2f%7a%68%2d%63%6e%2f%45%43%4d%41%53%63%72%69%70%74&usg=AOvVaw2sNKrPO9W4IE-M2nUlXqnE)
-* [百度百科](https://baike.baidu.com/item/ECMAScript)
-
-
+* [维基百科](https://www.google.com.hk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&cad=rja&uact=8&ved=0ahUKEwjj9qGvn4fYAhXCsY8KHRyBAZ8QFggvMAI&url=https%3a%2f%2fzh.wikipedia.org%2fzh-cn%2fECMAScript&usg=AOvVaw2sNKrPO9W4IE-M2nUlXqnE)-ECMAScript
+* [百度百科](https://baike.baidu.com/item/ECMAScript)--ECMAScript
+* [ECMAScript6入门](http://es6.ruanyifeng.com/#docs/intro)
 
 
 

@@ -1,4 +1,4 @@
-# 第六章 Cookie技术
+# 第06章 Cookie技术
 
 网络早期最大的问题之一是如何管理状态。简而言之，服务器无法知道两个请求是否来自同一个浏览器。当时最简单的方法是在请求时，在页面中插入一些参数，并在下一个请求中传回参数。这需要使用包含参数的隐藏的表单，或者作为URL参数的一部分传递。这两个解决方案都手动操作，容易出错。
 
@@ -202,7 +202,7 @@ Cookie:  user="dunizb"; like="a"; buy="b"
 例如，SanShao可能正在浏览其他用户XiaoMing发布消息的聊天论坛。假设XiaoMing制作了一个引用ShanShao银行网站的HTML图像元素，例如，
 
 ```
-<img src="http://www.bank.com/withdraw?user=SanShao&amount=999999&for=XiaoMing" >
+<img src="http://www.bank.com/withdraw?user=SanShao&amount=999999&for=XiaoMing" >
 ```
 
 如果XiaoHong的银行将其认证信息保存在cookie中，并且cookie尚未过期，\(当然是没有其他验证身份的东西\)，那么XiaoHong的浏览器尝试加载该图片将使用他的cookie提交提款表单，从而在未经XiaoHong批准的情况下授权交易。
@@ -211,5 +211,5 @@ Cookie:  user="dunizb"; like="a"; buy="b"
 
 ---
 
-本文来自：《这一次带你彻底了解Cookie》[https://mp.weixin.qq.com/s?\_\_biz=MzU0OTExNzYwNg==&mid=2247484049&idx=1&sn=7817b2ff4906ea80e8cff00d60bbf83f&chksm=fbb58958ccc2004ebadaec87f35f79aca2c47b76408311dcf39433e62e25890a4a04e4d6b4b3&mpshare=1&scene=23&srcid=1208GPMMaM5aOrE1QqYtkAyg%23rd](https://mp.weixin.qq.com/s?__biz=MzU0OTExNzYwNg==&mid=2247484049&idx=1&sn=7817b2ff4906ea80e8cff00d60bbf83f&chksm=fbb58958ccc2004ebadaec87f35f79aca2c47b76408311dcf39433e62e25890a4a04e4d6b4b3&mpshare=1&scene=23&srcid=1208GPMMaM5aOrE1QqYtkAyg%23rd)
+本文来自：《这一次带你彻底了解Cookie》[https://mp.weixin.qq.com/s?\_\_biz=MzU0OTExNzYwNg==∣=2247484049&idx=1&sn=7817b2ff4906ea80e8cff00d60bbf83f&chksm=fbb58958ccc2004ebadaec87f35f79aca2c47b76408311dcf39433e62e25890a4a04e4d6b4b3&mpshare=1&scene=23&srcid=1208GPMMaM5aOrE1QqYtkAyg%23rd](https://mp.weixin.qq.com/s?__biz=MzU0OTExNzYwNg==&mid=2247484049&idx=1&sn=7817b2ff4906ea80e8cff00d60bbf83f&chksm=fbb58958ccc2004ebadaec87f35f79aca2c47b76408311dcf39433e62e25890a4a04e4d6b4b3&mpshare=1&scene=23&srcid=1208GPMMaM5aOrE1QqYtkAyg%23rd)
 

@@ -11,6 +11,63 @@ PostCSS 的**主要功能**只有两个：
 
 因此，不能简单的把 PostCSS 归类成 CSS 预处理或后处理工具。PostCSS 所能执行的任务非常多，同时涵盖了传统意义上的预处理和后处理。PostCSS 是一个全新的工具，给前端开发人员带来了不一样的处理 CSS 的方式。
 
+## 二、使用PostCSS
+
+PostCSS 一般不单独使用，而是与已有的构建工具进行集成。PostCSS 与主流的构建工具，如 Webpack、Grunt 和 Gulp 都可以进行集成。完成集成之后，选择满足功能需求的 PostCSS 插件并进行配置。下面将具体介绍如何在 Webpack、Grunt 和 Gulp 中使用 PostCSS 的 Autoprefixer 插件。
+
+### 2.1 Webpack
+
+Webpack 中使用 postcss-loader 来执行插件处理。在代码清单 1 中，postcss-loader 用来对.css 文件进行处理，并添加在 style-loader 和 css-loader 之后。通过一个额外的 postcss 方法来返回所需要使用的 PostCSS 插件。require\('autoprefixer'\) 的作用是加载 Autoprefixer 插件。
+
+代码清单 1
+
+```js
+var path = require('path');
+ 
+module.exports = {
+ context: path.join(__dirname, 'app'),
+ entry: './app',
+ output: {
+   path: path.join(__dirname, 'dist'),
+   filename: 'bundle.js'
+ },
+ module: {
+   loaders: [
+     {
+       test:   /\.css$/,
+       loader: "style-loader!css-loader!postcss-loader"
+     }
+   ]
+ },
+ postcss: function () {
+   return [require('autoprefixer')];
+ }
+}
+```
+
+### 2.2 Gulp
+
+Gulp 中使用 gulp-postcss 来集成 PostCSS。在代码清单 2 中，CSS 文件由 gulp-postcss 处理之后，产生的结果写入到 dist 目录。
+
+清单 2. 在 Gulp 中使用 PostCSS 插件
+
+```js
+var gulp = require('gulp');
+ 
+gulp.task('css', function() {
+ var postcss = require('gulp-postcss');
+ return gulp.src('app/**/*.css')
+   .pipe(postcss([require('autoprefixer')]))
+   .pipe(gulp.dest('dist/'));
+});
+```
+
+
+
+
+
+
+
 ---
 
 **参考资料**

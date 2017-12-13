@@ -59,7 +59,158 @@ $ lessc styles.less > styles.css
 
 如果你在本地环境，可以使用第一种方式，非常简单；但在生产环境中，性能非常重要，最好使用第二种方式。
 
+## 四、Less语法详解
 
+### 4.1 注释
 
+可以使用CSS中的注释 （/\*我会被编译\*/）
 
+也可以使用//我不会被编译注释。这个注释在编译时自动过滤掉
+
+### 4.2 变量
+
+Less中声明变量一定要用@开头，比如：@变量名:值
+
+```css
+//1.声明变量
+@test_width:300px;
+.box{
+    //2.使用变量
+    width: @test_width;
+    height: @test_width;
+    border: 1px solid white;
+    background-color: yellow;
+}
+```
+
+它编译后的css文件中@test\_width就直接替换为300px;了。
+
+### 4.3 混合（Mixin）
+
+混合（mixin）变量，例如：
+
+```css
+.border{border:solid 10px red;}
+```
+
+带参数的混合
+
+```css
+.border-radius(@radius){css代码}
+```
+
+可设定默认值
+
+```css
+border-radius(@radius:5px){css代码}
+```
+
+Less：
+
+```css
+@test_width:300px;
+.box{
+    //2.使用变量
+    width: @test_width;
+    height: @test_width;
+    background-color: yellow;
+
+    .border;
+}
+
+//混合
+.border{
+    border: 5px solid pink;
+}
+
+.box2{
+    .box;
+    margin-left: 100px;
+}
+```
+
+带参数的混合，Less：
+
+```css
+//混合 - 可带参数的
+.border_02(@border_width){
+    border: solid yellow @border_width;
+}
+
+.test_hunhe{
+    .border_02(30px);
+}
+```
+
+带默认值参数的混合，Less：
+
+```css
+.border_03(@border_width:10px){
+    border: solid green @border_width;
+}
+.text_hunhe_03{
+    .border_03();
+}
+```
+
+在引用.border\_03的时候没有传递至，那么默认的值就是10px。
+
+### 4.4 匹配模式
+
+* 相当于JS中的if，但不完全是
+* 满足条件后才能匹配
+
+我们来看一个画三角的例子，如果你知道怎么画更好： 
+
+```css
+<div class="sanjiao"></div>
+
+.sanjiao{
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    border-width: 10px;
+    border-color: transparent transparent red transparent;
+    border-style: dashed dashed solid dashed;
+}
+```
+
+这是画一个向上的三角，如果我们要改变三角的朝向，我们得改变border-color，我们得写几遍大部分都一样的代码，而用来模式匹配之后： 
+
+```css
+//模式匹配
+.triangle(top,@width:5px,@color:#ccc){
+    border-width: @width;
+    border-color: transparent transparent @color transparent;
+    border-style: dashed dashed solid dashed;
+}
+.triangle(bottom,@width:5px,@color:#ccc){
+    border-width: @width;
+    border-color: @color transparent transparent transparent;
+    border-style: dashed dashed solid dashed;
+}
+.triangle(left,@width:5px,@color:#ccc){
+    border-width: @width;
+    border-color: transparent @color transparent transparent;
+    border-style: dashed solid dashed dashed;
+}
+.triangle(right,@width:5px,@color:#ccc){
+    border-width: @width;
+    border-color: transparent transparent transparent @color;
+    border-style: dashed dashed dashed solid;
+}
+```
+
+然后我们需要什么方向调用的时候就传什么方向：
+
+```css
+.sanjiao{
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    .triangle(right,100px);
+}
+```
+
+发现了没？就是一个“@\_”参数！无论你选择top是right方向，带@\_参数的triangle都会被带上，调用的时候就没必要再写width，height等。
 

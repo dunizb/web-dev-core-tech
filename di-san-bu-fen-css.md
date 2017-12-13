@@ -4,3 +4,11 @@
 
 CSS 是开放网络的核心语言之一，由 W3C 规范 进行标准化。CSS 被分为不同等级：CSS1 现已废弃， CSS2.1 是推荐标准， CSS3 分成多个小模块且正在标准化中。
 
+---
+
+### 推荐资料
+
+* [CSS编码规范](https://github.com/fex-team/styleguide/blob/master/css.md)
+
+
+

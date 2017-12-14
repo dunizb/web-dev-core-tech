@@ -72,19 +72,12 @@ typeof null // "object"
 
 **注意**，**JavaScript的标识名区分大小写，所以undefined和null不同于Undefined和Null（或者其他仅仅大小写不同的词形），后者只是普通的变量名。**
 
-
-
-
-
-
-
-
-
 ---
 
 **参考资料**
 
 * [MDN JavaScript 数据类型和数据结构](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Data_structures#对象)
+* [JavaScript标准参考教程（alpha）- 数据类型](http://javascript.ruanyifeng.com/grammar/types.html)
 
 
 

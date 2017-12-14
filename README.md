@@ -72,6 +72,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第25章 数据类型之间的转换
 * [x] 第26章 “\|\|”和“&&”操作符总结
 * [x] 第27章 arguments.callee和arguments.caller
+* [x] 第28章 forEach、for-in、for-of
 * [x] 附录
   * [x] 附录1：valueOf\(\)
 

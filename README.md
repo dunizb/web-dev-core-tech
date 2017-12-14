@@ -37,6 +37,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第07章 HTTPS
 * [x] 附录
   * [x] 附录1：GET和POST的区别
+  * [x] 附录2：HTTP缓存机制
 
 **第二部分 HTML**
 

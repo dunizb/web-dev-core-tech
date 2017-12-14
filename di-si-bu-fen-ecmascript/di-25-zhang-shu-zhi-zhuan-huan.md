@@ -1,4 +1,4 @@
-# 第25章 转换为数字和转换为字符串
+# 第25章 数据类型的转换
 
 有3个函数可以把非数值转换为数值：Num-ber\(\)、parseInt\(\)和parseFloat\(\)。第一个函数，即转型函数Number\(\)可以用于任何数据类型，而另两个函数则专门用于把字符串转换成数值。这3个函数对于同样的输入会有返回不同的结果。
 
@@ -94,7 +94,7 @@ var num4 = parseInt("10", 16);
 
 多数情况下，我们要解析的都是十进制数值，**因此始终将10作为第二个参数是非常必要的**。
 
-## 二、parseFloat\(\)
+## 三、parseFloat\(\)
 
 parseFloat\(\)也是从第一个字符（位置0）开始解析每个字符。而且也是一直解析到字符串末尾，或者解析到遇见一个无效的浮点数字字符为止。
 
@@ -120,6 +120,53 @@ var num5 = parseFloat("0908.5");
 //31250000
 var num6 = parseFloat("3.125e7");
 ```
+
+## 四、转换为字符串
+
+要把一个值转换为一个字符串有两种方式。
+
+### 4.1 toString\(\)
+
+几乎每个值都有的toString\(\)方法，这个方法唯一要做的就是返回相应值的字符串表现。
+
+```js
+var age = 11;
+// 字符串"11"
+var ageAsString = age.toString();
+var found = true;
+// 字符串"true"
+var foundAsString = found.toString();
+```
+
+但null和undefined值没有toString方法。
+
+在调用数值的toString\(\)方法时，可以传递一个参数：输出数值的基数。默认情况下，toString\(\)方法以十进制格式返回数值的字符串表示。而通过传递基数，toString\(\)可以输出以二进制、八进制、十六进制，乃至其他任意有效进制格式表示的字符串值。
+
+```js
+var num = 10;
+// "10"
+alert(num.toString());
+// "1010"
+alert(num.toString(2));
+// "12"
+alert(num.toString(8));
+// "10"
+alert(num.toString(10));
+// "a"
+alert(num.toString(16));
+```
+
+### 4.2 String\(\)
+
+在不知道要转换的值是不是null或unde-fined的情况下，还可以使用转型函数String\(\)，这个函数能够将任何类型的值转换为字符串。
+
+转换规则如下
+
+
+
+
+
+
 
 ---
 

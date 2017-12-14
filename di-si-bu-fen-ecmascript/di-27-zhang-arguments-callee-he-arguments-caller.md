@@ -30,6 +30,8 @@ function factorial(num){
 
 在这个重写后的factorial\(\)函数的函数体内，没有再引用函数名factorial。这样，无论引用函数时使用的是什么名字，都可以保证正常完成递归调用。
 
+## 二、caller
+
 ECMAScript 5也规范化了另一个函数对象的属性：caller。除了Opera的早期版本不支持，其他浏览器都支持这个ECMAScript 3并没有定义的属性。这个属性中保存着调用当前函数的函数的引用，如果是在全局作用域中调用当前函数，它的值为null。例如：
 
 ```js

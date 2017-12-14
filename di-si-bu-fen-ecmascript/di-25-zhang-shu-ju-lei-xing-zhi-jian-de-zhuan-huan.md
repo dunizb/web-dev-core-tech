@@ -168,6 +168,8 @@ alert(num.toString(16));
 * 如果值是null，则返回"null"；
 * 如果值是undefined，则返回"undefined"。
 
+**toString\(\)与String\(\)的区别就在于String\(\)还能转换null和undefined值**，可以说是toString\(\)的增强版。在开发中直接使用String\(\)似乎更好，这样能避免潜在的转换风险。
+
 ---
 
 **参考资料**

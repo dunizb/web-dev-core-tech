@@ -162,7 +162,11 @@ alert(num.toString(16));
 
 在不知道要转换的值是不是null或unde-fined的情况下，还可以使用转型函数String\(\)，这个函数能够将任何类型的值转换为字符串。
 
-转换规则如下
+转换规则如下：
+
+* 如果值有toString\(\)方法，则调用该方法（没有参数）并返回相应的结果；
+* 如果值是null，则返回"null"；
+* 如果值是undefined，则返回"undefined"。
 
 ---
 

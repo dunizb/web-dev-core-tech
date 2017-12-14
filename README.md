@@ -68,3 +68,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
 **第四部分 ECMAScript**
 
+* [ ] 第24章 数据类型
+
+
+

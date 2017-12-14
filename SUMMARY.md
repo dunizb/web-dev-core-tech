@@ -36,7 +36,5 @@
   * 附录
     * [附录1：CSS面试题精选](di-san-bu-fen-css/fu-lu-1-css-mian-shi-ti-jing-xuan.md)
 * [第四部分 ECMAScript](di-si-bu-fen-ecmascript.md)
-  * 第24章 数据类型
-
-
+  * [第24章 数据类型](di-si-bu-fen-ecmascript/di-24-zhang-shu-ju-lei-xing.md)
 

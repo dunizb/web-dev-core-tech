@@ -69,4 +69,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 **第四部分 ECMAScript**
 
 * [x] 第24章 数据类型
+* [x] 第25章 数值转换
+
+
 

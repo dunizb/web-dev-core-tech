@@ -38,6 +38,9 @@
 * [第四部分 ECMAScript](di-si-bu-fen-ecmascript.md)
   * [第24章 数据类型](di-si-bu-fen-ecmascript/di-24-zhang-shu-ju-lei-xing.md)
   * [第25章 数据类型之间的转换](di-si-bu-fen-ecmascript/di-25-zhang-shu-ju-lei-xing-zhi-jian-de-zhuan-huan.md)
-  * 附录
+  * 第26章 “\|\|”和“&&”操作符总结
+  * [附录](di-si-bu-fen-ecmascript/fu-lu.md)
     * [附录1：valueOf\(\)](di-si-bu-fen-ecmascript/fu-lu-1-valueof.md)
+
+
 

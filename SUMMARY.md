@@ -40,4 +40,7 @@
   * [第25章 数据类型之间的转换](di-si-bu-fen-ecmascript/di-25-zhang-shu-ju-lei-xing-zhi-jian-de-zhuan-huan.md)
   * 附录
     * [附录1：valueOf\(\)](di-si-bu-fen-ecmascript/fu-lu-1-valueof.md)
+    * 附录2：JavaScript 资源大全
+
+
 

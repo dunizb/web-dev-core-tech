@@ -70,6 +70,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
 * [x] 第24章 数据类型
 * [x] 第25章 数据类型之间的转换
+* [x] 第26章 “\|\|”和“&&”操作符总结
 * [x] 附录
   * [x] 附录1：valueOf\(\)
 

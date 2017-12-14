@@ -76,7 +76,7 @@ typeof null // "object"
 
 **参考资料**
 
-* [MDN JavaScript 数据类型和数据结构](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Data_structures#对象)
+* [JavaScript 数据类型和数据结构](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Data_structures#对象) by MDN
 * [JavaScript标准参考教程（alpha）by 阮一峰](http://javascript.ruanyifeng.com/grammar/types.html) [- 数据类型](http://javascript.ruanyifeng.com/grammar/types.html)
 
 

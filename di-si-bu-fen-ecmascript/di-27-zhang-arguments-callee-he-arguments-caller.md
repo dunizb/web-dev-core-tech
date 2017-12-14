@@ -46,7 +46,7 @@ outer()
 
 以上代码会导致警告框中显示outer\(\)函数的源代码。因为outer\(\)调用了inter\(\)，所以in-ner.caller就指向outer\(\)。为了实现更松散的耦合，也可以通过**arguments.callee.caller**来访问相同的信息。
 
-## 三、严格模式下的问题
+## 三、严格模式下的问题 
 
 当函数在严格模式下运行时，访问argu-ments.callee会导致错误。ECMAScript 5还定义了arguments.caller属性，但在严格模式下访问它也会导致错误，而在非严格模式下这个属性始终是undefined。定义这个属性是为了分清argu-ments.caller和函数的caller属性。以上变化都是为了加强这门语言的安全性，这样第三方代码就不能在相同的环境里窥视其他代码了。
 

@@ -40,9 +40,7 @@
   * [第25章 数据类型之间的转换](di-si-bu-fen-ecmascript/di-25-zhang-shu-ju-lei-xing-zhi-jian-de-zhuan-huan.md)
   * [第26章 “\|\|”和“&&”操作符总结](di-si-bu-fen-ecmascript/di-26-zhang-201c7c7c-201d-he-201c2626-201d-cao-zuo-fu-zong-jie.md)
   * [第27章 函数内部属性](di-si-bu-fen-ecmascript/di-27-zhang-han-shu-nei-bu-shu-xing.md)
-  * 第27章 arguments.callee和arguments.caller
+  * [第27章 arguments.callee和arguments.caller](di-si-bu-fen-ecmascript/di-27-zhang-arguments-callee-he-arguments-caller.md)
   * [附录](di-si-bu-fen-ecmascript/fu-lu.md)
     * [附录1：valueOf\(\)](di-si-bu-fen-ecmascript/fu-lu-1-valueof.md)
-
-
 

@@ -39,5 +39,7 @@
   * [第24章 数据类型](di-si-bu-fen-ecmascript/di-24-zhang-shu-ju-lei-xing.md)
   * [第25章 数据类型之间的转换](di-si-bu-fen-ecmascript/di-25-zhang-shu-ju-lei-xing-zhi-jian-de-zhuan-huan.md)
   * 附录
-    * [附录1：String\(\)、toString\(\)、valueOf\(\)的一些隐秘特性](di-si-bu-fen-ecmascript/fu-lu-1-string-tostring-valueof-de-yi-xie-yin-mi-te-xing.md)
+    * 附录1：valueOf\(\)
+
+
 

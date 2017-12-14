@@ -71,7 +71,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第24章 数据类型
 * [x] 第25章 数据类型之间的转换
 * [x] 附录
-  * [x] 附录1：String\(\)、toString\(\)、valueOf\(\)的一些隐秘特性
+  * [x] 附录1：valueOf\(\)
 
 
 

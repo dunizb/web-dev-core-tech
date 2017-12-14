@@ -11,7 +11,7 @@
   * [第07章 HTTPS](di-qi-zhang-https.md)
   * 附录
     * [附录1：GET和POST的区别](fu-lu-1-get-he-post-de-qu-bie.md)
-    * 附录2：HTTP缓存机制
+    * [附录2：HTTP缓存机制](fu-lu-2-http-huan-cun-ji-zhi.md)
 * [第二部分 HTML](di-er-bu-fen-html.md)
   * [第08章 理解HTML的语义化](di-er-bu-fen-html/di-ba-zhang-li-jie-html-de-yu-yi-hua.md)
   * [第09章 HTML中meta标签的大作用](di-er-bu-fen-html/di-jiu-zhang-html-zhong-xiao-meta-biao-qian-de-da-zuo-yong.md)
@@ -36,6 +36,4 @@
   * 附录
     * [附录1：CSS面试题精选](di-san-bu-fen-css/fu-lu-1-css-mian-shi-ti-jing-xuan.md)
 * [第四部分 ECMAScript](di-si-bu-fen-ecmascript.md)
-
-
 

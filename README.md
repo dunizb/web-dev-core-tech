@@ -73,6 +73,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第26章 “\|\|”和“&&”操作符总结
 * [x] 第27章 arguments.callee和arguments.caller
 * [x] 第28章 forEach、for-in、for-of
+* [ ] 第29章 标准库
 * [x] 附录
   * [x] 附录1：valueOf\(\)
 

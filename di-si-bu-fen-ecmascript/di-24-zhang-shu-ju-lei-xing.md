@@ -2,12 +2,13 @@
 
 ## 一、数据类型介绍
 
-最新的 ECMAScript 标准定义了 7 种数据类型:
+最新的 ECMAScript 标准定义了 8 种数据类型:
 
-* 6 种 原始类型
+* 7 种 原始类型
 
   * Boolean
   * Null
+  * Undefined
   * Number
   * String
   * Symbol\(ECMAScript 6 新定义\)
@@ -71,6 +72,116 @@ typeof null // "object"
 ```
 
 **注意**，**JavaScript的标识名区分大小写，所以undefined和null不同于Undefined和Null（或者其他仅仅大小写不同的词形），后者只是普通的变量名。**
+
+## 三、布尔值
+
+如果JavaScript预期某个位置应该是布尔值，会将该位置上现有的值自动转为布尔值。转换规则是除了下面六个值被转为false，其他值都视为true。
+
+* undefined
+* null
+* false
+* 0
+* NaN
+* ""或''（空字符串）
+
+需要特别注意的是，空数组（\[\]）和空对象（{}）对应的布尔值，都是true。
+
+```js
+if ([]) {
+  console.log(true);
+}
+// true
+
+if ({}) {
+  console.log(true);
+}
+// true
+```
+
+## 四、typeof运算符
+
+JavaScript有三种方法，可以确定一个值到底是什么类型。
+
+* typeof运算符
+* instanceof运算符
+* Object.prototype.toString方法
+
+typeof运算符可以返回一个值的数据类型，可能有以下结果。
+
+**1.原始类型**
+
+数值、字符串、布尔值分别返回number、string、boolean。
+
+**2.函数**
+
+函数返回function。
+
+```js
+function f() {}
+typeof f
+// "function"
+```
+
+**3.undefined**
+
+undefined返回undefined。
+
+```js
+typeof undefined
+// "undefined"
+```
+
+利用这一点，typeof可以用来检查一个没有声明的变量，而不报错。
+
+实际编程中，这个特点通常用在判断语句。
+
+```js
+// 错误的写法
+if (v) {
+  // ...
+}
+// ReferenceError: v is not defined
+
+// 正确的写法
+if (typeof v === "undefined") {
+  // ...
+}
+```
+
+**4.其他**
+
+除此以外，其他情况都返回object。
+
+```js
+typeof window // "object"
+typeof {} // "object"
+typeof [] // "object"
+typeof null // "object"
+```
+
+从上面代码可以看到，空数组（\[\]）的类型也是object，这表示在JavaScript内部，数组本质上只是一种特殊的对象。
+
+另外，null的类型也是object，这是由于历史原因造成的。这并不是说null就属于对象，本质上null是一个类似于undefined的特殊值。
+
+既然typeof对数组（array）和对象（object）的显示结果都是object，那么怎么区分它们呢？instanceof运算符可以做到。
+
+```js
+var o = {};
+var a = [];
+
+o instanceof Array // false
+a instanceof Array // true
+```
+
+
+
+
+
+
+
+ 
+
+ 
 
 ---
 

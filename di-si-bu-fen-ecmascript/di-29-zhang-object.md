@@ -219,6 +219,38 @@ o + ' ' + 'world' // "hello world"
 
 ### 3.3 toString\(\)的应用：判断数据类型
 
+Object.prototype.toString方法返回对象的类型字符串，因此可以用来判断一个值的类型。
+
+```js
+var o = {};
+o.toString() // "[object Object]"
+```
+
+上面代码调用空对象的toString方法，结果返回一个字符串object Object，其中第二个Object表示该值的构造函数。这是一个十分有用的判断数据类型的方法。
+
+实例对象可能会自定义toString方法，覆盖掉Object.prototype.toString方法。通过函数的call方法，可以在任意值上调用Object.prototype.toString方法，帮助我们判断这个值的类型。
+
+```js
+Object.prototype.toString.call(value)
+```
+
+不同数据类型的Object.prototype.toString方法返回值如下。
+
+* 数值：返回\[object Number\]。
+* 字符串：返回\[object String\]。
+* 布尔值：返回\[object Boolean\]。
+* undefined：返回\[object Undefined\]。
+* null：返回\[object Null\]。
+* 数组：返回\[object Array\]。
+* arguments对象：返回\[object Arguments\]。
+* 函数：返回\[object Function\]。
+* Error对象：返回\[object Error\]。
+* Date对象：返回\[object Date\]。
+* RegExp对象：返回\[object RegExp\]。
+* 其他对象：返回\[object Object\]。
+
+
+
 
 
 

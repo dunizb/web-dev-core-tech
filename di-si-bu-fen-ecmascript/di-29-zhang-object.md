@@ -127,7 +127,18 @@ Object.getOwnPropertyNames(o).length
 
 ## 三、Object对象的实例方法
 
+除了Object对象本身的方法，还有不少方法是部署在Object.prototype对象上的，所有Object的实例对象都继承了这些方法。
 
+Object实例对象的方法，主要有以下六个。
+
+* valueOf\(\)：返回当前对象对应的值。
+* toString\(\)：返回当前对象对应的字符串形式。
+* toLocaleString\(\)：返回当前对象对应的本地字符串形式。
+* hasOwnProperty\(\)：判断某个属性是否为当前对象自身的属性，还是继承自原型对象的属性。
+* isPrototypeOf\(\)：判断当前对象是否为另一个对象的原型。
+* propertyIsEnumerable\(\)：判断某个属性是否可枚举。
+
+本节介绍前两个方法，其他方法将在后文相关章节介绍。
 
 
 

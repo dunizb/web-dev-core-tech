@@ -140,5 +140,90 @@ Object实例对象的方法，主要有以下六个。
 
 本节介绍前两个方法，其他方法将在后文相关章节介绍。
 
+### 3.1 Object.prototype.valueOf\(\)
+
+valueOf方法的作用是返回一个对象的“值”，默认情况下返回对象本身。
+
+```js
+var o = new Object();
+o.valueOf() === o // true
+```
+
+上面代码比较o.valueOf\(\)与o本身，两者是一样的。
+
+valueOf方法的主要用途是，JavaScript自动类型转换时会默认调用这个方法。
+
+```js
+var o = new Object();
+1 + o // "1[object Object]"
+```
+
+上面代码将对象o与数字1相加，这时JavaScript就会默认调用valueOf\(\)方法。所以，如果自定义valueOf方法，就可以得到想要的结果。
+
+```js
+var o = new Object();
+o.valueOf = function (){
+  return 2;
+};
+
+1 + o // 3
+```
+
+上面代码自定义了o对象的valueOf方法，于是1 + o就得到了3。这种方法就相当于用o.valueOf覆盖Object.prototype.valueOf。
+
+### 3.2 Object.prototype.toString\(\)
+
+toString方法的作用是返回一个对象的字符串形式，默认情况下返回类型字符串。
+
+```js
+var o1 = new Object();
+o1.toString() // "[object Object]"
+
+var o2 = {a:1};
+o2.toString() // "[object Object]"
+```
+
+上面代码表示，对于一个对象调用toString方法，会返回字符串\[object Object\]，该字符串说明对象的类型。
+
+字符串\[object Object\]本身没有太大的用处，但是通过自定义toString方法，可以让对象在自动类型转换时，得到想要的字符串形式。
+
+```js
+var o = new Object();
+
+o.toString = function () {
+  return 'hello';
+};
+
+o + ' ' + 'world' // "hello world"
+```
+
+上面代码表示，当对象用于字符串加法时，会自动调用toString方法。由于自定义了toString方法，所以返回字符串hello world。
+
+数组、字符串、函数、Date对象都分别部署了自己版本的toString方法，覆盖了Object.prototype.toString方法。
+
+```js
+[1, 2, 3].toString() // "1,2,3"
+
+'123'.toString() // "123"
+
+(function () {
+  return 123;
+}).toString()
+// "function () {
+//   return 123;
+// }"
+
+(new Date()).toString()
+// "Tue May 10 2016 09:11:31 GMT+0800 (CST)"
+```
+
+### 3.3 toString\(\)的应用：判断数据类型
+
+
+
+
+
+
+
 
 

@@ -52,5 +52,68 @@ var stringValue = "hello world";
 alert(stringValue[1]);
 ```
 
+## 二、字符串操作方法
+
+关于字符串有关的几个方法
+
+* concat\(\)，用于将一个或多个字符串拼接起来，返回新得到的新字符串
+
+虽然concat\(\) 方法是专门用来拼接字符串的方法，但在实践中使用更多的是加号操作符（+）。而且，使用加号操作符在大多数情况下都比使用concat\(\) 方法要简便易行（特别是在拼接多个字符串的情况下）
+
+ECMAScript 5 还提供了 3 个新的方法：
+
+* slice\(\)
+* substr\(\)
+* substring\(\)
+
+这三个方法都会返回被操作字符串的一个子字符串，而且也都接受一或两个参数。第一个参数指定子字符串的开始位置，第二个参数（在指定的情况下）表示子字符串到哪结束。
+
+### 2.1 slice\(\)
+
+slice方法用于从原字符串取出子字符串并返回，不改变原字符串。
+
+它的第一个参数是子字符串的开始位置，第二个参数是子字符串的结束位置（不含该位置）。
+
+```js
+'JavaScript'.slice(0, 4) // "Java"
+```
+
+如果省略第二个参数，则表示子字符串一直到原字符串结束。
+
+如果参数是负值，表示从结尾开始倒数计算的位置，即该负值加上字符串长度。
+
+```js
+'JavaScript'.slice(-6) // "Script"
+'JavaScript'.slice(0, -6) // "Java"
+'JavaScript'.slice(-2, -1) // "p"
+```
+
+如果第一个参数大于第二个参数，slice方法返回一个空字符串。
+
+### 2.2 substring\(\)
+
+substring方法用于从原字符串取出子字符串并返回，不改变原字符串。它与slice作用相同，但有一些奇怪的规则，因此不建议使用这个方法，优先使用slice。
+
+如果第二个参数大于第一个参数，substring方法会自动更换两个参数的位置。
+
+```js
+'JavaScript'.substring(10, 4) // "Script"
+// 等同于
+'JavaScript'.substring(4, 10) // "Script"
+```
+
+上面代码中，调换substring方法的两个参数，都得到同样的结果。
+
+如果参数是负数，substring方法会自动将负数转为0。
+
+```js
+'Javascript'.substring(-3) // "JavaScript"
+'JavaScript'.substring(4, -3) // "Java"
+```
+
+上面代码的第二个例子，参数-3会自动变成0，等同于'JavaScript'.substring\(4, 0\)。由于第二个参数小于第一个参数，会自动互换位置，所以返回Java。
+
+
+
 
 

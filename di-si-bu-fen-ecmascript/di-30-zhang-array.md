@@ -112,5 +112,19 @@ var a = [1, 2, 3, [4, 5, 6]];
 a.toString() // "1,2,3,4,5,6"
 ```
 
-3.2 push\(\)
+## 3.2 toLoacleString\(\)
+
+toLoacleString\(\)返回跟toString\(\)一样的值，
+
+
+
+
+
+
+
+
+
+
+
+
 

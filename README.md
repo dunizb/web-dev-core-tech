@@ -74,9 +74,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第27章 arguments.callee和arguments.caller
 * [x] 第28章 forEach、for-in、for-of
 * [x] 第29章 Object
-* [ ] 第30章 Array
+* [x] 第30章 Array
 * [x] 附录
   * [x] 附录1：valueOf\(\)
-
-
 

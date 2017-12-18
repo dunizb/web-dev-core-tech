@@ -682,6 +682,122 @@ console.log(entries.next().value); // [2, 'c']
 
 ### 9.6 reduce\(\)，reduceRight\(\)
 
+reduce方法和reduceRight方法依次处理数组的每个成员，最终累计为一个值。
+
+它们的差别是，reduce是从左到右处理（从第一个成员到最后一个成员），reduceRight则是从右到左（从最后一个成员到第一个成员），其他完全一样。
+
+这两个方法的第一个参数都是一个函数。该函数接受以下四个参数。
+
+1. 累积变量，默认为数组的第一个成员
+2. 当前变量，默认为数组的第二个成员
+3. 当前位置（从0开始）
+4. 原数组
+
+这四个参数之中，只有前两个是必须的，后两个则是可选的。
+
+下面的例子求数组成员之和。
+
+```js
+[1, 2, 3, 4, 5].reduce(function(x, y){
+  console.log(x, y)
+  return x + y;
+});
+// 1 2
+// 3 3
+// 6 4
+// 10 5
+//最后结果：15
+```
+
+上面代码中，第一轮执行，x是数组的第一个成员，y是数组的第二个成员。从第二轮开始，x为上一轮的返回值，y为当前数组成员，直到遍历完所有成员，返回最后一轮计算后的x。
+
+利用reduce方法，可以写一个数组求和的sum方法。
+
+```js
+Array.prototype.sum = function (){
+  return this.reduce(function (partial, value) {
+    return partial + value;
+  })
+};
+
+[3, 4, 5, 6, 10].sum()
+// 28
+```
+
+如果要对累积变量指定初值，可以把它放在reduce方法和reduceRight方法的第二个参数。
+
+```js
+[1, 2, 3, 4, 5].reduce(function(x, y){
+  return x + y;
+}, 10);
+// 25
+```
+
+上面代码指定参数x的初值为10，所以数组从10开始累加，最终结果为25。注意，这时y是从数组的第一个成员开始遍历。
+
+第二个参数相当于设定了默认值，处理空数组时尤其有用。
+
+```js
+function add(prev, cur) {
+  return prev + cur;
+}
+
+[].reduce(add)
+// TypeError: Reduce of empty array with no initial value
+[].reduce(add, 1)
+// 1
+```
+
+上面代码中，由于空数组取不到初始值，reduce方法会报错。这时，加上第二个参数，就能保证总是会返回一个值。
+
+下面是一个reduceRight方法的例子。
+
+```js
+function substract(prev, cur) {
+  return prev - cur;
+}
+
+[3, 2, 1].reduce(substract) // 0
+[3, 2, 1].reduceRight(substract) // -4
+```
+
+上面代码中，reduce方法相当于3减去2再减去1，reduceRight方法相当于1减去2再减去3。
+
+由于reduce方法依次处理每个元素，所以实际上还可以用它来搜索某个元素。比如，下面代码是找出长度最长的数组元素。
+
+```js
+function findLongest(entries) {
+  return entries.reduce(function (longest, entry) {
+    return entry.length > longest.length ? entry : longest;
+  }, '');
+}
+
+findLongest(['aaa', 'bb', 'c']) // "aaa"
+```
+
+## 十、链式使用
+
+上面这些数组方法之中，有不少返回的还是数组，所以可以链式使用。
+
+```js
+var users = [
+  {name: 'tom', email: 'tom@example.com'},
+  {name: 'peter', email: 'peter@example.com'}
+];
+
+users
+.map(function (user) {
+  return user.email;
+})
+.filter(function (email) {
+  return /^t/.test(email);
+})
+.forEach(alert);
+// 弹出tom@example.com
+```
+
+上面代码中，先产生一个所有Email地址组成的数组，然后再过滤出以t开头的Email地址。
+
 ---
 
 **参考资料**

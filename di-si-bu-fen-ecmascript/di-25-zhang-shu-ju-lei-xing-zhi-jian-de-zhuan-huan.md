@@ -158,7 +158,16 @@ alert(num.toString(10));
 alert(num.toString(16));
 ```
 
-### 2.2 String\(\)
+### 2.2 toLocaleString\(\)
+
+该方法返回符合本地区规范的字符串表现形式，这个方法的一个典型的应用就是把数字转换成货币表现形式
+
+```js
+var num = 9800768800
+num.toLocaleString() // "9,800,768,800"
+```
+
+### 2.3 String\(\)
 
 在不知道要转换的值是不是null或unde-fined的情况下，还可以使用转型函数String\(\)，这个函数能够将任何类型的值转换为字符串。
 

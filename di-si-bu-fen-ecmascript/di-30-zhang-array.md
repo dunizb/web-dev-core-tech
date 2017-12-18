@@ -642,17 +642,47 @@ arr.filter(Boolean)
 
 filter方法还可以接受第二个参数，指定测试函数所在的上下文对象（即this对象）。
 
+### 9.5 entries\(\)，keys\(\) 和 values\(\) 
 
+keys\(\)是对键名的遍历、values\(\)是对键值的遍历，entries\(\)是对键值对的遍历。
 
+```js
+for (let index of ['a', 'b'].keys()) {
+  console.log(index);
+}
+// 0
+// 1
 
+for (let elem of ['a', 'b'].values()) {
+  console.log(elem);
+}
+// 'a'
+// 'b'
 
+for (let [index, elem] of ['a', 'b'].entries()) {
+  console.log(index, elem);
+}
+// 0 "a"
+// 1 "b"
+```
 
+如果不使用for...of循环，可以手动调用遍历器对象的next方法，进行遍历。
 
+```js
+let letter = ['a', 'b', 'c'];
+let entries = letter.entries();
+console.log(entries.next().value); // [0, 'a']
+console.log(entries.next().value); // [1, 'b']
+console.log(entries.next().value); // [2, 'c']
+```
 
+---
 
+**参考资料**
 
-
-
+* JavaScript高级程序设计
+* [JavaScript标准参考教程（alpha） - Array](http://javascript.ruanyifeng.com/stdlib/array.html#)
+* [ECMAScript 6 入门 - 数组的扩展](http://es6.ruanyifeng.com/#docs/array#%E6%95%B0%E7%BB%84%E5%AE%9E%E4%BE%8B%E7%9A%84-entries%EF%BC%8Ckeys-%E5%92%8C-values)
 
 
 

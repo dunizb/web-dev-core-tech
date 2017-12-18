@@ -425,9 +425,117 @@ ES6 提供三个新的方法用于遍历数组。
 
 它们都返回一个遍历器对象，可以用for...of循环进行遍历，唯一的区别是keys\(\)是对键名的遍历、values\(\)是对键值的遍历，entries\(\)是对键值对的遍历。
 
+### 9.1 some\(\)，every\(\)
 
+这两个方法类似“断言”（assert），用来判断数组成员是否符合某种条件。
 
+它们接受一个函数作为参数，所有数组成员依次执行该函数，返回一个布尔值。该函数接受三个参数，依次是当前位置的成员、当前位置的序号和整个数组。
 
+some方法是只要有一个数组成员的返回值是true，则整个some方法的返回值就是true，否则false。
+
+```js
+var arr = [1, 2, 3, 4, 5];
+arr.some(function (elem, index, arr) {
+  return elem >= 3;
+});
+// true
+```
+
+上面代码表示，如果存在大于等于3的数组成员，就返回true。
+
+every方法则是所有数组成员的返回值都是true，才返回true，否则false。
+
+**注意，对于空数组，some方法返回false，every方法返回true，回调函数都不会执行。**
+
+```js
+function isEven(x) { return x % 2 === 0 }
+
+[].some(isEven) // false
+[].every(isEven) // true
+```
+
+some和every方法还可以接受第二个参数，用来绑定函数中的this关键字。
+
+### 9.2 map\(\)
+
+map方法对数组的所有成员依次调用一个函数，根据函数结果返回一个新数组。
+
+```js
+var numbers = [1, 2, 3];
+
+numbers.map(function (n) {
+  return n + 1;
+});
+// [2, 3, 4]
+
+numbers
+// [1, 2, 3]
+```
+
+上面代码中，numbers数组的所有成员都加上1，组成一个新数组返回，原数组没有变化。
+
+map方法接受一个函数作为参数。该函数调用时，map方法会将其传入三个参数，分别是当前成员、当前位置和数组本身。
+
+```js
+[1, 2, 3].map(function(elem, index, arr) {
+  return elem * index;
+});
+// [0, 2, 6]
+```
+
+map方法不仅可以用于数组，还可以用于字符串，用来遍历字符串的每个字符。但是，不能直接使用，而要通过函数的call方法间接使用，或者先将字符串转为数组，然后使用。
+
+```js
+var upper = function (x) {
+  return x.toUpperCase();
+};
+
+[].map.call('abc', upper)
+// [ 'A', 'B', 'C' ]
+
+// 或者
+'abc'.split('').map(upper)
+// [ 'A', 'B', 'C' ]
+```
+
+其他类似数组的对象（比如document.querySelectorAll方法返回DOM节点集合），也可以用上面的方法遍历。
+
+map方法还可以接受第二个参数，表示回调函数执行时this所指向的对象。
+
+```js
+var arr = ['a', 'b', 'c'];
+
+[1, 2].map(function(e){
+  return this[e];
+}, arr)
+// ['b', 'c']
+```
+
+上面代码通过map方法的第二个参数，将回调函数内部的this对象，指向arr数组。
+
+**如果数组有空位，map方法的回调函数在这个位置不会执行，会跳过数组的空位。**
+
+```js
+var f = function(n){ return n + 1 };
+
+[1, undefined, 2].map(f) // [2, NaN, 3]
+[1, null, 2].map(f) // [2, 1, 3]
+[1, , 2].map(f) // [2, , 3]
+```
+
+上面代码中，map方法不会跳过undefined和null，但是会跳过空位。
+
+```js
+Array(2).map(function (){
+  console.log('enter...');
+  return 1;
+})
+// [, ,]
+```
+
+上面代码中，map方法根本没有执行，直接返回了Array\(2\)生成的空数组。
+
+### 9.3 forEach\(\)
 
 
 

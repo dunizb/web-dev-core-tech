@@ -642,7 +642,7 @@ arr.filter(Boolean)
 
 filter方法还可以接受第二个参数，指定测试函数所在的上下文对象（即this对象）。
 
-### 9.5 entries\(\)，keys\(\) 和 values\(\) 
+### 9.5 entries\(\)，keys\(\) 和 values\(\)
 
 keys\(\)是对键名的遍历、values\(\)是对键值的遍历，entries\(\)是对键值对的遍历。
 
@@ -680,9 +680,9 @@ console.log(entries.next().value); // [2, 'c']
 
 **参考资料**
 
-* JavaScript高级程序设计
+* JavaScript高级程序设计（第三版）
 * [JavaScript标准参考教程（alpha） - Array](http://javascript.ruanyifeng.com/stdlib/array.html#)
-* [ECMAScript 6 入门 - 数组的扩展](http://es6.ruanyifeng.com/#docs/array#%E6%95%B0%E7%BB%84%E5%AE%9E%E4%BE%8B%E7%9A%84-entries%EF%BC%8Ckeys-%E5%92%8C-values)
+* [ECMAScript 6 入门 - 数组的扩展](http://es6.ruanyifeng.com/#docs/array#数组实例的-entries，keys-和-values)
 
 
 

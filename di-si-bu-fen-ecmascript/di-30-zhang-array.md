@@ -537,5 +537,122 @@ Array(2).map(function (){
 
 ### 9.3 forEach\(\)
 
+forEach方法与map方法很相似，也是遍历数组的所有成员，执行某种操作，但是forEach方法一般不返回值，只用来操作数据。如果需要有返回值，一般使用map方法。
+
+forEach方法也可以接受第二个参数，用来绑定回调函数的this关键字。
+
+```js
+var out = [];
+
+[1, 2, 3].forEach(function(elem) {
+  this.push(elem * elem);
+}, out);
+
+out // [1, 4, 9]
+```
+
+上面代码中，空数组out是forEach方法的第二个参数，结果，回调函数内部的this关键字就指向out。这个参数对于多层this非常有用，因为多层this通常指向是不一致的。
+
+```js
+var obj = {
+  name: '张三',
+  times: [1, 2, 3],
+  print: function () {
+    this.times.forEach(function (n) {
+      console.log(this.name);
+    });
+  }
+};
+
+obj.print()
+// 没有任何输出
+```
+
+上面代码中，obj.print方法有两层this，它们的指向是不一致的。外层的this.times指向obj对象，内层的this.name指向顶层对象window。这显然是违背原意的，解决方法就是使用forEach方法的第二个参数固定this。
+
+```js
+var obj = {
+  name: '张三',
+  times: [1, 2, 3],
+  print: function () {
+    this.times.forEach(function (n) {
+      console.log(this.name);
+    }, this);
+  }
+};
+
+obj.print()
+// 张三
+// 张三
+// 张三
+```
+
+**注意，forEach方法无法中断执行，总是会将所有成员遍历完。如果希望符合某种条件时，就中断遍历，要使用for循环。**
+
+forEach方法会跳过数组的空位。
+
+forEach方法也可以用于类似数组的对象和字符串。
+
+```js
+var obj = {
+  0: 1,
+  a: 'hello',
+  length: 1
+}
+
+Array.prototype.forEach.call(obj, function (elem, i) {
+  console.log( i + ':' + elem);
+});
+// 0:1
+
+var str = 'hello';
+Array.prototype.forEach.call(str, function (elem, i) {
+  console.log( i + ':' + elem);
+});
+// 0:h
+// 1:e
+// 2:l
+// 3:l
+// 4:o
+```
+
+### 9.4 filter\(\)
+
+filter方法的参数是一个函数，所有数组成员依次执行该函数，返回结果为true的成员组成一个新数组返回。该方法不会改变原数组。
+
+```js
+[1, 2, 3, 4, 5].filter(function (elem) {
+  return (elem > 3);
+})
+// [4, 5]
+```
+
+上面代码将大于3的原数组成员，作为一个新数组返回。
+
+再看一个例子。
+
+```js
+var arr = [0, 1, 'a', false];
+
+arr.filter(Boolean)
+// [1, "a"]
+```
+
+上面例子中，通过filter方法，返回数组arr里面所有布尔值为true的成员。
+
+filter方法还可以接受第二个参数，指定测试函数所在的上下文对象（即this对象）。
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

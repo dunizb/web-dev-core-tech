@@ -62,15 +62,70 @@ isObject(true) // false
 
 ### 2.1 Object.keys\(\)，Object.getOwnPropertyNames\(\)
 
+Object.keys方法和Object.getOwnPropertyNames方法很相似，一般用来遍历对象的属性。它们的参数都是一个对象，都返回一个数组，该数组的成员都是对象自身的（而不是继承的）所有属性名。它们的区别在于，Object.keys方法只返回可枚举的属性（关于可枚举性的详细解释见后文），Object.getOwnPropertyNames方法还返回不可枚举的属性名。
 
+```js
+var o = {
+  p1: 123,
+  p2: 456
+};
 
+Object.keys(o)
+// ["p1", "p2"]
 
+Object.getOwnPropertyNames(o)
+// ["p1", "p2"]
+```
 
+上面的代码表示，对于一般的对象来说，这两个方法返回的结果是一样的。只有涉及不可枚举属性时，才会有不一样的结果。
 
+```js
+var a = ["Hello", "World"];
 
+Object.keys(a)
+// ["0", "1"]
 
+Object.getOwnPropertyNames(a)
+// ["0", "1", "length"]
+```
 
+上面代码中，数组的length属性是不可枚举的属性，所以只出现在Object.getOwnPropertyNames方法的返回结果中。
 
+由于JavaScript没有提供计算对象属性个数的方法，所以可以用这两个方法代替。
+
+```js
+Object.keys(o).length
+Object.getOwnPropertyNames(o).length
+```
+
+一般情况下，几乎总是使用Object.keys方法，遍历数组的属性。
+
+### 2.2 其他方法
+
+除了上面提到的方法，Object还有不少其他方法，将在后文逐一详细介绍。
+
+**对象属性模型的相关方法**
+
+* Object.getOwnPropertyDescriptor\(\)：获取某个属性的attributes对象。
+* Object.defineProperty\(\)：通过attributes对象，定义某个属性。
+* Object.defineProperties\(\)：通过attributes对象，定义多个属性。
+* Object.getOwnPropertyNames\(\)：返回直接定义在某个对象上面的全部属性的名称。
+
+**控制对象状态的方法**
+
+* Object.preventExtensions\(\)：防止对象扩展。
+* Object.isExtensible\(\)：判断对象是否可扩展。
+* Object.seal\(\)：禁止对象配置。
+* Object.isSealed\(\)：判断一个对象是否可配置。
+* Object.freeze\(\)：冻结一个对象。
+* Object.isFrozen\(\)：判断一个对象是否被冻结。
+
+**原型链相关方法**
+
+* Object.create\(\)：该方法可以指定原型对象和属性，返回一个新的对象。
+* Object.getPrototypeOf\(\)：获取对象的Prototype对象。
+
+## 三、Object对象的实例方法
 
 
 

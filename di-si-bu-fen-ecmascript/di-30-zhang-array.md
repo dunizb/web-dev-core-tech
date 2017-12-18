@@ -91,7 +91,7 @@ Array.isArray(a) // true
 
 上面代码中，typeof运算符只能显示数组的类型是Object，而Array.isArray方法可以对数组返回true。
 
-## 三、Array实例的方法
+## 三、转换方法
 
 ### 3.1 valueOf\(\)，toString\(\)
 

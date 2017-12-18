@@ -330,6 +330,18 @@ a.slice(4) // []
 a.slice(2, 1) // []
 ```
 
+slice方法的一个重要应用，是将类似数组的对象转为真正的数组。
+
+```js
+Array.prototype.slice.call({ 0: 'a', 1: 'b', length: 2 })
+// ['a', 'b']
+
+Array.prototype.slice.call(document.querySelectorAll("div"));
+Array.prototype.slice.call(arguments);
+```
+
+上面代码的参数都不是数组，但是通过call方法，在它们上面调用slice方法，就可以把它们转为真正的数组。
+
 
 
 

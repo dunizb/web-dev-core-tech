@@ -63,7 +63,20 @@ arr[2] // undefined
 
 上面代码中，arr是一个长度为3的空数组。虽然可以取到每个位置的键值undefined，但是所有的键名都取不到。
 
-## 二、Array.isArray\(\)
+## 二、检测数组
+
+### 2.1 instanceof
+
+自从ECMAScript 3做出了规定后，就出现了确定某个对象是否是数组的经典问题。对于一个网页，或者一个全局作用域而言，使用instanceof 操作符就能得到满意的结果：
+
+```js
+var a = [1,23,3]
+a instanceof Array //true
+```
+
+instanceof 操作符的问题在于，它假定单一的全局执行环节。如果网页中包含多个框架，那实际上就存在连个以上不同的全局执行环节，从而存在两个以上不同版本的 Array 构造函数。如果你从一个框架向另一个框架传入一个数组，那么传入的数组与第二个框架中原生创建的数组分别具有各自不同的构造函数。
+
+### 2.2 Array.isArray\(\)
 
 Array.isArray方法用来判断一个值是否为数组。它可以弥补typeof运算符的不足。
 
@@ -77,6 +90,29 @@ Array.isArray(a) // true
 上面代码中，typeof运算符只能显示数组的类型是Object，而Array.isArray方法可以对数组返回true。
 
 ## 三、Array实例的方法
+
+### 3.1 valueOf\(\)，toString\(\)
+
+valueOf方法返回数组本身。
+
+```js
+var a = [1, 2, 3];
+a.valueOf() // [1, 2, 3]
+```
+
+toString方法返回数组的字符串形式。
+
+```js
+var a = [1, 2, 3];
+a.toString() // "1,2,3"
+
+var a = [1, 2, 3, [4, 5, 6]];
+a.toString() // "1,2,3,4,5,6"
+```
+
+3.2 push\(\)
+
+
 
 
 

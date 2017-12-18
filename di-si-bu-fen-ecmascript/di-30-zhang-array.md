@@ -1,5 +1,7 @@
 # 第30章 Array
 
+![](/assets/Array.png)
+
 ## 一、构造函数
 
 Array是JavaScript的内置对象，同时也是一个构造函数，可以用它生成新的数组。
@@ -679,10 +681,6 @@ console.log(entries.next().value); // [2, 'c']
 ```
 
 ### 9.6 reduce\(\)，reduceRight\(\)
-
-
-
-
 
 ---
 

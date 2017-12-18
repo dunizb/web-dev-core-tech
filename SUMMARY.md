@@ -43,6 +43,9 @@
   * [第28章 forEach、for-in、for-of](di-si-bu-fen-ecmascript/di-28-zhang-foreach-for-in-for-of.md)
   * [第29章 Object](di-si-bu-fen-ecmascript/di-29-zhang-object.md)
   * [第30章 Array](di-si-bu-fen-ecmascript/di-30-zhang-array.md)
+  * 第31章 String
   * [附录](di-si-bu-fen-ecmascript/fu-lu.md)
     * [附录1：valueOf\(\)](di-si-bu-fen-ecmascript/fu-lu-1-valueof.md)
+
+
 

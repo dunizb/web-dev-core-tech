@@ -93,7 +93,7 @@ Array.isArray(a) // true
 
 ## 三、转换方法
 
-### 3.1 valueOf\(\)，toString\(\)
+转换方法主要有valueOf、toString、toLocaleString
 
 valueOf方法返回数组本身。
 
@@ -112,17 +112,7 @@ var a = [1, 2, 3, [4, 5, 6]];
 a.toString() // "1,2,3,4,5,6"
 ```
 
-## 3.2 toLoacleString\(\)
-
-toLoacleString\(\)返回跟toString\(\)一样的值，
-
-
-
-
-
-
-
-
+## 四、栈方法
 
 
 

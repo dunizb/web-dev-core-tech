@@ -58,6 +58,10 @@ isObject(true) // false
 
 ## 二、Object 对象的静态方法
 
+所谓“静态方法”，是指部署在Object对象自身的方法。
+
+### 2.1 Object.keys\(\)，Object.getOwnPropertyNames\(\)
+
 
 
 

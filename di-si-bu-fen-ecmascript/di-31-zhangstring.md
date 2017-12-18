@@ -158,6 +158,15 @@ trim方法用于去除字符串两端的空格，返回一个新字符串，不�
 'hello world'.lastIndexOf('o', 6) // 4
 ```
 
+## 四、模式匹配方法
+
+String 类型定义了几个用于在字符串中匹配模式的方法。
+
+* match\(\)
+* search\(\)
+* replace\(\)
+* split\(\)
+
 
 
 

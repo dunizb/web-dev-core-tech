@@ -65,11 +65,18 @@ arr[2] // undefined
 
 ## 二、Array.isArray\(\)
 
+Array.isArray方法用来判断一个值是否为数组。它可以弥补typeof运算符的不足。
 
+```js
+var a = [1, 2, 3];
 
+typeof a // "object"
+Array.isArray(a) // true
+```
 
+上面代码中，typeof运算符只能显示数组的类型是Object，而Array.isArray方法可以对数组返回true。
 
-
+## 三、Array实例的方法
 
 
 

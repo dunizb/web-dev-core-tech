@@ -249,13 +249,60 @@ Object.prototype.toString.call(value)
 * RegExp对象：返回\[object RegExp\]。
 * 其他对象：返回\[object Object\]。
 
+也就是说，Object.prototype.toString可以得到一个实例对象的构造函数。
 
+```js
+Object.prototype.toString.call(2) // "[object Number]"
+Object.prototype.toString.call('') // "[object String]"
+Object.prototype.toString.call(true) // "[object Boolean]"
+Object.prototype.toString.call(undefined) // "[object Undefined]"
+Object.prototype.toString.call(null) // "[object Null]"
+Object.prototype.toString.call(Math) // "[object Math]"
+Object.prototype.toString.call({}) // "[object Object]"
+Object.prototype.toString.call([]) // "[object Array]"
+```
 
+利用这个特性，可以写出一个比typeof运算符更准确的类型判断函数。
 
+```js
+var type = function (o){
+  var s = Object.prototype.toString.call(o);
+  return s.match(/\[object (.*?)\]/)[1].toLowerCase();
+};
 
+type({}); // "object"
+type([]); // "array"
+type(5); // "number"
+type(null); // "null"
+type(); // "undefined"
+type(/abcd/); // "regex"
+type(new Date()); // "date"
+```
 
+在上面这个type函数的基础上，还可以加上专门判断某种类型数据的方法。
 
+```js
+['Null',
+ 'Undefined',
+ 'Object',
+ 'Array',
+ 'String',
+ 'Number',
+ 'Boolean',
+ 'Function',
+ 'RegExp'
+].forEach(function (t) {
+  type['is' + t] = function (o) {
+    return type(o) === t.toLowerCase();
+  };
+});
 
+type.isObject({}) // true
+type.isNumber(NaN) // true
+type.isRegExp(/abc/) // true
+```
 
+---
 
+原文：[JavaScript标准参考教程\(alpha\) - Object对象](http://javascript.ruanyifeng.com/stdlib/object.html#toc1)
 

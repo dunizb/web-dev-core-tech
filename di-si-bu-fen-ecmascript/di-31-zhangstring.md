@@ -73,9 +73,9 @@ ECMAScript 5 还提供了 3 个新的方法：
 
 而 ES6 又提供了几个新的方法：
 
-* padStart\(\)
-* padEnd\(\) 
-* repeat\(\) 
+* padStart\(\)，字符串头部补全长度
+* padEnd\(\) ，字符串尾部补全长度
+* repeat\(\) ，返回一个新字符串，表示将原字符串重复n次
 
 ### 2.1 slice\(\)
 
@@ -181,6 +181,28 @@ padStart的常见用途是为数值补全指定位数。下面代码生成 10 �
 '12'.padStart(10, 'YYYY-MM-DD') // "YYYY-MM-12"
 '09-12'.padStart(10, 'YYYY-MM-DD') // "YYYY-09-12"
 ```
+
+### 2.6 repeat\(\)
+
+repeat方法返回一个新字符串，表示将原字符串重复 n 次。
+
+```js
+'x'.repeat(3) // "xxx"
+'hello'.repeat(2) // "hellohello"
+'na'.repeat(0) // ""
+```
+
+使用规则：
+
+* 参数如果是小数，会被取整。
+* 参数是负数或者 Infinity，会报错。
+* 如果参数是 0 到 -1 之间的小数，则等同于 0，这是因为会先进行取整运算。0 到 -1 之间的小数，取整以后等于 -0，repeat 视同为 0。
+* 参数 NaN 等同于 0。
+* 参数是字符串，则会先转换成数字。
+  ```js
+  'na'.repeat('na') // ""
+  'na'.repeat('3') // "nanana"
+  ```
 
 ## 三、字符串位置方法
 

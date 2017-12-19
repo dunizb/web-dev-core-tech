@@ -28,7 +28,7 @@ String(5) // "5"
 
 ## 一、字符方法
 
-两个用于访问字符串中特定字符的方法是：charAt\(\)和charCodeAt\(\)。这两个方法都接收一个参数化，即基于 0 的字符位置。其中，charAt\(\) 方法以单字符字符串的形式返回给定位置的那个字符（ECMAScript 中没有字符类型）。例如：
+两个用于访问字符串中特定字符的方法是：**charAt\(\)**和**charCodeAt\(\)**。这两个方法都接收一个参数化，即基于 0 的字符位置。其中，charAt\(\) 方法以单字符字符串的形式返回给定位置的那个字符（ECMAScript 中没有字符类型）。例如：
 
 ```js
 var stringValue = "hello world";
@@ -143,13 +143,12 @@ trim方法用于去除字符串两端的空格，返回一个新字符串，不�
 
 ## 三、字符串位置方法
 
-这两个方法
+ECMAScript 提供如下这两个方法用于确定一个字符串在另一个字符串中的位置
 
 * indexOf
+* lastIndexOf
 
-* laistIndexOf
-
-用于确定一个字符串在另一个字符串中的位置，都返回一个整数，表示匹配开始的位置。如果返回-1，就表示不匹配。两者的区别在于，indexOf从字符串头部开始匹配，lastIndexOf从尾部开始匹配。
+都返回一个整数，表示匹配开始的位置。如果返回-1，就表示不匹配。两者的区别在于，indexOf从字符串头部开始匹配，lastIndexOf从尾部开始匹配。
 
 它们还可以接受第二个参数，对于indexOf方法，第二个参数表示从该位置开始向后匹配；对于lastIndexOf，第二个参数表示从该位置起向前匹配。
 
@@ -157,6 +156,32 @@ trim方法用于去除字符串两端的空格，返回一个新字符串，不�
 'hello world'.indexOf('o', 6) // 7
 'hello world'.lastIndexOf('o', 6) // 4
 ```
+
+ES6 又提供了三种新方法。
+
+* includes\(\)：返回布尔值，表示是否找到了参数字符串。
+* startsWith\(\)：返回布尔值，表示参数字符串是否在原字符串的头部。
+* endsWith\(\)：返回布尔值，表示参数字符串是否在原字符串的尾部。
+
+```js
+let s = 'Hello world!';
+
+s.startsWith('Hello') // true
+s.endsWith('!') // true
+s.includes('o') // true
+```
+
+这三个方法都支持第二个参数，表示开始搜索的位置。
+
+```js
+let s = 'Hello world!';
+
+s.startsWith('world', 6) // true
+s.endsWith('Hello', 5) // true
+s.includes('Hello', 6) // false
+```
+
+上面代码表示，使用第二个参数n时，endsWith的行为与其他两个方法有所不同。它针对前n个字符，而其他两个方法针对从第n个位置直到字符串结束。
 
 ## 四、模式匹配方法
 
@@ -166,10 +191,6 @@ String 类型定义了几个用于在字符串中匹配模式的方法。
 * search\(\)
 * replace\(\)
 * split\(\)
-
-
-
-
 
 
 

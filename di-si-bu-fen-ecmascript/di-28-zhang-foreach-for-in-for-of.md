@@ -215,6 +215,8 @@ for (let n of fibonacci()) {
 * map: 将原数组中的元素处理后再返回
 * reduce: 对数组中的元素依次处理，将上次处理结果作为下次处理的输入，最后得到最终结果。
 
+这些内容详细使用见第30章Array。
+
 ---
 
 原文：[JavaScript里的循环方法：forEach，for-in，for-of](https://zhuanlan.zhihu.com/p/30328361)

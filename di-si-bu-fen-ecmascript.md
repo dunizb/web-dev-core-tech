@@ -52,7 +52,9 @@ ECMAScript是由ECMA-262标准化的脚本语言的名称。JavaScript和JScript
 
 因此，ECMAScript 和 JavaScript 的关系是，前者是后者的规格，后者是前者的一种实现（另外的 ECMAScript 方言还有 Jscript 和 ActionScript）。**日常场合，这两个词是可以互换的**。
 
+---
 
+本部分内容涉及 ECMAScript 6 的一些内容
 
 ---
 

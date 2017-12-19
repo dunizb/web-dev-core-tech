@@ -250,10 +250,101 @@ s.includes('Hello', 6) // false
 
 String 类型定义了几个用于在字符串中匹配模式的方法。
 
-* match\(\)
-* search\(\)
-* replace\(\)
-* split\(\)
+* match\(\)，用于确定原字符串是否匹配某个子字符串
+* search\(\)，用法等同于match，但是返回值为匹配的第一个位置
+* replace\(\)，替换匹配的子字符串
+* split\(\)，按照给定规则分割字符串
+
+### 4.1 match\(\)、search\(\)
+
+**match** 方法用于确定原字符串是否匹配某个子字符串，返回一个数组，成员为匹配的第一个字符串。如果没有找到匹配，则返回null。
+
+```js
+'cat, bat, sat, fat'.match('at') // ["at"]
+'cat, bat, sat, fat'.match('xt') // null
+```
+
+返回数组还有 index 属性和 input 属性，分别表示匹配字符串开始的位置和原始字符串。
+
+```js
+var matches = 'cat, bat, sat, fat'.match('at');
+matches.index // 1
+matches.input // "cat, bat, sat, fat"
+```
+
+match方法还可以使用正则表达式作为参数，详细请参考正在表达式相关内容。
+
+**search** 方法的用法等同于 match，但是返回值为匹配的第一个位置。如果没有找到匹配，则返回 -1。
+
+```js
+'cat, bat, sat, fat'.search('at') // 1
+```
+
+search 方法还可以使用正则表达式作为参数，详细请参考正在表达式相关内容。
+
+### 4.2 replace\(\)
+
+replace 方法用于替换匹配的子字符串，一般情况下只替换第一个匹配（除非使用带有 g 修饰符的正则表达式）。
+
+```js
+'aaa'.replace('a', 'b') // "baa"
+```
+
+replace方法还可以使用正则表达式作为参数
+
+### 4.3 split\(\)
+
+split方法按照给定规则分割字符串，返回一个由分割出来的子字符串组成的数组。
+
+```js
+'a|b|c'.split('|') // ["a", "b", "c"]
+```
+
+如果分割规则为空字符串，则返回数组的成员是原字符串的每一个字符。
+
+```js
+'a|b|c'.split('') // ["a", "|", "b", "|", "c"]
+```
+
+如果省略参数，则返回数组的唯一成员就是原字符串。
+
+```js
+'a|b|c'.split() // ["a|b|c"]
+```
+
+如果满足分割规则的两个部分紧邻着（即中间没有其他字符），则返回数组之中会有一个空字符串。
+
+```js
+'a||c'.split('|') // ['a', '', 'c']
+```
+
+如果满足分割规则的部分处于字符串的开头或结尾（即它的前面或后面没有其他字符），则返回数组的第一个或最后一个成员是一个空字符串。
+
+```js
+'|b|c'.split('|') // ["", "b", "c"]
+'a|b|'.split('|') // ["a", "b", ""]
+```
+
+split方法还可以接受第二个参数，限定返回数组的最大成员数。
+
+```js
+'a|b|c'.split('|', 0) // []
+'a|b|c'.split('|', 1) // ["a"]
+'a|b|c'.split('|', 2) // ["a", "b"]
+'a|b|c'.split('|', 3) // ["a", "b", "c"]
+'a|b|c'.split('|', 4) // ["a", "b", "c"]
+```
+
+上面代码中，split方法的第二个参数，决定了返回数组的成员数。
+
+split方法还可以使用正则表达式作为参数。
+
+---
+
+**参考资料**
+
+* [JavaScript标准参考教程（alpha） ](http://javascript.ruanyifeng.com/stdlib/string.html#)
+* [ECMAScript 6 入门，字符串的扩展](http://es6.ruanyifeng.com/#docs/string)
 
 
 

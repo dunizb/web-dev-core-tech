@@ -75,9 +75,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第28章 forEach、for-in、for-of
 * [x] 第29章 Object
 * [x] 第30章 Array
-* [ ] 第31章 String
+* [x] 第31章 String
 * [x] 附录
   * [x] 附录1：valueOf\(\)
-
-
 

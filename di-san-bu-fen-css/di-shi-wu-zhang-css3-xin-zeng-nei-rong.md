@@ -117,7 +117,7 @@ Animation让CSS拥有了可以制作动画的功能。使用CSS3的Animation制�
 
 具体用法可以参考教程：[CSS3 Animation](http://www.w3cplus.com/content/css3-animation)。
 
-## 二、边框
+## 三、边框
 
 CSS3新增了三个边框属性，分别是：
 
@@ -127,7 +127,7 @@ CSS3新增了三个边框属性，分别是：
 
 IE9+支持border-radius和box-shadow属性。Firefox、Chrome以及Safari支持所有新的边框属性。
 
-## 三、背景
+## 四、背景
 
 CSS3新增了几个关于背景的属性，分别是
 
@@ -172,7 +172,7 @@ CSS3中，元素可以被分成几个独立的盒子（如使内联元素span跨
 * bounding-box; 把盒之间的距离计算在内；
 * each-box; 为每个盒子单独重绘背景。
 
-## 四、文字效果
+## 五、文字效果
 
 ### word-wrap
 
@@ -206,11 +206,11 @@ CSS3里面开始支持对文字的更深层次的渲染，具体有三个属性�
 * text-stroke-color: 设置文字边界填充颜色
 * text-stroke-width: 设置文字边界宽度
 
-## 五、渐变
+## 六、渐变
 
 CSS3新增了渐变效果，包括linear-gradient\(线性渐变\)和radial-gradient\(径向渐变\)。具体用法参考教程：[CSS3 Gradient](http://www.w3cplus.com/content/css3-gradient)
 
-## 六、@font-face特性
+## 七、@font-face特性
 
 在CSS3之前，web设计师必须使用已在用户计算机上安装好的字体。通过CSS3，web设计师可以使用他们喜欢的任意字体。当您您找到或购买到希望使用的字体时，可将该字体文件存放到web服务器上，它会在需要时被自动下载到用户的计算机上。字体是在 CSS3 @font-face 规则中定义的。Firefox、Chrome、Safari以及Opera支持 .ttf\(True Type Fonts\)和 .otf\(OpenType Fonts\)类型的字体。IE9+ 支持新的@font-face规则，但是仅支持 .eot类型的字体\(Embedded OpenType\)。
 
@@ -229,7 +229,7 @@ div{
 }
 ```
 
-## 七、多列布局
+## 八、多列布局
 
 通过CSS3，能够创建多个列来对文本进行布局，IE10和Opera支持多列属性。Firefox 需要前缀-moz-，Chrome和Safari需要前缀-webkit-。主要有如下三个属性：
 
@@ -251,7 +251,7 @@ div{
 }
 ```
 
-## 八、用户界面
+## 九、用户界面
 
 CSS3中，新的用户界面特性包括重设元素尺寸、盒尺寸以及轮廓等。Firefox、Chrome以及Safari 支持resize属性。IE、Chrome、Safari以及Opera支持box-sizing属性。Firefox需要前缀-moz-。
 

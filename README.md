@@ -80,9 +80,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第29章 Object
 * [x] 第30章 Array
 * [x] 第31章 String
-* [ ] 第32章 RegExp
+* [x] 第32章 RegExp
 * [x] 附录
   * [x] 附录1：valueOf\(\)
-
-
 

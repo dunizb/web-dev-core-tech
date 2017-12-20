@@ -65,9 +65,32 @@ r.lastIndex // 0
 r.source // "abc"
 ```
 
-### 2.2 方法
+### 2.2 **test\(\)**
 
+正则对象的test方法返回一个布尔值，表示当前模式是否能匹配参数字符串。
 
+```js
+/cat/.test('cats and dogs') // true
+```
+
+如果正则表达式带有g修饰符，则每一次test方法都从上一次结束的位置开始向后匹配。
+
+带有g修饰符时，可以通过正则对象的lastIndex属性指定开始搜索的位置。
+
+```js
+var r = /x/g;
+var s = '_x_x';
+
+r.lastIndex = 4;
+r.test(s) // false
+```
+
+lastIndex属性只对同一个正则表达式有效，所以下面这样写是错误的。
+
+```js
+var count = 0;
+while (/a/g.test('babaa')) count++;
+```
 
 
 

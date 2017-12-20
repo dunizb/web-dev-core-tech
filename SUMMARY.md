@@ -39,7 +39,7 @@
   * [第24章 数据类型](di-si-bu-fen-ecmascript/di-24-zhang-shu-ju-lei-xing.md)
   * [第25章 数据类型之间的转换](di-si-bu-fen-ecmascript/di-25-zhang-shu-ju-lei-xing-zhi-jian-de-zhuan-huan.md)
   * [第26章 “\|\|”和“&&”操作符总结](di-si-bu-fen-ecmascript/di-26-zhang-201c7c7c-201d-he-201c2626-201d-cao-zuo-fu-zong-jie.md)
-  * [第27章 arguments.callee和arguments.caller](di-si-bu-fen-ecmascript/di-27-zhang-arguments-callee-he-arguments-caller.md)
+  * [第27章 arguments](di-si-bu-fen-ecmascript/di-27-zhang-arguments-callee-he-arguments-caller.md)
   * [第28章 forEach、for-in、for-of](di-si-bu-fen-ecmascript/di-28-zhang-foreach-for-in-for-of.md)
   * [第29章 Object](di-si-bu-fen-ecmascript/di-29-zhang-object.md)
   * [第30章 Array](di-si-bu-fen-ecmascript/di-30-zhang-array.md)

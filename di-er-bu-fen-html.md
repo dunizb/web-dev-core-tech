@@ -63,6 +63,8 @@ HTML 是一种基本的 WEB 网页设计语言，XHTML 是一个基于 XML 的�
 * 附录1：HTML面试题精选
 * 附录2：在HTML中被废弃的元素和属性
 
+![](/assets/HTML.png)
+
 ---
 
 百度百科：HTML，[https://baike.baidu.com/item/HTML/97049?fr=aladdin](https://baike.baidu.com/item/HTML/97049?fr=aladdin)

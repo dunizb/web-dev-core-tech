@@ -92,6 +92,19 @@ var count = 0;
 while (/a/g.test('babaa')) count++;
 ```
 
+上面代码会导致无限循环，因为while循环的每次匹配条件都是一个新的正则表达式，导致lastIndex属性总是等于0。
+
+如果正则模式是一个空字符串，则匹配所有字符串。
+
+```js
+new RegExp('').test('abc')
+// true
+```
+
+### 2.3 exec\(\)
+
+
+
 
 
 

@@ -189,15 +189,161 @@ while(true) {
 
 如果正则对象是一个空字符串，则exec方法会匹配成功，但返回的也是空字符串。
 
+## 三、字符串对象的方法
 
+字符串对象的方法之中，有4种与正则对象有关。
 
+* match\(\)：返回一个数组，成员是所有匹配的子字符串。
+* search\(\)：按照给定的正则表达式进行搜索，返回一个整数，表示匹配开始的位置。
+* replace\(\)：按照给定的正则表达式进行替换，返回替换后的字符串。
+* split\(\)：按照给定规则进行字符串分割，返回一个数组，包含分割后的各个成员。
 
+### 3.1 String.prototype.match\(\)
 
+字符串对象的match方法对字符串进行正则匹配，返回匹配结果。
 
+```js
+var s = '_x_x';
+var r1 = /x/;
+var r2 = /y/;
 
+s.match(r1) // ["x"]
+s.match(r2) // null
+```
 
+从上面代码可以看到，字符串的match方法与正则对象的exec方法非常类似：匹配成功返回一个数组，匹配失败返回null。
 
+如果正则表达式带有 g 修饰符，则该方法与正则对象的exec方法行为不同，会一次性返回所有匹配成功的结果。
 
+```js
+var s = 'abba';
+var r = /a/g;
 
+s.match(r) // ["a", "a"]
+r.exec(s) // ["a"]
+```
 
+设置正则表达式的lastIndex属性，对match方法无效，匹配总是从字符串的第一个字符开始。
+
+### 3.2 String.prototype.search\(\)
+
+字符串对象的search方法，返回第一个满足条件的匹配结果在整个字符串中的位置。如果没有任何匹配，则返回-1。
+
+```js
+'_x_x'.search(/x/)
+// 1
+```
+
+该方法会忽略g修饰符。
+
+```js
+var r = /x/g;
+r.lastIndex = 2; // 无效
+'_x_x'.search(r) // 1
+```
+
+上面代码中，正则表达式使用g修饰符之后，使用lastIndex属性指定开始匹配的位置，结果无效，还是从字符串的第一个字符开始匹配。
+
+### 3.3 String.prototype.replace\(\)
+
+字符串对象的replace方法可以替换匹配的值。它接受两个参数，第一个是搜索模式，第二个是替换的内容。
+
+搜索模式如果不加g修饰符，就替换第一个匹配成功的值，否则替换所有匹配成功的值。
+
+```js
+'aaa'.replace('a', 'b') // "baa"
+'aaa'.replace(/a/, 'b') // "baa"
+'aaa'.replace(/a/g, 'b') // "bbb"
+```
+
+replace方法的一个应用，就是消除字符串首尾两端的空格。
+
+```js
+var str = '  #id div.class  ';
+
+str.replace(/^\s+|\s+$/g, '')
+// "#id div.class"
+```
+
+replace方法的第二个参数可以使用美元符号$，用来指代所替换的内容。
+
+* $& 指代匹配的子字符串。
+* $\` 指代匹配结果前面的文本。
+* $' 指代匹配结果后面的文本。
+* $n 指代匹配成功的第n组内容，n是从1开始的自然数。
+* $$ 指代美元符号$。
+
+```js
+'hello world'.replace(/(\w+)\s(\w+)/, '$2 $1')
+// "world hello"
+
+'abc'.replace('b', '[$`-$&-$\']')
+// "a[a-b-c]c"
+```
+
+replace方法的第二个参数还可以是一个函数，将每一个匹配内容替换为函数返回值。
+
+```js
+'3 and 5'.replace(/[0-9]+/g, function(match){
+  return 2 * match;
+})
+// "6 and 10"
+
+var a = 'The quick brown fox jumped over the lazy dog.';
+var pattern = /quick|brown|lazy/ig;
+
+a.replace(pattern, function replacer(match) {
+  return match.toUpperCase();
+});
+// The QUICK BROWN fox jumped over the LAZY dog.
+```
+
+作为replace方法第二个参数的替换函数，可以接受多个参数。第一个参数是捕捉到的内容，第二个参数是捕捉到的组匹配（有多少个组匹配，就有多少个对应的参数）。此外，最后还可以添加两个参数，倒数第二个参数是捕捉到的内容在整个字符串中的位置（比如从第五个位置开始），最后一个参数是原字符串。下面是一个网页模板替换的例子。
+
+```js
+var prices = {
+  'pr_1': '$1.99',
+  'pr_2': '$9.99',
+  'pr_3': '$5.00'
+};
+
+var template = '/* ... */'; // 这里可以放网页模块字符串
+
+template.replace(
+  /(<span id=")(.*?)(">)(<\/span>)/g,
+  function(match, $1, $2, $3, $4){
+    return $1 + $2 + $3 + prices[$2] + $4;
+  }
+);
+```
+
+上面代码的捕捉模式中，有四个括号，所以会产生四个组匹配，在匹配函数中用$1到$4表示。匹配函数的作用是将价格插入模板中。
+
+### 3.4 String.prototype.split\(\)
+
+字符串对象的split方法按照正则规则分割字符串，返回一个由分割后的各个部分组成的数组。
+
+该方法接受两个参数，第一个参数是分隔规则，第二个参数是返回数组的最大成员数。
+
+```js
+// 非正则分隔
+'a,  b,c, d'.split(',')
+// [ 'a', '  b', 'c', ' d' ]
+
+// 正则分隔，去除多余的空格
+'a,  b,c, d'.split(/, */)
+// [ 'a', 'b', 'c', 'd' ]
+
+// 指定返回数组的最大成员
+'a,  b,c, d'.split(/, */, 2)
+[ 'a', 'b' ]
+```
+
+上面代码使用正则表达式，去除了子字符串的逗号后面的空格。
+
+---
+
+来自：[JavaScript标准参考教程 - RegExp](http://javascript.ruanyifeng.com/stdlib/regexp.html)
+
+由于正则表达式相关内容太多，详细请查阅上面的链接
 

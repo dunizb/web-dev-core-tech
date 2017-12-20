@@ -84,7 +84,7 @@
 
 缺点：会产生新的未知问题。（不推荐使用）
 
-### 方法6父元素设置 overflow：hidden；
+### 方法6：父元素设置 overflow：hidden；
 
 ```html
 <style type=”text/css”>
@@ -108,7 +108,7 @@
 
 缺点：无法显示需要溢出的元素（亦不太推荐使用）
 
-### 方法7父元素设置 overflow：auto；
+### 方法7：父元素设置 overflow：auto；
 
 原理：原理同方法6，在IE6中还需要触发 hasLayout（zoom：1）
 

@@ -45,9 +45,7 @@
   * [第30章 Array](di-si-bu-fen-ecmascript/di-30-zhang-array.md)
   * [第31章 String](di-si-bu-fen-ecmascript/di-31-zhangstring.md)
   * [第32章 RegExp](di-si-bu-fen-ecmascript/di-32-zhang-regexp.md)
-  * 第33章 Math.random\(\)
+  * [第33章 Math.random\(\)](di-si-bu-fen-ecmascript/di-33-zhang-math-random.md)
   * [附录](di-si-bu-fen-ecmascript/fu-lu.md)
     * [附录1：valueOf\(\)](di-si-bu-fen-ecmascript/fu-lu-1-valueof.md)
-
-
 

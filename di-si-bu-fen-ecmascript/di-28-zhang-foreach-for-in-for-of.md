@@ -1,5 +1,7 @@
 # 第28章 forEach、for-in、for-of
 
+![](/assets/forEach、for-in、for-of.png)
+
 ## 一、forEach
 
 自从JavaScript5起，我们开始可以使用内置的forEach方法：

@@ -65,7 +65,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第9节 CSS度量单位体系
 * [x] 第10节 CSS预处理器之Less
 * [x] 第11节 使用PostCSS进行CSS处理
-* [x] 第22章 CSS的低权重原则
+* [x] 第12节 CSS的低权重原则
 * [x] 第23章 BEM命名规范
 * [x] 附录
   * [x] 附录1：CSS面试题精选

@@ -19,22 +19,7 @@
   * 附录
     * [附录1：HTML面试题](di-er-zhang-html/fu-lu-1-html-mian-shi-ti.md)
     * [附录2：在HTML5中被废弃的元素和属性](di-er-zhang-html/fu-lu-2-ff1a-zai-html5-zhong-bei-fei-qi-de-yuan-su-he-shu-xing.md)
-* [第三部分 CSS](di-san-bu-fen-css.md)
-  * [第11章 CSS书写顺序及相应规范](di-san-bu-fen-css/di-shi-yi-zhang-css-shu-xie-shun-xu-ji-xiang-ying-gui-fan.md)
-  * [第12章 CSS盒模型](di-san-bu-fen-css/di-shi-er-zhang-css-he-mo-xing.md)
-  * [第13章 Flexbox布局](di-san-bu-fen-css/di-shi-san-zhang-flexbox-bu-ju.md)
-  * [第14章 CSS Grid布局基础](di-san-bu-fen-css/di-shi-si-zhang-css-grid-bu-ju-ji-chu.md)
-  * [第15章 浮动](di-san-bu-fen-css/di-shi-wu-zhang-fu-dong-yu-ding-wei.md)
-  * [第16章 布局解决方案](di-san-bu-fen-css/di-shi-liu-zhang-bu-ju-jie-jue-fang-an.md)
-  * [第17章 CSS3新增内容](di-san-bu-fen-css/di-shi-wu-zhang-css3-xin-zeng-nei-rong.md)
-  * [第18章 CSS颜色体系](di-san-bu-fen-css/di-shi-ba-zhang-css-yan-se-ti-xi.md)
-  * [第19章 CSS度量单位体系](di-san-bu-fen-css/di-shi-jiu-zhang-css-dan-wei-ti-xi.md)
-  * [第20章 CSS预处理器之Less](di-san-bu-fen-css/di-er-shi-zhang-css-yu-chu-li-qi-zhi-less.md)
-  * [第21章 使用PostCSS进行CSS处理](di-san-bu-fen-css/di-er-shi-yi-zhang-shi-yong-postcss-jin-xing-css-chu-li.md)
-  * [第22章 CSS的低权重原则](di-san-bu-fen-css/di-22-zhang-css-de-di-quan-zhong-yuan-ze.md)
-  * [第23章 BEM命名规范](di-san-bu-fen-css/di-23-zhang-bem-ming-ming-gui-fan.md)
-  * 附录
-    * [附录1：CSS面试题精选](di-san-bu-fen-css/fu-lu-1-css-mian-shi-ti-jing-xuan.md)
+
 * [第四部分 ECMAScript](di-si-bu-fen-ecmascript.md)
   * [第24章 数据类型](di-si-bu-fen-ecmascript/di-24-zhang-shu-ju-lei-xing.md)
   * [第25章 数据类型之间的转换](di-si-bu-fen-ecmascript/di-25-zhang-shu-ju-lei-xing-zhi-jian-de-zhuan-huan.md)
@@ -48,4 +33,6 @@
   * [第33章 Math.random\(\)](di-si-bu-fen-ecmascript/di-33-zhang-math-random.md)
   * [附录](di-si-bu-fen-ecmascript/fu-lu.md)
     * [附录1：valueOf\(\)](di-si-bu-fen-ecmascript/fu-lu-1-valueof.md)
+
+
 

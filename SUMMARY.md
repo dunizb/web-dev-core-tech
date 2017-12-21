@@ -35,17 +35,7 @@
   * [3.13 BEM命名规范](di-san-zhang-css/313-bemming-ming-gui-fan.md)
   * [附录](di-san-zhang-css/fu-lu.md)
     * [附录1：CSS面试题精选](di-san-zhang-css/fu-lu/fu-lu-1-css-mian-shi-ti-jing-xuan.md)
-* [第四部分 ECMAScript](di-si-bu-fen-ecmascript.md)
-  * [第24章 数据类型](di-si-bu-fen-ecmascript/di-24-zhang-shu-ju-lei-xing.md)
-  * [第25章 数据类型之间的转换](di-si-bu-fen-ecmascript/di-25-zhang-shu-ju-lei-xing-zhi-jian-de-zhuan-huan.md)
-  * [第26章 “\|\|”和“&&”操作符总结](di-si-bu-fen-ecmascript/di-26-zhang-201c7c7c-201d-he-201c2626-201d-cao-zuo-fu-zong-jie.md)
-  * [第27章 arguments](di-si-bu-fen-ecmascript/di-27-zhang-arguments.md)
-  * [第28章 forEach、for-in、for-of](di-si-bu-fen-ecmascript/di-28-zhang-foreach-for-in-for-of.md)
-  * [第29章 Object](di-si-bu-fen-ecmascript/di-29-zhang-object.md)
-  * [第30章 Array](di-si-bu-fen-ecmascript/di-30-zhang-array.md)
-  * [第31章 String](di-si-bu-fen-ecmascript/di-31-zhangstring.md)
-  * [第32章 RegExp](di-si-bu-fen-ecmascript/di-32-zhang-regexp.md)
-  * [第33章 Math.random\(\)](di-si-bu-fen-ecmascript/di-33-zhang-math-random.md)
-  * [附录](di-si-bu-fen-ecmascript/fu-lu.md)
-    * [附录1：valueOf\(\)](di-si-bu-fen-ecmascript/fu-lu-1-valueof.md)
+* 第四章 ECMAScript Core
+
+
 

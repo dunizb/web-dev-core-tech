@@ -79,9 +79,9 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第5节 forEach、for-in、for-of
 * [x] 第6节 Object
 * [x] 第7节 Array
-* [x] 第31章 String
-* [x] 第32章 RegExp
-* [ ] 第33章 Math.random\(\)
+* [x] 第8节 String
+* [x] 第9节 RegExp
+* [ ] 第10节 Math.random\(\)
 * [x] 附录
   * [x] 附录1：valueOf\(\)
 

@@ -77,8 +77,8 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第3节 “\|\|”和“&&”操作符总结
 * [x] 第4节 arguments
 * [x] 第5节 forEach、for-in、for-of
-* [x] 第29章 Object
-* [x] 第30章 Array
+* [x] 第6节 Object
+* [x] 第7节 Array
 * [x] 第31章 String
 * [x] 第32章 RegExp
 * [ ] 第33章 Math.random\(\)

@@ -42,4 +42,7 @@
   * [4.4 arguments](di-si-zhang-ecmascript-core/44-arguments.md)
   * [4.5 forEach、for-in、for-of](di-si-zhang-ecmascript-core/45-foreachfor-infor-of.md)
   * [4.6 Object](di-si-zhang-ecmascript-core/46-object.md)
+  * 4.7 Array
+
+
 

@@ -61,7 +61,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第5节 浮动
 * [x] 第6节 布局解决方案
 * [x] 第7节 CSS3新增内容
-* [x] 第18章 CSS颜色体系
+* [x] 第8节 CSS颜色体系
 * [x] 第19章 CSS度量单位体系
 * [x] 第20章 CSS预处理器之Less
 * [x] 第21章 使用PostCSS进行CSS处理

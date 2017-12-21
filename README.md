@@ -52,10 +52,10 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
   * [x] 附录1：HTML面试题精选
   * [x] 附录2：在HTML5中被废弃的元素和属性
 
-**第三部分 CSS**
+**第三章 CSS**
 
-* [x] 第11章 CSS书写顺序及相应规范
-* [x] 第12章 CSS盒模型
+* [x] 第1节 CSS书写顺序及相应规范
+* [x] 第2节 CSS盒模型
 * [x] 第13章 Flexbox布局
 * [x] 第14章 CSS Grid布局基础
 * [x] 第15章 浮动

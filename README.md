@@ -70,9 +70,9 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 附录
   * [x] 附录1：CSS面试题精选
 
-**第四部分 ECMAScript**
+**第四章 ECMAScript Core**
 
-* [x] 第24章 数据类型
+* [x] 第1节 数据类型
 * [x] 第25章 数据类型之间的转换
 * [x] 第26章 “\|\|”和“&&”操作符总结
 * [x] 第27章 arguments

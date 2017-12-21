@@ -36,4 +36,7 @@
   * [附录](di-san-zhang-css/fu-lu.md)
     * [附录1：CSS面试题精选](di-san-zhang-css/fu-lu/fu-lu-1-css-mian-shi-ti-jing-xuan.md)
 * [第四章 ECMAScript Core](di-si-zhang-ecmascript-core.md)
+  * 4.1 数据类型
+
+
 

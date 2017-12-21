@@ -1,4 +1,4 @@
-# 第31章 String
+# 第8节 String
 
 ![](/assets/String.png)String对象是JavaScript原生提供的三个包装对象之一，用来生成字符串的包装对象。
 

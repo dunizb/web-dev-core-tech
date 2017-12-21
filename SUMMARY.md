@@ -15,7 +15,7 @@
 * [第二章 HTML](di-er-zhang-html.md)
   * [2.1 理解HTML的语义化](di-er-zhang-html/21-li-jie-html-de-yu-yi-hua.md)
   * [2.2 HTML中的meta标签大作用](di-er-zhang-html/22-htmlzhong-de-meta-biao-qian-da-zuo-yong.md)
-  * 2.3 理解DOM结构
+  * [2.3 理解DOM结构](di-er-zhang-html/23-li-jie-dom-jie-gou.md)
 * [第三部分 CSS](di-san-bu-fen-css.md)
   * [第11章 CSS书写顺序及相应规范](di-san-bu-fen-css/di-shi-yi-zhang-css-shu-xie-shun-xu-ji-xiang-ying-gui-fan.md)
   * [第12章 CSS盒模型](di-san-bu-fen-css/di-shi-er-zhang-css-he-mo-xing.md)
@@ -45,6 +45,4 @@
   * [第33章 Math.random\(\)](di-si-bu-fen-ecmascript/di-33-zhang-math-random.md)
   * [附录](di-si-bu-fen-ecmascript/fu-lu.md)
     * [附录1：valueOf\(\)](di-si-bu-fen-ecmascript/fu-lu-1-valueof.md)
-
-
 

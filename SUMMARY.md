@@ -11,6 +11,7 @@
   * [1.7 HTTPS](di-yi-zhang-http/17-https.md)
   * 附录
     * [附录1：GET和POST的区别](di-yi-zhang-http/fu-lu-1-get-he-post-de-qu-bie.md)
+    * 附录2：HTTP缓存机制
 * [第二部分 HTML](di-er-bu-fen-html.md)
   * [第08章 理解HTML的语义化](di-er-bu-fen-html/di-ba-zhang-li-jie-html-de-yu-yi-hua.md)
   * [第09章 HTML中meta标签的大作用](di-er-bu-fen-html/di-jiu-zhang-html-zhong-xiao-meta-biao-qian-de-da-zuo-yong.md)
@@ -47,4 +48,6 @@
   * [第33章 Math.random\(\)](di-si-bu-fen-ecmascript/di-33-zhang-math-random.md)
   * [附录](di-si-bu-fen-ecmascript/fu-lu.md)
     * [附录1：valueOf\(\)](di-si-bu-fen-ecmascript/fu-lu-1-valueof.md)
+
+
 

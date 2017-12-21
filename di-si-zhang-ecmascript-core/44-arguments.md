@@ -1,4 +1,4 @@
-# 第27章 arguments
+# 第4节 arguments
 
 在函数内部，有两个特殊的对象：arguments和this。
 

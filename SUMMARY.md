@@ -9,7 +9,7 @@
   * [1.5 HTTP的几种连接](di-yi-zhang-http/15-httpde-ji-zhong-lian-jie.md)
   * [1.6 Cookie技术](di-yi-zhang-http/16-cookieji-zhu.md)
   * [1.7 HTTPS](di-yi-zhang-http/17-https.md)
-  * 附录
+  * [附录](di-yi-zhang-http/fu-lu.md)
     * [附录1：GET和POST的区别](di-yi-zhang-http/fu-lu-1-get-he-post-de-qu-bie.md)
     * [附录2：HTTP缓存机制](di-yi-zhang-http/fu-lu-2-http-huan-cun-ji-zhi.md)
 * [第二章 HTML](di-er-zhang-html.md)

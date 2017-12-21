@@ -47,7 +47,5 @@
   * [4.9 RegExp](di-si-zhang-ecmascript-core/49-regexp.md)
   * [4.10 Math.random\(\)](di-si-zhang-ecmascript-core/410-mathrandom.md)
   * 附录
-    * 附录1：valueOf\(\)
-
-
+    * [附录1：valueOf\(\)](di-si-zhang-ecmascript-core/fu-lu-1-valueof.md)
 

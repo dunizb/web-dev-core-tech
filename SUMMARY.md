@@ -18,6 +18,7 @@
   * [2.3 理解DOM结构](di-er-zhang-html/23-li-jie-dom-jie-gou.md)
   * 附录
     * [附录1：HTML面试题](di-er-zhang-html/fu-lu-1-html-mian-shi-ti.md)
+    * 附录2：在HTML5中被废弃的元素和属性
 * [第三部分 CSS](di-san-bu-fen-css.md)
   * [第11章 CSS书写顺序及相应规范](di-san-bu-fen-css/di-shi-yi-zhang-css-shu-xie-shun-xu-ji-xiang-ying-gui-fan.md)
   * [第12章 CSS盒模型](di-san-bu-fen-css/di-shi-er-zhang-css-he-mo-xing.md)
@@ -47,4 +48,6 @@
   * [第33章 Math.random\(\)](di-si-bu-fen-ecmascript/di-33-zhang-math-random.md)
   * [附录](di-si-bu-fen-ecmascript/fu-lu.md)
     * [附录1：valueOf\(\)](di-si-bu-fen-ecmascript/fu-lu-1-valueof.md)
+
+
 

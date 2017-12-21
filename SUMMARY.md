@@ -40,7 +40,5 @@
   * [4.2 数据类型之间的转换](di-si-zhang-ecmascript-core/42-shu-ju-lei-xing-zhi-jian-de-zhuan-huan.md)
   * [4.3 “\|\|”和“&&”操作符总结](di-si-zhang-ecmascript-core/43-201c7c7c-201d-he-201c2626-201d-cao-zuo-fu-zong-jie.md)
   * [4.4 arguments](di-si-zhang-ecmascript-core/44-arguments.md)
-  * 4.5 forEach、for-in、for-of
-
-
+  * [4.5 forEach、for-in、for-of](di-si-zhang-ecmascript-core/45-foreachfor-infor-of.md)
 

@@ -1,4 +1,4 @@
-# 第28章 forEach、for-in、for-of
+# 第5节 forEach、for-in、for-of
 
 ![](/assets/forEach、for-in、for-of.png)
 

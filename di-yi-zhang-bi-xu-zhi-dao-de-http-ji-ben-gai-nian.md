@@ -1,4 +1,4 @@
-# 第01章 HTTP基本概念
+# 第1节 HTTP基本概念
 
 ![](/assets/HTTP基本概念.png)阅读本文你将看到：HTTP是干嘛用的？怎样和服务器通信？HTTP的基本性质？HTTP能控制什么？基于HTTP三大组件系统？HTTP 和 TCP 之间的关系？HTTP 协议如何使用 TCP 连接？
 

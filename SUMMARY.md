@@ -1,14 +1,14 @@
 # Summary
 
 * [首页](README.md)
-* [第一部分 HTTP](chapter1.md)
-  * [第01章 HTTP基本概念](di-yi-zhang-bi-xu-zhi-dao-de-http-ji-ben-gai-nian.md)
-  * [第02章 HTTP简史](di-er-zhang-http-jian-shi.md)
-  * [第03章 请求](di-san-zhang-qing-qiu.md)
-  * [第04章 响应](di-si-zhang-xiang-ying.md)
-  * [第05章 HTTP的几种连接](di-wu-zhang-http-de-ji-zhong-lian-jie.md)
-  * [第06章 Cookie技术](di-liu-zhang-cookie-ji-zhu.md)
-  * [第07章 HTTPS](di-qi-zhang-https.md)
+* [第1章 HTTP](chapter1.md)
+  * [1.1 HTTP基本概念](di-yi-zhang-bi-xu-zhi-dao-de-http-ji-ben-gai-nian.md)
+  * [1.2 HTTP简史](di-er-zhang-http-jian-shi.md)
+  * [1.3 请求](di-san-zhang-qing-qiu.md)
+  * [1.4 响应](di-si-zhang-xiang-ying.md)
+  * [1.5 HTTP的几种连接](di-wu-zhang-http-de-ji-zhong-lian-jie.md)
+  * [1.6 Cookie技术](di-liu-zhang-cookie-ji-zhu.md)
+  * [1.7 HTTPS](di-qi-zhang-https.md)
   * 附录
     * [附录1：GET和POST的区别](fu-lu-1-get-he-post-de-qu-bie.md)
     * [附录2：HTTP缓存机制](fu-lu-2-http-huan-cun-ji-zhi.md)

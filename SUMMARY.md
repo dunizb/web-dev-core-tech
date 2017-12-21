@@ -17,7 +17,7 @@
   * [2.2 HTML中的meta标签大作用](di-er-zhang-html/22-htmlzhong-de-meta-biao-qian-da-zuo-yong.md)
   * [2.3 理解DOM结构](di-er-zhang-html/23-li-jie-dom-jie-gou.md)
   * 附录
-    * 附录1：HTML面试题精选
+    * 附录1：HTML面试题
 * [第三部分 CSS](di-san-bu-fen-css.md)
   * [第11章 CSS书写顺序及相应规范](di-san-bu-fen-css/di-shi-yi-zhang-css-shu-xie-shun-xu-ji-xiang-ying-gui-fan.md)
   * [第12章 CSS盒模型](di-san-bu-fen-css/di-shi-er-zhang-css-he-mo-xing.md)

@@ -45,4 +45,7 @@
   * [4.7 Array](di-si-zhang-ecmascript-core/47-array.md)
   * [4.8 String](di-si-zhang-ecmascript-core/48-string.md)
   * [4.9 RegExp](di-si-zhang-ecmascript-core/49-regexp.md)
+  * 4.10 Math.random\(\)
+
+
 

@@ -30,24 +30,24 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
 ## 计划目录（持续更新）
 
-**第一部分 HTTP**
+**第一章 HTTP**
 
-* [x] 第01章 HTTP基本概念
-* [x] 第02章 HTTP简史
-* [x] 第03章 请求
-* [x] 第04章 响应
-* [x] 第05章 HTTP的几种连接
-* [x] 第06章 Cookie技术
-* [x] 第07章 HTTPS
+* [x] 第1节 HTTP基本概念
+* [x] 第2节 HTTP简史
+* [x] 第3节 请求
+* [x] 第4节 响应
+* [x] 第5节 HTTP的几种连接
+* [x] 第6节 Cookie技术
+* [x] 第7节 HTTPS
 * [x] 附录
   * [x] 附录1：GET和POST的区别
   * [x] 附录2：HTTP缓存机制
 
-**第二部分 HTML**
+**第二章 HTML**
 
-* [x] 第08章 理解HTML的语义化
-* [x] 第09章 HTML中meta标签的大作用
-* [x] 第10章 理解DOM结构
+* [x] 第1节 理解HTML的语义化
+* [x] 第2节 HTML中meta标签的大作用
+* [x] 第3节 理解DOM结构
 * [x] 附录
   * [x] 附录1：HTML面试题精选
   * [x] 附录2：在HTML5中被废弃的元素和属性

@@ -6,7 +6,7 @@
   * [1.2 HTTP简史](di-yi-zhang-http/12-httpjian-shi.md)
   * [1.3 请求](di-yi-zhang-http/13-qing-qiu.md)
   * [1.4 响应](di-yi-zhang-http/14-xiang-ying.md)
-  * 1.5 HTTP的几种连接
+  * [1.5 HTTP的几种连接](di-yi-zhang-http/15-httpde-ji-zhong-lian-jie.md)
 * [第二部分 HTML](di-er-bu-fen-html.md)
   * [第08章 理解HTML的语义化](di-er-bu-fen-html/di-ba-zhang-li-jie-html-de-yu-yi-hua.md)
   * [第09章 HTML中meta标签的大作用](di-er-bu-fen-html/di-jiu-zhang-html-zhong-xiao-meta-biao-qian-de-da-zuo-yong.md)
@@ -43,6 +43,4 @@
   * [第33章 Math.random\(\)](di-si-bu-fen-ecmascript/di-33-zhang-math-random.md)
   * [附录](di-si-bu-fen-ecmascript/fu-lu.md)
     * [附录1：valueOf\(\)](di-si-bu-fen-ecmascript/fu-lu-1-valueof.md)
-
-
 

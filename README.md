@@ -73,7 +73,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 **第四章 ECMAScript Core**
 
 * [x] 第1节 数据类型
-* [x] 第25章 数据类型之间的转换
+* [x] 第2节 数据类型之间的转换
 * [x] 第26章 “\|\|”和“&&”操作符总结
 * [x] 第27章 arguments
 * [x] 第28章 forEach、for-in、for-of

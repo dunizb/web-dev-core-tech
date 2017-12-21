@@ -1,4 +1,4 @@
-# 第30章 Array
+# 第7节 Array
 
 ![](/assets/Array.png)
 

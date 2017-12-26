@@ -49,7 +49,5 @@
   * 附录
     * [附录1：valueOf\(\)](di-si-zhang-ecmascript-core/fu-lu-1-valueof.md)
 * 第五章 面向对象编程
-  * 5.1 核心知识归纳
-
-
+  * [5.1 核心知识归纳](51-he-xin-zhi-shi-gui-na.md)
 

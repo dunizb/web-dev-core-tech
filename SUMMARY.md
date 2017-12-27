@@ -48,6 +48,6 @@
   * [4.10 Math.random\(\)](di-si-zhang-ecmascript-core/410-mathrandom.md)
   * 附录
     * [附录1：valueOf\(\)](di-si-zhang-ecmascript-core/fu-lu-1-valueof.md)
-* 第五章 面向对象编程
+* [第五章 面向对象编程](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng.md)
   * [5.1 核心知识归纳](51-he-xin-zhi-shi-gui-na.md)
 

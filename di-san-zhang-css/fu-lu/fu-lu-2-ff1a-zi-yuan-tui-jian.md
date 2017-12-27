@@ -15,5 +15,16 @@
 
 ## 开源库
 
+* [2017 年 20 个最佳的极简 CSS 框架](http://web.jobbole.com/91697/)
+
+## 图书
+
+* [《CSS世界》](https://item.jd.com/12262251.html)，作者张鑫旭，专注CSS十余年
+* [《CSS揭秘》](https://item.jd.com/11911279.html)，CSS一姐Lea Verou作品 从网页制作CSS到CSS3从入门到精通的大全作品 CSS指南作者Eric Meyer倾情作序
+* [《CSS权威指南（第3版）》](https://item.jd.com/10100250.html)HTML、CSS和Web标准领域、国际上公认的专家亲笔撰写！累计印刷已超9次，好评过万！全面深度解读CSS的指南！
+* [《图解CSS3：核心技术与案例实战》](https://item.jd.com/16007134442.html)，大漠 著
+* [《深入PostCSS Web设计》](https://item.jd.com/12133427.html)
+* [《CSS重构 样式表性能调优》](https://item.jd.com/12232145.html)css代码重构指南 软件架构优化测试 css参考工具书
+
 
 

@@ -6,6 +6,12 @@
 * [两行 CSS 代码实现图片任意颜色赋色技术](http://web.jobbole.com/93409/)
 * [如何用 CSS 实现多行文本的省略号显示](http://web.jobbole.com/90636/)
 * [这5个CSS属性你可能都不知道！](https://mp.weixin.qq.com/s?__biz=MzA5NzkwNDk3MQ==&mid=2650585462&amp;idx=1&amp;sn=e3b9f7025871865d4ff91a1ab68dac6a&source=41#wechat_redirect)
+* [神奇的 conic-gradient 圆锥渐变](http://www.cnblogs.com/coco1s/p/7079529.html)
+* [-webkit-text-stroke文字描边CSS属性及展开](http://www.zhangxinxu.com/wordpress/2017/06/webkit-text-stroke-css-text-shadow/)
+* [有趣的CSS题目（16）： 奇妙的 background-clip: text](https://mp.weixin.qq.com/s?__biz=MzAxODE2MjM1MA==&mid=2651552156&idx=2&sn=1ae0bb827931ff61c79d48bdf4881f0f&chksm=8025ae5db752274b005bd6aca449d28751c081788f4d6b84554bfab4ae249622282a31a8ffd0&mpshare=1)
+* [使用 CSS 3 制作长投影](/www.jackpu.com/shi-yong-css-3-zhi-zuo-chang-tou-ying-long-shadow/)
+* [前端灰度效果的实现（filter:grayscale\(\)）兼容所有浏览器](https://shimo.im/doc/FPp7NV8VzKQK4LBw/?v=201703080736)
+* [CSS 自定义属性：基础篇](https://zhuanlan.zhihu.com/p/25714131)
 
 ## 开源库
 

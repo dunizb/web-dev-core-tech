@@ -70,6 +70,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第14节 CSS工程化演进
 * [x] 附录
   * [x] 附录1：CSS面试题精选
+  * [x] 附录2：资源推荐
 
 **第四章 ECMAScript Core**
 

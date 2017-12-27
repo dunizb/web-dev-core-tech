@@ -178,31 +178,251 @@ function A(){
 var a=new A();
 console.log(a.__proto__) 
 //输出：Object {}
- 
+
 //推荐使用这种方式获取对象的原型
 console.log(Object.getPrototypeOf(a)) 
 //输出：Object {}
 ```
 
-无论对象是如何创建的，默认原型都是Object，在这里需要提及的比较特殊的一点就是，通过构造函数来创建对象，函数A本身也是一个对象，而A有两个指向表示原型的属性，分别是_proto_和prototype，而且两个属性并不相同
+无论对象是如何创建的，默认原型都是Object，在这里需要提及的比较特殊的一点就是，通过构造函数来创建对象，函数A本身也是一个对象，而A有两个指向表示原型的属性，分别是_proto_和prototype，而且两个属性并不相同。
 
+函数的的prototype属性只有在当作构造函数创建的时候，把自身的prototype属性值赋给对象的原型。而实际上，作为函数本身，它的原型应该是function对象，然后function对象的原型才是Object。
 
+总之，建议使用ES6推荐的查看原型和设置原型的方法。
 
+**原型的用法**
 
+其实原型和类的继承的用法是一致的：当你想用某个对象的属性时，将当前对象的原型指向该对象，你就拥有了该对象的使用权了。
 
+```js
+function A(){
+    this.name='world ';
+}
+function B(){
+    this.bb="hello"
+}
+var a=new A();
+var b=new B();
+//将b设置为a的原型,此处有一个问题，即a的constructor也指向了B构造函数，可能需要纠正 
+Object.setPrototypeOf(a,b);
+a.constructor=A;
+console.log(a.bb);    //hello
+```
 
+如果使用ES6来做的话则简单许多，甚至不涉及到prototype这个属性
 
+```js
+class B{
+   constructor(){
+       this.bb='hello'
+   }
+}
+class A  extends B{
+  constructor(){
+     super();
+     this.name='world';
+  }
+}
+ 
+var a=new A();
+console.log(a.bb+" "+a.name);    //hello world
+console.log(typeof(A))           //"function"
+```
 
+怎么样？是不是已经完全看不到原型的影子了？活脱脱就是类继承，但是你也看得到实际上类A 的类型是function，所以说，本质上class在JS中是一种语法糖，JS继承的本质依然是原型，不过，ES6引入class，extends 来掩盖原型的概念也是一个很友好的举动，对于长期学习那些类继承为基础的面对对象编程语言的程序员而言。
 
+我的建议是，尽可能理解原型，尽可能用class这种语法糖。
 
+好了，问自己两个问题：
 
+1. 为什么要使用原型？——提高函数的复用性。
+2. 为什么属性不放在原型上而方法要放在原型上？
+   1. 利用对象的动态特性：构造函数.prototype.xxxx = vvv
+   2. 利用直接替换
+      ```js
+      Student.prototype = {
+          sayHello : function(){},
+          study : function(){}
+      };
+      ```
 
+## 七、原型链
 
+**什么是原型链？**
 
+凡是对象就有原型，那么原型又是对象，因此凡是给定一个对象，那么就可以找到他的原型，原型还有原型，那么如此下去，就构成一个对象的序列，称该结构为原型链。
 
+这个概念其实也变得比较简单，可以类比类的继承链条，即每个对象的原型往上追溯，一直到Object为止，这组成了一个链条，将其中的对象串联起来，当查找当前对象的属性时，如果没找到，就会沿着这个链条去查找，一直到Object，如果还没发现，就会报undefined。
 
+**原型链的结构**
 
+凡是使用构造函数创建出对象，并且没有利用赋值的方式修改原型，就说该对象保留默认的原型链。
 
+默认原型链结构是什么样子呢？
+
+```js
+function Person(){}
+var p = new Person();
+//p 具有默认的原型链
+```
+
+默认的原型链结构就是：当前对象 -&gt; 构造函数.prototype -&gt; Object.prototype -&gt; null
+
+在实现继承的时候，有时候会利用替换原型链结构的方式实现原型继承，那么原型链结构就会发生改变
+
+```js
+function DunizbCollection(){}
+DunizbCollection.prototype = [];
+var arr = new DunizbCollection();
+```
+
+此时arr对象的原型链结构被指向了数组对象的原型链结构了：arr -&gt; \[\] -&gt; Array.prototype -&gt; Object.prototype -&gt; null
+
+**用图形表示对象的原型链结构**
+
+以如下代码为例绘制原型链结构
+
+```js
+function Person(){}
+var p = new Person();
+```
+
+原型链结构图为：
+
+![](http://img.mukewang.com/580365b70001795f06520439.jpg)
+
+使用原型需要注意两点：
+
+1. 原型继承链条不要太长，否则会出现效率问题。
+2. 指定原型时，注意constructor也会改变。
+
+## 八、继承
+
+实现继承有两种常见方式：
+
+第一种，**混合式继承**：最简单的继承就是将别的对象的属性强加到我身上，那么我就有这个成员了。
+
+混合式继承的简单描述：
+
+```js
+var Person = function () {};
+Person.prototype.extend = function ( o ) {
+     for ( var k in o ) {
+          this[ k ] = o[ k ];
+     }
+};
+Person.prototype.extend({
+      run: function () { console.log( '我能跑了' ); },
+      eat: function () { console.log( '我可以吃了' ); },
+      sayHello: function () { console.log( '我吃饱了' ); }
+});
+```
+
+第二种，**原型继承**：利用原型也可以实现继承，不需要在我身上添加任何成员，只要原型有了我就有了。
+
+第三种，**借用构造函数继承：**这种技术的基本思想相当简单，即在子类型构造函数的内部调用超类型构造函数，而函数只不过是在特定环境中执行代码的对象，因此通过使用apply\(\)和call\(\)方法也可以在（将来）新创建的对象上执行构造函数
+
+```js
+function Person ( name, age, gender ) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+}
+// 需要提供一个 Student 的构造函数创建学生对象
+// 学生也应该有 name, age, gender, 同时还需要有 course 课程
+function Student ( name, age, gender, course ) {
+    Person.call( this, name, age, gender )；
+    this.course = course;
+}
+```
+
+> 在《JavaScript高级程序设计（第三版）》中详细介绍了继承的6种方式
+
+## 九、函数的四种调用模式
+
+**函数模式**
+
+就是一个简单的函数调用。函数名的前面没有任何引导内容。
+
+**方法模式**
+
+方法一定式依附与一个对象，将函数赋值给对象的一个属性，那么就成为了方法。
+
+**构造器调用模式**
+
+创建对象的时候构造函数做了什么？由于构造函数只是给 this 添加成员，没有做其他事情。而方法也可以完成这个操作，就是 this 而言，构造函数与方法没有本质的区别。
+
+特征：
+
+1. 使用 new 关键字，来引导构造函数。
+2. 构造函数中的 this 与方法中的一样，表示对象，但是构造函数中的对象是刚刚创建出来的对象
+3. 构造函数中不需要 return ，就会默认的 return this。
+   1. 如果手动添加return ，就相当于 return this
+   2. 如果手动的添加 return 基本类型，无效，还是保留原来 返回 this
+   3. 如果手动添加的 return null，或 return undefined ，无效
+   4. 如果手动添加 return 对象类型，那么原来创建的 this 就会被丢掉，返回的是 return 后面的对象
+
+创建对象的模式：
+
+1. 工厂方法，工厂就是用来生产的，因此如果函数创建对象并返回，就称该函数为工厂函数
+2. 构造方法
+3. 寄生式创建
+4. 混合式创建
+
+**上下文调用模式**
+
+上下文就是环境。就是自己定义设置 this 的含义。
+
+语法：
+
+1. 函数名.apply\( 对象, \[ 参数 \] \);
+2. 函数名.call\( 对象, 参数 \);
+
+描述：
+
+1. 函数名就是表示函数本身，使用函数进行调用的时候默认 this 是全局变量
+2. 函数名也可以是方法提供，使用方法调用的时候，this 是指向当前对象
+3. 使用 apply 进行调用后，无论是函数还是方法都无效了，我们的 this ，由 apply 的第一个参数决定
+
+参数问题：无论是 call 还是 apply 在没有后面的参数的情况下（函数无参数，方法五参数）是完全一致的
+
+```js
+function foo(){
+    console.log( this );
+}
+foo.apply( obj );
+foo.call( obj );
+```
+
+第一个参数的使用也是有规则的:
+
+1. 如果传入的是一个对象，那么就相当于设置该函数中的 this 为参数
+2. 如果不传入参数，或传入 null 、undefined 等，那么相当于 this 默认为 window
+   ```js
+   foo();
+   foo.apply();
+   foo.apply( null );
+   foo.call( undefined );
+   ```
+3. 如果传入的是基本类型，那么 this 就是基本类型对应的包装类型的引用
+
+在使用上下文调用的时候，原函数（方法）可能会带有参数，那么这个参数再上下文调用中使用 第二个（第 n 个）参数来表示
+
+```js
+function foo( num ) {
+    console.log( num );
+}
+foo.apply( null, [ 123 ] );
+// 等价于
+foo( 123 );
+```
+
+---
+
+**参考资料**
+
+* 本文原型部分部分引用自[《JavaScript原型详解》](http://www.admin10000.com/document/9336.html)，版权归原作者所有
+* [js闭包的用途](http://blog.csdn.net/sunlylorn/article/details/6534610)
 
 
 

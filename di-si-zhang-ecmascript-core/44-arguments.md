@@ -30,6 +30,8 @@ function factorial(num){
 
 在这个重写后的factorial\(\)函数的函数体内，没有再引用函数名factorial。这样，无论引用函数时使用的是什么名字，都可以保证正常完成递归调用。
 
+> **警告：**callee属性已经不建议使用，在新版本的JavaScript将被去除，并且在严格模式下
+
 ## 二、caller
 
 ECMAScript 5也规范化了另一个函数对象的属性：**caller**。除了Opera的早期版本不支持，其他浏览器都支持这个ECMAScript 3并没有定义的属性。**这个属性中保存着调用当前函数的函数的引用**，如果是在全局作用域中调用当前函数，它的值为null。例如：
@@ -48,7 +50,7 @@ outer()
 
 ## 三、严格模式下的问题
 
-当函数在严格模式下运行时，访问argu-ments.callee会导致错误。ECMAScript 5还定义了arguments.caller属性，但在严格模式下访问它也会导致错误，而在非严格模式下这个属性始终是undefined。定义这个属性是为了分清argu-ments.caller和函数的caller属性。以上变化都是为了加强这门语言的安全性，这样第三方代码就不能在相同的环境里窥视其他代码了。
+当函数在严格模式下运行时，访问arguments.callee会导致错误。ECMAScript 5还定义了arguments.caller属性，但在严格模式下访问它也会导致错误，而在非严格模式下这个属性始终是undefined。定义这个属性是为了分清argu-ments.caller和函数的caller属性。以上变化都是为了加强这门语言的安全性，这样第三方代码就不能在相同的环境里窥视其他代码了。
 
 严格模式还有一个限制：不能为函数的caller属性赋值，否则会导致错误。
 

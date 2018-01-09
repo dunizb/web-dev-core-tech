@@ -84,7 +84,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第8节 String
 * [x] 第9节 RegExp
 * [x] 第10节 Math.random\(\)
-* [x] 第11节 函数
+* [x] 第11节 this、apply、call、bind
 * [x] 附录
   * [x] 附录1：valueOf\(\)
 

@@ -48,7 +48,7 @@
   * [4.8 String](di-si-zhang-ecmascript-core/48-string.md)
   * [4.9 RegExp](di-si-zhang-ecmascript-core/49-regexp.md)
   * [4.10 Math.random\(\)](di-si-zhang-ecmascript-core/410-mathrandom.md)
-  * [4.11 ](di-si-zhang-ecmascript-core/411-han-shu.md)this、apply、call、bind
+
   * 附录
     * [附录1：valueOf\(\)](di-si-zhang-ecmascript-core/fu-lu-1-valueof.md)
 * [第五章 面向对象编程](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng.md)

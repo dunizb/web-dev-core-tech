@@ -56,7 +56,5 @@
   * [5.1 核心知识归纳](51-he-xin-zhi-shi-gui-na.md)
   * [5.2 作用域](52-zuo-yong-yu.md)
 * 第六章 异步编程与网络请求
-  * 6.1 异步编程
-
-
+  * [6.1 异步编程](61-yi-bu-bian-cheng.md)
 

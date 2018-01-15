@@ -94,5 +94,9 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第1节 核心知识归纳
 * [x] 第2节 作用域
 
+**第六章 异步编程与网络请求**
+
+* [ ] 第1节 异步编程
+
 
 

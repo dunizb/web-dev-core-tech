@@ -96,7 +96,8 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
 **第六章 异步编程与网络请求**
 
-* [ ] 第1节 异步编程
+* [x] 第1节 异步编程
+* [x] JavaScript异步编程开源库
 
 
 

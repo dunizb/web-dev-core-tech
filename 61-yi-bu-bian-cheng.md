@@ -106,6 +106,93 @@ jQuery.unsubscribe("done", f2);
 
 这种方法的性质与"事件监听"类似，但是明显优于后者。因为我们可以通过查看"消息中心"，了解存在多少信号、每个信号有多少订阅者，从而监控程序的运行。
 
+下面是原生JavaScript模拟的一个“发布/订阅”模式
+
+```js
+var Subject = function(){
+    var _observers = [];
+
+    this.attach = function(observer){
+        _observers.push(observer);
+    }
+
+    this.detach = function(){
+        _observers.pop();
+    }
+
+    this.notify = function(msg){
+        for(var i = 0; i < _observers.length; i++){
+            _observers[i].update(msg);
+        }
+    }
+
+    this.print = function(){
+        console.log(_observers.length);
+        console.log(_observers);
+    }
+}
+
+var Observer = function(name){
+    this.update = function(msg){
+        console.log('I am ', name, 'and I get the message ', msg);
+    }
+}
+
+var sub = new Subject();
+sub.attach(new Observer('a'));
+sub.attach(new Observer('b'));
+sub.notify('hello');
+
+console.log('');
+
+setTimeout(function(){
+    sub.detach();
+    sub.attach(new Observer('c'));
+    sub.notify('world');
+}, 1000);
+```
+
+### 1.4 Promises对象
+
+Promises对象是CommonJS工作组提出的一种规范，目的是为异步编程提供统一接口。
+
+简单说，它的思想是，每一个异步任务返回一个Promise对象，该对象有一个then方法，允许指定回调函数。比如，f1的回调函数f2,可以写成：
+
+```js
+f1().then(f2);
+```
+
+f1要进行如下改写（这里使用的是jQuery的实现）：
+
+```js
+function f1(){
+　  var dfd = $.Deferred();
+　　setTimeout(function () {
+　　　　// f1的任务代码
+　　　　dfd.resolve();
+　　}, 500);
+　　return dfd.promise;
+}
+```
+
+**这样写的优点在于，回调函数变成了链式写法，程序的流程可以看得很清楚，而且有一整套的配套方法，可以实现许多强大的功能。**
+
+比如，指定多个回调函数：
+
+```js
+f1().then(f2).then(f3);
+```
+
+再比如，指定发生错误时的回调函数：
+
+```js
+f1().then(f2).fail(f3);
+```
+
+而且，它还有一个前面三种方法都没有的好处：如果一个任务已经完成，再添加回调函数，该回调函数会立即执行。所以，你不用担心是否错过了某个事件或信号。这种方法的缺点就是编写和理解，都相对比较难。
+
+
+
 
 
 

@@ -541,14 +541,13 @@ fail(function(err){
 
 所谓的链式调用就是在成功回调内返回一个新的promise对象,假如之后的回调不需要获取闭包内容的话,可以直接返回,否则可以接着写then方法调用。
 
-
-
 ---
 
 **参考文章：**
 
 * [Javascript异步编程的4种方法](http://www.ruanyifeng.com/blog/2012/12/asynchronous＿javascript.html)
 * [jQuery的deferred对象详解](http://www.ruanyifeng.com/blog/2011/08/a_detailed_explanation_of_jquery_deferred_object.html)
+* [Promise实现之q.js](https://yq.aliyun.com/articles/53393)
 
 
 

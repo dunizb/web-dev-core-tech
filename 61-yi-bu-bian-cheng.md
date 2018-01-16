@@ -352,27 +352,12 @@ wait(dtd);
 
 类似的，还存在一个deferred.reject\(\)方法，作用是将dtd对象的执行状态从"未完成"改为"已失败"，从而触发fail\(\)方法。
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 
 **参考文章：**
 
 * [Javascript异步编程的4种方法](http://www.ruanyifeng.com/blog/2012/12/asynchronous＿javascript.html)
+* [jQuery的deferred对象详解](http://www.ruanyifeng.com/blog/2011/08/a_detailed_explanation_of_jquery_deferred_object.html)
 
 
 

@@ -58,7 +58,5 @@
 * [第六章 异步编程](di-liu-zhang-yi-bu-bian-cheng-yu-wang-luo-qing-qiu.md)
   * [6.1 异步编程](61-yi-bu-bian-cheng.md)
   * [6.2 JavaScript异步编程开源库](62-javascriptyi-bu-bian-cheng-kai-yuan-ku.md)
-  * 6.3 Promise对象
-
-
+  * [6.3 Promise对象](63-promisedui-xiang.md)
 

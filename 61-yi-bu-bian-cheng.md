@@ -352,6 +352,197 @@ wait(dtd);
 
 类似的，还存在一个deferred.reject\(\)方法，作用是将dtd对象的执行状态从"未完成"改为"已失败"，从而触发fail\(\)方法。
 
+### 2.2 Q.js
+
+Q.js是一个Promise函数库，已经实现了Promise/A+标准。
+
+特点：
+
+* 浏览器端和服务端公用
+* 发展早，较其他库相对成熟
+
+q.js的所有方法操作的对象都得是一个promise对象,下面来说说怎么用q来创建promise对象
+
+下面所有实例统一在nodejs环境里执行,请执行下面命令安装q.js，然后引用它
+
+```
+npm install q --save
+```
+
+```js
+var q = require('q'),
+    fs = require('fs');
+```
+
+下面会用到文件模块，所以也要引用
+
+**创建promise对象**
+
+q.fcall 传递给此方法一个返回值的函数或者一个defer实例,将会创建一个promise对象
+
+```js
+var promise = q.fcall(function(){
+    return [10, 20];
+});
+
+var promise1 = q.fcall(function(){
+    var deferred = q.defer();
+    fs.readFile('../data/file2.txt', 'utf8', deferred.makeNodeResolver());
+    return deferred.promise;
+});
+```
+
+q.defer 通过延迟对象来创建promise对象
+
+```js
+var getFile = function(){
+    var deferred = q.defer();
+    fs.readFile('../data/file.txt', 'utf8', function(err, content){
+        if(err){
+            deferred.reject(new Error(err));
+        }else{
+            deferred.resolve(content);
+        }
+    });
+    return deferred.promise;
+}
+```
+
+q.promise 传递此方法一个函数来创建promise对象
+
+```js
+var getFilePromise = function(){
+    return q.promise(function(resolve, reject, notify){
+        fs.readFile('../data/file.txt', 'utf8', function(err, content){
+            if(err){
+                reject(new Error(err));
+            }else{
+                resolve(content);
+            }
+        });
+    })
+}
+```
+
+**使用promise对象**
+
+最简单的使用方法就是直接使用then方法,传入一个成功回调与一个异常回调
+
+```js
+// fcall创建的promise
+
+promise.then(function(msg){
+    console.log(msg);
+}, function(err){
+    // do stuff
+});
+
+// q.defer创建的promise
+getFile().then(function(msg){
+    console.log(msg);
+}, function(err){
+    // do stuff
+})
+
+// q.promise创建的promise中q.defer使用一样
+```
+
+q.all 使用此方法可以保证执行多个异步方法之后执行回调
+
+```js
+q.all([promise, promise1]).then(function(msg){
+    console.log('normal', msg);
+}, function(err){
+    console.log(err);
+})
+```
+
+上面的q.all方法成功返回的结果会返回一个包含所有异步方法结果的数组,出现一个异步方法异常则执行错误回调方法.
+
+> 注意q.all 里的promise数组支持不带延迟对象以及延迟对象
+
+q.when 使用此方法执行不带延迟对象以及延迟对象promise,不支持传递数组内带延迟对象
+
+```js
+q.when(promise1, function(msg){
+    log('when' + msg);
+},function(err){
+    console.log(err);
+})
+
+q.when(promise, function(msg){
+    log('when' + msg);
+},function(err){
+    console.log(err);
+})
+
+q.when([promise, promise], function(msg){
+    log('when' + msg);
+},function(err){
+    console.log(err);
+})
+```
+
+返回的结果处理跟q.all一样
+
+> 注意q.when 不支持数组内传递延迟对象
+
+q.nfcall \| q.nfapply 这两方法是对nodejs里异步方法的适配，不用写上面promise对象定义里的resolve及reject等
+
+```js
+q.nfcall(fs.readFile, '../data/file.txt', 'utf8').then(function(msg){
+    console.log('nfcall', msg);
+})
+
+q.nfapply(fs.readFile, ['../data/file.txt', 'utf8']).then(function(msg){
+    console.log('nfapply', msg);
+})
+```
+
+其实nfcall = node function call, nfapply = node function apply,传递的传递参考call与apply方法,回调处理跟上面的一样
+
+当回调函数内出现异常时,回调异常函数是catch不到的,这里q提供了一个fail方法
+
+```js
+ar getFileHandy = function(){
+    var deferred = q.defer();
+    fs.readFile('../data/file1.txt', 'utf8', deferred.makeNodeResolver());
+    return deferred.promise;
+}
+getFileHandy().then(function(msg){
+    console.log(msg);
+    throw new Error('demo exception');
+}).fail(function(err){
+    // 此处可以catch 所有的异常
+    console.log(err);
+});
+```
+
+以上都是单一的异步方法调用，下面说说q里的链式调用
+
+```js
+promise1.then(function(msg){
+    return getFile();
+}).
+then(function(msg){
+    return getFileHandy()
+    .then(function(data){
+        return getFilePromise();
+    })
+    .then(function(content){
+        console.log('>>' + content);
+        throw new Error('haha error!');
+    });
+}).
+fail(function(err){
+    console.log('err>>' + err);
+});
+```
+
+所谓的链式调用就是在成功回调内返回一个新的promise对象,假如之后的回调不需要获取闭包内容的话,可以直接返回,否则可以接着写then方法调用。
+
+
+
 ---
 
 **参考文章：**

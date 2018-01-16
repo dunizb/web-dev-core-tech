@@ -57,4 +57,7 @@
   * [5.2 作用域](52-zuo-yong-yu.md)
 * [第六章 异步编程与网络请求](di-liu-zhang-yi-bu-bian-cheng-yu-wang-luo-qing-qiu.md)
   * [6.1 异步编程](61-yi-bu-bian-cheng.md)
+  * 6.2 JavaScript异步编程开源库
+
+
 

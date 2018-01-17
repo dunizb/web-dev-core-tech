@@ -65,4 +65,7 @@
   * [6.4 Generator函数](di-liu-zhang-javascript-yi-bu-bian-cheng/64-generatorhan-shu.md)
   * [6.5 Generator函数的应用](di-liu-zhang-javascript-yi-bu-bian-cheng/65-generatorhan-shu-de-ying-yong.md)
   * [6.6 深入理解ES7的async/await](di-liu-zhang-javascript-yi-bu-bian-cheng/66-shen-ru-li-jie-es7-de-async-await.md)
+  * 6.7 一步一步实现一个Promise
+
+
 

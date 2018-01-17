@@ -84,8 +84,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第8节 String
 * [x] 第9节 RegExp
 * [x] 第10节 Math.random\(\)
-* [x] 第11节 this、apply、call、bind
-* [x] 变量声明提升
+* [x] 第11节 变量声明提升
 * [x] 附录
   * [x] 附录1：valueOf\(\)
 
@@ -95,7 +94,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [ ] 第2节 闭包
 * [ ] 第3节 原型与原型链
 * [ ] 第4节 继承
-* [ ] 第5节 this、apply、call、bind
+* [x] 第5节 this、apply、call、bind
 * [ ] 第6节 ES6 class
 
 **第六章 JavaScript异步编程**

@@ -91,8 +91,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
 **第五章 面向对象编程**
 
-* [x] 第1节 核心知识归纳
-* [x] 第2节 作用域
+* [x] 第1节 作用域
 
 **第六章 异步编程**
 

@@ -98,6 +98,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第1节 异步编程概论
 * [x] 第2节 JavaScript异步编程开源库
 * [x] 第3节 Promise对象
+* [x] 第4节 Generator函数
 
 
 

@@ -52,6 +52,7 @@
   * [4.12 变量声明提升](di-si-zhang-ecmascript-core/412-bian-liang-sheng-ming-ti-sheng.md)
   * 附录
     * [附录1：valueOf\(\)](di-si-zhang-ecmascript-core/fu-lu-1-valueof.md)
+* 第五章 面向对象编程
 * [第五章 面向对象编程](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng.md)
   * [5.1 核心知识归纳](51-he-xin-zhi-shi-gui-na.md)
   * [5.2 作用域](52-zuo-yong-yu.md)
@@ -59,4 +60,6 @@
   * [6.1 异步编程](61-yi-bu-bian-cheng.md)
   * [6.2 JavaScript异步编程开源库](62-javascriptyi-bu-bian-cheng-kai-yuan-ku.md)
   * [6.3 Promise对象](63-promisedui-xiang.md)
+
+
 

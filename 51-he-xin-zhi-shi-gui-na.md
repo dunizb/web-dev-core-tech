@@ -223,7 +223,7 @@ class A  extends B{
      this.name='world';
   }
 }
- 
+
 var a=new A();
 console.log(a.bb+" "+a.name);    //hello world
 console.log(typeof(A))           //"function"

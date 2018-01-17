@@ -58,7 +58,5 @@
   * [6.1 异步编程概论](di-liu-zhang-javascript-yi-bu-bian-cheng/61-yi-bu-bian-cheng-gai-lun.md)
   * [6.2 JavaScript异步编程开源库](di-liu-zhang-javascript-yi-bu-bian-cheng/62-javascriptyi-bu-bian-cheng-kai-yuan-ku.md)
   * [6.3 Promise对象](di-liu-zhang-javascript-yi-bu-bian-cheng/63-promisedui-xiang.md)
-  * 6.4 Generator函数
-
-
+  * [6.4 Generator函数](di-liu-zhang-javascript-yi-bu-bian-cheng/64-generatorhan-shu.md)
 

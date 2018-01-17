@@ -56,8 +56,7 @@
   * 5.2 闭包
   * 5.3 原型与原型链
   * 5.4 继承
-  * 5.5 [this、apply、call、bind](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/55-thisapplycallbind.md)
-
+  * [5.5 this、apply、call、bind](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/55-thisapplycallbind.md)
   * 5.6 ES6 class
 * [第六章 JavaScript异步编程](di-liu-zhang-javascript-yi-bu-bian-cheng.md)
   * [6.1 异步编程概论](di-liu-zhang-javascript-yi-bu-bian-cheng/61-yi-bu-bian-cheng-gai-lun.md)
@@ -66,6 +65,4 @@
   * [6.4 Generator函数](di-liu-zhang-javascript-yi-bu-bian-cheng/64-generatorhan-shu.md)
   * [6.5 Generator函数的应用](di-liu-zhang-javascript-yi-bu-bian-cheng/65-generatorhan-shu-de-ying-yong.md)
   * [6.6 深入理解ES7的async/await](di-liu-zhang-javascript-yi-bu-bian-cheng/66-shen-ru-li-jie-es7-de-async-await.md)
-
-
 

@@ -96,6 +96,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [ ] 第3节 原型与原型链
 * [ ] 第4节 继承
 * [ ] 第5节 this、apply、call、bind
+* [ ] 第6节 ES6 class
 
 **第六章 JavaScript异步编程**
 

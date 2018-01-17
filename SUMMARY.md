@@ -55,7 +55,6 @@
 * [第五章 面向对象编程](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng.md)
   * [5.1 作用域](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/51-zuo-yong-yu.md)
 * [第五章 面向对象](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng.md)
-  * [5.1 核心知识归纳](51-he-xin-zhi-shi-gui-na.md)
   * [5.2 作用域](52-zuo-yong-yu.md)
 * [第六章 异步编程](di-liu-zhang-yi-bu-bian-cheng-yu-wang-luo-qing-qiu.md)
   * [6.1 异步编程](61-yi-bu-bian-cheng.md)

@@ -54,7 +54,6 @@
     * [附录1：valueOf\(\)](di-si-zhang-ecmascript-core/fu-lu-1-valueof.md)
 * [第五章 面向对象编程](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng.md)
   * [5.1 作用域](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/51-zuo-yong-yu.md)
-* [第a章 面向对象](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng.md)
 * [第六章 异步编程](di-liu-zhang-yi-bu-bian-cheng-yu-wang-luo-qing-qiu.md)
   * [6.1 异步编程](61-yi-bu-bian-cheng.md)
   * [6.2 JavaScript异步编程开源库](62-javascriptyi-bu-bian-cheng-kai-yuan-ku.md)

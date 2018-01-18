@@ -55,5 +55,67 @@ console.log('r2 = ' + r2); // r2应为undefined
 // r2 = undefined
 ```
 
+运行后可以发现，输出提示类似“出错了：TypeError: Cannot read property 'length' of null”。
+
+我们来分析一下使用try ... catch ... finally的执行流程。
+
+当代码块被try { ... }包裹的时候，就表示这部分代码执行过程中可能会发生错误，一旦发生错误，就不再继续执行后续代码，转而跳到catch块。catch \(e\) { ... }包裹的代码就是错误处理代码，变量e表示捕获到的错误。**最后，无论有没有错误，finally一定会被执行。**
+
+所以，有错误发生时，执行流程像这样：
+
+1. 先执行try { ... }的代码；
+2. 执行到出错的语句时，后续语句不再继续执行，转而执行catch \(e\) { ... }代码；
+3. 最后执行finally { ... }代码。
+
+而没有错误发生时，执行流程像这样：
+
+1. 先执行try { ... }的代码；
+2. 因为没有出错，catch \(e\) { ... }代码不会被执行；
+3. 最后执行finally { ... }代码。
+
+最后请注意，**catch和finally可以不必都出现**。也就是说，try语句一共有三种形式：
+
+完整的try ... catch ... finally：
+
+```js
+try {
+    ...
+} catch (e) {
+    ...
+} finally {
+    ...
+}
+```
+
+只有try ... catch，没有finally：
+
+```js
+try {
+    ...
+} catch (e) {
+    ...
+}
+```
+
+只有try ... finally，没有catch：
+
+```js
+try {
+    ...
+} finally {
+    ...
+}
+```
+
+
+
+
+
+
+
+
+
+
+
 
 

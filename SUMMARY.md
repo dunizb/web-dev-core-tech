@@ -53,12 +53,13 @@
   * 附录
     * [附录1：valueOf\(\)](di-si-zhang-ecmascript-core/fu-lu-1-valueof.md)
 * [第五章 面向对象编程](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng.md)
-  * [5.1 作用域](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/51-zuo-yong-yu.md)
-  * 5.2 闭包
-  * 5.3 原型与原型链
-  * 5.4 继承
-  * [5.5 this、apply、call、bind](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/55-thisapplycallbind.md)
-  * 5.6 ES6 class
+  * 5.1 构造函数
+  * [5.2 作用域](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/51-zuo-yong-yu.md)
+  * 5.3 闭包
+  * 5.4 原型与原型链
+  * 5.5 继承
+  * [5.6 this、apply、call、bind](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/55-thisapplycallbind.md)
+  * 5.7 ES6 class
 * [第六章 JavaScript异步编程](di-liu-zhang-javascript-yi-bu-bian-cheng.md)
   * [6.1 异步编程概论](di-liu-zhang-javascript-yi-bu-bian-cheng/61-yi-bu-bian-cheng-gai-lun.md)
   * [6.2 JavaScript异步编程开源库](di-liu-zhang-javascript-yi-bu-bian-cheng/62-javascriptyi-bu-bian-cheng-kai-yuan-ku.md)
@@ -67,4 +68,6 @@
   * [6.5 Generator函数的应用](di-liu-zhang-javascript-yi-bu-bian-cheng/65-generatorhan-shu-de-ying-yong.md)
   * [6.6 深入理解ES7的async/await](di-liu-zhang-javascript-yi-bu-bian-cheng/66-shen-ru-li-jie-es7-de-async-await.md)
   * [6.7 一步一步实现一个Promise](di-liu-zhang-javascript-yi-bu-bian-cheng/67-yi-bu-yi-bu-shi-xian-yi-ge-promise.md)
+
+
 

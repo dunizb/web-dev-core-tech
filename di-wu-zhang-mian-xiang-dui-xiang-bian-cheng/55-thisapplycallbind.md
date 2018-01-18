@@ -1,4 +1,4 @@
-# 第6节 this、apply、call、bind
+# 第7节 this、apply、call、bind
 
 > 作者：sunshine小小倩
 >

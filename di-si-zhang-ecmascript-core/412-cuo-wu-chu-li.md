@@ -34,5 +34,26 @@ if (fd == -1) {
 
 ## 一、try ... catch ... finally
 
+使用try ... catch ... finally处理错误时，我们编写的代码如下：
+
+```
+var r1, r2, s = null;
+try {
+    r1 = s.length; // 此处应产生错误
+    r2 = 100; // 该语句不会执行
+} catch (e) {
+    console.log('出错了：' + e);
+} finally {
+    console.log('finally');
+}
+console.log('r1 = ' + r1); // r1应为undefined
+console.log('r2 = ' + r2); // r2应为undefined
+
+// 出错了：TypeError: s is null
+// finally
+// r1 = undefined
+// r2 = undefined
+```
+
 
 

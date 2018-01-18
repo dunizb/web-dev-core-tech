@@ -107,7 +107,65 @@ try {
 }
 ```
 
+## 二、错误类型
 
+JavaScript有一个标准的Error对象表示错误，还有从Error派生的TypeError、ReferenceError等错误对象。我们在处理错误时，可以通过catch\(e\)捕获的变量e访问错误对象：
+
+```js
+try {
+    ...
+} catch (e) {
+    if (e instanceof TypeError) {
+        alert('Type error!');
+    } else if (e instanceof Error) {
+        alert(e.message);
+    } else {
+        alert('Error: ' + e);
+    }
+}
+```
+
+使用变量e是一个习惯用法，也可以以其他变量名命名，如catch\(ex\)。
+
+## 三、抛出错误
+
+程序也可以主动抛出一个错误，让执行流程直接跳转到catch块。抛出错误使用**throw**语句。
+
+例如，下面的代码让用户输入一个数字，程序接收到的实际上是一个字符串，然后用parseInt\(\)转换为整数。当用户输入不合法的时候，我们就抛出错误：
+
+```js
+var r, n, s;
+try {
+    s = prompt('请输入一个数字');
+    n = parseInt(s);
+    if (isNaN(n)) {
+        throw new Error('输入错误');
+    }
+    // 计算平方:
+    r = n * n;
+    console.log(n + ' * ' + n + ' = ' + r);
+} catch (e) {
+    console.log('出错了：' + e);
+}
+```
+
+**实际上，JavaScript允许抛出任意对象，包括数字、字符串。但是，最好还是抛出一个Error对象。**
+
+最后，当我们用catch捕获错误时，一定要编写错误处理语句：
+
+```js
+var n = 0, s;
+try {
+    n = s.length;
+} catch (e) {
+    console.log(e);
+}
+console.log(n);
+```
+
+哪怕仅仅把错误打印出来，也不要什么也不干，因为catch到错误却什么都不执行，就不知道程序执行过程中到底有没有发生错误。
+
+> 处理错误时，请不要简单粗暴地用alert\(\)把错误显示给用户。教程的代码使用alert\(\)是为了便于演示。
 
 
 

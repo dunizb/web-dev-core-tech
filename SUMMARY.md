@@ -50,6 +50,7 @@
   * [4.10 Math.random\(\)](di-si-zhang-ecmascript-core/410-mathrandom.md)
   * [4.11 变量声明提升](di-si-zhang-ecmascript-core/412-bian-liang-sheng-ming-ti-sheng.md)
   * [4.12 错误处理](di-si-zhang-ecmascript-core/412-cuo-wu-chu-li.md)
+  * 4.13 var、let、const
   * 附录
     * [附录1：valueOf\(\)](di-si-zhang-ecmascript-core/fu-lu-1-valueof.md)
 * [第五章 面向对象编程](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng.md)
@@ -69,4 +70,6 @@
   * [6.5 Generator函数的应用](di-liu-zhang-javascript-yi-bu-bian-cheng/65-generatorhan-shu-de-ying-yong.md)
   * [6.6 深入理解ES7的async/await](di-liu-zhang-javascript-yi-bu-bian-cheng/66-shen-ru-li-jie-es7-de-async-await.md)
   * [6.7 一步一步实现一个Promise](di-liu-zhang-javascript-yi-bu-bian-cheng/67-yi-bu-yi-bu-shi-xian-yi-ge-promise.md)
+
+
 

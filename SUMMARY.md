@@ -54,12 +54,13 @@
     * [附录1：valueOf\(\)](di-si-zhang-ecmascript-core/fu-lu-1-valueof.md)
 * [第五章 面向对象编程](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng.md)
   * [5.1 构造函数](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/51-gou-zao-han-shu.md)
-  * [5.2 作用域](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/51-zuo-yong-yu.md)
-  * 5.3 闭包
-  * 5.4 原型与原型链
-  * 5.5 继承
-  * [5.6 this、apply、call、bind](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/55-thisapplycallbind.md)
-  * 5.7 ES6 class
+  * 5.2 创建对象的几种方式
+  * [5.3 作用域](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/51-zuo-yong-yu.md)
+  * 5.4 闭包
+  * 5.5 原型与原型链
+  * 5.6 继承
+  * [5.7 this、apply、call、bind](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/55-thisapplycallbind.md)
+  * 5.8 ES6 class
 * [第六章 JavaScript异步编程](di-liu-zhang-javascript-yi-bu-bian-cheng.md)
   * [6.1 异步编程概论](di-liu-zhang-javascript-yi-bu-bian-cheng/61-yi-bu-bian-cheng-gai-lun.md)
   * [6.2 JavaScript异步编程开源库](di-liu-zhang-javascript-yi-bu-bian-cheng/62-javascriptyi-bu-bian-cheng-kai-yuan-ku.md)

@@ -53,7 +53,7 @@
   * 附录
     * [附录1：valueOf\(\)](di-si-zhang-ecmascript-core/fu-lu-1-valueof.md)
 * [第五章 面向对象编程](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng.md)
-  * 5.1 构造函数
+  * [5.1 构造函数](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/51-gou-zao-han-shu.md)
   * [5.2 作用域](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/51-zuo-yong-yu.md)
   * 5.3 闭包
   * 5.4 原型与原型链
@@ -68,6 +68,4 @@
   * [6.5 Generator函数的应用](di-liu-zhang-javascript-yi-bu-bian-cheng/65-generatorhan-shu-de-ying-yong.md)
   * [6.6 深入理解ES7的async/await](di-liu-zhang-javascript-yi-bu-bian-cheng/66-shen-ru-li-jie-es7-de-async-await.md)
   * [6.7 一步一步实现一个Promise](di-liu-zhang-javascript-yi-bu-bian-cheng/67-yi-bu-yi-bu-shi-xian-yi-ge-promise.md)
-
-
 

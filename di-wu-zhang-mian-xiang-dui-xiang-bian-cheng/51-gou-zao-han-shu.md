@@ -121,6 +121,7 @@ var p = new Person();
 **参考文章**
 
 * [JavaScript构造函数详解](http://www.jb51.net/article/77039.htm)
+* [我遇到的前端面试题2017](https://blog.dunizb.com/2017/09/08/interview-questions-2017/#9-%E5%BD%93new-Foo-%E6%97%B6%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88)
 
 
 

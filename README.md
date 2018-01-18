@@ -91,12 +91,13 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
 **第五章 面向对象编程**
 
-* [x] 第1节 作用域
-* [ ] 第2节 闭包
-* [ ] 第3节 原型与原型链
-* [ ] 第4节 继承
-* [x] 第5节 this、apply、call、bind
-* [ ] 第6节 ES6 class
+* [x] 第1节 构造函数
+* [x] 第2节 作用域
+* [ ] 第3节 闭包
+* [ ] 第4节 原型与原型链
+* [ ] 第5节 继承
+* [x] 第6节 this、apply、call、bind
+* [ ] 第7节 ES6 class
 
 **第六章 JavaScript异步编程**
 

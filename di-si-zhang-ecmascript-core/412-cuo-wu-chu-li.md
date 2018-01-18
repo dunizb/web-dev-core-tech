@@ -167,7 +167,66 @@ console.log(n);
 
 > 处理错误时，请不要简单粗暴地用alert\(\)把错误显示给用户。教程的代码使用alert\(\)是为了便于演示。
 
+## 三、错误传播
 
+如果代码发生了错误，又没有被try ... catch捕获，那么，程序执行流程会跳转到哪呢？
+
+```js
+function getLength(s) {
+    return s.length;
+}
+
+function printLength() {
+    console.log(getLength('abc')); // 3
+    console.log(getLength(null)); // Error!
+}
+
+printLength();
+```
+
+**如果在一个函数内部发生了错误，它自身没有捕获，错误就会被抛到外层调用函数，如果外层函数也没有捕获，该错误会一直沿着函数调用链向上抛出，直到被JavaScript引擎捕获，代码终止执行。**
+
+所以，我们不必在每一个函数内部捕获错误，只需要在合适的地方来个统一捕获，一网打尽。
+
+## 四、异步错误处理
+
+编写JavaScript代码时，我们要时刻牢记，JavaScript引擎是一个事件驱动的执行引擎，代码总是以单线程执行，而回调函数的执行需要等到下一个满足条件的事件出现后，才会被执行。
+
+例如，setTimeout\(\)函数可以传入回调函数，并在指定若干毫秒后执行：
+
+```js
+function printTime() {
+    console.log('It is time!');
+}
+
+setTimeout(printTime, 1000);
+console.log('done');
+```
+
+上面的代码会先打印done，1秒后才会打印It is time!。
+
+如果printTime\(\)函数内部发生了错误，我们试图用try包裹setTimeout\(\)是无效的：
+
+```js
+function printTime() {
+    throw new Error();
+}
+
+try {
+    setTimeout(printTime, 1000);
+    console.log('done');
+} catch (e) {
+    console.log('error');
+}
+
+// done
+```
+
+原因就在于调用setTimeout\(\)函数时，传入的printTime函数并未立刻执行！紧接着，JavaScript引擎会继续执行console.log\('done'\);语句，而此时并没有错误发生。直到1秒钟后，执行printTime函数时才发生错误，但此时除了在printTime函数内部捕获错误外，外层代码并无法捕获。
+
+所以，**涉及到异步代码，无法在调用时捕获，原因就是在捕获的当时，回调函数并未执行。**
+
+类似的，当我们处理一个事件时，在绑定事件的代码处，无法捕获事件处理函数的错误。
 
 
 

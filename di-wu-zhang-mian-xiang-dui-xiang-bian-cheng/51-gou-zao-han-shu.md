@@ -62,7 +62,7 @@ Person.prototype.sayName= function(){
 };
 ```
 
-但是如果方法比较多的话，大多人会采用一种更简洁的方法：直接使用一个对象字面形式替换原型对象，如下：  
+但是如果方法比较多的话，大多人会采用一种更简洁的方法：直接使用一个对象字面形式替换原型对象，如下：
 
 ```js
 Person.prototype ={
@@ -84,7 +84,7 @@ Person.prototype ={
 ```js
 Person.prototype ={
      constructor :Person,
-      
+
      sayName :function(){
         console.log(this.name);
      },        
@@ -94,9 +94,25 @@ Person.prototype ={
 };
 ```
 
+### 构造函数创建对象的过程
 
+以下面代码为例：
 
-啊萨达四大撒
+```js
+var p = new Person();
+```
+
+首先，运算符new 创建了一个对象，类似于{}，是一个没有任何（自定义）成员的对象；
+
+* 使用new 创建对象，那么对象的类型就是创建他的构造函数名
+* 使用{}无论如何都是Object类型，相当于new Object
+
+然后，调用构造函数，为其初始化成员；
+
+* 构造函数在调用的一开始，有一个赋值操作，即this = 刚刚创建出来的对象。
+* 因此在构造函数中this表示刚刚创建出来的对象。
+
+然后，在构造函数中 利用 对象的动态特性 为其对象添加成员；
 
 
 

@@ -148,6 +148,14 @@ console.log(p.__prop__ === Person.prototype);//true
 
 ![](http://img.imooc.com/57d226440001674106910470.png)
 
+## 五、原型链
+
+
+
+
+
+
+
 ---
 
 **参考资料**

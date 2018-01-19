@@ -128,6 +128,29 @@ o1.name = "张三";    // 不是修改原型中的name而是自己增加了一�
 console.log(o1.name + '，'+ o2.name);    // 张三，test
 ```
 
+## 四、构造、原型、实例三角结构图
+
+对于如下代码：
+
+```
+function Person(){}
+var p = new Person()
+
+console.log(Person.prototype.constructor); //function Person(){}
+console.log(Person.prototype.constructor.name); //Person
+console.log(typeof Person.prototype.constructor); //function
+
+console.log(p.__prop__);
+console.log(p.__prop__ === Person.prototype);//true
+
+```
+
+于是他们的关系图如下：
+
+![](http://img.imooc.com/57d226440001674106910470.png)
+
+
+
 
 
 

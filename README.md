@@ -94,7 +94,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
 **第五章 面向对象编程**
 
-* [ ] 第1节 原型与原型链
+* [x] 第1节 原型与原型链
 * [x] 第2节 作用域
 * [x] 第3节 闭包
 * [ ] 第4节 继承

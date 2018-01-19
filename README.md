@@ -87,6 +87,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第11节 变量声明提升
 * [x] 第12节 错误处理
 * [ ] 第13节 var、let、const
+* [ ] 第14节 分钟理解JS引擎的执行机制
 * [x] 附录
   * [x] 附录1：valueOf\(\)
 

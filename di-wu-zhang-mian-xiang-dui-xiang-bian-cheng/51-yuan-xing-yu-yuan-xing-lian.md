@@ -1,5 +1,14 @@
 # 第1节 原型与原型链
 
+这一节您将看到以下内容：
+
+* 传统构造函数的问题
+* 一些相关概念
+* 认识原型
+* 构造、原型、实例三角结构图
+* 对象的原型链
+* 函数的构造函数Function
+
 一句话说明什么是原型：原型就是一个JavaScript对象，原型能存储我们的方法，构造函数创建出来的实例对象能够引用原型中的方法。
 
 ## 一、传统构造函数的问题
@@ -170,7 +179,7 @@ var p = new Person();
 //p 具有默认的原型链
 ```
 
-默认的原型链结构就是： 
+默认的原型链结构就是：
 
 ```
 当前对象 -> 构造函数.prototype -> Object.prototype -> null
@@ -189,9 +198,114 @@ var arr = new DunizbCollection();
 
 ### ![](/assets/__prop__7.png)
 
-jsabjashdas
+## 六、函数的构造函数Function
 
+在JS中使用Function可以实例化函数对象 。也就是说在JS中函数与普通对象一样，也是一个对象类型。函数是JS中的一等公民。
 
+1. 函数是对象，就可以使用对象的动态特性
+2. 函数是对象，就有构造函数创建函数
+3. 函数是对象，可以创建其它对象
+4. 函数是唯一可以限定变量作用域的结果
+
+要解决的问题
+
+1. Function 如何使用
+2. Function 与函数的关系
+3. 函数的原型链结构
+
+### 6.1 函数是Function的实例
+
+语法
+
+```js
+new Function( arg0,arg1,arg1,….argN, body );
+```
+
+Function 中的参数全部是字符串
+
+该构造函数的作用是将参数链接起来组成函数
+
+* 如果参数只有一个，那么表示函数体
+* 如果参数有多个，最后一个参数表示函数体，前面的所有参数表示函数的参数
+* 如果没有参数，表示创建一个空函数
+
+举例：创建一个打印一句话的函数
+
+```js
+// 传统的
+function foo () {
+    console.log( '你好' );
+}
+//Function
+var func = new Function( 'console.log( "你好" );' );
+// 功能上，这里foo 与 func 等价
+```
+
+在比如，创建一个空函数
+
+```js
+//传统
+function foo () {}
+//Function
+var func = new Function();
+func();
+```
+
+传入函数内一个数字，打印该函数
+
+```js
+//传统
+function foo ( num ) {
+    console.log( num );
+}
+//Function
+var func = new Function( "num" ,"console.log( num )" );
+func();
+```
+
+### 6.2 函数的原型链结构
+
+任意的一个函数，都是相当于Function的实例，类似于{}与new Object\(\)的关系。
+
+```js
+function foo () {}
+```
+
+上面的代告诉解析器，有一个对象叫foo，它是一个函数；相当于new Function（）得到一个函数对象
+
+* 函数应该有什么属性？答：\_\_proto\_\_
+* 函数的构造函数是什么？答：Function
+* 函数应该继承自Function.prototype
+* Function.prototype继承自Object.prototype
+
+对于Function，我们还必须知道
+
+* Object函数是Function的一个实例
+
+* Object作为对象是继承自Function.prototype的，又“Function.prototype”继承自Object.prototype
+  ```js
+  foo.prototype.__proto__ === Object.prototype // true
+  ```
+* Function是自己的构造函数
+
+下面绘制出 Function 的构造原型实例三角形结构 
+
+![](/assets/__prop__8.png)
+
+* 在JS 中任何对象的老祖宗就是Object.prototype
+* 在JS中任何函数的老祖宗就是Function.prototype
+
+### 6.3 为什么要使用Function？
+
+Function是使用字符串构建函数，那么就可以在程序运行过程中构建函数.
+
+以前的函数必须一开始就写好，再经过预解析，一步一步的运行
+
+假定从服务器里拿到“\[1,2,3,4,5\]”，将数组形式的字符串转换成数组对象
+
+```js
+var arr = ( new Function( 'return ' + str + ' ;' ) )();
+```
 
 
 

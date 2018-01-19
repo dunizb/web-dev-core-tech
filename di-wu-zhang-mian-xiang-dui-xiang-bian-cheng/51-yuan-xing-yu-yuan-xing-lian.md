@@ -39,7 +39,7 @@ function Foo () {
 
 会在开发中变得困难：引入框架危险，代码繁冗不好维护。解决方法就是如果外面的函数不占用其名字，而且在函数名下。
 
-每一个函数在定义的时候，有一个神秘对象（暂且这么称呼）被创建出来。
+每一个函数在定义的时候，有一个神秘对象（就是原型对象，暂且这么称呼）被创建出来。
 
 每一个由构造函数创建的对象都会默认的连接到该神秘对象上。
 
@@ -283,12 +283,14 @@ function foo () {}
 * Object函数是Function的一个实例
 
 * Object作为对象是继承自Function.prototype的，又“Function.prototype”继承自Object.prototype
+
   ```js
   foo.prototype.__proto__ === Object.prototype // true
   ```
+
 * Function是自己的构造函数
 
-下面绘制出 Function 的构造原型实例三角形结构 
+下面绘制出 Function 的构造原型实例三角形结构
 
 ![](/assets/__prop__8.png)
 
@@ -306,8 +308,6 @@ Function是使用字符串构建函数，那么就可以在程序运行过程中
 ```js
 var arr = ( new Function( 'return ' + str + ' ;' ) )();
 ```
-
-
 
 ---
 

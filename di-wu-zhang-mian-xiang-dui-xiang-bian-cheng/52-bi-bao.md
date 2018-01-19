@@ -17,6 +17,45 @@
 3. 实现封装
 4. 模拟面向对象的代码风格
 
+函数就可以构成闭包，要解决的问题就是如何访问到函数内部的数据
+
+例1：
+
+```js
+function foo () {
+    var num  = 123;
+    return num;
+}
+var res = foo();
+console.log( res );    // =>123
+```
+
+这里的确是访问到函数中的数据了。但是该数据不能第二次访问，因此第二次访问的时候又要调用一次foo，表示又有一个新的num = 123出来了。
+
+在函数内的数据，不能直接在函数外部访问，那么在函数内如果定义一个函数，那么在这个函数内部中是可以直接访问的
+
+例2：
+
+```js
+function foo() {
+    var num = Math.random();
+    function func() {
+        return mun;
+    }
+    return func;
+}
+var f = foo();
+// f 可以直接访问这个 num
+var res1 = f();
+var res2 = f();
+```
+
+我们使用前面学习的绘制作用域链结构图的方法来绘制闭包的作用域链结构图，如下：
+
+![](http://upload-images.jianshu.io/upload_images/68937-29f42ee2c9f5f863.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+
 ## 三、闭包的基本模型
 
 ### 对象模式
@@ -24,17 +63,14 @@
 函数内部定义个一个对象，对象中绑定多个函数（方法），返回对象，利用对象的方法访问函数内的数据
 
 ```js
-function fun1(){
-    var a = 0;
-    var b = 'hello';
-    return obj = {
-        a: a,
-        b: b
+function foo () {
+    // 私有数据
+    return {
+         method : function(){
+             // 操作私有数据
+         }
     }
 }
-
-fun1().a; // 0
-fun1().b; // hello
 ```
 
 ### 函数模式
@@ -42,31 +78,92 @@ fun1().b; // hello
 函数内部定义一个新函数，返回新函数，用新函数获得函数内的数据
 
 ```js
-function func1(){
-    var a = 0;
-    var b = 'hello';
-    function func2(){
-        return a + b;
+function foo(){
+    // 私有数据
+    return function(){
+         // 可以操作私有数据
     }
-    return func2();
 }
-
-func1(); // 0hello
 ```
 
 ### 沙箱模式
 
+**沙箱的概念**
+
+沙盘与盒子，就可以在一个笑笑的空间内模拟显示世界，特点是执行效果与现实世界一模一样，但是在沙箱中模拟与现实无关.
+
 沙箱模式就是一个自调用函数，代码写到函数中一样会执行，但是不会与外界有任何的影响
 
-```
-var a = 0;
-(function(){
-    var b = 'hello';
-    console.log(a + b);
+例如，在jQuery中
+
+```js
+(function () {
+   var jQuery = function () { // 所有的算法 }
+   // .... // .... jQuery.each = function () {}
+   window.jQuery = window.$ = jQuery;
 })();
-
-// 0hello
+$.each( ... )
 ```
 
-sdhashdjas
+### 带有缓存功能的函数
+
+以 Fibonacci 数列为例，改进传统计算斐波那契数列方法
+
+我们来回顾一下传统递归方式求斐波那契数列方法，我们定义一个count变量来查看递归了多少次：
+
+```js
+var count = 0;
+function fibo( n ){
+    count++;
+    if( n ==0 || n == 1 ) return 1;
+    return fibo( n - 1 ) + fibo( n - 2 );
+}
+fib1( 20 );
+console.log( count1 );
+// 5: 15
+// 6: 25
+// ...
+// 20: 21891
+```
+
+当 n = 5 式，count = 15，当时当 n = 20 的时候，count就达到惊人的21891次，性能太低了
+
+性能低的原因是 重复计算。如果每次将计算的结果存起来
+
+* 那么每次需要的时候先看看有没有存储过该数据，如果有，直接拿来用。
+* 如果没有再递归，但是计算的结果需要再次存储起来，以便下次使用
+
+改进版：
+
+```js
+var data = [ 1, 1 ];
+var count = 0;
+function fibo( n ) {
+    count++;
+    var v = data[ n ];
+    if( v === undefined ){
+         v = fibo( n - 1 ) + fibo( n - 2 );
+         data[ n ] = v;
+    }
+    return v;
+}
+fibo( 100 );
+console.log( count );    // 199
+```
+
+改进之后， n = 100的时候也才199次，大大提高了性能。
+
+## 四、闭包的性能问题
+
+
+
+
+
+
+
+
+
+
+
+
 

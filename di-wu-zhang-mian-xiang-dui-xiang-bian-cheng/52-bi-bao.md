@@ -1,4 +1,4 @@
-# 第2节 闭包
+# 第3节 闭包
 
 ## 一、概念
 
@@ -283,16 +283,14 @@ f(document);
 window.jView = obj;
 ```
 
-obj 是在函数 f 中定义的一个对象，这个对象中定义了一系列方法， 执行window.jView = obj 就是在 window 全局对象定义了一个变量 jView，并将这个变量指向 obj 对象，即全局变量 jView 引用了 obj . 而 obj 对象中的函数又引用了函数 f 中的变量 viewport ,因此函数 f 中的 viewport 不会被 GC 回收，viewport 会一直保存到内存中，所以这种写法满足了闭包的条件。 
-
-
+obj 是在函数 f 中定义的一个对象，这个对象中定义了一系列方法， 执行window.jView = obj 就是在 window 全局对象定义了一个变量 jView，并将这个变量指向 obj 对象，即全局变量 jView 引用了 obj . 而 obj 对象中的函数又引用了函数 f 中的变量 viewport ,因此函数 f 中的 viewport 不会被 GC 回收，viewport 会一直保存到内存中，所以这种写法满足了闭包的条件。
 
 ---
 
 参考文章
 
 * [让你分分钟理解 JavaScript 闭包](http://www.cnblogs.com/onepixel/p/5062456.html)
-* [进击JavaScript之（三）玩转闭包](https://blog.dunizb.com/2016/08/28/%E8%BF%9B%E5%87%BBJavaScript%E4%B9%8B%EF%BC%88%E4%B8%89%EF%BC%89%E7%8E%A9%E8%BD%AC%E9%97%AD%E5%8C%85/)
+* [进击JavaScript之（三）玩转闭包](https://blog.dunizb.com/2016/08/28/进击JavaScript之（三）玩转闭包/)
 
 
 

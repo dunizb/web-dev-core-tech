@@ -25,7 +25,7 @@ function Foo(){
 function sayHello () {}
 function Foo () {
     this.say = sayHello；
-}  
+}
 ```
 
 会在开发中变得困难：引入框架危险，代码繁冗不好维护。解决方法就是如果外面的函数不占用其名字，而且在函数名下。
@@ -87,13 +87,58 @@ console.log(f1.sayHello === f2.sayHello); // true
 
 \[\[Prototype\]\]作为对象的内部属性，是不能被直接访问的。所以为了方便查看一个对象的原型，Firefox和Chrome中提供了\_\_proto\_\_这个**非标准**（不是所有浏览器都支持）的访问器（ECMA引入了标准对象原型访问器"Object.getPrototype\(object\)"）。
 
+下面通过一个例子来看看原型相关概念：
+
+```js
+function Person() {}
+// 神秘对象就是Person.prototype
+//那么只有使用构造函数才可以访问它
+var o = new Person();
+//以前不能直接使用o来访问神秘对象
+//现在有了__proto__后，
+o.__proto__也可以直接访问神秘对象
+//那么o.__proto__ === Person.prototype
+```
+
+**神秘对象**（原型）中都有一个属性constructor，翻译为 构造器 。表示该原型是与什么构造函数联系起来的。
+
+\_\_proto\_\_有什么用?
+
+* 可以访问原型
+* 由于在开发中除非特殊要求，不要使用实例去修改原型的成员，因此该属性开发时使用较少。
+* 但是在调试过程中非常方便，可以轻易的访问原型进行查看成员
+
+如果在早期的浏览器中使用实例需要访问原型如何处理？
+
+可以使用实例对象访问构造器，然后使用构造器访问原型
+
+```js
+var o = new Person();
+o.constructor.prototype
+```
+
+如果给实例继承自原型的属性赋值
+
+```js
+function Foo();
+Foo.prototype.name = "test";
+var o1 = new Foo();
+var o2 = new Foo();
+o1.name = "张三";    // 不是修改原型中的name而是自己增加了一个name属性
+console.log(o1.name + '，'+ o2.name);    // 张三，test
+```
+
+
+
+
+
 
 
 ---
 
 **参考资料**
 
-* [进击JavaScript之（五）原型与继承](https://blog.dunizb.com/2016/09/19/%E8%BF%9B%E5%87%BBJavaScript%E4%B9%8B%EF%BC%88%E4%BA%94%EF%BC%89%E5%8E%9F%E5%9E%8B%E4%B8%8E%E7%BB%A7%E6%89%BF/)
+* [进击JavaScript之（五）原型与继承](https://blog.dunizb.com/2016/09/19/进击JavaScript之（五）原型与继承/)
 
 
 

@@ -132,7 +132,7 @@ console.log(o1.name + '，'+ o2.name);    // 张三，test
 
 对于如下代码：
 
-```
+```js
 function Person(){}
 var p = new Person()
 
@@ -142,20 +142,11 @@ console.log(typeof Person.prototype.constructor); //function
 
 console.log(p.__prop__);
 console.log(p.__prop__ === Person.prototype);//true
-
 ```
 
 于是他们的关系图如下：
 
 ![](http://img.imooc.com/57d226440001674106910470.png)
-
-
-
-
-
-
-
-
 
 ---
 

@@ -50,7 +50,7 @@
   * [4.10 Math.random\(\)](di-si-zhang-ecmascript-core/410-mathrandom.md)
   * [4.11 变量声明提升](di-si-zhang-ecmascript-core/412-bian-liang-sheng-ming-ti-sheng.md)
   * [4.12 错误处理](di-si-zhang-ecmascript-core/412-cuo-wu-chu-li.md)
-  * 4.13 var、let、const
+  * [4.13 var、let、const](di-si-zhang-ecmascript-core/413-varletconst.md)
   * 4.14 10分钟理解JS引擎的执行机制
   * 附录
     * [附录1：valueOf\(\)](di-si-zhang-ecmascript-core/fu-lu-1-valueof.md)
@@ -61,7 +61,7 @@
   * 5.4 继承
   * [5.5 this、apply、call、bind](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/55-thisapplycallbind.md)
   * [5.6 构造函数](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/56-gou-zao-han-shu.md)
-  * [5.7 创建对象的几种方式](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/57-chuang-jian-dui-xiang-de-ji-zhong-fang-shi.md)比较
+  * [5.7 创建对象的几种方式](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/57-chuang-jian-dui-xiang-de-ji-zhong-fang-shi.md)
   * 5.8 ES6 class
 * [第六章 JavaScript异步编程](di-liu-zhang-javascript-yi-bu-bian-cheng.md)
   * [6.1 异步编程概论](di-liu-zhang-javascript-yi-bu-bian-cheng/61-yi-bu-bian-cheng-gai-lun.md)
@@ -71,6 +71,4 @@
   * [6.5 Generator函数的应用](di-liu-zhang-javascript-yi-bu-bian-cheng/65-generatorhan-shu-de-ying-yong.md)
   * [6.6 深入理解ES7的async/await](di-liu-zhang-javascript-yi-bu-bian-cheng/66-shen-ru-li-jie-es7-de-async-await.md)
   * [6.7 一步一步实现一个Promise](di-liu-zhang-javascript-yi-bu-bian-cheng/67-yi-bu-yi-bu-shi-xian-yi-ge-promise.md)
-
-
 

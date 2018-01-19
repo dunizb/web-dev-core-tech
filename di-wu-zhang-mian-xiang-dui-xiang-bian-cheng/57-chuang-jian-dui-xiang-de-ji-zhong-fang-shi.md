@@ -353,7 +353,7 @@ function Car (desc) {
   this.desc = desc;
   this.color = "red";
 }
-  
+
 Car.prototype = {
   getInfo: function() {
    return 'A ' + this.color + ' ' + this.desc + '.';

@@ -111,6 +111,8 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第4节 Generator函数
 * [x] 第5节 Generator函数的应用
 * [x] 第6节 深入理解ES7的async/await
+* [ ] 第7节 单线程模型
+* [ ] 第8节 定时器
 * [x] 附录
   * [x] 附录1：一步一步实现一个Promise
 

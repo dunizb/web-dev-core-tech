@@ -66,11 +66,14 @@
   * 5.8 ES6 class
 * [第六章 JavaScript异步编程](di-liu-zhang-javascript-yi-bu-bian-cheng.md)
   * [6.1 异步编程概论](di-liu-zhang-javascript-yi-bu-bian-cheng/61-yi-bu-bian-cheng-gai-lun.md)
-  * [6.2 JavaScript异步编程开源库](di-liu-zhang-javascript-yi-bu-bian-cheng/62-javascriptyi-bu-bian-cheng-kai-yuan-ku.md)
-  * [6.3 Promise对象](di-liu-zhang-javascript-yi-bu-bian-cheng/63-promisedui-xiang.md)
-  * [6.4 Generator函数](di-liu-zhang-javascript-yi-bu-bian-cheng/64-generatorhan-shu.md)
-  * [6.5 Generator函数的应用](di-liu-zhang-javascript-yi-bu-bian-cheng/65-generatorhan-shu-de-ying-yong.md)
-  * [6.6 深入理解ES7的async/await](di-liu-zhang-javascript-yi-bu-bian-cheng/66-shen-ru-li-jie-es7-de-async-await.md)
+  * [6.2 浏览器单线程模型](di-liu-zhang-javascript-yi-bu-bian-cheng/62-liu-lan-qi-dan-xian-cheng-mo-xing.md)
+  * [6.3 JavaScript异步编程开源库](di-liu-zhang-javascript-yi-bu-bian-cheng/62-javascriptyi-bu-bian-cheng-kai-yuan-ku.md)
+  * [6.4 Promise对象](di-liu-zhang-javascript-yi-bu-bian-cheng/63-promisedui-xiang.md)
+  * [6.5 Generator函数](di-liu-zhang-javascript-yi-bu-bian-cheng/64-generatorhan-shu.md)
+  * [6.6 Generator函数的应用](di-liu-zhang-javascript-yi-bu-bian-cheng/65-generatorhan-shu-de-ying-yong.md)
+  * [6.7 async/await](di-liu-zhang-javascript-yi-bu-bian-cheng/66-shen-ru-li-jie-es7-de-async-await.md)
   * 附录
     * [附录1：一步一步实现一个Promise](di-liu-zhang-javascript-yi-bu-bian-cheng/67-yi-bu-yi-bu-shi-xian-yi-ge-promise.md)
+
+
 

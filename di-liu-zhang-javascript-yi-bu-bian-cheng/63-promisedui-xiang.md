@@ -1,4 +1,4 @@
-# 第2节 Promise对象
+# 第4节 Promise对象
 
 原文：[ECMAScript 6 入门 - Promise 对象](http://es6.ruanyifeng.com/#docs/promise)
 

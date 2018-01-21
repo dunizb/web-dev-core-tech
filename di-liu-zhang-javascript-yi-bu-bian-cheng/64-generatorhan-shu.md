@@ -1,4 +1,4 @@
-# 第4节 Generator函数
+# 第5节 Generator函数
 
 ## 一、什么是Generator函数
 
@@ -280,7 +280,7 @@ try {
 
 如果 Generator 函数内部没有部署try...catch代码块，那么throw方法抛出的错误，将被外部try...catch代码块捕获。
 
-## 六、Generator.prototype.return\(\) 
+## 六、Generator.prototype.return\(\)
 
 Generator 函数返回的遍历器对象，还有一个return方法，可以返回给定的值，并且终结遍历 Generator 函数。
 

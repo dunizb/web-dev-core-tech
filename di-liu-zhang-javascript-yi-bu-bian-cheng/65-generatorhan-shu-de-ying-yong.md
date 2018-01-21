@@ -1,4 +1,4 @@
-# 第5节 Generator函数的应用
+# 第6节 Generator函数的应用
 
 Generator 可以暂停函数执行，返回任意表达式的值。这种特点使得 Generator 有多种应用场景。
 
@@ -244,8 +244,4 @@ function doStuff() {
 ---
 
 原文：[http://es6.ruanyifeng.com/\#docs/generator](http://es6.ruanyifeng.com/#docs/generator)
-
-
-
-
 

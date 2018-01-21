@@ -1,4 +1,4 @@
-# 第6节 深入理解ES7的async/await
+# 第7节 async/await
 
 ## 一、介绍
 

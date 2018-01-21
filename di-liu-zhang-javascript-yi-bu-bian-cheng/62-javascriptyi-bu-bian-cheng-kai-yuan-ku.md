@@ -1,4 +1,4 @@
-# 第2节 JavaScript异步编程开源库
+# 第3节 JavaScript异步编程开源库
 
 ## 一、jQuery的deferred对象
 

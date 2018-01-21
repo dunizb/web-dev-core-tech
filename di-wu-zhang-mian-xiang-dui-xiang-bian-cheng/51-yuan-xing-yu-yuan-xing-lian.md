@@ -290,12 +290,12 @@ function foo () {}
 
 * Function是自己的构造函数
 
+* 在JS 中任何对象的老祖宗就是Object.prototype
+* 在JS中任何函数的老祖宗就是Function.prototype
+
 下面绘制出 Function 的构造原型实例三角形结构
 
 ![](/assets/__prop__8.png)
-
-* 在JS 中任何对象的老祖宗就是Object.prototype
-* 在JS中任何函数的老祖宗就是Function.prototype
 
 ### 6.3 为什么要使用Function？
 

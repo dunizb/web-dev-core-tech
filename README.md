@@ -24,10 +24,6 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
 [https://webdev.dunizb.vip（可能比较慢，建议使用“](https://webdev.dunizb.vip)[梯子](https://webdev.dunizb.vip)[”）](https://webdev.dunizb.vip)
 
-## 思维导图（持续更新）
-
-请戳这里：[https://mubu.com/doc/1mdbHvzshh](https://mubu.com/doc/1mdbHvzshh)
-
 ## 计划目录（持续更新）
 
 **第一章 HTTP**
@@ -116,6 +112,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [ ] 第8节 定时器
 
 * [x] 附录
+
   * [x] 附录1：一步一步实现一个Promise
 
 **性能优化**

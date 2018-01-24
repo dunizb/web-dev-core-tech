@@ -87,6 +87,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第15节 script标签的defer和async属性
 
 * [x] 附录
+
   * [x] 附录1：valueOf\(\)
 
 **第五章 面向对象编程**
@@ -111,6 +112,8 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第7节 async/await
 
 * [x] 第8节 定时器
+
+* [x] 第9节 Event Loop（事件循环）机制
 
 * [x] 附录
 

@@ -102,7 +102,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 **第六章 JavaScript异步编程**
 
 * [x] 第1节 异步编程概论
-* [ ] 第2节 浏览器单线程模型
+* [x] 第2节 浏览器单线程模型
 * [x] 第3节 JavaScript异步编程开源库
 * [x] 第4节 Promise对象
 * [x] 第5节 Generator函数
@@ -118,6 +118,4 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 **性能优化**
 
 * [ ] 函数防抖与节流
-
-
 

@@ -111,9 +111,11 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第6节 Generator函数的应用
 * [x] 第7节 async/await
 
-* [x] 第8节 定时器
+* [ ] 第8节 定时器
 
-* [x] 第9节 Event Loop（事件循环）机制
+* [ ] 第9节 Event Loop（事件循环）机制
+
+* [ ] 第10节 JavaScript 执行机制
 
 * [x] 附录
 

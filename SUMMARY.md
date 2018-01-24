@@ -74,7 +74,6 @@
   * [6.7 async/await](di-liu-zhang-javascript-yi-bu-bian-cheng/66-shen-ru-li-jie-es7-de-async-await.md)
   * [6.8 定时器](di-liu-zhang-javascript-yi-bu-bian-cheng/68-ding-shi-qi.md)
   * [6.9 Event Loop（事件循环）机制](di-liu-zhang-javascript-yi-bu-bian-cheng/69-event-loopff08-shi-jian-xun-huan-ff09-ji-zhi.md)
-  * 6.7 JavaScript 执行机制
   * 附录
     * [附录1：一步一步实现一个Promise](di-liu-zhang-javascript-yi-bu-bian-cheng/67-yi-bu-yi-bu-shi-xian-yi-ge-promise.md)
 

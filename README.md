@@ -115,8 +115,6 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
 * [ ] 第9节 Event Loop（事件循环）机制
 
-* [ ] 第10节 JavaScript 执行机制
-
 * [x] 附录
 
   * [x] 附录1：一步一步实现一个Promise
@@ -124,4 +122,6 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 **性能优化**
 
 * [ ] 函数防抖与节流
+
+
 

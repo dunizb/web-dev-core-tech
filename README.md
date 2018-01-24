@@ -85,6 +85,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第13节 var、let、const
 * [x] 第14节 分钟理解JS引擎的执行机制
 * [x] 第15节 script标签的defer和async属性
+* [x] 第16节 定时器
 * [x] 附录
   * [x] 附录1：valueOf\(\)
 
@@ -118,4 +119,6 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 **性能优化**
 
 * [ ] 函数防抖与节流
+
+
 

@@ -111,7 +111,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第6节 Generator函数的应用
 * [x] 第7节 async/await
 
-* [ ] 第8节 定时器
+* [x] 第8节 定时器
 
 * [ ] 第9节 Event Loop（事件循环）机制
 
@@ -124,6 +124,4 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 **性能优化**
 
 * [ ] 函数防抖与节流
-
-
 

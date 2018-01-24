@@ -85,7 +85,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第13节 var、let、const
 * [x] 第14节 分钟理解JS引擎的执行机制
 * [x] 第15节 script标签的defer和async属性
-* [x] 第16节 定时器
+
 * [x] 附录
   * [x] 附录1：valueOf\(\)
 
@@ -110,7 +110,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第6节 Generator函数的应用
 * [x] 第7节 async/await
 
-* [ ] 第8节 定时器
+* [x] 第8节 定时器
 
 * [x] 附录
 

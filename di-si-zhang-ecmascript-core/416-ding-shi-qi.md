@@ -205,9 +205,140 @@ interval(function(){
 
 setTimeout和setInterval函数，都返回一个表示计数器编号的整数值，将该整数传入clearTimeout和clearInterval函数，就可以取消对应的定时器。
 
+```js
+var id1 = setTimeout(f,1000);
+var id2 = setInterval(f,1000);
 
+clearTimeout(id1);
+clearInterval(id2);
+```
 
+setTimeout和setInterval返回的整数值是连续的，也就是说，第二个setTimeout方法返回的整数值，将比第一个的整数值大1。利用这一点，可以写一个函数，取消当前所有的setTimeout。
 
+```js
+(function() {
+  var gid = setInterval(clearAllTimeouts, 0);
+
+  function clearAllTimeouts() {
+    var id = setTimeout(function() {}, 0);
+    while (id > 0) {
+      if (id !== gid) {
+        clearTimeout(id);
+      }
+      id--;
+    }
+  }
+})();
+```
+
+运行上面代码后，实际上再设置任何setTimeout都无效了。
+
+下面是一个clearTimeout实际应用的例子。有些网站会实时将用户在文本框的输入，通过Ajax方法传回服务器，jQuery的写法如下。
+
+```js
+$('textarea').on('keydown', ajaxAction);
+```
+
+这样写有一个很大的缺点，就是如果用户连续击键，就会连续触发keydown事件，造成大量的Ajax通信。这是不必要的，而且很可能会发生性能问题。正确的做法应该是，设置一个门槛值，表示两次Ajax通信的最小间隔时间。如果在设定的时间内，发生新的keydown事件，则不触发Ajax通信，并且重新开始计时。如果过了指定时间，没有发生新的keydown事件，将进行Ajax通信将数据发送出去。
+
+```js
+$('textarea').on('keydown', debounce(ajaxAction, 2500))
+```
+
+利用setTimeout和clearTimeout，可以实现debounce方法，该方法用于防止某个函数在短时间内被密集调用。具体来说，debounce方法返回一个新版的该函数，这个新版函数调用后，只有在指定时间内没有新的调用，才会执行，否则就重新计时。
+
+```js
+function debounce(fn, delay){
+  var timer = null; // 声明计时器
+  return function(){
+    var context = this;
+    var args = arguments;
+    clearTimeout(timer);
+    timer = setTimeout(function(){
+      fn.apply(context, args);
+    }, delay);
+  };
+}
+
+// 用法示例
+var todoChanges = _.debounce(batchLog, 1000);
+Object.observe(models.todo, todoChanges);
+```
+
+> 现实中，最好不要设置太多个setTimeout和setInterval，它们耗费CPU。比较理想的做法是，将要推迟执行的代码都放在一个函数里，然后只对这个函数使用setTimeout或setInterval。
+
+## 四、运行机制
+
+setTimeout和setInterval的运行机制是，将指定的代码移出本次执行，等到下一轮 Event Loop 时，再检查是否到了指定时间。如果到了，就执行对应的代码；如果不到，就等到再下一轮 Event Loop 时重新判断。
+
+这意味着，setTimeout和setInterval指定的代码，必须等到本轮 Event Loop 的所有任务都执行完，才会开始执行。由于前面的任务到底需要多少时间执行完，是不确定的，所以没有办法保证，setTimeout和setInterval指定的任务，一定会按照预定时间执行。
+
+```js
+setTimeout(someTask, 100);
+veryLongTask();
+```
+
+上面代码的setTimeout，指定100毫秒以后运行一个任务。但是，如果后面的veryLongTask函数（同步任务）运行时间非常长，过了100毫秒还无法结束，那么被推迟运行的someTask就只有等着，等到veryLongTask运行结束，才轮到它执行。
+
+下面是setInterval的例子。
+
+```js
+setInterval(function () {
+  console.log(2);
+}, 1000);
+
+sleep(3000);
+```
+
+上面的第一行语句要求每隔1000毫秒，就输出一个2。但是，紧接着的语句需要3000毫秒才能完成，那么setInterval就必须推迟到3000毫秒之后才开始生效。这3000毫秒之内，setInterval不会产生累积效应。
+
+## 五、正常任务与微任务
+
+正常情况下，JavaScript的任务是同步执行的，即执行完前一个任务，然后执行后一个任务。只有遇到异步任务的情况下，执行顺序才会改变。
+
+这时，需要区分两种任务：正常任务（task）与微任务（microtask）。它们的区别在于，“正常任务”在下一轮Event Loop执行，“微任务”在本轮Event Loop的所有任务结束后执行。
+
+```js
+console.log(1);
+
+setTimeout(function() {
+  console.log(2);
+}, 0);
+
+Promise.resolve().then(function() {
+  console.log(3);
+}).then(function() {
+  console.log(4);
+});
+
+console.log(5);
+
+// 1
+// 5
+// 3
+// 4
+// 2
+```
+
+上面代码的执行结果说明，setTimeout\(fn, 0\)在Promise.resolve之后执行。
+
+这是因为setTimeout语句指定的是“正常任务”，即不会在当前的Event Loop执行。而Promise会将它的回调函数，在状态改变后的那一轮Event Loop指定为微任务。所以，3和4输出在5之后、2之前。
+
+正常任务包括以下情况。
+
+* setTimeout
+* setInterval
+* setImmediate
+* I/O
+* 各种事件（比如鼠标单击事件）的回调函数
+
+微任务目前主要是process.nextTick\(Nodejs的API\)和 Promise 这两种情况。
+
+事实上，process.nextTick是不会进入异步队列的，而是直接在主线程队列尾强插一个任务，虽然不会阻塞主线程，但是会阻塞异步任务的执行，如果有嵌套的process.nextTick，那异步任务就永远没机会被执行到了。
+
+---
+
+原文：[http://javascript.ruanyifeng.com/advanced/timer.html](http://javascript.ruanyifeng.com/advanced/timer.html)
 
 
 

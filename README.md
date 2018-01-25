@@ -113,7 +113,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
 * [x] 第8节 定时器
 
-* [ ] 第9节 Event Loop（事件循环）机制
+* [x] 第9节 Event Loop（事件循环）机制
 
 * [x] 附录
 

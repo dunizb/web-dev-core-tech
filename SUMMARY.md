@@ -59,7 +59,7 @@
   * [5.1 原型与原型链](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/51-yuan-xing-yu-yuan-xing-lian.md)
   * [5.2 作用域](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/51-zuo-yong-yu.md)
   * [5.3 闭包](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/52-bi-bao.md)
-  * 5.4 继承
+  * [5.4 继承](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/54-ji-cheng.md)
   * [5.5 this、apply、call、bind](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/55-thisapplycallbind.md)
   * [5.6 构造函数](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/56-gou-zao-han-shu.md)
   * [5.7 创建对象的几种方式](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/57-chuang-jian-dui-xiang-de-ji-zhong-fang-shi.md)
@@ -76,6 +76,4 @@
   * [6.9 Event Loop（事件循环）机制](di-liu-zhang-javascript-yi-bu-bian-cheng/69-event-loopff08-shi-jian-xun-huan-ff09-ji-zhi.md)
   * 附录
     * [附录1：一步一步实现一个Promise](di-liu-zhang-javascript-yi-bu-bian-cheng/67-yi-bu-yi-bu-shi-xian-yi-ge-promise.md)
-
-
 

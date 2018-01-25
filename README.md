@@ -120,7 +120,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
   * [x] 附录1：一步一步实现一个Promise
 
-**框架技术**
+**框架相关技术**
 
 * [ ] 第1节 剖析MVVM原理
 * [ ] 第2节 双向数据绑定原理

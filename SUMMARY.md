@@ -63,7 +63,7 @@
   * [5.5 this、apply、call、bind](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/55-thisapplycallbind.md)
   * [5.6 构造函数](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/56-gou-zao-han-shu.md)
   * [5.7 创建对象的几种方式](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/57-chuang-jian-dui-xiang-de-ji-zhong-fang-shi.md)
-  * 5.8 ES6 class
+  * [5.8 ES6 类 class](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/58-es6-class.md)
 * [第六章 JavaScript异步编程](di-liu-zhang-javascript-yi-bu-bian-cheng.md)
   * [6.1 异步编程概论](di-liu-zhang-javascript-yi-bu-bian-cheng/61-yi-bu-bian-cheng-gai-lun.md)
   * [6.2 浏览器单线程模型](di-liu-zhang-javascript-yi-bu-bian-cheng/62-liu-lan-qi-dan-xian-cheng-mo-xing.md)

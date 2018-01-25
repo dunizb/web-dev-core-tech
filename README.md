@@ -122,7 +122,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
 **框架相关技术**
 
-* [ ] 第1节 剖析MVVM原理
+* [ ] 第1节 剖析vue实现原理，自己动手实现mvvm
 * [ ] 第2节 双向数据绑定原理
 * [ ] 第3节 理解 Virtual DOM
 * [ ] 第4节 前端数据模板引擎

@@ -188,6 +188,10 @@ var obj = Object.create(p)
 
 Class 可以通过extends关键字实现继承，这比 ES5 的通过修改原型链实现继承，要清晰和方便很多。
 
+> 关于ES6 class 详细参看第8节内容
+
+ES6继承代码：
+
 ```js
 class Parent {
 }
@@ -207,12 +211,4 @@ class Child1 extends Parent {
 子类必须在constructor方法中调用super方法，否则新建实例时会报错。如果子类没有定义constructor方法，这个方法会被默认添加，不管有没有显式定义，任何一个子类都有constructor方法。
 
 ES5 的继承，实质是先创造子类的实例对象this，然后再将父类的方法添加到this上面（Parent.apply\(this\)）。ES6 的继承机制完全不同，实质是先创造父类的实例对象this（所以必须先调用super方法），然后再用子类的构造函数修改this。
-
-
-
-
-
-
-
-
 

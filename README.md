@@ -125,6 +125,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [ ] 第1节 剖析MVVM原理
 * [ ] 第2节 双向数据绑定原理
 * [ ] 第3节 理解 Virtual DOM
+* [ ] 第4节 前端数据模板引擎
 
 **性能优化**
 

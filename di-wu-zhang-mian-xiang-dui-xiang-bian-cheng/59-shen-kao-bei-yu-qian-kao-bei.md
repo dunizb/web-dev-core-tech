@@ -171,7 +171,43 @@ console.log(target.child); //Object {}
 
 这种方法使用较为简单，可以满足基本的深拷贝需求，而且能够处理JSON格式能表示的所有数据类型，**但是对于正则表达式类型、函数类型等无法进行深拷贝\(而且会直接丢失相应的值\)。**还有一点不好的地方是它会抛弃对象的constructor。也就是深拷贝之后，不管这个对象原来的构造函数是什么，在深拷贝之后都会变成Object。**同时如果对象中存在循环引用的情况也无法正确处理。**
 
+### 3.4 利用Object.create\(\)自己实现
 
+直接使用var newObj = Object.create\(oldObj\)，可以达到深拷贝的效果。
+
+```js
+function deepClone(initalObj, finalObj) {    
+  var obj = finalObj || {};    
+  for (var i in initalObj) {        
+    var prop = initalObj[i];        // 避免相互引用对象导致死循环，如initalObj.a = initalObj的情况
+    if(prop === obj) {            
+      continue;
+    }        
+    if (typeof prop === 'object') {
+      obj[i] = (prop.constructor === Array) ? [] : Object.create(prop);
+    } else {
+      obj[i] = prop;
+    }
+  }    
+  return obj;
+}
+```
+
+### 3.5 lodash
+
+另外一个很热门的函数库lodash，也有提供\_.cloneDeep用来做 Deep Copy。
+
+```js
+var _ = require('lodash');
+var obj1 = {
+    a: 1,
+    b: { f: { g: 1 } },
+    c: [1, 2, 3]
+};
+var obj2 = _.cloneDeep(obj1);
+console.log(obj1.b.f === obj2.b.f);
+// false
+```
 
 
 

@@ -99,7 +99,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第5节 this、apply、call、bind
 * [x] 第6节 构造函数
 * [x] 第7节 创建对象的几种方式比较
-* [ ] 第8节 ES6 class
+* [x] 第8节 ES6 class
 
 **第六章 JavaScript异步编程**
 

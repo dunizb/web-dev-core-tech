@@ -100,6 +100,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第6节 构造函数
 * [x] 第7节 创建对象的几种方式比较
 * [x] 第8节 ES6 class
+* [x] 第9节 深拷贝与浅拷贝
 
 **第六章 JavaScript异步编程**
 
@@ -119,7 +120,12 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
   * [x] 附录1：一步一步实现一个Promise
 
+**框架技术**
+
+* [ ] 
 **性能优化**
 
 * [ ] 函数防抖与节流
+
+
 

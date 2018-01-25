@@ -120,9 +120,9 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
   * [x] 附录1：一步一步实现一个Promise
 
-**框架相关技术**
+**第七章 前端框架相关技术**
 
-* [ ] 第1节 剖析vue实现原理，自己动手实现mvvm
+* [x] 第1节 剖析vue实现原理，自己动手实现mvvm
 * [ ] 第2节 双向数据绑定原理
 * [ ] 第3节 理解 Virtual DOM
 * [ ] 第4节 前端数据模板引擎

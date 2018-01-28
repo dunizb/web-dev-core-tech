@@ -122,11 +122,12 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
 **第七章 前端框架相关技术**
 
-* [x] 第1节 剖析vue实现原理，自己动手实现mvvm
-* [ ] 第2节 双向数据绑定原理
-* [ ] 第3节 理解 Virtual DOM
-* [ ] 第4节 前端数据模板引擎
-* [ ] 第5节 前端路由原理与实现
+* [x] 第1节 Vue.js双向绑定的实现原理
+* [ ] 第2节 理解 Virtual DOM
+* [ ] 第3节 前端数据模板引擎
+* [ ] 第4节 前端路由原理与实现
+* [x] 附录
+  * [x] 附录1：剖析vue实现原理，自己动手实现mvvm
 
 **Vue.js专题**
 

@@ -78,5 +78,9 @@
   * 附录
     * [附录1：一步一步实现一个Promise](di-liu-zhang-javascript-yi-bu-bian-cheng/67-yi-bu-yi-bu-shi-xian-yi-ge-promise.md)
 * 第七章 前端框架技术
-  * [7.1 剖析vue实现原理，自己动手实现mvvm](71-pou-xi-vue-shi-xian-yuan-li-ff0c-zi-ji-dong-shou-shi-xian-mvvm.md)
+  * 7.1 Vue.js双向绑定的实现原理
+* * 附录：
+    * [附录1：剖析vue实现原理，自己动手实现mvvm](71-pou-xi-vue-shi-xian-yuan-li-ff0c-zi-ji-dong-shou-shi-xian-mvvm.md)
+
+
 

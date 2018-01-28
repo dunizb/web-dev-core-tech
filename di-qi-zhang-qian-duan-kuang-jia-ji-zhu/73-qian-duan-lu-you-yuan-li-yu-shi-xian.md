@@ -315,3 +315,9 @@ return __data__.join('')
 
 [》》阅读全文《《](https://segmentfault.com/a/1190000006990480)
 
+******
+
+**相关资料**
+- [前端数据模板引擎的总结](http://www.cnblogs.com/jingwhale/p/5811800.html)
+- [聊一聊前端模板与渲染那些事儿](https://segmentfault.com/a/1190000000606216)
+

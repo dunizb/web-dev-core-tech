@@ -77,6 +77,6 @@
   * [6.9 Event Loop（事件循环）机制](di-liu-zhang-javascript-yi-bu-bian-cheng/69-event-loopff08-shi-jian-xun-huan-ff09-ji-zhi.md)
   * 附录
     * [附录1：一步一步实现一个Promise](di-liu-zhang-javascript-yi-bu-bian-cheng/67-yi-bu-yi-bu-shi-xian-yi-ge-promise.md)
-* 第七章 前端框架技术
-  * [7.1 Vue.js双向绑定的实现原理](71-vuejsshuang-xiang-bang-ding-de-shi-xian-yuan-li.md)
+
+
 

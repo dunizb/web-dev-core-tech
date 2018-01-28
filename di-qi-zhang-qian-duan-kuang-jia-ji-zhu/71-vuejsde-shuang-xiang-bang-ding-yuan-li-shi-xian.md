@@ -72,7 +72,7 @@ var vm = new Vue({
 2. 输入框内容变化时，data 中的数据同步变化。即 view =&gt; model 的变化。
 3. data 中的数据变化时，文本节点的内容同步变化。即 model =&gt; view 的变化。
 
-要实现任务一，需要对 DOM 进行编译，这里有一个知识点：DocumentFragment。
+要实现任务一，需要对 DOM 进行编译，这里有一个知识点：**DocumentFragment**。
 
 ## 四、DocumentFragment
 
@@ -103,58 +103,58 @@ const dom = nodetoFragment(app);
 ```js
 //  编译HTML模板
 const compile = (node,vm) => {
-	const regex = /\{\{(.*)\}\}/;//为临时正则表达式，为demo而生
-	//如果节点类型为元素的话
-	if(node.nodeType === 1){
-		const attrs = node.attributes;//学到一个新属性。。。
-		for(let i = 0;i < attrs.length; i++){
-			let attr = attrs[i];
-			if(attr.nodeName === "v-model"){
-				let name = attr.nodeValue;
-				node.addEventListener("input",function (e) {
-					vm.data[name] = e.target.value;
-				});
-				node.value = vm.data[name];
-				node.removeAttribute("v-model");
-			}
-		}
-	}
-	//如果节点类型为文本的话
-	if(node.nodeType === 3){
-		if(regex.test(node.nodeValue)){
-			let name = RegExp.$1;//获取搭配匹配的字符串，又学到了。。。
-			name = name.trim();
-			node.nodeValue = vm.data[name];
-		}
-	}
+    const regex = /\{\{(.*)\}\}/;//为临时正则表达式，为demo而生
+    //如果节点类型为元素的话
+    if(node.nodeType === 1){
+        const attrs = node.attributes;//学到一个新属性。。。
+        for(let i = 0;i < attrs.length; i++){
+            let attr = attrs[i];
+            if(attr.nodeName === "v-model"){
+                let name = attr.nodeValue;
+                node.addEventListener("input",function (e) {
+                    vm.data[name] = e.target.value;
+                });
+                node.value = vm.data[name];
+                node.removeAttribute("v-model");
+            }
+        }
+    }
+    //如果节点类型为文本的话
+    if(node.nodeType === 3){
+        if(regex.test(node.nodeValue)){
+            let name = RegExp.$1;//获取搭配匹配的字符串，又学到了。。。
+            name = name.trim();
+            node.nodeValue = vm.data[name];
+        }
+    }
 };
 
 //劫持挂载元素到虚拟dom
 let nodeToFragment = (node,vm) => {
-	const flag = document.createDocumentFragment();
-	let child;
-	while(child = node.firstChild){
-		compile(child,vm);//绑定数据，插入到虚拟DOM中
-		flag.appendChild(child);
-	}
-	return flag;
+    const flag = document.createDocumentFragment();
+    let child;
+    while(child = node.firstChild){
+        compile(child,vm);//绑定数据，插入到虚拟DOM中
+        flag.appendChild(child);
+    }
+    return flag;
 };
 
 //初始化
 class Vue {
-	constructor(option){
-		this.data = option.data;
-		let id = option.el;
-		let dom = nodeToFragment(document.getElementById(id),this);
-		document.getElementById(id).appendChild(dom);
-	}
+    constructor(option){
+        this.data = option.data;
+        let id = option.el;
+        let dom = nodeToFragment(document.getElementById(id),this);
+        document.getElementById(id).appendChild(dom);
+    }
 }
 
 const vm = new Vue({
-	el : "app",
-	data : {
-		text : "hello world"
-	}
+    el : "app",
+    data : {
+        text : "hello world"
+    }
 })
 ```
 
@@ -170,18 +170,18 @@ let defineReactive = (obj,key,val) => {
         get(val){
             return val;
         }
-    	set(newVal,oldVal){
-    	    if(newVal === oldVal) return;
-    	    val = newVal;
-    	}
+        set(newVal,oldVal){
+            if(newVal === oldVal) return;
+            val = newVal;
+        }
     })
 };
 
 //监听数据
 let observe = (obj,vm) => {
-	Object.keys(obj).forEach((key)=>{
-		defineReactive(vm.data,key,obj[key]);
-	})
+    Object.keys(obj).forEach((key)=>{
+        defineReactive(vm.data,key,obj[key]);
+    })
 };
 ```
 
@@ -268,11 +268,11 @@ let complie = (node,vm){
     ......
     //如果节点类型为文本的话
     if(node.nodeType === 3){
-	    if(regex.test(node.nodeValue)){
-	        let name = RegExp.$1;
-	        name = name.trim();
-                node.nodeValue = vm.data[name];
-            
+        if(regex.test(node.nodeValue)){
+            let name = RegExp.$1;
+            name = name.trim();
+            node.nodeValue = vm.data[name];
+
             new Watcher(vm,node,name);//在此处添加订阅者
         }
     }
@@ -313,11 +313,7 @@ let defineReactive = (obj,key,val) => {
 
 至此，hello world 双向绑定就基本实现了。文本内容会随输入框内容同步变化，在控制器中修改 vm.text 的值，会同步反映到文本内容中。
 
-
-
 ---
 
 原文链接：[http://www.cnblogs.com/kidney/p/6052935.html](http://www.cnblogs.com/kidney/p/6052935.html)
-
-
 

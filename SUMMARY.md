@@ -80,7 +80,10 @@
 * [第七章 前端框架技术](di-qi-zhang-qian-duan-kuang-jia-ji-zhu.md)
   * [7.1 Vue.js的双向绑定原理实现](di-qi-zhang-qian-duan-kuang-jia-ji-zhu/71-vuejsde-shuang-xiang-bang-ding-yuan-li-shi-xian.md)
   * [7.2 理解 Virtual DOM](di-qi-zhang-qian-duan-kuang-jia-ji-zhu/71-li-jie-virtual-dom.md)
-  * [7.3 前端路由原理与实现](di-qi-zhang-qian-duan-kuang-jia-ji-zhu/73-qian-duan-lu-you-yuan-li-yu-shi-xian.md)
+  * [7.3 前端模板的原理与实现](di-qi-zhang-qian-duan-kuang-jia-ji-zhu/73-qian-duan-lu-you-yuan-li-yu-shi-xian.md)
+  * 7.4 前端路由的两种实现原理
   * 附录
     * 附录1：剖析vue实现原理，自己动手实现mvvm
+
+
 

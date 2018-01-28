@@ -73,8 +73,9 @@
   * [6.5 Generator函数](di-liu-zhang-javascript-yi-bu-bian-cheng/64-generatorhan-shu.md)
   * [6.6 Generator函数的应用](di-liu-zhang-javascript-yi-bu-bian-cheng/65-generatorhan-shu-de-ying-yong.md)
   * [6.7 async/await](di-liu-zhang-javascript-yi-bu-bian-cheng/66-shen-ru-li-jie-es7-de-async-await.md)
-  * [6.8 定时器](di-liu-zhang-javascript-yi-bu-bian-cheng/68-ding-shi-qi.md)
-  * [6.9 Event Loop（事件循环）机制](di-liu-zhang-javascript-yi-bu-bian-cheng/69-event-loopff08-shi-jian-xun-huan-ff09-ji-zhi.md)
+  * 6.8 Async/Await替代Promise的6个理由
+  * [6.9 定时器](di-liu-zhang-javascript-yi-bu-bian-cheng/68-ding-shi-qi.md)
+  * [6.10 Event Loop（事件循环）机制](di-liu-zhang-javascript-yi-bu-bian-cheng/69-event-loopff08-shi-jian-xun-huan-ff09-ji-zhi.md)
   * 附录
     * [附录1：一步一步实现一个Promise](di-liu-zhang-javascript-yi-bu-bian-cheng/67-yi-bu-yi-bu-shi-xian-yi-ge-promise.md)
 * [第七章 前端框架技术](di-qi-zhang-qian-duan-kuang-jia-ji-zhu.md)
@@ -85,4 +86,6 @@
   * [7.5 剖析单页面应用路由实现原理](di-qi-zhang-qian-duan-kuang-jia-ji-zhu/75-pou-xi-dan-ye-mian-ying-yong-lu-you-shi-xian-yuan-li.md)
   * 附录
     * 附录1：剖析vue实现原理，自己动手实现mvvm
+
+
 

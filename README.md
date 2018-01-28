@@ -123,7 +123,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 **第七章 前端框架相关技术**
 
 * [x] 第1节 Vue.js双向绑定的实现原理
-* [ ] 第2节 理解 Virtual DOM
+* [x] 第2节 理解 Virtual DOM
 * [ ] 第3节 前端数据模板引擎
 * [ ] 第4节 前端路由原理与实现
 * [x] 附录
@@ -134,6 +134,4 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 **性能优化**
 
 * [ ] 函数防抖与节流
-
-
 

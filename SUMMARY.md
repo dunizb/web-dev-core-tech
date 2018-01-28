@@ -79,7 +79,7 @@
     * [附录1：一步一步实现一个Promise](di-liu-zhang-javascript-yi-bu-bian-cheng/67-yi-bu-yi-bu-shi-xian-yi-ge-promise.md)
 * [第七章 前端框架技术](di-qi-zhang-qian-duan-kuang-jia-ji-zhu.md)
   * [7.1 Vue.js的双向绑定原理实现](di-qi-zhang-qian-duan-kuang-jia-ji-zhu/71-vuejsde-shuang-xiang-bang-ding-yuan-li-shi-xian.md)
-  * 7.1 理解 Virtual DOM
+  * [7.2 理解 Virtual DOM](di-qi-zhang-qian-duan-kuang-jia-ji-zhu/71-li-jie-virtual-dom.md)
   * 附录
     * 附录1：剖析vue实现原理，自己动手实现mvvm
 

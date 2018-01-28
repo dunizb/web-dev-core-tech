@@ -82,9 +82,7 @@
   * [7.2 理解 Virtual DOM](di-qi-zhang-qian-duan-kuang-jia-ji-zhu/71-li-jie-virtual-dom.md)
   * [7.3 前端模板的原理与实现](di-qi-zhang-qian-duan-kuang-jia-ji-zhu/73-qian-duan-lu-you-yuan-li-yu-shi-xian.md)
   * [7.4 前端路由的两种实现原理](di-qi-zhang-qian-duan-kuang-jia-ji-zhu/74-qian-duan-lu-you-de-liang-zhong-shi-xian-yuan-li.md)
-  * 7.5 剖析单页面应用路由实现原理
+  * [7.5 剖析单页面应用路由实现原理](di-qi-zhang-qian-duan-kuang-jia-ji-zhu/75-pou-xi-dan-ye-mian-ying-yong-lu-you-shi-xian-yuan-li.md)
   * 附录
     * 附录1：剖析vue实现原理，自己动手实现mvvm
-
-
 

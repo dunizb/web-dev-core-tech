@@ -1,4 +1,4 @@
-# 第1节 JS模块化编程（一）：模块的写法和AMD规范
+# 第1节 JS模块化编程（一）模块的写法和AMD规范
 
 Javascript模块化编程，已经成为一个迫切的需求。理想情况下，开发者只需要实现核心的业务逻辑，其他都可以加载别人已经写好的模块。
 
@@ -138,7 +138,7 @@ var module1 = (function ($, YAHOO) {
 
 ### 2.2 CommonJS
 
-2009年，美国程序员Ryan Dahl创造了[node.js](http://nodejs.org/)项目，将javascript语言用于服务器端编程。 
+2009年，美国程序员Ryan Dahl创造了[node.js](http://nodejs.org/)项目，将javascript语言用于服务器端编程。
 
 ![](http://www.ruanyifeng.com/blogimg/asset/201210/bg2012103002.jpg)
 

@@ -52,7 +52,7 @@
   * [4.12 错误处理](di-si-zhang-ecmascript-core/412-cuo-wu-chu-li.md)
   * [4.13 var、let、const](di-si-zhang-ecmascript-core/413-varletconst.md)
   * [4.14 10分钟理解JS引擎的执行机制](di-si-zhang-ecmascript-core/414-10fen-zhong-li-jie-js-yin-qing-de-zhi-xing-ji-zhi.md)
-  * [4.15 script标签的defer和async属性](di-si-zhang-ecmascript-core/415-scriptbiao-qian-de-defer-he-async-shu-xing.md)
+
   * 附录
     * [附录1：valueOf\(\)](di-si-zhang-ecmascript-core/fu-lu-1-valueof.md)
 * [第五章 JavaScript面向对象编程](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng.md)
@@ -76,6 +76,7 @@
   * [6.8 Async/Await替代Promise的6个理由](di-liu-zhang-javascript-yi-bu-bian-cheng/68-asyncawaitti-dai-promise-de-6-ge-li-you.md)
   * [6.9 定时器](di-liu-zhang-javascript-yi-bu-bian-cheng/68-ding-shi-qi.md)
   * [6.10 Event Loop（事件循环）机制](di-liu-zhang-javascript-yi-bu-bian-cheng/69-event-loopff08-shi-jian-xun-huan-ff09-ji-zhi.md)
+  * 6.11 script标签的defer和async属性
   * 附录
     * [附录1：一步一步实现一个Promise](di-liu-zhang-javascript-yi-bu-bian-cheng/67-yi-bu-yi-bu-shi-xian-yi-ge-promise.md)
 * [第七章 前端框架技术](di-qi-zhang-qian-duan-kuang-jia-ji-zhu.md)
@@ -92,4 +93,6 @@
   * [9.2 JS模块化编程（二）require.js的用法](di-jiu-zhang-qian-duan-mo-kuai-hua-yu-gong-cheng-hua/92-jsmo-kuai-hua-bian-cheng-ff08-er-ff09-require-js-de-yong-fa.md)
   * [9.3 ES6的模块加载](di-jiu-zhang-qian-duan-mo-kuai-hua-yu-gong-cheng-hua/93-es6de-mo-kuai-jia-zai.md)
   * [附录：一些资料](di-jiu-zhang-qian-duan-mo-kuai-hua-yu-gong-cheng-hua/fu-lu-ff1a-yi-xie-zi-liao.md)
+
+
 

@@ -19,7 +19,7 @@
   * 附录
     * [附录1：HTML面试题](di-er-zhang-html/fu-lu-1-html-mian-shi-ti.md)
     * [附录2：在HTML5中被废弃的元素和属性](di-er-zhang-html/fu-lu-2-ff1a-zai-html5-zhong-bei-fei-qi-de-yuan-su-he-shu-xing.md)
-* [CSS](di-san-zhang-css.md)部分
+* [CSS部分](di-san-zhang-css.md)
   * [3.1 CSS书写顺序及相应规范](di-san-zhang-css/31-cssshu-xie-shun-xu-ji-xiang-ying-gui-fan.md)
   * [3.2 CSS盒模型](di-san-zhang-css/32-csshe-mo-xing.md)
   * [3.3 Flexbox布局](di-san-zhang-css/33-flexboxbu-ju.md)
@@ -86,6 +86,4 @@
   * [7.5 剖析单页面应用路由实现原理](di-qi-zhang-qian-duan-kuang-jia-ji-zhu/75-pou-xi-dan-ye-mian-ying-yong-lu-you-shi-xian-yuan-li.md)
   * 附录
     * 附录1：剖析vue实现原理，自己动手实现mvvm
-
-
 

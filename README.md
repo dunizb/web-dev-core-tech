@@ -26,7 +26,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
 ## 计划目录（持续更新）
 
-**HTTP部分**
+**第一章 HTTP部分**
 
 * [x] 第1节 HTTP基本概念
 * [x] 第2节 HTTP简史
@@ -39,7 +39,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
   * [x] 附录1：GET和POST的区别
   * [x] 附录2：HTTP缓存机制
 
-**HTML部分**
+**第二章 HTML部分**
 
 * [x] 第1节 理解HTML的语义化
 * [x] 第2节 HTML中meta标签的大作用

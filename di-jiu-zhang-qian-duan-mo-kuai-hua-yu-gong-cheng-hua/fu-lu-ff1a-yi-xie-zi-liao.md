@@ -6,3 +6,5 @@
 
 [Module 的加载实现](http://es6.ruanyifeng.com/#docs/module-loader)
 
+[开发更好用的 JavaScript 模块](https://zhuanlan.zhihu.com/p/31499310)
+

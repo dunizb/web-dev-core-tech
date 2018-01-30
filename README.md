@@ -132,8 +132,9 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第4节 前端路由的两种实现原理
 * [x] 第5节 剖析单页面应用路由实现原理
 * [x] 第6节 使用JavaScript 写Web路由
-* [x] 附录
-  * [x] 附录1：剖析vue实现原理，自己动手实现mvvm
+* [ ] 第7节 jQuery插件开发全解析
+* [ ] 附录
+  * [ ] 附录1：剖析vue实现原理，自己动手实现mvvm
 
 **第八章 Vue.js专题**
 

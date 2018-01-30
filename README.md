@@ -141,7 +141,6 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第1节 JS模块化编程（一）模块的写法和AMD规范
 * [x] 第2节 JS模块化编程（二）require.js的用法
 * [x] 第3节 ES6的模块加载
-* [x] 第4节 ES6的模块加载实现
 * [x] 附录：一些资料
 
 **第十章 性能优化**

@@ -48,7 +48,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
   * [x] 附录1：HTML面试题精选
   * [x] 附录2：在HTML5中被废弃的元素和属性
 
-**CSS部分**
+**第三章 CSS部分**
 
 * [x] 第1节 CSS书写顺序及相应规范
 * [x] 第2节 CSS盒模型

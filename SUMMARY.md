@@ -19,7 +19,7 @@
   * 附录
     * [附录1：HTML面试题](di-er-zhang-html/fu-lu-1-html-mian-shi-ti.md)
     * [附录2：在HTML5中被废弃的元素和属性](di-er-zhang-html/fu-lu-2-ff1a-zai-html5-zhong-bei-fei-qi-de-yuan-su-he-shu-xing.md)
-* [CSS部分](di-san-zhang-css.md)
+* 第三章 [CSS部分](di-san-zhang-css.md)
   * [3.1 CSS书写顺序及相应规范](di-san-zhang-css/31-cssshu-xie-shun-xu-ji-xiang-ying-gui-fan.md)
   * [3.2 CSS盒模型](di-san-zhang-css/32-csshe-mo-xing.md)
   * [3.3 Flexbox布局](di-san-zhang-css/33-flexboxbu-ju.md)

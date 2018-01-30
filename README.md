@@ -122,7 +122,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
   * [x] 附录1：一步一步实现一个Promise
 
-**前端框架相关技术**
+**第七章 前端框架相关技术**
 
 * [x] 第1节 Vue.js双向绑定的实现原理
 * [x] 第2节 理解 Virtual DOM

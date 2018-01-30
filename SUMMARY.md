@@ -1,7 +1,7 @@
 # Summary
 
 * [首页](README.md)
-* [HTTP部分](di-yi-zhang-http.md)
+* [第一章 HTTP部分](di-yi-zhang-http.md)
   * [1.1 HTTP的基本概念](di-yi-zhang-http/11-httpde-ji-ben-gai-nian.md)
   * [1.2 HTTP简史](di-yi-zhang-http/12-httpjian-shi.md)
   * [1.3 请求](di-yi-zhang-http/13-qing-qiu.md)
@@ -86,6 +86,4 @@
   * [7.5 剖析单页面应用路由实现原理](di-qi-zhang-qian-duan-kuang-jia-ji-zhu/75-pou-xi-dan-ye-mian-ying-yong-lu-you-shi-xian-yuan-li.md)
   * 附录
     * 附录1：剖析vue实现原理，自己动手实现mvvm
-
-
 

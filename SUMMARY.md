@@ -88,4 +88,7 @@
     * 附录1：剖析vue实现原理，自己动手实现mvvm
 * [第八章 Vue.js专题](di-ba-zhang-vue-js-zhuan-ti.md)
 * [第九章 前端模块化与工程化](di-jiu-zhang-qian-duan-mo-kuai-hua-yu-gong-cheng-hua.md)
+  * 9.1 Javascript模块化编程（一）：模块的写法
+
+
 

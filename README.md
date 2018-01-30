@@ -136,6 +136,8 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
 **第九章 前端模块化与工程化**
 
+* [x] 第1节 Javascript模块化编程（一）：模块的写法
+
 **第十章 性能优化**
 
 * [ ] 函数防抖与节流

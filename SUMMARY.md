@@ -37,7 +37,7 @@
   * [附录](di-san-zhang-css/fu-lu.md)
     * [附录1：CSS面试题精选](di-san-zhang-css/fu-lu/fu-lu-1-css-mian-shi-ti-jing-xuan.md)
     * [附录2：资源推荐](di-san-zhang-css/fu-lu/fu-lu-2-ff1a-zi-yuan-tui-jian.md)
-* 第四章 [ECMAScript Core](di-si-zhang-ecmascript-core.md)
+* [第四章 ECMAScript Core](di-si-zhang-ecmascript-core.md)
   * [4.1 数据类型](di-si-zhang-ecmascript-core/41-shu-ju-lei-xing.md)
   * [4.2 数据类型之间的转换](di-si-zhang-ecmascript-core/42-shu-ju-lei-xing-zhi-jian-de-zhuan-huan.md)
   * [4.3 “\|\|”和“&&”操作符总结](di-si-zhang-ecmascript-core/43-201c7c7c-201d-he-201c2626-201d-cao-zuo-fu-zong-jie.md)
@@ -86,6 +86,4 @@
   * [7.5 剖析单页面应用路由实现原理](di-qi-zhang-qian-duan-kuang-jia-ji-zhu/75-pou-xi-dan-ye-mian-ying-yong-lu-you-shi-xian-yuan-li.md)
   * 附录
     * 附录1：剖析vue实现原理，自己动手实现mvvm
-
-
 

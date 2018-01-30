@@ -136,7 +136,8 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
 **第九章 前端模块化与工程化**
 
-* [x] 第1节 Javascript模块化编程（一）：模块的写法
+* [x] 第1节 Javascript模块化编程（一）模块的写法和AMD规范
+* [x] 第2节 Javascript模块化编程（二）require.js的用法
 
 **第十章 性能优化**
 

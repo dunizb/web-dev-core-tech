@@ -91,7 +91,5 @@
   * [9.1 JS模块化编程（一）模块的写法和AMD规范](di-jiu-zhang-qian-duan-mo-kuai-hua-yu-gong-cheng-hua/91-javascriptmo-kuai-hua-bian-cheng-ff08-yi-ff09-ff1a-mo-kuai-de-xie-fa.md)
   * [9.2 JS模块化编程（二）require.js的用法](di-jiu-zhang-qian-duan-mo-kuai-hua-yu-gong-cheng-hua/92-jsmo-kuai-hua-bian-cheng-ff08-er-ff09-require-js-de-yong-fa.md)
   * [9.3 ES6的模块加载](di-jiu-zhang-qian-duan-mo-kuai-hua-yu-gong-cheng-hua/93-es6de-mo-kuai-jia-zai.md)
-  * 附录：一些资料
-
-
+  * [附录：一些资料](di-jiu-zhang-qian-duan-mo-kuai-hua-yu-gong-cheng-hua/fu-lu-ff1a-yi-xie-zi-liao.md)
 

@@ -4,3 +4,5 @@
 
 [浅析JS中的模块规范（CommonJS，AMD，CMD）](http://www.cnblogs.com/skylar/p/4065455.html)
 
+[Module 的加载实现](http://es6.ruanyifeng.com/#docs/module-loader)
+

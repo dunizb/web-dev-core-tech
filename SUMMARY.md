@@ -65,7 +65,7 @@
   * [5.7 创建对象的几种方式](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/57-chuang-jian-dui-xiang-de-ji-zhong-fang-shi.md)
   * [5.8 ES6 类 class](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/58-es6-class.md)
   * [5.9 深拷贝与浅拷贝](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/59-shen-kao-bei-yu-qian-kao-bei.md)
-* [第六章 JavaScript异步编程](di-liu-zhang-javascript-yi-bu-bian-cheng.md)
+* [JavaScript异步编程](di-liu-zhang-javascript-yi-bu-bian-cheng.md)
   * [6.1 异步编程概论](di-liu-zhang-javascript-yi-bu-bian-cheng/61-yi-bu-bian-cheng-gai-lun.md)
   * [6.2 浏览器单线程模型](di-liu-zhang-javascript-yi-bu-bian-cheng/62-liu-lan-qi-dan-xian-cheng-mo-xing.md)
   * [6.3 JavaScript异步编程开源库](di-liu-zhang-javascript-yi-bu-bian-cheng/62-javascriptyi-bu-bian-cheng-kai-yuan-ku.md)
@@ -78,7 +78,7 @@
   * [6.10 Event Loop（事件循环）机制](di-liu-zhang-javascript-yi-bu-bian-cheng/69-event-loopff08-shi-jian-xun-huan-ff09-ji-zhi.md)
   * 附录
     * [附录1：一步一步实现一个Promise](di-liu-zhang-javascript-yi-bu-bian-cheng/67-yi-bu-yi-bu-shi-xian-yi-ge-promise.md)
-* [第七章 前端框架技术](di-qi-zhang-qian-duan-kuang-jia-ji-zhu.md)
+* [前端框架技术](di-qi-zhang-qian-duan-kuang-jia-ji-zhu.md)
   * [7.1 Vue.js的双向绑定原理实现](di-qi-zhang-qian-duan-kuang-jia-ji-zhu/71-vuejsde-shuang-xiang-bang-ding-yuan-li-shi-xian.md)
   * [7.2 理解 Virtual DOM](di-qi-zhang-qian-duan-kuang-jia-ji-zhu/71-li-jie-virtual-dom.md)
   * [7.3 前端模板的原理与实现](di-qi-zhang-qian-duan-kuang-jia-ji-zhu/73-qian-duan-lu-you-yuan-li-yu-shi-xian.md)

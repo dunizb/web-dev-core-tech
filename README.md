@@ -102,7 +102,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第8节 ES6 class
 * [x] 第9节 深拷贝与浅拷贝
 
-**JavaScript异步编程**
+**第六章 JavaScript异步编程**
 
 * [x] 第1节 异步编程概论
 * [x] 第2节 浏览器单线程模型

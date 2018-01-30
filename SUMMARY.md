@@ -65,7 +65,7 @@
   * [5.7 创建对象的几种方式](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/57-chuang-jian-dui-xiang-de-ji-zhong-fang-shi.md)
   * [5.8 ES6 类 class](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/58-es6-class.md)
   * [5.9 深拷贝与浅拷贝](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/59-shen-kao-bei-yu-qian-kao-bei.md)
-* [JavaScript异步编程](di-liu-zhang-javascript-yi-bu-bian-cheng.md)
+* 第六章 [JavaScript异步编程](di-liu-zhang-javascript-yi-bu-bian-cheng.md)
   * [6.1 异步编程概论](di-liu-zhang-javascript-yi-bu-bian-cheng/61-yi-bu-bian-cheng-gai-lun.md)
   * [6.2 浏览器单线程模型](di-liu-zhang-javascript-yi-bu-bian-cheng/62-liu-lan-qi-dan-xian-cheng-mo-xing.md)
   * [6.3 JavaScript异步编程开源库](di-liu-zhang-javascript-yi-bu-bian-cheng/62-javascriptyi-bu-bian-cheng-kai-yuan-ku.md)
@@ -86,4 +86,6 @@
   * [7.5 剖析单页面应用路由实现原理](di-qi-zhang-qian-duan-kuang-jia-ji-zhu/75-pou-xi-dan-ye-mian-ying-yong-lu-you-shi-xian-yuan-li.md)
   * 附录
     * 附录1：剖析vue实现原理，自己动手实现mvvm
+
+
 

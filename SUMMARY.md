@@ -12,7 +12,7 @@
   * [附录](di-yi-zhang-http/fu-lu.md)
     * [附录1：GET和POST的区别](di-yi-zhang-http/fu-lu-1-get-he-post-de-qu-bie.md)
     * [附录2：HTTP缓存机制](di-yi-zhang-http/fu-lu-2-http-huan-cun-ji-zhi.md)
-* [第二章 HTML](di-er-zhang-html.md)
+* [HTML部分](di-er-zhang-html.md)
   * [2.1 理解HTML的语义化](di-er-zhang-html/21-li-jie-html-de-yu-yi-hua.md)
   * [2.2 HTML中的meta标签大作用](di-er-zhang-html/22-htmlzhong-de-meta-biao-qian-da-zuo-yong.md)
   * [2.3 理解DOM结构](di-er-zhang-html/23-li-jie-dom-jie-gou.md)

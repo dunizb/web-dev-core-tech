@@ -132,9 +132,11 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 附录
   * [x] 附录1：剖析vue实现原理，自己动手实现mvvm
 
-**Vue.js专题**
+**第八章 Vue.js专题**
 
-**性能优化**
+**第九章 前端模块化与工程化**
+
+**第十章 性能优化**
 
 * [ ] 函数防抖与节流
 

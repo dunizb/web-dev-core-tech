@@ -1,7 +1,7 @@
 # Summary
 
 * [首页](README.md)
-* [第一章 HTTP](di-yi-zhang-http.md)
+* [HTTP部分](di-yi-zhang-http.md)
   * [1.1 HTTP的基本概念](di-yi-zhang-http/11-httpde-ji-ben-gai-nian.md)
   * [1.2 HTTP简史](di-yi-zhang-http/12-httpjian-shi.md)
   * [1.3 请求](di-yi-zhang-http/13-qing-qiu.md)

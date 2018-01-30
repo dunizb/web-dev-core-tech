@@ -26,7 +26,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
 ## 计划目录（持续更新）
 
-**第一章 HTTP**
+**HTTP部分**
 
 * [x] 第1节 HTTP基本概念
 * [x] 第2节 HTTP简史
@@ -39,7 +39,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
   * [x] 附录1：GET和POST的区别
   * [x] 附录2：HTTP缓存机制
 
-**第二章 HTML**
+**HTML部分**
 
 * [x] 第1节 理解HTML的语义化
 * [x] 第2节 HTML中meta标签的大作用
@@ -48,7 +48,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
   * [x] 附录1：HTML面试题精选
   * [x] 附录2：在HTML5中被废弃的元素和属性
 
-**第三章 CSS**
+**CSS部分**
 
 * [x] 第1节 CSS书写顺序及相应规范
 * [x] 第2节 CSS盒模型
@@ -68,7 +68,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
   * [x] 附录1：CSS面试题精选
   * [x] 附录2：资源推荐
 
-**第四章 ECMAScript Core**
+**ECMAScript Core**
 
 * [x] 第1节 数据类型
 * [x] 第2节 数据类型之间的转换
@@ -90,7 +90,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
   * [x] 附录1：valueOf\(\)
 
-**第五章 面向对象编程**
+**JavaScript面向对象编程**
 
 * [x] 第1节 原型与原型链
 * [x] 第2节 作用域
@@ -102,7 +102,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第8节 ES6 class
 * [x] 第9节 深拷贝与浅拷贝
 
-**第六章 JavaScript异步编程**
+**JavaScript异步编程**
 
 * [x] 第1节 异步编程概论
 * [x] 第2节 浏览器单线程模型
@@ -122,7 +122,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
   * [x] 附录1：一步一步实现一个Promise
 
-**第七章 前端框架相关技术**
+**前端框架相关技术**
 
 * [x] 第1节 Vue.js双向绑定的实现原理
 * [x] 第2节 理解 Virtual DOM

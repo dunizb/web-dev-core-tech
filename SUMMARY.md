@@ -85,7 +85,7 @@
   * [7.4 前端路由的两种实现原理](di-qi-zhang-qian-duan-kuang-jia-ji-zhu/74-qian-duan-lu-you-de-liang-zhong-shi-xian-yuan-li.md)
   * [7.5 剖析单页面应用路由实现原理](di-qi-zhang-qian-duan-kuang-jia-ji-zhu/75-pou-xi-dan-ye-mian-ying-yong-lu-you-shi-xian-yuan-li.md)
   * [7.6 使用JavaScript 写Web路由](di-qi-zhang-qian-duan-kuang-jia-ji-zhu/76-shi-yong-javascript-xie-web-lu-you.md)
-  * 7.7 jQuery插件开发全解析
+  * [7.7 jQuery插件开发全解析](di-qi-zhang-qian-duan-kuang-jia-ji-zhu/77-jquerycha-jian-kai-fa-quan-jie-xi.md)
   * 附录
     * 附录1：剖析vue实现原理，自己动手实现mvvm
 * [第八章 Vue.js专题](di-ba-zhang-vue-js-zhuan-ti.md)
@@ -95,6 +95,4 @@
   * [9.3 ES6的模块加载](di-jiu-zhang-qian-duan-mo-kuai-hua-yu-gong-cheng-hua/93-es6de-mo-kuai-jia-zai.md)
   * [9.4 怎么开发并发布一个可用的 JavaScript 模块 ？](di-jiu-zhang-qian-duan-mo-kuai-hua-yu-gong-cheng-hua/94-zen-yao-kai-fa-bing-fa-bu-yi-ge-ke-yong-de-javascript-mo-kuai.md)
   * [附录：一些资料](di-jiu-zhang-qian-duan-mo-kuai-hua-yu-gong-cheng-hua/fu-lu-ff1a-yi-xie-zi-liao.md)
-
-
 

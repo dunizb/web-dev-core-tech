@@ -55,7 +55,7 @@
   * [4.15 script标签的defer和async属性](di-si-zhang-ecmascript-core/415-scriptbiao-qian-de-defer-he-async-shu-xing.md)
   * 附录
     * [附录1：valueOf\(\)](di-si-zhang-ecmascript-core/fu-lu-1-valueof.md)
-* [JavaScript面向对象编程](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng.md)
+* [第五章 JavaScript面向对象编程](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng.md)
   * [5.1 原型与原型链](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/51-yuan-xing-yu-yuan-xing-lian.md)
   * [5.2 作用域](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/51-zuo-yong-yu.md)
   * [5.3 闭包](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/52-bi-bao.md)

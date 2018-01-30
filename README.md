@@ -90,7 +90,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
   * [x] 附录1：valueOf\(\)
 
-**JavaScript面向对象编程**
+**第五章 JavaScript面向对象编程**
 
 * [x] 第1节 原型与原型链
 * [x] 第2节 作用域

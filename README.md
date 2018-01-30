@@ -118,6 +118,8 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
 * [x] 第10节 Event Loop（事件循环）机制
 
+* [x] 第11节 script标签的defer和async属性
+
 * [x] 附录
 
   * [x] 附录1：一步一步实现一个Promise

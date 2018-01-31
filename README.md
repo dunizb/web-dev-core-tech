@@ -20,9 +20,11 @@ Email：[zb@dunizb.vip](mailto:zb@dunizb.vip)
 
 Github：[https://github.com/dunizb](https://github.com/dunizb)
 
-## 在线阅读
+## 源码
 
-[https://webdev.dunizb.vip（可能比较慢，建议使用“](https://webdev.dunizb.vip)[梯子](https://webdev.dunizb.vip)[”）](https://webdev.dunizb.vip)
+* [GitHub Repo](https://github.com/dunizb/web-dev-core-tech)
+* [GitBook Repo](https://www.gitbook.com/book/dunizb/web-dev-core-tech)
+* [在线访问](https://webdev.dunizb.vip)（可能比较慢，建议使用“梯子”）
 
 ## 计划目录（持续更新）
 

@@ -22,8 +22,8 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
 ## 源码
 
-* [GitHub Repo](https://github.com/dunizb/web-dev-core-tech)
-* [GitBook Repo](https://www.gitbook.com/book/dunizb/web-dev-core-tech)
+* [Github Repo](https://github.com/dunizb/web-dev-core-tech)
+* [Gitbook Repo](https://www.gitbook.com/book/dunizb/web-dev-core-tech)
 * [在线访问](https://webdev.dunizb.vip)（可能比较慢，建议使用“梯子”）
 
 ## 计划目录（持续更新）

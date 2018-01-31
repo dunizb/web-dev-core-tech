@@ -111,17 +111,11 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第5节 Generator函数
 * [x] 第6节 Generator函数的应用
 * [x] 第7节 async/await
-
 * [x] 第8节 Async/Await替代Promise的6个理由
-
 * [x] 第9节 定时器
-
 * [x] 第10节 Event Loop（事件循环）机制
-
 * [x] 第11节 script标签的defer和async属性
-
 * [x] 附录
-
   * [x] 附录1：一步一步实现一个Promise
 
 **第七章 前端框架相关技术**

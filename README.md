@@ -23,7 +23,7 @@
 * [Gitbook Repo](https://www.gitbook.com/book/dunizb/web-dev-core-tech)
 * [在线访问](https://webdev.dunizb.vip)（可能比较慢，建议使用“梯子”）
 
-## 计划目录（持续更新）
+## 计划目录（持续补充和更新）
 
 **第一章 TCP/IP/HTTP部分**
 

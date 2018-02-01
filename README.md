@@ -12,13 +12,10 @@
 
 ## 联系方式
 
-Email：[zb@dunizb.vip](mailto:zb@dunizb.vip)
-
-微信：dunizb
-
-博客：[https://dunizb.com](https://dunizb.com)
-
-Github：[https://github.com/dunizb](https://github.com/dunizb)
+* Email：[zb@dunizb.vip](mailto:zb@dunizb.vip)
+* 微信：dunizb
+* 博客：[https://dunizb.com](https://dunizb.com)
+* Github：[https://github.com/dunizb](https://github.com/dunizb)
 
 ## 源码
 

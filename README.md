@@ -28,7 +28,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
 ## 计划目录（持续更新）
 
-**第一章 HTTP部分**
+**第一章 TCP/IP/HTTP部分**
 
 * [x] 第1节 HTTP基本概念
 * [x] 第2节 HTTP简史
@@ -37,6 +37,7 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第5节 HTTP的几种连接
 * [x] 第6节 Cookie技术
 * [x] 第7节 HTTPS
+* [x] 第8节 TCP协议的三次握手和四次分手
 * [x] 附录
   * [x] 附录1：GET和POST的区别
   * [x] 附录2：HTTP缓存机制

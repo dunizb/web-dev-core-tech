@@ -144,7 +144,9 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 * [x] 第4节 怎么开发并发布一个可用的 JavaScript 模块 ？
 * [x] 附录：一些资料
 
-**第十章 性能优化**
+**第十章 网络通讯和数据交互 **
+
+**第十一章 性能优化**
 
 * [ ] 函数防抖与节流
 

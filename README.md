@@ -146,9 +146,16 @@ Github：[https://github.com/dunizb](https://github.com/dunizb)
 
 **第十章 网络通讯和数据交互 **
 
+* [ ] 前端跨域技术总结
+* [ ] Ajax
+* [ ] JSONP原理及实现
+
 **第十一章 性能优化**
 
 * [ ] 函数防抖与节流
+* [ ] 网站静态化处理
+* [ ] 图片优化技术
+* [ ] 缓存技术
 
 
 

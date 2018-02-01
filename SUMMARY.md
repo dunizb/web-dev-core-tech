@@ -9,7 +9,7 @@
   * [1.5 HTTP的几种连接](di-yi-zhang-http/15-httpde-ji-zhong-lian-jie.md)
   * [1.6 Cookie技术](di-yi-zhang-http/16-cookieji-zhu.md)
   * [1.7 HTTPS](di-yi-zhang-http/17-https.md)
-  * 1.8 TCP协议的三次握手和四次分手
+  * [1.8 TCP协议的三次握手和四次分手](di-yi-zhang-http/18-tcpxie-yi-de-san-ci-wo-shou-he-si-ci-fen-shou.md)
   * [附录](di-yi-zhang-http/fu-lu.md)
     * [附录1：GET和POST的区别](di-yi-zhang-http/fu-lu-1-get-he-post-de-qu-bie.md)
     * [附录2：HTTP缓存机制](di-yi-zhang-http/fu-lu-2-http-huan-cun-ji-zhi.md)
@@ -97,6 +97,4 @@
   * [9.3 ES6的模块加载](di-jiu-zhang-qian-duan-mo-kuai-hua-yu-gong-cheng-hua/93-es6de-mo-kuai-jia-zai.md)
   * [9.4 怎么开发并发布一个可用的 JavaScript 模块 ？](di-jiu-zhang-qian-duan-mo-kuai-hua-yu-gong-cheng-hua/94-zen-yao-kai-fa-bing-fa-bu-yi-ge-ke-yong-de-javascript-mo-kuai.md)
   * [附录：一些资料](di-jiu-zhang-qian-duan-mo-kuai-hua-yu-gong-cheng-hua/fu-lu-ff1a-yi-xie-zi-liao.md)
-
-
 

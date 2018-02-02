@@ -145,6 +145,7 @@
 
 * [x] 第1节 前端跨域技术之JSONP、反向代理、CORS
 * [x] 第2节 Ajax与XMLHttpRequest
+* [x] 第3节 XMLHttpRequest Level 2 使用指南
 * [ ] JSONP原理及实现
 
 **第十一章 性能优化**

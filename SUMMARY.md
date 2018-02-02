@@ -103,8 +103,6 @@
   * [10.3 XMLHttpRequest Level 2 使用指南](di-shi-zhang-wang-luo-tong-xun-he-shu-ju-jiao-hu/103-xmlhttprequest-level-2-shi-yong-zhi-nan.md)
 * [第十一章 性能优化](di-shi-zhang-qian-duan-xing-neng-you-hua.md)
   * [11.1 常见服务端性能优化策略的总结](di-shi-zhang-qian-duan-xing-neng-you-hua/111-chang-jian-xing-neng-you-hua-ce-lve-de-zong-jie.md)
-  * 11.2 常见前端性能优化策略的总结
+  * [11.2 常见前端性能优化策略的总结](di-shi-zhang-qian-duan-xing-neng-you-hua/112-chang-jian-qian-duan-xing-neng-you-hua-ce-lve-de-zong-jie.md)
 * [第十二章 跨终端Web开发](di-shi-er-zhang-kua-zhong-duan-web-kai-fa.md)
-
-
 

@@ -98,9 +98,7 @@
   * [9.4 怎么开发并发布一个可用的 JavaScript 模块 ？](di-jiu-zhang-qian-duan-mo-kuai-hua-yu-gong-cheng-hua/94-zen-yao-kai-fa-bing-fa-bu-yi-ge-ke-yong-de-javascript-mo-kuai.md)
   * [附录：一些资料](di-jiu-zhang-qian-duan-mo-kuai-hua-yu-gong-cheng-hua/fu-lu-ff1a-yi-xie-zi-liao.md)
 * [第十章 网络通讯和数据交互](di-shi-zhang-wang-luo-tong-xun-he-shu-ju-jiao-hu.md)
-  * 10.1 前端跨域技术之JSONP、反向代理、CORS
+  * [10.1 前端跨域技术之JSONP、反向代理、CORS](di-shi-zhang-wang-luo-tong-xun-he-shu-ju-jiao-hu/101-qian-duan-kua-yu-ji-zhu-zhi-jsonp-3001-fan-xiang-dai-li-3001-cors.md)
 * [第十一章 性能优化](di-shi-zhang-qian-duan-xing-neng-you-hua.md)
 * [第十二章 跨终端Web开发](di-shi-er-zhang-kua-zhong-duan-web-kai-fa.md)
-
-
 

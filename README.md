@@ -143,8 +143,8 @@
 
 **第十章 网络通讯和数据交互 **
 
-* [ ] 前端跨域技术之JSONP、反向代理、CORS
-* [ ] Ajax
+* [x] 第1节 前端跨域技术之JSONP、反向代理、CORS
+* [x] 第2节 Ajax与XMLHttpRequest
 * [ ] JSONP原理及实现
 
 **第十一章 性能优化**

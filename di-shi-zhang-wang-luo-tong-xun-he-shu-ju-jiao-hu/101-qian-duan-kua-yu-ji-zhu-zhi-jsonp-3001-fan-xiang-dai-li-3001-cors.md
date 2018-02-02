@@ -267,7 +267,101 @@ app.get('/jsonServerResponse', function(req, res) {
 
 Cross-Origin Resource Sharing（CORS）跨域资源共享是一份浏览器技术的规范，提供了 Web 服务从不同域传来沙盒脚本的方法，以避开浏览器的同源策略，是 JSONP 模式的现代版。与 JSONP 不同，CORS 除了 GET 要求方法以外也支持其他的 HTTP 要求。用 CORS 可以让网页设计师用一般的 XMLHttpRequest，这种方式的错误处理比 JSONP 要来的好。另一方面，JSONP 可以在不支持 CORS 的老旧浏览器上运作。现代的浏览器都支持 CORS。
 
-### 5.2 CORS 的实现
+### 5.2 CORS的请求分类
+
+CORS的请求分为两类：简单请求、非简单请求。
+
+只要同时满足以下两大条件，就属于简单请求。
+
+1. 请求方法是以下三种方法之一：HEAD、GET、POST
+2. HTTP的头信息不超出以下几种字段：
+   1. Accept
+   2. Accept-Language
+   3. Content-Language
+   4. Last-Event-ID
+   5. Content-Type：只限于三个值`application/x-www-form-urlencoded`、`multipart/form-data`、`text/plain`
+
+凡是不同时满足上面两个条件，就属于非简单请求。
+
+### 5.3 简单请求
+
+如果是简单请求的话，会自动在头信息之中，添加一个`Origin`字段
+
+```
+GET /cors HTTP/1.1
+Origin: http://api.bob.com 
+Host: api.alice.com
+Accept-Language: en-US
+Connection: keep-alive
+User-Agent: Mozilla/5.0...
+
+```
+
+这个Origin对应服务器端的`Access-Control-Allow-Origin`设置，所以一般来说需要在服务器端加上这个`Access-Control-Allow-Origin 指定域名\|\*`
+
+### 5.4 非简单请求
+
+如果是非简单请求的话，会在正式通信之前，增加一次HTTP查询请求，称为"预检"请求（preflight）。
+
+浏览器先询问服务器，当前网页所在的域名是否在服务器的许可名单之中，以及可以使用哪些HTTP动词和头信息字段。只有得到肯定答复，浏览器才会发出正式的 `XMLHttpRequest` 请求，否则就报错。
+
+> 需要注意这里是会发送2次请求，第一次是预检请求，第二次才是真正的请求！
+
+**首先发出预检请求：**
+
+```
+// 预检请求
+OPTIONS /cors HTTP/1.1
+Origin: http://api.bob.com
+Access-Control-Request-Method: PUT
+Access-Control-Request-Headers: X-Custom-Header
+Host: api.alice.com
+Accept-Language: en-US
+Connection: keep-alive
+User-Agent: Mozilla/5.0..
+```
+
+除了Origin字段，"预检"请求的头信息包括两个特殊字段。
+
+- Access-Control-Request-Method，该字段是必须的，用来列出浏览器的CORS请求会用到哪些HTTP方法，上例是PUT。
+- Access-Control-Request-Headers，该字段是一个逗号分隔的字符串，指定浏览器CORS请求会额外发送的头信息字段，上例是X-Custom-Header。
+
+**然后服务器收到"预检"请求以后：**
+
+检查了`Origin`、`Access-Control-Request-Method`和`Access-Control-Request-Headers`字段以后，确认允许跨源请求，就可以做出回应。
+```
+// 预检请求的回应
+HTTP/1.1 200 OK
+Date: Mon, 01 Dec 2008 01:15:39 GMT
+Server: Apache/2.0.61 (Unix)
+Access-Control-Allow-Origin: http://api.bob.com
+Access-Control-Allow-Methods: GET, POST, PUT
+Access-Control-Allow-Headers: X-Custom-Header
+Content-Type: text/html; charset=utf-8
+Content-Encoding: gzip
+Content-Length: 0
+Keep-Alive: timeout=2, max=100
+Connection: Keep-Alive
+Content-Type: text/plain
+```
+
+**最后一旦服务器通过了"预检"请求：**
+
+以后每次浏览器正常的CORS请求，就都跟简单请求一样，会有一个`Origin`头信息字段。服务器的回应，也都会有一个`Access-Control-Allow-Origin`头信息字段。
+```
+// 以后的请求，就像拿到了通行证之后，就不需要再做预检请求了。
+PUT /cors HTTP/1.1
+Origin: http://api.bob.com
+Host: api.alice.com
+X-Custom-Header: value
+Accept-Language: en-US
+Connection: keep-alive
+User-Agent: Mozilla/5.0...
+```
+
+> 详情参考这里[http://www.ruanyifeng.com/blog/2016/04/cors.html](http://www.ruanyifeng.com/blog/2016/04/cors.html)
+
+### 5.5 CORS 的实现
 
 还是以 服务器 3000 上的请求页面向 服务器 3001 发送请求为例。
 
@@ -331,14 +425,12 @@ window对象有个name属性，该属性有个特征：即在一个窗口 \(wind
 
 参考：[https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage)
 
-
-
 ---
 
 **参考资料**
 
 * [jsonp-反向代理-CORS解决JS跨域问题的个人总结](https://segmentfault.com/a/1190000012967320)
-* [前端跨域请求原理及实践](http://tingandpeng.com/2016/09/05/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E8%B7%B5/)
+* [前端跨域请求原理及实践](http://tingandpeng.com/2016/09/05/前端跨域请求原理及实践/)
 
 
 

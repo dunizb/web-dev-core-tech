@@ -102,10 +102,10 @@
   * [10.2 Ajax与XMLHttpRequest](di-shi-zhang-wang-luo-tong-xun-he-shu-ju-jiao-hu/102-ajaxyu-xmlhttprequest.md)
   * [10.3 XMLHttpRequest Level 2 使用指南](di-shi-zhang-wang-luo-tong-xun-he-shu-ju-jiao-hu/103-xmlhttprequest-level-2-shi-yong-zhi-nan.md)
 * [第十一章 性能优化](di-shi-yi-zhang-qian-duan-xing-neng-you-hua.md)
-  * [11.1 代码优化](di-shi-zhang-qian-duan-xing-neng-you-hua/112-chang-jian-qian-duan-xing-neng-you-hua-ce-lve-de-zong-jie.md)
-  * [11.2 Web图像优化](di-shi-zhang-qian-duan-xing-neng-you-hua/113-qian-duan-xing-neng-you-hua-zhi-web-tu-xiang-you-hua.md)
   * [附录](di-shi-zhang-qian-duan-xing-neng-you-hua/fu-lu.md)
     * [附录1：推荐资料](di-shi-zhang-qian-duan-xing-neng-you-hua/fu-lu-1-ff1a-tui-jian-zi-liao.md)
     * [附录2：常见服务端性能优化策略的总结](di-shi-zhang-qian-duan-xing-neng-you-hua/fu-lu-2-ff1a-chang-jian-fu-wu-duan-xing-neng-you-hua-ce-lve-de-zong-jie.md)
 * [第十二章 跨终端Web开发](di-shi-er-zhang-kua-zhong-duan-web-kai-fa.md)
+
+
 

@@ -106,11 +106,9 @@
   * [11.1 代码优化](di-shi-yi-zhang-qian-duan-xing-neng-you-hua/111-dai-ma-you-hua.md)
   * [11.2 Web图像优化](di-shi-yi-zhang-qian-duan-xing-neng-you-hua/112-webtu-xiang-you-hua.md)
   * [11.3 Web图像优化之响应式图片](di-shi-yi-zhang-qian-duan-xing-neng-you-hua/113-webtu-xiang-you-hua-zhi-xiang-ying-shi-tu-pian.md)
-  * 11.4 Web图像优化之图片懒加载技术
+  * [11.4 Web图像优化之图片懒加载技术](di-shi-yi-zhang-qian-duan-xing-neng-you-hua/114-webtu-xiang-you-hua-zhi-tu-pian-lan-jia-zai-ji-zhu.md)
   * 附录
     * [附录1：推荐资料](di-shi-yi-zhang-qian-duan-xing-neng-you-hua/fu-lu-1-ff1a-tui-jian-zi-liao.md)
     * [附录2：常见服务端性能优化策略的总结](di-shi-yi-zhang-qian-duan-xing-neng-you-hua/fu-lu-2-ff1a-chang-jian-fu-wu-duan-xing-neng-you-hua-ce-lve-de-zong-jie.md)
 * [第十二章 跨终端Web开发](di-shi-er-zhang-kua-zhong-duan-web-kai-fa.md)
-
-
 

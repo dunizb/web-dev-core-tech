@@ -1,4 +1,4 @@
-# 第2节 前端性能优化之代码优化
+# 第1节 代码优化
 
 Web前端性能优化WPO，相信大多数前端同学都不会陌生，在各自所负责的站点页面中，也都会或多或少的有过一定的技术实践。可以说，这个领域并不缺乏成熟技术理论和技术牛人：例如Yahoo的web站点性能优化黄金法则，以及大名鼎鼎的优化大师Steve Souders。
 
@@ -180,7 +180,7 @@ for(i = 0; i < 10; i++) {
     item = document.createElement("li");
     list.appendChild(item);
     item.appendChild(document.createTextNode("Item " + i));
-}    
+}
 ```
 
 这段代码为列表添加了10个项目。添加每个项目时，都有2个现场更新：一个添加&lt;li&gt;元素，另一个给它添加文本节点。这样添加10个项目，这个操作总共要完成20个现场更新。
@@ -217,7 +217,7 @@ var images = document.getElementsByTagName("img"),
     leng;
 for (i = 0, len = images.length; i < len; i++) {
     // 处理
-}    
+}
 ```
 
 这里的关键在于长度length存入了len变量，而不是每次都去访问HTMLCollection的length属性。当在循环中使用HTMLCollection的时候，下一步应该是获取要使用的项目的引用，如下所示，以便避免在循环体内多次调用HTMLCollection。
@@ -230,7 +230,7 @@ var images = document.getElementsByTagName("img"),
 for (i = 0, len = images.length; i < len; i++) {
     image = images[i];
     // 处理
-}    
+}
 ```
 
 这段代码添加了image变量，保存了当前的图像。这之后，在循环内就没有理由再访问images的HTMLCollection了。

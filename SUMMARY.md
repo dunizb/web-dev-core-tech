@@ -107,5 +107,6 @@
   * [11.3 前端性能优化之Web图像优化](di-shi-zhang-qian-duan-xing-neng-you-hua/113-qian-duan-xing-neng-you-hua-zhi-web-tu-xiang-you-hua.md)
   * 附录
     * [附录1：推荐资料](di-shi-zhang-qian-duan-xing-neng-you-hua/fu-lu-1-ff1a-tui-jian-zi-liao.md)
+    * [附录2：常见服务端性能优化策略的总结](di-shi-zhang-qian-duan-xing-neng-you-hua/fu-lu-2-ff1a-chang-jian-fu-wu-duan-xing-neng-you-hua-ce-lve-de-zong-jie.md)
 * [第十二章 跨终端Web开发](di-shi-er-zhang-kua-zhong-duan-web-kai-fa.md)
 

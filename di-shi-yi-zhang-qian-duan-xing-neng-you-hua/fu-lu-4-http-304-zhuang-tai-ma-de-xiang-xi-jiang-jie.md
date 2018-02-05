@@ -55,30 +55,34 @@ Screenshot of Windiff of conditional and unconditional requests
 
 HTTP 协议规格说明定义ETag为“被请求变量的实体值” 。 另一种说法是，ETag是一个可以与Web资源关联的记号（token）。典型的Web资源可以一个Web页，但也可能是JSON或XML文档。服务器单独负责判断记号是什么及其含义，并在HTTP响应头中将其传送到客户端
 
+---
 
---------
-
-首先看一个关于304请求的响应头的信息，这里面有两个比较重要的请求头字段：`If-Modified-Since` 和 `If-None-Match`，这两个字段表示发送的是一个条件请求。   
+首先看一个关于304请求的响应头的信息，这里面有两个比较重要的请求头字段：`If-Modified-Since` 和 `If-None-Match`，这两个字段表示发送的是一个条件请求。  
 ![](http://7xkn2v.dl1.z0.glb.clouddn.com/QQ20160215-0.png)
 
-当客户端缓存了目标资源但不确定该缓存资源是否是最新版本的时候, 就会发送一个条件请求，这样就可以辨别出一个请求是否是条件请求，在进行条件请求时,客户端会提供给服务器一个`If-Modified-Since`请求头,其值为服务器上次返回的`Last-Modified`响应头中的Date日期值,还会提供一个`If-None-Match`请求头,值为服务器上次返回的`ETag`响应头的值。   
+当客户端缓存了目标资源但不确定该缓存资源是否是最新版本的时候, 就会发送一个条件请求，这样就可以辨别出一个请求是否是条件请求，在进行条件请求时,客户端会提供给服务器一个`If-Modified-Since`请求头,其值为服务器上次返回的`Last-Modified`响应头中的Date日期值,还会提供一个`If-None-Match`请求头,值为服务器上次返回的`ETag`响应头的值。  
 ![](http://7xkn2v.dl1.z0.glb.clouddn.com/QQ20160215-1.png)
 
 服务器会读取到这两个请求头中的值,判断出客户端缓存的资源是否是最新的,如果是的话,**服务器就会返回HTTP/304 Not Modified响应头, 但没有响应体**.客户端收到304响应后,就会从本地缓存中读取对应的资源.
 
 **所以：当访问七牛资源出现304访问的情况下其实就是先在本地缓存了访问的资源，然后请求的时候流量其实就是cdn返回的响应头的字节数的流量。**
 
-这里以Chrome为例说一下缓存资源在本地的保存的位置，通过在Chrome浏览器的地址栏输入Chrome:Version查看Chrome浏览器保存文件的位置：   
+这里以Chrome为例说一下缓存资源在本地的保存的位置，通过在Chrome浏览器的地址栏输入Chrome:Version查看Chrome浏览器保存文件的位置：  
 ![](http://7xkn2v.dl1.z0.glb.clouddn.com/QQ20160215-2.png)
 
 另一种情况是,如果服务器认为客户端缓存的资源已经过期了,那么服务器就会返回HTTP/200 OK响应,响应体就是该资源当前最新的内容.客户端收到200响应后,就会用新的响应体覆盖掉旧的缓存资源.
 
 只有在客户端缓存了对应资源且该资源的响应头中包含了`Last-Modified`或`ETag`的情况下,才可能发送条件请求.如果这两个头都不存在,则必须无条件\(unconditionally\)请求该资源,服务器也就必须返回完整的资源数据.
 
-另外，有时候我们浏览器调试的时候不希望本地缓存，可以设置取消缓存即可：   
+另外，有时候我们浏览器调试的时候不希望本地缓存，可以设置取消缓存即可：  
 ![](http://7xkn2v.dl1.z0.glb.clouddn.com/QQ20160215-3.png)
 
 ---
 
-原文：[http://blog.csdn.net/netdxy/article/details/50670734](http://blog.csdn.net/netdxy/article/details/50670734)
+**参考文章**
+
+* [http://blog.csdn.net/netdxy/article/details/50670734](http://blog.csdn.net/netdxy/article/details/50670734)
+* [http://blog.csdn.net/huwei2003/article/details/70139062](http://blog.csdn.net/huwei2003/article/details/70139062)
+
+
 

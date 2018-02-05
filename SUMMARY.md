@@ -110,13 +110,11 @@
   * [11.5 GPU加速](di-shi-yi-zhang-qian-duan-xing-neng-you-hua/115-gpujia-su.md)
   * [11.6 DNS预解析提升页面速度](di-shi-yi-zhang-qian-duan-xing-neng-you-hua/116-dnsyu-jie-xi-ti-sheng-ye-mian-su-du.md)
   * [11.7 Web缓存技术](di-shi-yi-zhang-qian-duan-xing-neng-you-hua/117-webhuan-cun-ji-zhu.md)
-  * 11.8 雅虎35条
+  * [11.8 雅虎35条](di-shi-yi-zhang-qian-duan-xing-neng-you-hua/118-ya-hu-35-tiao.md)
   * 附录
     * [附录1：推荐资料](di-shi-yi-zhang-qian-duan-xing-neng-you-hua/fu-lu-1-ff1a-tui-jian-zi-liao.md)
     * [附录2：常见服务端性能优化策略的总结](di-shi-yi-zhang-qian-duan-xing-neng-you-hua/fu-lu-2-ff1a-chang-jian-fu-wu-duan-xing-neng-you-hua-ce-lve-de-zong-jie.md)
     * [附录3：网站静态化处理](di-shi-yi-zhang-qian-duan-xing-neng-you-hua/fu-lu-3-ff1a-wang-zhan-jing-tai-hua-chu-li.md)
     * [附录4：HTTP 304状态码的详细讲解](di-shi-yi-zhang-qian-duan-xing-neng-you-hua/fu-lu-4-http-304-zhuang-tai-ma-de-xiang-xi-jiang-jie.md)
 * [第十二章 跨终端Web开发](di-shi-er-zhang-kua-zhong-duan-web-kai-fa.md)
-
-
 

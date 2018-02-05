@@ -110,7 +110,7 @@
   * [11.5 GPU加速](di-shi-yi-zhang-qian-duan-xing-neng-you-hua/115-gpujia-su.md)
   * [11.6 DNS预解析提升页面速度](di-shi-yi-zhang-qian-duan-xing-neng-you-hua/116-dnsyu-jie-xi-ti-sheng-ye-mian-su-du.md)
   * [11.7 Web缓存技术](di-shi-yi-zhang-qian-duan-xing-neng-you-hua/117-webhuan-cun-ji-zhu.md)
-  * [11.8 雅虎35条](di-shi-yi-zhang-qian-duan-xing-neng-you-hua/118-ya-hu-35-tiao.md)
+  * [11.8 雅虎军规35条](di-shi-yi-zhang-qian-duan-xing-neng-you-hua/118-ya-hu-35-tiao.md)
   * 附录
     * [附录1：推荐资料](di-shi-yi-zhang-qian-duan-xing-neng-you-hua/fu-lu-1-ff1a-tui-jian-zi-liao.md)
     * [附录2：常见服务端性能优化策略的总结](di-shi-yi-zhang-qian-duan-xing-neng-you-hua/fu-lu-2-ff1a-chang-jian-fu-wu-duan-xing-neng-you-hua-ce-lve-de-zong-jie.md)

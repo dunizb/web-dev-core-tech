@@ -48,7 +48,7 @@
   * [4.6 Object](di-si-zhang-ecmascript-core/46-object.md)
   * [4.7 Array](di-si-zhang-ecmascript-core/47-array.md)
   * [4.8 String](di-si-zhang-ecmascript-core/48-string.md)
-  * [4.9 60分钟正则从入门到深入](di-si-zhang-ecmascript-core/49-regexp.md)
+  * [4.9 正则从入门到深入](di-si-zhang-ecmascript-core/49-regexp.md)
   * [4.10 Math.random\(\)](di-si-zhang-ecmascript-core/410-mathrandom.md)
   * [4.11 变量声明提升](di-si-zhang-ecmascript-core/412-bian-liang-sheng-ming-ti-sheng.md)
   * [4.12 错误处理](di-si-zhang-ecmascript-core/412-cuo-wu-chu-li.md)

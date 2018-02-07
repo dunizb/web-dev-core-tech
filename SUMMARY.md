@@ -58,6 +58,7 @@
   * [4.16 箭头函数](di-si-zhang-ecmascript-core/415-jian-tou-han-shu.md)
   * 附录
     * [附录1：valueOf\(\)](di-si-zhang-ecmascript-core/fu-lu-1-valueof.md)
+    * 附录2：2017年我遇到的面试题
 * [第五章 JavaScript面向对象编程](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng.md)
   * [5.1 原型与原型链](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/51-yuan-xing-yu-yuan-xing-lian.md)
   * [5.2 作用域](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng/51-zuo-yong-yu.md)
@@ -122,4 +123,6 @@
     * [附录3：网站静态化处理](di-shi-yi-zhang-qian-duan-xing-neng-you-hua/fu-lu-3-ff1a-wang-zhan-jing-tai-hua-chu-li.md)
     * [附录4：HTTP 304状态码的详细讲解](di-shi-yi-zhang-qian-duan-xing-neng-you-hua/fu-lu-4-http-304-zhuang-tai-ma-de-xiang-xi-jiang-jie.md)
 * [第十二章 跨终端Web开发](di-shi-er-zhang-kua-zhong-duan-web-kai-fa.md)
+
+
 

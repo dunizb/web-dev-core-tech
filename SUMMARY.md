@@ -48,8 +48,8 @@
   * [4.6 Object](di-si-zhang-ecmascript-core/46-object.md)
   * [4.7 Array](di-si-zhang-ecmascript-core/47-array.md)
   * [4.8 String](di-si-zhang-ecmascript-core/48-string.md)
-  * [4.9 正则表达式——](di-si-zhang-ecmascript-core/49-regexp.md)入门篇
-  * 4.10 正在表达式——实战篇
+  * [4.9 正则表达式——入门篇](di-si-zhang-ecmascript-core/49-regexp.md)
+  * [4.10 正在表达式——实战篇](di-si-zhang-ecmascript-core/410-zheng-zai-biao-da-shi-2014-2014-shi-zhan-pian.md)
   * [4.11 Math.random\(\)](di-si-zhang-ecmascript-core/410-mathrandom.md)
   * [4.12 变量声明提升](di-si-zhang-ecmascript-core/412-bian-liang-sheng-ming-ti-sheng.md)
   * [4.13 错误处理](di-si-zhang-ecmascript-core/412-cuo-wu-chu-li.md)
@@ -122,6 +122,4 @@
     * [附录3：网站静态化处理](di-shi-yi-zhang-qian-duan-xing-neng-you-hua/fu-lu-3-ff1a-wang-zhan-jing-tai-hua-chu-li.md)
     * [附录4：HTTP 304状态码的详细讲解](di-shi-yi-zhang-qian-duan-xing-neng-you-hua/fu-lu-4-http-304-zhuang-tai-ma-de-xiang-xi-jiang-jie.md)
 * [第十二章 跨终端Web开发](di-shi-er-zhang-kua-zhong-duan-web-kai-fa.md)
-
-
 

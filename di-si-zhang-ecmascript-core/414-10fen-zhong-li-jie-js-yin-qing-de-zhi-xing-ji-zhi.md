@@ -1,4 +1,4 @@
-# 第14节 分钟理解JS引擎的执行机制
+# 第15节 分钟理解JS引擎的执行机制
 
 ## 一、灵魂三问：JS为什么是单线程的？为什么需要异步？单线程又是如何实现异步的呢？
 
@@ -38,7 +38,7 @@ JS最初被设计用在浏览器中，那么想象一下，如果浏览器中的
 
 ```js
 console.log(1)
-    
+
 setTimeout(function(){
     console.log(2)
 },0)
@@ -80,7 +80,7 @@ console.log(3 是同步任务,放到主线程里
 setTimeout(function(){
      console.log('定时器开始啦')
  });
- 
+
  new Promise(function(resolve){
      console.log('马上执行for循环啦');
      for(var i = 0; i < 10000; i++){
@@ -89,7 +89,7 @@ setTimeout(function(){
  }).then(function(){
      console.log('执行then函数啦')
  });
- 
+
  console.log('代码执行结束');
 ```
 
@@ -139,7 +139,7 @@ setTimeout(function(){
 ```js
 setTimeout(function(){
     console.log('执行了')
-},3000)   
+},3000)
 ```
 
 但是这种说并不严谨，准确的解释是: 3秒后，setTimeout里的函数被会推入event queue，而event queue\(事件队列\)里的任务只有在主线程空闲时才会执行。

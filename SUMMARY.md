@@ -55,7 +55,6 @@
   * [4.13 var、let、const](di-si-zhang-ecmascript-core/413-varletconst.md)
   * [4.14 10分钟理解JS引擎的执行机制](di-si-zhang-ecmascript-core/414-10fen-zhong-li-jie-js-yin-qing-de-zhi-xing-ji-zhi.md)
   * 4.15 箭头函数
-    * [x] 
   * 附录
     * [附录1：valueOf\(\)](di-si-zhang-ecmascript-core/fu-lu-1-valueof.md)
 * [第五章 JavaScript面向对象编程](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng.md)

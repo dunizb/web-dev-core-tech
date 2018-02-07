@@ -209,12 +209,6 @@ console.log(obj1.b.f === obj2.b.f);
 // false
 ```
 
-
-
-
-
-
-
 ---
 
 **参考文章**
@@ -222,6 +216,10 @@ console.log(obj1.b.f === obj2.b.f);
 * [javaScript中浅拷贝和深拷贝的实现](https://github.com/wengjq/Blog/issues/3)
 * [深拷贝与浅拷贝的实现（一）](http://www.alloyteam.com/2017/08/12978/)
 * [什么是js深拷贝和浅拷贝及其实现方式](http://www.haorooms.com/post/js_copy_sq)
+
+**延伸阅读**
+
+* [JavaScript 深拷贝性能分析](https://mp.weixin.qq.com/s?__biz=MjM5NTEwMTAwNg==&mid=2650214065&idx=1&sn=c8b5e3f1a46d457bdb0f89dd73f48279&chksm=befe0e90898987865016d3a89fd0c3cb79525757f57dce50b0f77b500cdfe3ee7c9c31230ed5&mpshare=1&scene=23&srcid=02074hq6YoLU49d39tmd6UBe#rd)
 
 
 

@@ -48,13 +48,14 @@
   * [4.6 Object](di-si-zhang-ecmascript-core/46-object.md)
   * [4.7 Array](di-si-zhang-ecmascript-core/47-array.md)
   * [4.8 String](di-si-zhang-ecmascript-core/48-string.md)
-  * [4.9 正则从入门到深入](di-si-zhang-ecmascript-core/49-regexp.md)
-  * [4.10 Math.random\(\)](di-si-zhang-ecmascript-core/410-mathrandom.md)
-  * [4.11 变量声明提升](di-si-zhang-ecmascript-core/412-bian-liang-sheng-ming-ti-sheng.md)
-  * [4.12 错误处理](di-si-zhang-ecmascript-core/412-cuo-wu-chu-li.md)
-  * [4.13 var、let、const](di-si-zhang-ecmascript-core/413-varletconst.md)
-  * [4.14 10分钟理解JS引擎的执行机制](di-si-zhang-ecmascript-core/414-10fen-zhong-li-jie-js-yin-qing-de-zhi-xing-ji-zhi.md)
-  * [4.15 箭头函数](di-si-zhang-ecmascript-core/415-jian-tou-han-shu.md)
+  * [4.9 正则表达式——](di-si-zhang-ecmascript-core/49-regexp.md)入门篇
+  * 4.10 正在表达式——实战篇
+  * [4.11 Math.random\(\)](di-si-zhang-ecmascript-core/410-mathrandom.md)
+  * [4.12 变量声明提升](di-si-zhang-ecmascript-core/412-bian-liang-sheng-ming-ti-sheng.md)
+  * [4.13 错误处理](di-si-zhang-ecmascript-core/412-cuo-wu-chu-li.md)
+  * [4.14 var、let、const](di-si-zhang-ecmascript-core/413-varletconst.md)
+  * [4.15 10分钟理解JS引擎的执行机制](di-si-zhang-ecmascript-core/414-10fen-zhong-li-jie-js-yin-qing-de-zhi-xing-ji-zhi.md)
+  * [4.16 箭头函数](di-si-zhang-ecmascript-core/415-jian-tou-han-shu.md)
   * 附录
     * [附录1：valueOf\(\)](di-si-zhang-ecmascript-core/fu-lu-1-valueof.md)
 * [第五章 JavaScript面向对象编程](di-wu-zhang-mian-xiang-dui-xiang-bian-cheng.md)
@@ -121,4 +122,6 @@
     * [附录3：网站静态化处理](di-shi-yi-zhang-qian-duan-xing-neng-you-hua/fu-lu-3-ff1a-wang-zhan-jing-tai-hua-chu-li.md)
     * [附录4：HTTP 304状态码的详细讲解](di-shi-yi-zhang-qian-duan-xing-neng-you-hua/fu-lu-4-http-304-zhuang-tai-ma-de-xiang-xi-jiang-jie.md)
 * [第十二章 跨终端Web开发](di-shi-er-zhang-kua-zhong-duan-web-kai-fa.md)
+
+
 

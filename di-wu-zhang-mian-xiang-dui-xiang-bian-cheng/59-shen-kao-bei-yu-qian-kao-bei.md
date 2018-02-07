@@ -193,7 +193,13 @@ function deepClone(initalObj, finalObj) {
 }
 ```
 
-### 3.5 lodash
+### 3.5 jQuery.extend
+
+语法：jQuery.extend\( \[deep \], target, object1 \[, objectN \] \)
+
+深浅拷贝对应的参数就是\[deep\]，是可选的，为true或false。默认情况是false（浅拷贝），并且false是不能够显示的写出来的。如果想写，只能写true（深拷贝）
+
+### 3.6 lodash
 
 另外一个很热门的函数库lodash，也有提供\_.cloneDeep用来做 Deep Copy。
 

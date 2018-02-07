@@ -2,6 +2,15 @@
 
 304状态码或许不应该认为是一种错误，而是对客户端有缓存情况下服务端的一种响应。
 
+304的标准解释是：Not Modified 客户端有缓冲的文档并发出了一个条件性的请求（一般是提供If-Modified-Since头表示客户只想比指定日期更新的文档）。服务器告诉客户，原来缓冲的文档还可以继续使用。
+
+如果cache-control：no-chache说明强制每次请求直接发送给源服务器，而不经过本地缓存版本的校验。
+
+如果cache-control：max-age=0有二种情况：
+
+* max-age &gt; 0 时 直接从游览器缓存中 提取 
+* max-age &lt; =0 时 向server 发送http 请求确认 ,该资源是否有修改有的话 返回200 ,无的话 返回304. 
+
 ## 一、整个请求响应过程
 
 客户端在请求一个文件的时候，发现自己缓存的文件有 `Last Modified` ，那么在请求中会包含 `If Modified Since` ，这个时间就是缓存文件的 `Last Modified` 。因此，如果请求中包含 `If Modified Since`，就说明已经有缓存在客户端。服务端只要判断这个时间和当前请求的文件的修改时间就可以确定是返回 304 还是 200 。
@@ -49,7 +58,7 @@
 Screenshot of Windiff of conditional and unconditional requests
 ```
 
-如果你想全局阻止HTTP/304响应，可以这么做：**首先清除浏览器的缓存**,可以使用Fiddler工具栏上的Clear Cache按钮\(仅能清除Internet Explorer缓存\),**或者在浏览器上按CTRL+SHIFT+DELETE\(所有浏览器都支持\)**。在清除浏览器的缓存之后，回到Fiddler中，在菜单中选择`Rules > Performance > Disable Caching`选项，然后Fiddler就会:删除所有请求中的条件请求相同的请求头以及所有响应中的缓存时间相关的响应头。**此外,还会在每个请求中添加`Pragma: no-cache`请求头，在每个响应中添加`Cache-Control: no-cache`响应头，阻止浏览器缓存这些资源。**
+如果你想全局阻止HTTP/304响应，可以这么做：**首先清除浏览器的缓存**,可以使用Fiddler工具栏上的Clear Cache按钮\(仅能清除Internet Explorer缓存\),**或者在浏览器上按CTRL+SHIFT+DELETE\(所有浏览器都支持\)**。在清除浏览器的缓存之后，回到Fiddler中，在菜单中选择`Rules > Performance > Disable Caching`选项，然后Fiddler就会:删除所有请求中的条件请求相同的请求头以及所有响应中的缓存时间相关的响应头。**此外,还会在每个请求中添加**`Pragma: no-cache`**请求头，在每个响应中添加**`Cache-Control: no-cache`**响应头，阻止浏览器缓存这些资源。**
 
 ## 四、ETag是什么意思？
 
@@ -81,6 +90,7 @@ HTTP 协议规格说明定义ETag为“被请求变量的实体值” 。 另一
 
 **参考文章**
 
+* [分析HTTP请求返回304状态码](http://blog.csdn.net/itpinpai/article/details/48181849)
 * [http://blog.csdn.net/netdxy/article/details/50670734](http://blog.csdn.net/netdxy/article/details/50670734)
 * [http://blog.csdn.net/huwei2003/article/details/70139062](http://blog.csdn.net/huwei2003/article/details/70139062)
 

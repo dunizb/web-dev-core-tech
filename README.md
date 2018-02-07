@@ -86,7 +86,7 @@
 * [x] 第13节 var、let、const
 * [x] 第14节 分钟理解JS引擎的执行机制
 * [x] 第15节 script标签的defer和async属性
-* [ ] 第16节 箭头函数
+* [x] 第16节 箭头函数
 * [x] 附录
   * [x] 附录1：valueOf\(\)
 

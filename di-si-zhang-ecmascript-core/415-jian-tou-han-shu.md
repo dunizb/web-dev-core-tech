@@ -19,13 +19,14 @@
 箭头序列`-->`同样是单行注释的一部分。古怪的是，在HTML中`-->`之前的字符是注释的一部分，而在JS中`-->`之后的部分才是注释。
 
 你一定感到陌生的是，只有当箭头在行首时才会注释当前行。这是因为在其它上下文中，`-->`是一个JS运算符：“趋向于”运算符！
+
 ```js
 function countdown(n) {
   while (n --> 0)  // "n goes to zero"
     alert(n);
   blastoff();
 }
-```   
+```
 
 上面这段代码[可以正常运行](http://codepen.io/anon/pen/oXZaBY?editors=001)，循环会一直重复直到n趋于0，这当然不是ES6中的新特性，它只不过是将两个你早已熟悉的特性通过一些误导性的手段结合在一起。你能理解么？通常来说，类似这种谜团都可以在[Stack Overflow](http://stackoverflow.com/questions/1642028/what-is-the-name-of-the-operator)上找到答案。
 
@@ -35,7 +36,7 @@ function countdown(n) {
 * `-->`，“趋向于”操作符
 * `<=`，小于等于
 * `=>`，这又是什么？
-  
+
 `=>`到底是什么？我们今天就来一探究竟。
 
 首先，我们谈论一些有关函数的事情。
@@ -45,11 +46,13 @@ function countdown(n) {
 JavaScript中有一个有趣的特性，无论何时，当你需要一个函数时，你都可以在想添加的地方输入这个函数。
 
 举个例子，假设你尝试告诉浏览器用户点击一个特定按钮后的行为，你会这样写：
+
 ```js
 $("#confetti-btn").click(
 ```
 
-jQuery的.click()方法接受一个参数：一个函数。没问题，你可以在这里输入一个函数：
+jQuery的.click\(\)方法接受一个参数：一个函数。没问题，你可以在这里输入一个函数：
+
 ```js
 $("#confetti-btn").click(function (event) {
   playTrumpet();
@@ -57,11 +60,12 @@ $("#confetti-btn").click(function (event) {
 });
 ```
 
-对 于现在的我们来说，写出这样的代码相当自然，而回忆起在这种编程方式流行之前，这种写法相对陌生一些，许多语言中都没有这种特性。1958年，Lisp首 先支持函数表达式，也支持调用lambda函数，而C++，Python、C#以及Java在随后的多年中一直不支持这样的特性。
+对 于现在的我们来说，写出这样的代码相当自然，而回忆起在这种编程方式流行之前，这种写法相对陌生一些，许多语言中都没有这种特性。1958年，Lisp首 先支持函数表达式，也支持调用lambda函数，而C++，Python、C\#以及Java在随后的多年中一直不支持这样的特性。
 
 现在截然不同，所有的四种语言都已支持lambda函数，更新出现的语言普遍都支持内建的lambda函数。我们必须要感谢JavaScript和早期的JavaScript程序员，他们勇敢地构建了重度依赖lambda函数的库，让这种特性被广泛接受。
 
 令人伤感的是，随后在所有我提及的语言中，只有JavaScript的lambda的语法最终变得冗长乏味。
+
 ```
 // 六种语言中的简单函数示例
 function (a) { return a > 0; } // JS
@@ -75,6 +79,7 @@ a -> a > 0  // Java
 ## 二、箭袋中的新羽
 
 ES6中引入了一种编写函数的新语法
+
 ```js
 // ES5
 var selected = allJobs.filter(function (job) {
@@ -82,13 +87,14 @@ var selected = allJobs.filter(function (job) {
 });
 // ES6
 var selected = allJobs.filter(job => job.isSelected());
-```    
+```
 
 当你只需要一个只有一个参数的简单函数时，可以使用新标准中的箭头函数，它的语法非常简单：`标识符=>表达式`。你无需输入`function`和`return`，一些小括号、大括号以及分号也可以省略。
 
 > （我个人对于这个特性非常感激，不再需要输入function这几个字符对我而言至关重要，因为我总是不可避免地错误写成functoin，然后我就不得不回过头改正它。）
 
 如果要写一个接受多重参数（也可能没有参数，或者是不定参数、默认参数、参数解构）的函数，你需要用小括号包裹参数list。
+
 ```js
 // ES5
 var total = values.reduce(function (a, b) {
@@ -101,6 +107,7 @@ var total = values.reduce((a, b) => a + b, 0);
 正如你使用类似Underscore.js和Immutable.js这样的库提供的函数工具，箭头函数运行起来同样美不可言。事实上，Immutable的文档中的示例全都由ES6写成，其中的许多特性已经用上了箭头函数。
 
 那么不是非常函数化的情况又如何呢？除表达式外，箭头函数还可以包含一个块语句。回想一下我们之前的示例：
+
 ```js
 // ES5
 $("#confetti-btn").click(function (event) {
@@ -133,13 +140,14 @@ var chewToys = puppies.map(puppy => ({})); //
 
 ### 三、这个函数的this值是什么呢？
 
-普通`function`函数和箭头函数的行为有一个微妙的区别，**箭头函数没有它自己的`this`值，箭头函数内的`this`值继承自外围作用域。**
+普通`function`函数和箭头函数的行为有一个微妙的区别，**箭头函数没有它自己的**`this`**值，箭头函数内的**`this`**值继承自外围作用域。**
 
 在我们尝试说明这个问题前，先一起回顾一下。
 
 JavaScript中的`this`是如何工作的？它的值从哪里获取？这些问题的答案可都不简单，如果你对此倍感清晰，一定因为你长时间以来一直在处理类似的问题。
 
 这个问题经常出现的其中一个原因是，无论是否需要，`function`函数总会自动接收一个`this`值。你是否写过这样的hack代码：
+
 ```js
 {
   ...
@@ -172,6 +180,7 @@ JavaScript中的`this`是如何工作的？它的值从哪里获取？这些问�
 在ES6的版本中，注意addAll方法从它的调用者处获取了this值，内部函数是一个箭头函数，所以它继承了外围作用域的this值。
 
 超赞的是，在ES6中你可以用更简洁的方式编写对象字面量中的方法，所以上面这段代码可以简化成：
+
 ```js
 // ES6的方法语法
 {
@@ -183,7 +192,7 @@ JavaScript中的`this`是如何工作的？它的值从哪里获取？这些问�
 }
 ```
 
-箭头函数与非箭头函数间还有一个细微的区别，**箭头函数不会获取它们自己的`arguments`对象**。诚然，在ES6中，你可能更多地会使用不定参数和默认参数值这些新特性。
+箭头函数与非箭头函数间还有一个细微的区别，**箭头函数不会获取它们自己的**`arguments`**对象**。诚然，在ES6中，你可能更多地会使用不定参数和默认参数值这些新特性。
 
 ## 四、什么时候“不要”用箭头函数
 
@@ -196,6 +205,7 @@ JavaScript中的`this`是如何工作的？它的值从哪里获取？这些问�
 #### 4.1.1 对象字面量
 
 自从箭头函数有了短语法，非常吸引人用它来定义方法。让我们试试看：
+
 ```js
 var calculate = {  
   array: [1, 2, 3],
@@ -216,6 +226,7 @@ calculate.sum();
 执行 `this.array` 等同于 `window.array`， 值为 `undefined`。
 
 解决方案是使用函数表达式或者方法定义的短语法 （ECMAScript 6可用）。 在这种情况下 this 决定于调用的对象，而不是紧邻上下文。 让我们看看修正的版本：
+
 ```js
 var calculate = {  
   array: [1, 2, 3],
@@ -234,6 +245,7 @@ calculate.sum(); // => 6
 相同的规则也适用于在 `prototype` 对象上定义方法。
 
 用箭头函数来定义 `sayCatName` 方法，会带来一个不正确的上下文 window：
+
 ```js
 function MyCat(name) {  
   this.catName = name;
@@ -247,6 +259,7 @@ cat.sayCatName(); // => undefined
 ```
 
 使用 保守派 函数表达式：
+
 ```js
 function MyCat(name) {  
   this.catName = name;
@@ -270,6 +283,7 @@ this 在 JavaScript 中是一个很强大的特性。它允许利用函数调用
 给 DOM 元素装配事件监听器是客户端编程的一个通常的任务。一个事件用 this 作为目标元素去触发处理函数。这是一个动态上下文的简便用法。
 
 接下来的例子试图使用一个箭头函数触发一个处理函数：
+
 ```js
 var button = document.getElementById('myButton');  
 button.addEventListener('click', () => {  
@@ -283,6 +297,7 @@ this 在箭头函数中是 window，也就是被定义为全局上下文（译�
 `this.innerHTML` 等价于 `window.innerHTML` ，并没有什么意义。
 
 你不得不应用一个函数表达式，去允许目标元素改变其上下文。
+
 ```js
 var button = document.getElementById('myButton');  
 button.addEventListener('click', function() {  
@@ -302,6 +317,7 @@ button.addEventListener('click', function() {
 无论怎样，this 还是会从紧邻上下文中获取，而不是那个新创建的对象。 换句话说，一个箭头函数构造器的调用过程没有什么意义，反而会产生歧义。
 
 让我们看看，如果试图去尝试使用箭头函数作为构造器，会发生什么：
+
 ```js
 var Message = (text) => {  
   this.text = text;
@@ -315,6 +331,7 @@ var helloMessage = new Message('Hello World!');
 与一些之前特定版本的 JavaScript 静默失败 相比，我认为 ECMAScript 6 在这些情况下提供含有错误信息的失败会更加高效。
 
 上面的例子可以使用一个 函数表达式 来修正，这才是创建构造器正确的方式 （包括 函数声明）：
+
 ```js
 var Message = function(text) {  
   this.text = text;
@@ -327,11 +344,12 @@ console.log(helloMessage.text); // => 'Hello World!'
 
 **当要求动态上下文的时候，你就不能使用箭头函数，比如：定义方法，用构造器创建对象，处理时间时用 this 获取目标。**
 
-
-******
+---
 
 **参考文章**
+
 * [深入浅出ES6（七）：箭头函数 Arrow Functions](http://www.infoq.com/cn/articles/es6-in-depth-arrow-functions)
 * [什么时候“不要”用箭头函数](http://www.zcfy.cc/article/when-not-to-use-arrow-functions-482.html)
-    
+
+
 

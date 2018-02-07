@@ -21,6 +21,75 @@ JavaScript脚本都可以省略var。
 1. JS没有块级作用域
 2. 循环内变量过度共享
 
+比如如下经典场景：
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        //面试经典问题:
+
+        function onMyLoad(){
+            /*
+            抛出问题:
+                此题的目的是想每次点击对应目标时弹出对应的数字下标 0~4,但实际是无论点击哪个目标都会弹出数字5
+            问题所在:
+                arr 中的每一项的 onclick 均为一个函数实例(Function 对象),这个函数实例也产生了一个闭包域,
+                这个闭包域引用了外部闭包域的变量,其 function scope 的 closure 对象有个名为 i 的引用,
+                外部闭包域的私有变量内容发生变化,内部闭包域得到的值自然会发生改变
+            */
+            var arr = document.getElementsByTagName("p");
+            for(var i = 0; i < arr.length;i++){
+                arr[i].onclick = function(){
+                    alert(i);
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="onMyLoad()">
+    <p>产品一</p>
+    <p>产品二</p>
+    <p>产品三</p>
+    <p>产品四</p>
+    <p>产品五</p>
+</body>
+</html>
+```
+
+解决办法一：增加若干个对应的闭包域空间(这里采用的是匿名函数),专门用来存储原先需要引用的内容(下标),不过只限于基本类型(基本类型值传递,对象类型引用传递)
+
+```js
+for(var i = 0;i<arr.length;i++){
+
+    //声明一个匿名函数,若传进来的是基本类型则为值传递,故不会对实参产生影响,
+    //该函数对象有一个本地私有变量arg(形参) ,该函数的 function scope 的 closure 对象属性有两个引用,一个是 arr,一个是 i
+    //尽管引用 i 的值随外部改变 ,但本地私有变量(形参) arg 不会受影响,其值在一开始被调用的时候就决定了.
+    (function (arg) {
+        arr[i].onclick = function () {  //onclick函数实例的 function scope 的 closure 对象属性有一个引用 arg,
+            alert(arg);                 //只要 外部空间的 arg 不变,这里的引用值当然不会改变
+        }
+    })(i);                              //立刻执行该匿名函数,传递下标 i(实参)
+}
+```
+
+解决办法二：将下标作为对象属性(name:"i",value:i的值)添加到每个数组项(p对象)中
+```js
+for(var i = 0;i<arr.length;i++){
+    //为当前数组项即当前 p 对象添加一个名为 i 的属性,值为循环体的 i 变量的值,
+    //此时当前 p 对象的 i 属性并不是对循环体的 i 变量的引用,而是一个独立p 对象的属性,属性值在声明的时候就确定了
+    //(基本类型的值都是存在栈中的,当有一个基本类型变量声明其等于另一个基本变量时,此时并不是两个基本类型变量都指向一个值,而是各自有各自的值,但值是相等的)
+    arr[i].i = i;
+    arr[i].onclick = function () {
+        alert(this.i);
+    }
+}
+```
+
+> 更多解决方法请参看：[ 用9种办法解决 JS 闭包经典面试题之 for 循环取 i](http://blog.csdn.net/u013243347/article/details/52134643)
+
 let相比var的优点如下：
 
 * let声明的变量拥有块级作用域,let声明仍然保留了提升的特性，但不会盲目提升。

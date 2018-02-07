@@ -49,7 +49,7 @@
 Screenshot of Windiff of conditional and unconditional requests
 ```
 
-如果你想全局阻止HTTP/304响应，可以这么做：首先清除浏览器的缓存,可以使用Fiddler工具栏上的Clear Cache按钮\(仅能清除Internet Explorer缓存\),或者在浏览器上按CTRL+SHIFT+DELETE\(所有浏览器都支持\)。在清除浏览器的缓存之后，回到Fiddler中，在菜单中选择`Rules > Performance > Disable Caching`选项，然后Fiddler就会:删除所有请求中的条件请求相同的请求头以及所有响应中的缓存时间相关的响应头。此外,还会在每个请求中添加`Pragma: no-cache`请求头，在每个响应中添加`Cache-Control: no-cache`响应头，阻止浏览器缓存这些资源。
+如果你想全局阻止HTTP/304响应，可以这么做：**首先清除浏览器的缓存**,可以使用Fiddler工具栏上的Clear Cache按钮\(仅能清除Internet Explorer缓存\),**或者在浏览器上按CTRL+SHIFT+DELETE\(所有浏览器都支持\)**。在清除浏览器的缓存之后，回到Fiddler中，在菜单中选择`Rules > Performance > Disable Caching`选项，然后Fiddler就会:删除所有请求中的条件请求相同的请求头以及所有响应中的缓存时间相关的响应头。**此外,还会在每个请求中添加`Pragma: no-cache`请求头，在每个响应中添加`Cache-Control: no-cache`响应头，阻止浏览器缓存这些资源。**
 
 ## 四、ETag是什么意思？
 

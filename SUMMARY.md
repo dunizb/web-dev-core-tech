@@ -97,7 +97,7 @@
 * [第八章 Vue.js专题](di-ba-zhang-vue-js-zhuan-ti.md)
   * [8.1 Vue keep-alive实践总结](di-ba-zhang-vue-js-zhuan-ti/81-vue-keep-aliveshi-jian-zong-jie.md)
   * 附录
-    * [附录1：Vue.js相关问题整理](di-ba-zhang-vue-js-zhuan-ti/fu-lu-1-vue-js-xiang-guan-wen-ti-zheng-li.md)
+    * [附录1：Vue.js知识点整理](di-ba-zhang-vue-js-zhuan-ti/fu-lu-1-vue-js-xiang-guan-wen-ti-zheng-li.md)
 * [第九章 前端模块化与工程化](di-jiu-zhang-qian-duan-mo-kuai-hua-yu-gong-cheng-hua.md)
   * [9.1 JS模块化编程（一）模块的写法和AMD规范](di-jiu-zhang-qian-duan-mo-kuai-hua-yu-gong-cheng-hua/91-javascriptmo-kuai-hua-bian-cheng-ff08-yi-ff09-ff1a-mo-kuai-de-xie-fa.md)
   * [9.2 JS模块化编程（二）require.js的用法](di-jiu-zhang-qian-duan-mo-kuai-hua-yu-gong-cheng-hua/92-jsmo-kuai-hua-bian-cheng-ff08-er-ff09-require-js-de-yong-fa.md)

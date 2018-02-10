@@ -1,4 +1,4 @@
-# 附录1：Vue.js相关问题总结
+# 附录1：Vue.js知识点总结
 
 ## 1. vue.js 计算属性与$watch的区别?
 
@@ -17,14 +17,16 @@ watch属性：用于耗时的，可以异步的获取远程服务上的数据这
 
 ## 3. 数组更新检测不能检测哪些情况？
 
-**1. 非变异方法**
+**1. 非变异方法**  
 例如：`filter()`, `concat()` 和 `slice()` 。这些不会改变原始数组，但总是返回一个新数组。当使用非变异方法时，可以用新数组替换旧数组。
 
 **2. 不能检测以下变动的数组：**
+
 * 当你利用索引直接设置一个项时，例如：`vm.items[indexOfItem] = newValue`
 * 当你修改数组的长度时，例如：`vm.items.length = newLength`
 
 为了解决第一类问题，以下两种方式都可以实现和 `vm.items[indexOfItem] = newValue` 相同的效果，同时也将触发状态更新：
+
 ```js
 // Vue.set
 Vue.set(example1.items, indexOfItem, newValue)
@@ -34,24 +36,30 @@ example1.items.splice(indexOfItem, 1, newValue)
 ```
 
 为了解决第二类问题，你可以使用 `splice`：
+
 ```js
 example1.items.splice(newLength)
 ```
 
-**3. 不能检测对象属性的添加或删除**
-解决方法：`vm.$set`
+**3. 不能检测对象属性的添加或删除**  
+解决方法：`vm.$set`  
 例如：你可以添加一个新的 age 属性到嵌套的 userProfile 对象：
+
 ```js
 vm.$set(vm.userProfile, 'age', 27)
 ```
+
 有时你可能需要为已有对象赋予多个新属性，比如使用 `Object.assign()` 或 `_.extend()`。在这种情况下，你应该用两个对象的属性创建一个新的对象。所以，如果你想添加新的响应式属性，不要像这样：
+
 ```js
 Object.assign(vm.userProfile, {
   age: 27,
   favoriteColor: 'Vue Green'
 })
 ```
+
 你应该这样做：
+
 ```js
 vm.userProfile = Object.assign({}, vm.userProfile, {
   age: 27,
@@ -60,11 +68,6 @@ vm.userProfile = Object.assign({}, vm.userProfile, {
 ```
 
 ## 4. v-for with v-if 的优先级谁高？
+
 当它们处于同一节点，`v-for` 的优先级比 `v-if` 更高，这意味着 `v-if` 将分别重复运行于每个 `v-for` 循环中。
-
-
-
-
-
-
 

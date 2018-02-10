@@ -335,6 +335,7 @@ alert(stu1.alertName == stu2.alertName);  //true  共享函数
 ## 六、寄生构造函数模式
 
 这种模式的基本思想就是创建一个函数，该函数的作用仅仅是封装创建对象的代码，然后再返回新建的对象
+
 ```js
 function Person(name, job) {
   var o = new Object()
@@ -360,8 +361,9 @@ person1.sayName()
 稳妥对象最适合在一些安全环境中（这些环境会禁止使用`this`和`new`），或防止数据被其他应用程序改动时使用
 
 稳妥构造函数模式和寄生模式类似，有两点不同:
-- 一是创建对象的实例方法不引用`this`
-- 而是不使用`new`操作符调用构造函数
+
+* 一是创建对象的实例方法不引用`this`
+* 而是不使用`new`操作符调用构造函数
 
 ```js
 function Person(name, job) {
@@ -379,7 +381,6 @@ person1.sayName()
 ```
 
 和寄生构造函数模式一样，这样创建出来的对象与构造函数之间没有什么关系，`instanceof`操作符对他们没有意义.
-
 
 ## 八、Object.create\(\)
 
@@ -453,6 +454,7 @@ alert(car.getInfo());
 
 * [JavaScript构造函数及原型对象](http://blog.csdn.net/a153375250/article/details/51083245)
 * [一种新的javascript对象创建方式Object.create\(\)](http://www.jb51.net/article/77127.htm)
+* [JavaScript创建对象的七种方式](https://xxxgitone.github.io/2017/06/10/JavaScript创建对象的七种方式/)
 
 
 

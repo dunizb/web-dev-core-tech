@@ -1,4 +1,4 @@
-# 第7节 创建对象的几种方式比较
+# 第7节 创建对象的八种方式比较
 
 JavaScript中没有类的概念，所以其在对象创建方面与面向对象语言有所不同。
 
@@ -11,7 +11,10 @@ JS是一种基于对象的语言，对象的概念在JS体系中十分的重要�
 * 构造函数模式创建对象
 * 原型模式创建对象
 * 构造与原型混合模式创建对象
+* 寄生构造函数模式
+* 稳妥构造函数模式
 * Object.create\(\)
+* 总结几种方式的优缺点
 
 ## 一、使用Object或对象字面量创建对象
 
@@ -23,7 +26,7 @@ student.name = "easy";
 student.age = "20";
 ```
 
-这样，一个student对象就创建完毕，拥有2个属性name以及age，分别赋值为"easy"和20。
+这样，一个 student 对象就创建完毕，拥有 2 个属性 name 以及 age，分别赋值为"easy"和20。
 
 如果你嫌这种方法有一种封装性不良的感觉，我们也可以使用对象字面量的方式来创建student对象：
 
@@ -34,7 +37,7 @@ var sutdent = {
 };
 ```
 
-这样看起来似乎就完美了。但是马上我们就会发现一个十分尖锐的问题：当我们要创建同类的student1，student2，…，studentn时，我们不得不将以上的代码重复n次。
+这样看起来似乎就完美了。但是马上我们就会发现一个十分尖锐的问题：当我们要创建同类的student1，student2，…，studentn时，我们不得不将以上的代码重复 n 次。
 
 ```js
 var sutdent1 = {
@@ -91,7 +94,7 @@ var v1 = createStudent("easy1", 20);
 var v2 = createFruit("apple", "green");
 ```
 
-对于以上代码创建的对象v1、v2，我们用instanceof操作符去检测，他们统统都是Object类型。我们的当然不满足于此，我们希望v1是Student类型的，而v2是Fruit类型的。为了实现这个目标，我们可以用自定义构造函数的方法来创建对象。
+对于以上代码创建的对象v1、v2，我们用 instanceof 操作符去检测，他们统统都是Object类型。我们的当然不满足于此，我们希望v1是Student类型的，而v2是Fruit类型的。为了实现这个目标，我们可以用自定义构造函数的方法来创建对象。
 
 ## 三、构造函数模式创建对象
 
@@ -314,8 +317,8 @@ function Student(name, age) {
 Student.prototype = {
   constructor : Student,
   alertName : function() {
-                alert(this.name);
-              }
+     alert(this.name);
+  }
 }
 
 var stu1 = new Student("Jim", 20);
@@ -329,7 +332,56 @@ alert(stu1.alertName == stu2.alertName);  //true  共享函数
 
 以上，在构造函数中定义实例属性，在原型中定义共享属性的模式，是目前使用最广泛的方式。通常情况下，我们都会默认使用这种方式来定义引用类型变量。
 
-## 六、Object.create\(\)
+## 六、寄生构造函数模式
+
+这种模式的基本思想就是创建一个函数，该函数的作用仅仅是封装创建对象的代码，然后再返回新建的对象
+```js
+function Person(name, job) {
+  var o = new Object()
+  o.name = name
+  o.job = job
+  o.sayName = function() {
+    console.log(this.name)
+  }
+  return o
+}
+var person1 = new Person('Jiang', 'student')
+person1.sayName()
+```
+
+这个模式，除了使用`new`操作符并把使用的包装函数叫做构造函数之外，和工厂模式几乎一样
+
+构造函数如果不返回对象，默认也会返回一个新的对象，通过在构造函数的末尾添加一个`return`语句，可以重写调用构造函数时返回的值
+
+## 七、稳妥构造函数模式
+
+首先明白稳妥对象指的是没有公共属性，而且其方法也不引用`this`。
+
+稳妥对象最适合在一些安全环境中（这些环境会禁止使用`this`和`new`），或防止数据被其他应用程序改动时使用
+
+稳妥构造函数模式和寄生模式类似，有两点不同:
+- 一是创建对象的实例方法不引用`this`
+- 而是不使用`new`操作符调用构造函数
+
+```js
+function Person(name, job) {
+  var o = new Object()
+  o.name = name
+  o.job = job
+  o.sayName = function() {
+    console.log(name)
+  }
+  return o
+}
+
+var person1 = Person('Jiang', 'student')
+person1.sayName()
+```
+
+和寄生构造函数模式一样，这样创建出来的对象与构造函数之间没有什么关系，`instanceof`操作符对他们没有意义.
+
+
+## 八、Object.create\(\)
 
 Object.create\(proto \[, propertiesObject \]\) 是E5中提出的一种新的对象创建方式，该方法会使用指定的原型对象及其属性去创建一个新的对象。
 
@@ -366,6 +418,34 @@ alert(car.getInfo());
 ```
 
 结果为:A blue undefined.
+
+## 总结几种方式的优缺点
+
+**1. 对象字面量**
+
+* 优点：简单
+  缺点：如果需要创建很多对象需要写很多代码
+
+**2. 工厂模式**
+
+* 优点：可以无数次调用这个工厂函数
+* 缺点：没有解决对象识别问题，不能区分对象类型
+
+**3. 构造函数模式**
+
+* 优点：可以检测对象类型
+* 缺点：使用构造函数创建对象，每个方法都要在每个实例上重新创建一次
+
+**4. 原型模式**
+
+* 优点：可以让所有的实例对象共享它所包含的属性和方法，不必在构造函数中定义对象实例信息。
+* 缺点：所有的属性都将被共享，这种共享对于函数非常合适
+
+**5. 组合使用构造函数模式和原型模式**  
+优点：它可以解决上面那些模式的缺点，使用此模式可以让每个实例都会有自己的一份实例属性副本，但同时又共享着对方法的引用。这样的话，即使实例属性修改引用类型的值，也不会影响其他实例的属性值了
+
+**6. 寄生构造函数模式**  
+除了使用new操作符并把使用的包装函数叫做构造函数之外，和工厂模式几乎一样
 
 ---
 

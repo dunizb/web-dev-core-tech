@@ -294,7 +294,6 @@ Host: api.alice.com
 Accept-Language: en-US
 Connection: keep-alive
 User-Agent: Mozilla/5.0...
-
 ```
 
 这个Origin对应服务器端的`Access-Control-Allow-Origin`设置，所以一般来说需要在服务器端加上这个`Access-Control-Allow-Origin 指定域名\|\*`
@@ -323,12 +322,13 @@ User-Agent: Mozilla/5.0..
 
 除了Origin字段，"预检"请求的头信息包括两个特殊字段。
 
-- Access-Control-Request-Method，该字段是必须的，用来列出浏览器的CORS请求会用到哪些HTTP方法，上例是PUT。
-- Access-Control-Request-Headers，该字段是一个逗号分隔的字符串，指定浏览器CORS请求会额外发送的头信息字段，上例是X-Custom-Header。
+* Access-Control-Request-Method，该字段是必须的，用来列出浏览器的CORS请求会用到哪些HTTP方法，上例是PUT。
+* Access-Control-Request-Headers，该字段是一个逗号分隔的字符串，指定浏览器CORS请求会额外发送的头信息字段，上例是X-Custom-Header。
 
 **然后服务器收到"预检"请求以后：**
 
 检查了`Origin`、`Access-Control-Request-Method`和`Access-Control-Request-Headers`字段以后，确认允许跨源请求，就可以做出回应。
+
 ```
 // 预检请求的回应
 HTTP/1.1 200 OK
@@ -348,6 +348,7 @@ Content-Type: text/plain
 **最后一旦服务器通过了"预检"请求：**
 
 以后每次浏览器正常的CORS请求，就都跟简单请求一样，会有一个`Origin`头信息字段。服务器的回应，也都会有一个`Access-Control-Allow-Origin`头信息字段。
+
 ```
 // 以后的请求，就像拿到了通行证之后，就不需要再做预检请求了。
 PUT /cors HTTP/1.1

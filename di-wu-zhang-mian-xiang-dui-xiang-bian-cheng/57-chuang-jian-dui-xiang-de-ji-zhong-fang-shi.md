@@ -1,4 +1,4 @@
-# 第7节 创建对象的八种方式比较
+# 第7节 创建对象的九种方式比较
 
 JavaScript中没有类的概念，所以其在对象创建方面与面向对象语言有所不同。
 
@@ -11,9 +11,10 @@ JS是一种基于对象的语言，对象的概念在JS体系中十分的重要�
 * 3.构造函数模式创建对象
 * 4.原型模式创建对象
 * 5.构造与原型混合模式创建对象
-* 6.寄生构造函数模式
-* 7.稳妥构造函数模式
-* 8.Object.create\(\)
+* 6.动态原型模式
+* 7.寄生构造函数模式
+* 8.稳妥构造函数模式
+* 9.Object.create\(\)
 * 总结几种方式的优缺点
 
 ## 一、使用Object或对象字面量创建对象
@@ -304,35 +305,59 @@ Student.prototype = {
 
 ## 五、构造与原型混合模式创建对象
 
-我们结合原型模式在共享方法属性以及构造函数模式在实例方法属性方面的优势，使用以下的方法创建对象：
+这是使用最为广泛、认同度最高的一种创建自定义类型的方法，通常情况下，我们都会默认使用这种方式来定义引用类型变量。
+
+它可以解决上面那些模式的缺点。使用此模式可以让每个实例都会有自己的一份实例属性副本，但同时又共享着对方法的引用，这样的话，即使实例属性修改引用类型的值，也不会影响其他实例的属性值了。
 
 ```js
 //我们希望每个stu拥有属于自己的name和age属性
-function Student(name, age) {
-  this.name = name;
-  this.age = age;
+function Person(name) {
+  this.name = name
+  this.friends = [‘Shelby’, ‘Court’]
 }
 
-//所有的stu应该共享一个alertName()方法
-Student.prototype = {
-  constructor : Student,
-  alertName : function() {
-     alert(this.name);
-  }
+Person.prototype.sayName = function() {
+  console.log(this.name)
 }
+var person1 = new Person()
+var person2 = new Person()
 
-var stu1 = new Student("Jim", 20);
-var stu2 = new Student("Tom", 21);
-
-stu1.alertName();  //Jim  实例属性
-stu2.alertName();  //Tom  实例属性
-
-alert(stu1.alertName == stu2.alertName);  //true  共享函数
+person1.friends.push(‘Van’)
+console.log(person1.friends)  //[“Shelby”, “Court”, “Van”]
+console.log(person2.friends) // [“Shelby”, “Court”]
+console.log(person1.friends === person2.friends) //false
 ```
 
-以上，在构造函数中定义实例属性，在原型中定义共享属性的模式，是目前使用最广泛的方式。通常情况下，我们都会默认使用这种方式来定义引用类型变量。
+## 六、动态原型模式
 
-## 六、寄生构造函数模式
+动态原型模式将所有信息都封装在了构造函数中，初始化的时候，通过检测某个应该存在的方法时候有效，来决定是否需要初始化原型。
+```js
+function Person(name, job) {
+  // 属性
+  this.name = name
+  this.job = job
+  
+  // 方法
+  if(typeof this.sayName !== ‘function’) {
+    Person.prototype.sayName = function() {
+       console.log(this.name)
+    }
+  }
+  
+}
+var person1 = new Person(‘Jiang’, ‘Student’)
+person1.sayName()
+```
+
+只有在 `sayName` 方法不存在的时候，才会将它添加到原型中。这段代码只会初次调用构造函数的时候才会执行。
+
+此后原型已经完成初始化，不需要在做什么修改了。
+
+这里对原型所做的修改，能够立即在所有实例中得到反映。
+
+其次，`if`语句检查的可以是初始化之后应该存在的任何属性或方法，所以不必用一大堆的if语句检查每一个属性和方法，只要检查一个就行了。
+
+## 七、寄生构造函数模式
 
 这种模式的基本思想就是创建一个函数，该函数的作用仅仅是封装创建对象的代码，然后再返回新建的对象
 
@@ -354,7 +379,7 @@ person1.sayName()
 
 构造函数如果不返回对象，默认也会返回一个新的对象，通过在构造函数的末尾添加一个`return`语句，可以重写调用构造函数时返回的值
 
-## 七、稳妥构造函数模式
+## 八、稳妥构造函数模式
 
 首先明白稳妥对象指的是没有公共属性，而且其方法也不引用`this`。
 
@@ -382,7 +407,7 @@ person1.sayName()
 
 和寄生构造函数模式一样，这样创建出来的对象与构造函数之间没有什么关系，`instanceof`操作符对他们没有意义.
 
-## 八、Object.create\(\)
+## 九、Object.create\(\)
 
 Object.create\(proto \[, propertiesObject \]\) 是E5中提出的一种新的对象创建方式，该方法会使用指定的原型对象及其属性去创建一个新的对象。
 

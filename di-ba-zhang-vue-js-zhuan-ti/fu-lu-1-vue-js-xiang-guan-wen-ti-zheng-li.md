@@ -80,3 +80,17 @@ vm.userProfile = Object.assign({}, vm.userProfile, {
 - .passive（2.3.0），告诉浏览器你不想阻止事件的默认行为，尤其能够提升移动端的性能。
 - .native，在某个组件的根元素上监听一个原生事件
 - .sync（2.3.0）作为一个编译时的语法糖存在，它会被扩展为一个自动更新父组件属性的 `v-on` 监听器。当子组件需要更新 foo 的值时，它需要显式地触发一个更新事件`update`。
+
+## 6. v-cloak有什么用？
+
+这个指令保持在元素上直到关联实例结束编译。和 CSS 规则如 `[v-cloak] { display: none }` 一起用时，这个指令可以隐藏未编译的 Mustache 标签直到实例准备完毕。
+```html
+[v-cloak] {
+  display: none;
+}
+
+<div v-cloak>
+  {{ message }}
+</div>
+```
+
